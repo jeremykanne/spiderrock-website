@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brokerage Services — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <div class="bg-sr-navy text-white text-xs py-2.5 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-8 flex justify-end gap-8">
+      <a href="platform.html" class="hover:text-blue-200">Trading Platform</a>
+      <a href="brokerage.html" class="text-blue-200">Brokerage Services</a>
+      <a href="data.html" class="hover:text-blue-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark py-24 text-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <a href="/" class="inline-block hover:opacity-80 mb-12">
+        <svg class="h-10 w-auto" viewBox="0 0 200 60" fill="none">
+          <text x="10" y="45" font-family="Inter" font-size="32" font-weight="700" fill="white">SpiderRock</text>
+        </svg>
+      </a>
+      <h1 class="text-6xl font-bold mb-6 max-w-3xl">Market Access &amp; Brokerage</h1>
+      <p class="text-white/80 text-xl max-w-2xl">FINRA-regulated execution and market access for institutional clients worldwide.</p>
+    </div>
+  </div>
+
+  <section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-4xl font-bold mb-16">Regulated Electronic Execution</h2>
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-gray-900">SpiderRock EXS</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Through SpiderRock EXS, our FINRA-regulated broker-dealer and NFA member, we provide comprehensive market access and execution services for institutional clients trading equities, options, and futures.</p>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-2"><span class="text-sr-blue">✓</span> Low-latency infrastructure with direct exchange connections</li>
+            <li class="flex gap-2"><span class="text-sr-blue">✓</span> Customizable Direct Market Access (DMA) routing</li>
+            <li class="flex gap-2"><span class="text-sr-blue">✓</span> Comprehensive 15c3-5 pre-trade risk management</li>
+            <li class="flex gap-2"><span class="text-sr-blue">✓</span> Full regulatory compliance and reporting</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-12 rounded-lg">
+          <h3 class="text-lg font-bold mb-8 text-gray-900">Market Access Coverage</h3>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="font-semibold text-gray-900">U.S. Equities</p>
+              <p class="text-sm text-gray-600">All listed equities via low-latency connections</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="font-semibold text-gray-900">Equity Options</p>
+              <p class="text-sm text-gray-600">Complete coverage across all U.S. options exchanges</p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Futures</p>
+              <p class="text-sm text-gray-600">CME and CBOT contracts with optimized routing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sr-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+      <h2 class="text-4xl font-bold mb-6">Compliance Built In</h2>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto mb-12">Enterprise-grade compliance infrastructure with automated reporting, surveillance, and regulatory oversight.</p>
+      <a href="contact.html" class="inline-block bg-sr-red text-white font-semibold px-8 py-3">Get Started</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-16">
+    <div class="max-w-7xl mx-auto px-8 text-center text-sm">
+      <p>© 2026 SpiderRock. All rights reserved.</p>
+      <p class="mt-2">SpiderRock EXS LLC is a registered broker dealer. Member FINRA / SIPC.</p>
+    </div>
+  </footer>
+</body>
+</html>
