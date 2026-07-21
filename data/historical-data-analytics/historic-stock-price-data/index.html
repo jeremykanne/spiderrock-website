@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historical Stock Price Data — SpiderRock Data & Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto','sans-serif'], display: ['Montserrat','sans-serif'] },
+          colors: { 'sr-navy':'#162032','sr-blue':'#1B3D6B','sr-gray':'#5C6270','sr-dark':'#3A3F4A','sr-red':'#C0392B' }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4,0,0.2,1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card-hover { transition: all 200ms ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../../data/" class="text-blue-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-br from-sr-navy to-sr-blue text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-4 text-white text-[13px] font-semibold">
+          <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Data Home</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Data &amp; Analytics <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../options-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a>
+                <a href="../../data-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Data Delivery</a>
+                <a href="../../volatility-charts/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Charts</a>
+                <a href="../../data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Live APIs</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-blue-200 cursor-pointer">Historical <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Data Overview</a>
+                <a href="../options-greeks/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Options &amp; Greeks</a>
+                <a href="../historic-stock-price-data/" class="block px-4 py-2 text-blue-200 bg-white/10 text-xs">Historical Stock Prices</a>
+                <a href="../volatility-surfaces/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Surfaces</a>
+                <a href="../vol2g/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Database (VOL2G)</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../spiderstream-market-data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">SpiderStream / MLink API</a>
+                <a href="../../stocks-options-futures/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Stocks, Options &amp; Futures</a>
+                <a href="../../option-features-dataset/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Option Features Dataset</a>
+                <a href="../../options-pricing-tool/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Pricing Tool</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../market-data-partners/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Market Data Partners</a>
+                <a href="../../updates/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">News &amp; Events</a>
+                <a href="../../resources/glossary/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Glossary</a>
+              </div>
+            </div>
+          </div>
+          <a href="../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Historical Data</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Historical Stock Price Data</h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">End-of-day and intraday tick data for U.S. equities — clean, adjusted, and ready for quantitative research, backtesting, and machine learning applications.</p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Data Access</a>
+        <a href="../" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 hover:bg-white/10 transition-colors">Historical Data Overview</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <img src="../../images/stock-price-hero.jpg" alt="Historical Stock Price Data" class="w-full rounded-xl shadow-xl mb-16">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Institutional-Grade Equity History</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Clean, Adjusted, and Complete</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">SpiderRock's historical stock price data covers the full U.S. equity universe with corporate action adjustments, survivorship-bias awareness, and deep tick-level granularity for intraday research.</p>
+          <p class="text-gray-600 leading-relaxed">Delivered alongside SpiderRock's options data, equity history integrates seamlessly into workflows that require coordinated stock and derivatives analysis.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
+            <div class="text-3xl font-display font-bold text-sr-navy mb-1">EOD</div>
+            <div class="text-sm text-gray-600 font-medium">End-of-day pricing</div>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
+            <div class="text-3xl font-display font-bold text-sr-blue mb-1">Tick</div>
+            <div class="text-sm text-gray-600 font-medium">Intraday granularity</div>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
+            <div class="text-3xl font-display font-bold text-sr-red mb-1">Adj.</div>
+            <div class="text-sm text-gray-600 font-medium">Corporate action adjusted</div>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
+            <div class="text-3xl font-display font-bold text-sr-gray mb-1">U.S.</div>
+            <div class="text-sm text-gray-600 font-medium">Full equity universe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA FIELDS -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Coverage</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-12">Fields Available per Symbol</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">End-of-Day (EOD)</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Open, High, Low, Close (OHLC)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Adjusted and unadjusted prices</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Volume and dollar volume</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Dividend and split adjustment factors</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Market cap and shares outstanding</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Closing bid/ask and spread</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Intraday Tick</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade price and size</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>NBBO bid/ask updates</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Exchange of execution</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade condition codes</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Nanosecond timestamps</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>OHLCV bars (1-min, 5-min, hourly)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE CLEAN DATA -->
+  <section class="bg-white py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Quality</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Rigorous Data Processing</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">Raw exchange data contains errors, anomalies, and inconsistencies. SpiderRock applies institutional-grade processing to deliver clean, research-ready data.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-navy rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">1</div>
+              <div><strong class="text-gray-900">Corporate Action Adjustments</strong><p class="text-gray-600 text-sm mt-1">Prices and volumes are adjusted for stock splits, reverse splits, spin-offs, and special dividends — ensuring continuity across the full history.</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-blue rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">2</div>
+              <div><strong class="text-gray-900">Outlier Detection &amp; Cleansing</strong><p class="text-gray-600 text-sm mt-1">Erroneous prints and quotes are flagged and removed. Obvious bad ticks are corrected, and suspicious data is annotated rather than silently discarded.</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-red rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">3</div>
+              <div><strong class="text-gray-900">Symbol Mapping &amp; Continuity</strong><p class="text-gray-600 text-sm mt-1">Ticker changes, mergers, delistings, and re-listings are tracked so you can follow securities through corporate events without losing historical context.</p></div>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-6">Compatible With Your Stack</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">Historical stock data is delivered in formats designed for direct ingestion into quantitative workflows:</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-navy rounded flex items-center justify-center text-white text-xs font-bold">CSV</div>
+              <span class="text-gray-700 text-sm">Flat CSV files for pandas, R, and spreadsheets</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-blue rounded flex items-center justify-center text-white text-xs font-bold">PQ</div>
+              <span class="text-gray-700 text-sm">Parquet format for large-scale analytics (Spark, Dask)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-red rounded flex items-center justify-center text-white text-xs font-bold">API</div>
+              <span class="text-gray-700 text-sm">Liberator REST API for targeted, on-demand queries</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-gray rounded flex items-center justify-center text-white text-xs font-bold">S3</div>
+              <span class="text-gray-700 text-sm">Direct cloud delivery to AWS S3 or Azure Blob</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-sr-navy py-24">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl font-bold text-white mb-6">Get Access to Historical Stock Data</h2>
+      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Contact our data team to discuss coverage, formats, pricing, and integration options for historical U.S. equity data.</p>
+      <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Request Information</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16"><img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;"></div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div><h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li></ul></div>
+        <div><h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li></ul></div>
+        <div><h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="../" class="hover:text-white transition-colors">Historical Data</a></li></ul></div>
+        <div><h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../../about-us/" class="hover:text-white transition-colors">Leadership</a></li><li><a href="../../../contact-us/" class="hover:text-white transition-colors">Contact</a></li></ul></div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

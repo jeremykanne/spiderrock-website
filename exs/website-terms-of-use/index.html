@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Terms of Use — SpiderRock EXS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .prose h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #162032; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .prose p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose a { color: #1B3D6B; text-decoration: underline; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../exs/" class="text-blue-200">Brokerage Services</a>
+      <a href="../../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-5 text-white text-[13px] font-semibold">
+          <a href="../" class="hover:text-blue-200 transition-colors duration-200">EXS Home</a>
+          <a href="../ats/" class="hover:text-blue-200 transition-colors duration-200">SpiderRock ATS</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Regulatory <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[200px]">
+                <a href="../regulatory/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Quarterly Order Reports</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Legal <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
+                <a href="../legal-disclaimers/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Legal Disclaimers</a>
+                <a href="../privacy-statement/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Privacy Statement</a>
+                <a href="../website-terms-of-use/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Terms of Use</a>
+              </div>
+            </div>
+          </div>
+          <a href="../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Brokerage Services</p>
+      <h1 class="font-display text-[48px] md:text-[60px] font-bold leading-tight mb-6 max-w-3xl">
+        Website Terms of Use
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Terms governing your use of the SpiderRock website and services.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── CONTENT ──────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 prose">
+
+        <h3>No Liability</h3>
+        <p>Neither SpiderRock EXS nor SpiderRock Holdings, LLC ("SpiderRock") is liable for any harm caused by the transmission, through accessing the services or information on this site, of a computer virus, or other computer code or programming device that might be used to access, delete, damage, disable, disrupt, or otherwise impede in any manner the operation of the site or of any user's software, hardware, data, or property.</p>
+
+        <h3>No Warranty</h3>
+        <p>This site may contain information, content, and advertisements ("Materials") supplied by SpiderRock and/or its content providers. SpiderRock and its content providers do not warrant the accuracy, completeness, or timeliness, merchantability, non-infringement, or fitness for a particular purpose, or otherwise endorse any of the Materials contained on, distributed through, or linked, downloaded, or accessed from any of the services contained on this site, nor the quality of any products, information, or other materials displayed, purchased, or obtained by you as a result of an advertisement or any other information or offer in or in connection with the site.</p>
+        <p>You hereby acknowledge that any reliance upon any Materials shall be at your sole risk, and neither SpiderRock nor any of its affiliates, agents, or licensors shall be liable to you or anyone else for any loss or injury caused in whole or in part by your use of this site, the Materials, or the products. SpiderRock and its affiliates, agents, and licensors shall not be liable to you or anyone else for any consequential, special, incidental, indirect, or similar damages (including, but not limited to, damages for lost profits or lost opportunity) even if advised of the possibility of such damages. SpiderRock reserves the right, in its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the site or the Materials.</p>
+
+        <h3>Trademarks</h3>
+        <p>SpiderRock, SMS, Hawk Order, Eagle Order, Falcon Order, and Spider Order are trademarks of SpiderRock Holdings LLC.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../../platform/analytics-framework/" class="hover:text-white transition-colors">Analytics Framework</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+            <li><a href="../legal-disclaimers/" class="hover:text-white transition-colors">Legal Disclaimers</a></li>
+            <li><a href="../privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a></li>
+            <li><a href="../website-terms-of-use/" class="hover:text-white transition-colors">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../../data/historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Platform — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card-hover { transition: all 200ms ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../platform/" class="text-blue-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-5 text-white text-[13px] font-semibold">
+          <a href="./" class="text-blue-200">Platform</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Our Platform <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
+                <a href="routing-algos/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Order Management</a>
+                <a href="risk-management/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Risk Management</a>
+                <a href="analytics-framework/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a>
+                <a href="compliance-layer/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Compliance Layer</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Tools &amp; APIs <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[170px]">
+                <a href="gui-tools/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Trading Tools</a>
+                <a href="srse/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Platform APIs</a>
+              </div>
+            </div>
+          </div>
+          <a href="updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Trading Platform</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        Advanced Execution &amp; Risk Management
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
+        A high-performance, cloud-based system for constructing, executing, and managing equity, futures, and options strategies at institutional scale — currently in its seventh generation.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Demo</a>
+    </div>
+  </section>
+
+  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <!-- Intro text — constrained width so it stays readable -->
+      <div class="grid md:grid-cols-2 gap-16 mb-16">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Market-Scale Infrastructure</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Built for Institutional Workflows at Scale</h2>
+        </div>
+        <div class="flex flex-col justify-end">
+          <p class="text-gray-700 leading-relaxed text-lg mb-5">
+            The SpiderRock Platform operates at market scale and integrates all clients and markets within a high-performance, low-latency system. Built on an open message architecture, it combines market data, analytics, order management, risk, and execution into a single environment.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg mb-8">
+            Clients can access the platform as a data service or integrate it directly into their systems, from lightweight connectivity to a fully embedded execution and analytics engine. It supports institutional trading across equities, options, and futures, enabling the deployment and management of complex derivatives strategies on a scale.
+          </p>
+          <p class="text-gray-600 text-sm font-semibold uppercase tracking-widest mb-4">Supported Strategy Types</p>
+          <ul class="space-y-2 text-gray-600 mb-8">
+            <li class="flex gap-3"><span class="text-sr-blue font-bold mt-1">✓</span><span>Systematic Dispersion Arbitrage</span></li>
+            <li class="flex gap-3"><span class="text-sr-blue font-bold mt-1">✓</span><span>Systematic Long / Short Valuation Arbitrage</span></li>
+            <li class="flex gap-3"><span class="text-sr-blue font-bold mt-1">✓</span><span>Research / Special Situations Trading</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/GettingStarted/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+              Getting Started <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/Integration/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+              System Integration <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+          <p class="text-xs text-gray-400 mt-3">SpiderRock Documentation</p>
+        </div>
+      </div>
+      <!-- Diagram — full section width -->
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" style="display:block;width:100%;height:auto;" role="img" aria-label="SpiderRock platform architecture diagram">
+            <defs>
+              <pattern id="sr-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="0.65" fill="#A8BED4" opacity="0.5"/>
+              </pattern>
+              <marker id="sr-arr-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                <polygon points="0,1 7,4 0,7" fill="#C0392B"/>
+              </marker>
+              <marker id="sr-arr-gray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <polygon points="0,1 6,3.5 0,6" fill="#94AABF" opacity="0.8"/>
+              </marker>
+            </defs>
+            <rect width="880" height="480" fill="#F4F7FA"/>
+            <rect width="880" height="480" fill="url(#sr-dots)"/>
+            <!-- MARKET DATA INPUTS -->
+            <line x1="44" y1="32" x2="836" y2="32" stroke="#C0392B" stroke-width="0.75" opacity="0.4"/>
+            <text x="44" y="26" fill="#C0392B" font-size="8.5" font-weight="700" letter-spacing="3.5" font-family="'Montserrat',sans-serif">MARKET DATA INPUTS</text>
+            <rect x="46"  y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="107" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Equities</text>
+            <rect x="179" y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="240" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Index Options</text>
+            <rect x="312" y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="373" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Futures</text>
+            <rect x="445" y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="506" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">ETF Options</text>
+            <rect x="578" y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="639" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Single Names</text>
+            <rect x="711" y="40" width="122" height="28" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="772" y="58" fill="#2D3F52" font-size="10.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Vol Surfaces</text>
+            <!-- Collector tree -->
+            <line x1="107" y1="68" x2="107" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="240" y1="68" x2="240" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="373" y1="68" x2="373" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="506" y1="68" x2="506" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="639" y1="68" x2="639" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="772" y1="68" x2="772" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="107" y1="86" x2="772" y2="86" stroke="#A8BECE" stroke-width="0.7"/>
+            <circle cx="107" cy="86" r="2" fill="#A8BECE"/><circle cx="240" cy="86" r="2" fill="#A8BECE"/><circle cx="373" cy="86" r="2" fill="#A8BECE"/><circle cx="506" cy="86" r="2" fill="#A8BECE"/><circle cx="639" cy="86" r="2" fill="#A8BECE"/><circle cx="772" cy="86" r="2" fill="#A8BECE"/>
+            <circle cx="440" cy="86" r="3" fill="#C0392B" opacity="0.85"/>
+            <line x1="440" y1="86" x2="440" y2="141" stroke="#C0392B" stroke-width="1.5" marker-end="url(#sr-arr-red)"/>
+            <!-- PLATFORM CORE -->
+            <rect x="44" y="148" width="792" height="160" rx="3" fill="#162032" stroke="#1B3D6B" stroke-width="1.5"/>
+            <line x1="45.75" y1="174" x2="834.25" y2="174" stroke="#1B3D6B" stroke-width="1"/>
+            <text x="440" y="165" fill="white" fill-opacity="0.9" font-size="9.5" font-weight="700" letter-spacing="4.5" text-anchor="middle" font-family="'Montserrat',sans-serif">SPIDERROCK PLATFORM</text>
+            <!-- Options Analytics -->
+            <rect x="66" y="182" width="168" height="116" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="150" y="204" fill="#7EB5F5" font-size="7.5" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">OPTIONS ANALYTICS</text>
+            <line x1="86" y1="210" x2="214" y2="210" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <text x="150" y="228" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Vol surfaces</text>
+            <text x="150" y="244" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Greeks &amp; analytics</text>
+            <text x="150" y="260" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Fair value models</text>
+            <text x="150" y="276" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Price discovery</text>
+            <line x1="234" y1="240" x2="250" y2="240" stroke="#2059A4" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+            <!-- Order Management -->
+            <rect x="250" y="182" width="168" height="116" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="334" y="204" fill="#7EB5F5" font-size="7.5" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">ORDER MANAGEMENT</text>
+            <line x1="270" y1="210" x2="398" y2="210" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <text x="334" y="228" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Algo routing</text>
+            <text x="334" y="244" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">ML microstructure</text>
+            <text x="334" y="260" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Basket execution</text>
+            <text x="334" y="276" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Auto-hedging</text>
+            <line x1="418" y1="240" x2="434" y2="240" stroke="#2059A4" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+            <!-- Risk Management -->
+            <rect x="434" y="182" width="168" height="116" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="518" y="204" fill="#7EB5F5" font-size="7.5" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">RISK MANAGEMENT</text>
+            <line x1="454" y1="210" x2="582" y2="210" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <text x="518" y="228" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Order-level risk</text>
+            <text x="518" y="244" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Portfolio aggregation</text>
+            <text x="518" y="260" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Scenario analysis</text>
+            <text x="518" y="276" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Real-time shaping</text>
+            <line x1="602" y1="240" x2="618" y2="240" stroke="#2059A4" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+            <!-- Compliance Layer -->
+            <rect x="618" y="182" width="196" height="116" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="716" y="204" fill="#7EB5F5" font-size="7.5" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">COMPLIANCE LAYER</text>
+            <line x1="638" y1="210" x2="794" y2="210" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <text x="716" y="228" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">SOC-II certified</text>
+            <text x="716" y="244" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">GUI / SRSE integration</text>
+            <text x="716" y="260" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Regulatory reporting</text>
+            <text x="716" y="276" fill="white" fill-opacity="0.55" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Evolving requirements</text>
+            <!-- CONNECTOR: PLATFORM → CLIENT -->
+            <line x1="160" y1="308" x2="160" y2="328" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="440" y1="308" x2="440" y2="328" stroke="#C0392B" stroke-width="1.5" opacity="0.9"/>
+            <line x1="720" y1="308" x2="720" y2="328" stroke="#A8BECE" stroke-width="0.7"/>
+            <line x1="160" y1="328" x2="720" y2="328" stroke="#A8BECE" stroke-width="0.7"/>
+            <circle cx="160" cy="328" r="2" fill="#A8BECE"/><circle cx="440" cy="328" r="3" fill="#C0392B" opacity="0.85"/><circle cx="720" cy="328" r="2" fill="#A8BECE"/>
+            <line x1="160" y1="328" x2="160" y2="374" stroke="#A8BECE" stroke-width="0.7" marker-end="url(#sr-arr-gray)"/>
+            <line x1="440" y1="328" x2="440" y2="362" stroke="#C0392B" stroke-width="1.5" marker-end="url(#sr-arr-red)"/>
+            <line x1="720" y1="328" x2="720" y2="374" stroke="#A8BECE" stroke-width="0.7" marker-end="url(#sr-arr-gray)"/>
+            <!-- CLIENT INTERFACES -->
+            <line x1="44" y1="368" x2="836" y2="368" stroke="#C0392B" stroke-width="0.75" opacity="0.4"/>
+            <text x="44" y="362" fill="#C0392B" font-size="8.5" font-weight="700" letter-spacing="3.5" font-family="'Montserrat',sans-serif">CLIENT INTERFACES</text>
+            <rect x="44"  y="374" width="230" height="68" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/>
+            <text x="159" y="401" fill="#1E2D3D" font-size="12" font-weight="600" text-anchor="middle" font-family="'Roboto',sans-serif">Trading Tools</text>
+            <text x="159" y="421" fill="#6B8299" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Citrix Suite · Web App</text>
+            <rect x="290" y="374" width="300" height="68" rx="2" fill="#162032" stroke="#1B3D6B" stroke-width="1.5"/>
+            <text x="440" y="401" fill="white" fill-opacity="0.9" font-size="12" font-weight="600" text-anchor="middle" font-family="'Roboto',sans-serif">Platform APIs</text>
+            <text x="440" y="421" fill="white" fill-opacity="0.45" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">SRSE · MLink · FIX · SpiderStream</text>
+            <rect x="606" y="374" width="230" height="68" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/>
+            <text x="721" y="401" fill="#1E2D3D" font-size="12" font-weight="600" text-anchor="middle" font-family="'Roboto',sans-serif">Execution Venues</text>
+            <text x="721" y="421" fill="#6B8299" font-size="9.5" text-anchor="middle" font-family="'Roboto',sans-serif">Exchanges · Brokers · OMS</text>
+            <!-- Watermark -->
+            <line x1="44" y1="456" x2="836" y2="456" stroke="#CBD5E1" stroke-width="0.5"/>
+            <text x="44" y="470" fill="#94A3B8" font-size="8" letter-spacing="1" font-family="'Roboto',sans-serif">7TH GENERATION · LOW-LATENCY · OPEN MESSAGE ARCHITECTURE</text>
+          </svg>
+        </div>
+    </div>
+  </section>
+
+  <!-- ─── STRATEGY TYPES ──────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Supported Strategy Types</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Built for How You Trade</h2>
+      </div>
+      <div class="space-y-16">
+
+        <div class="grid md:grid-cols-5 gap-12 items-start">
+          <div class="md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-gray-900">Systematic Dispersion Arbitrage</h3>
+          </div>
+          <div class="md:col-span-3">
+            <p class="text-gray-600 leading-relaxed mb-4">Dispersion arbitrage strategies typically involve short index options positions paired with long exposure in individual constituents or related names. These strategies are actively managed to maintain near delta neutral profiles, with exposure balanced through dynamic hedging, options Greeks alignment, and scenario-based risk analysis.</p>
+            <p class="text-gray-600 leading-relaxed mb-6">Portfolio Managers can easily design, execute, and manage these strategies at scale. Through integrated APIs clients access live market data and analytics, monitor real-time risk, and deploy risk-constrained baskets of orders with embedded execution logic and automated hedging across large symbol sets.</p>
+            <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/PlatformFeatures/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+              Platform Features Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 pt-16 grid md:grid-cols-5 gap-12 items-start">
+          <div class="md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-gray-900">Systematic Long/Short Valuation Arbitrage</h3>
+          </div>
+          <div class="md:col-span-3">
+            <p class="text-gray-600 leading-relaxed mb-4">Long/Short valuation arbitrage strategies aim to maintain a balanced portfolio of single-name long or short volatility positions. These portfolios may span a wide range of underliers and can optionally include index or ETF exposure.</p>
+            <p class="text-gray-600 leading-relaxed">Strategies are typically constructed to capture relative value based on quantitative valuation models and are actively managed through dynamic hedging as underlying prices evolve. Through integrated APIs, clients access live market data and analytics, check real-time risk and insert risk-constrained basket of orders with embedded execution and automated hedging across large symbol sets.</p>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 pt-16 grid md:grid-cols-5 gap-12 items-start">
+          <div class="md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-gray-900">Research / Special Situations Trading</h3>
+          </div>
+          <div class="md:col-span-3">
+            <p class="text-gray-600 leading-relaxed mb-4">Special situations trading is typically driven by discretionary teams with deeper sector expertise and proprietary research. These workflows are less systematic, with traders actively managing execution and risk through high-touch, GUI-based tools.</p>
+            <p class="text-gray-600 leading-relaxed">SpiderRock provides advanced trading interfaces, including options montages and real-time analytics, enabling traders to express views and manage risk in a highly interactive environment. Traders can incorporate proprietary valuation models ranging from full volatility surfaces to client-defined ATM inputs integrated with SpiderRock's implied volatility framework.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PLATFORM FEATURES ────────────────────────────────────────────────────── -->
+  <section id="functionalities" class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-gray-500 text-sm font-semibold uppercase tracking-widest mb-4">Institutional-Grade Capabilities</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Platform Features</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div id="routing" class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Order Management</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            SpiderRock's Platform allows clients to participate directly in price discovery through real-time model-driven estimates derived from continuously updated volatility surfaces and analytics. It combines quantitative models and machine learning-based signals to monitor market microstructure and optimize order routing. Clients can calibrate execution from passive to aggressive using these signals enabling precise, scalable deployment of derivative strategies.
+          </p>
+          <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/PlatformFeatures/OrderManagement/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+            Order Management Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <div id="risk" class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Risk Management</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Our risk management system ensures strong cohesion between high-velocity trading and live risk calculations at the order level as well as risk aggregation at the portfolio level. This gives you the ability to shape your portfolio in real-time, based on market conditions as well as trading objectives.
+          </p>
+          <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/PlatformFeatures/RiskManagement/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+            Risk Management Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <div id="analytics" class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Options Analytics</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            The platform is built on normalized, source-level market data with real-time analytics computed continuously across instruments. These analytics feed directly into risk management and execution logic, are available through GUI Tools and programmatic access via SRSE.
+          </p>
+          <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/PlatformFeatures/Analytics/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+            Option Analytics Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <div id="compliance" class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Compliance Layer</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Compliance is a critical component of institutional trading. The platform offers an elegant solution allowing for efficient integration of your evolving compliance requirements via GUI tools or SRSE. The platform is SOC-II compliant.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTEGRATION ───────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-gray-500 text-sm font-semibold uppercase tracking-widest mb-4">Connect Your Systems</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900 mb-8">Trading Tools &amp; System APIs</h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://docs.spiderrockconnect.com/docs/8.6.6.3/Documentation/Products/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+            Trading Tools Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/" class="inline-flex items-center gap-2 text-xs font-semibold text-sr-blue border border-sr-blue/40 px-4 py-2 hover:bg-sr-blue hover:text-white transition-colors duration-200">
+            Platform APIs Docs <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16">
+
+        <div class="border-l-4 border-sr-blue pl-8">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">GUI Tools</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            SpiderRock provides two GUI-based trading interfaces covering single order entry, basket trading, order management, portfolio risk, and dynamic hedging:
+          </p>
+          <ul class="space-y-5 text-gray-600 text-sm mb-6">
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">Citrix Tool Suite</strong> — full-featured desktop trading environment delivered via Citrix</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/Products/CitrixTools/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">Web App Tool Suite</strong> — browser-based access with the same core capabilities</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/Products/ToolSuite/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-sr-blue pl-8">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Platform APIs</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Programmatic access to all SpiderRock systems for trading, risk, data, and analytics:
+          </p>
+          <ul class="space-y-5 text-gray-600 text-sm mb-6">
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">SRSE</strong> — SQL-based live database queries and order insertion</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/SRSE/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">MLink</strong> — high-throughput message-based API for market data and analytics</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">FIX</strong> — standard FIX protocol gateway for order entry and drop copies</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/FIX/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-sr-blue font-bold flex-shrink-0 mt-0.5">—</span>
+              <div>
+                <p><strong class="text-gray-900">SpiderStream</strong> — low-latency multicast market data feed</p>
+                <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/SpiderStream/" class="inline-block mt-1 text-xs text-sr-blue font-medium hover:underline whitespace-nowrap">Documentation →</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-24 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Consult With Our Experts</h2>
+      <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+        Behind any great technology is a team of experts. Let us help you consider whether SpiderRock is a good fit in bringing your team to the next chapter of its technology evolution.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-navy text-white font-semibold px-10 py-4 button-smooth text-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="./" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="routing-algos/" class="hover:text-white transition-colors">Order Management</a></li>
+            <li><a href="risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="analytics-framework/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="compliance-layer/" class="hover:text-white transition-colors">Compliance Layer</a></li>
+            <li><a href="gui-tools/" class="hover:text-white transition-colors">Trading Tools</a></li>
+            <li><a href="srse/" class="hover:text-white transition-colors">SRSE</a></li>
+            <li><a href="fix-gateway/" class="hover:text-white transition-colors">FIX Gateway</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
+            <li><a href="../data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Management — SpiderRock Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../platform/" class="text-blue-200">Trading Platform</a>
+      <a href="../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-5 text-white text-[13px] font-semibold">
+          <a href="../" class="hover:text-blue-200 transition-colors duration-200">Platform</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Our Platform <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
+                <a href="../routing-algos/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Order Management</a>
+                <a href="../risk-management/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Risk Management</a>
+                <a href="../analytics-framework/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a>
+                <a href="../compliance-layer/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Compliance Layer</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Tools &amp; APIs <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[170px]">
+                <a href="../gui-tools/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Trading Tools</a>
+                <a href="../srse/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Platform APIs</a>
+                <a href="../fix-gateway/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">FIX Gateway</a>
+              </div>
+            </div>
+          </div>
+          <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Trading Platform</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        Real-Time Risk Management
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Order and portfolio risk controls with comprehensive limit monitoring and automated safeguards at every level.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── ORDER RISK ────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-20 items-start">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Order-Level Controls</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Order Risk Management</h2>
+          <p class="text-gray-700 leading-relaxed text-lg mb-6">
+            Risk group limits and risk counters enforce controls at the order level. Every order is evaluated against pre-configured risk parameters before routing to any exchange or dark pool. This creates a robust pre-trade risk gate that prevents limit breaches before they occur.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Risk counters track cumulative order flow across all strategies and accounts in real time, enabling immediate automated responses when configurable thresholds are approached.
+          </p>
+          <div class="mt-8 space-y-4">
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Risk group limits</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Per-order risk counters</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Exchange-level controls</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Real-time pre-trade checks</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Portfolio-Level Controls</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Portfolio Risk Management</h2>
+          <p class="text-gray-700 leading-relaxed text-lg mb-6">
+            Risk record aggregation provides a consolidated view of position risk across all strategies, accounts, and underlying exposures. SpiderRock's advanced risk management tools monitor Greeks, delta exposure, and P&L in real time, giving traders and risk managers complete visibility into portfolio risk.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            This enables firms to shape their portfolio dynamically based on changing market conditions while maintaining strict adherence to risk limits.
+          </p>
+          <div class="mt-8 space-y-4">
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Risk record aggregation</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Greeks monitoring (delta, gamma, vega, theta)</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">P&amp;L attribution</span>
+            </div>
+            <div class="flex gap-3 items-start">
+              <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
+              <span class="text-gray-700">Portfolio stress testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-navy py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white/10 rounded-xl p-10">
+          <div class="font-display text-5xl font-bold text-white mb-3">Real-Time</div>
+          <p class="text-white/70 text-lg">Pre-trade risk checks on every order</p>
+        </div>
+        <div class="bg-white/10 rounded-xl p-10">
+          <div class="font-display text-5xl font-bold text-white mb-3">Full Greeks</div>
+          <p class="text-white/70 text-lg">Delta, gamma, vega &amp; theta monitoring</p>
+        </div>
+        <div class="bg-white/10 rounded-xl p-10">
+          <div class="font-display text-5xl font-bold text-white mb-3">SOC-II</div>
+          <p class="text-white/70 text-lg">Compliant infrastructure and controls</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-24 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Consult With Our Risk Experts</h2>
+      <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+        Contact SpiderRock to discuss how our risk management architecture can be tailored to your institutional requirements.
+      </p>
+      <a href="../../contact-us/" class="inline-block bg-sr-navy text-white font-semibold px-10 py-4 button-smooth text-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../routing-algos/" class="hover:text-white transition-colors">Order Management</a></li>
+            <li><a href="../risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../analytics-framework/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../compliance-layer/" class="hover:text-white transition-colors">Compliance Layer</a></li>
+            <li><a href="../gui-tools/" class="hover:text-white transition-colors">Trading Tools</a></li>
+            <li><a href="../srse/" class="hover:text-white transition-colors">SRSE</a></li>
+            <li><a href="../fix-gateway/" class="hover:text-white transition-colors">FIX Gateway</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../../data/historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

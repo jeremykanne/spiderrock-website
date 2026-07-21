@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Options Analytics — SpiderRock Data &amp; Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy': '#162032',
+            'sr-blue': '#1B3D6B',
+            'sr-gray': '#5C6270',
+            'sr-dark': '#3A3F4A',
+            'sr-red':  '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card-hover { transition: all 200ms ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- UTILITY BAR -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../data/" class="text-blue-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-4 text-white text-[13px] font-semibold">
+          <a href="../" class="hover:text-blue-200 transition-colors duration-200">Data Home</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Data &amp; Analytics <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../options-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a><a href="../data-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Data Delivery</a><a href="../volatility-charts/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Charts</a><a href="../data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Live APIs</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Historical <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../historical-data-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Data Overview</a><a href="../historical-data-analytics/options-greeks/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Options &amp; Greeks</a><a href="../historical-data-analytics/historic-stock-price-data/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Stock Prices</a><a href="../historical-data-analytics/volatility-surfaces/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Surfaces</a><a href="../historical-data-analytics/vol2g/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Database (VOL2G)</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../spiderstream-market-data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">SpiderStream / MLink API</a><a href="../stocks-options-futures/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Stocks, Options &amp; Futures</a><a href="../option-features-dataset/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Option Features Dataset</a><a href="../options-pricing-tool/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Pricing Tool</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../market-data-partners/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Market Data Partners</a><a href="../updates/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">News &amp; Events</a><a href="../resources/glossary/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Glossary</a>
+              </div>
+            </div>
+          </div>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        Real-Time Options Analytics
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
+        Low-latency volatility feeds, implied volatility surfaces, Greeks, and analytics — built on SpiderRock's proprietary numerical pricing libraries.
+      </p>
+      <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Get Access</a>
+    </div>
+  </section>
+
+  <!-- REAL-TIME FEED OVERVIEW -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Built for Speed</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Real-Time Volatility Feed</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            SpiderRock volatility feeds are built on option analytics derived from our proprietary numerical pricing libraries and are based on discrete dividend estimates where appropriate. The feeds update on every OPRA tick (TICK), at fixed intervals (LOOP), and at the end of each trading session (CLOSE).
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Leveraging our technology platform, SpiderRock sets the standard in reliable, high-performance, intelligent options analytics. We use a market-tested proprietary methodology to deliver superior speed, throughput, and accuracy to protect our clients' edge.
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-sr-navy rounded-xl p-6 text-center text-white">
+            <div class="font-display text-2xl font-bold mb-2">TICK</div>
+            <p class="text-white/70 text-sm">Every OPRA price change</p>
+          </div>
+          <div class="bg-sr-blue rounded-xl p-6 text-center text-white">
+            <div class="font-display text-2xl font-bold mb-2">LOOP</div>
+            <p class="text-white/70 text-sm">Fixed interval updates</p>
+          </div>
+          <div class="bg-sr-dark rounded-xl p-6 text-center text-white">
+            <div class="font-display text-2xl font-bold mb-2">CLOSE</div>
+            <p class="text-white/70 text-sm">End of session</p>
+          </div>
+          <div class="col-span-3 bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <p class="text-gray-600 text-sm leading-relaxed">Sub-millisecond processing of analytics for low latency delivery. Arbitrage-free volatility surfaces tied together with no-arbitrage across strikes to support live trading operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO DELIVERY MECHANISMS -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Multiple Formats</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Two Delivery Mechanisms</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">SpiderStream Multicast Feed</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">A low-latency analytics feed that adds options content to raw market feeds. Includes normalized OPRA and CME prices with a reduced bandwidth profile that is more manageable and cost-effective.</p>
+          <ul class="space-y-3 text-gray-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">ADAPTIVE</strong> — Implied vol NBBO quotes, surface prices, Greeks with synchronized underlying prices, forecasted dividends, and interest rates</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">SECURE</strong> — Redundant infrastructure in US through NY4/5 or CH2 data centers, globally available via partner data ecosystems</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">ARBITRAGE-FREE</strong> — Volatility surfaces designed for trading, tied together with no-arbitrage across strikes</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">REAL-TIME</strong> — Sub-millisecond processing of analytics for low latency delivery</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+          <div class="w-12 h-12 bg-sr-blue rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">SpiderStream over MLink API</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">A powerful and effective API for Websocket or REST query access to live market data for all US listed equities, futures, and options — including full-scope options analytics and volatility surfaces.</p>
+          <ul class="space-y-3 text-gray-600 text-sm">
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">EASY TO CONSUME</strong> — Internet access or cross-connect in Equinix NY4 or CH2. Unlimited user API calls</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">BROAD</strong> — Live and prior day records covering all listed US equity and futures derivative markets</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">EFFICIENT</strong> — High throughput operations with low latency message delivery</span></li>
+            <li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">—</span><span><strong class="text-gray-900">LIVE ANALYTICS</strong> — On-the-fly computation of implied volatilities and Greeks, plus minute bars and trade aggregations</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="bg-white py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Coverage</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">What's Included</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Stock</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Real-time quotes</li>
+            <li>Trade details</li>
+            <li>Closing prices</li>
+            <li>Market summary</li>
+            <li>Order imbalances</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Options</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Real-time quotes</li>
+            <li>Trade details</li>
+            <li>Closing prices</li>
+            <li>Market summary</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Futures</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Real-time quotes</li>
+            <li>Trade details</li>
+            <li>Settlement prices</li>
+            <li>Closing prices</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Live Implied Quotes</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Options implied quotes</li>
+            <li>Trade details</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Equity Options Analytics</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Real-time volatility surfaces</li>
+            <li>Historical volatilities</li>
+            <li>Opening prices</li>
+            <li>Closing prices &amp; analytics</li>
+            <li>Risk factors</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Future Options Analytics</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>Real-time volatility surfaces</li>
+            <li>Historical volatilities</li>
+            <li>Opening prices</li>
+            <li>Closing prices &amp; analytics</li>
+            <li>Risk factors</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Use Cases</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">How Clients Use Our Analytics</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">GUI &amp; Trading Platform Integration</h3>
+          <p class="text-gray-600 leading-relaxed">Handling full market data feeds to build displays for customer-facing applications, internal trading, or risk platforms is expensive. With SpiderStream over MLink, integrate via Websocket or REST and scale off SpiderRock's 100GB market data infrastructure backbone — for the cost of a market data feed.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Optimize Live Trading Strategies</h3>
+          <p class="text-gray-600 leading-relaxed">Consume SpiderRock's feed with the most accurate volatility surfaces for US options available on the market. Significantly improve model accuracy and reduce CPU load by offloading analytics calculation — reducing hardware requirements without compromising data quality.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Risk &amp; P&amp;L Monitoring</h3>
+          <p class="text-gray-600 leading-relaxed">Accurate surface prices allow clients to optimize deployed capital and better understand potential risks. Perform "what-if" analysis, real-time risk with margin, and overnight portfolio risk using messages like Implied Quote and Close Marks delivered over the multicast feed.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Interactive Database Querying</h3>
+          <p class="text-gray-600 leading-relaxed">Query tables with live prices, quotes, and prints across all asset classes sourced from US exchanges — enhanced with live proprietary analytics calculated on every option tick and at regular intervals. Reliable, low-cost delivery without a significant infrastructure investment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-sr-navy py-24">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Consult with Our Data Team</h2>
+      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Our experienced options analytics experts are ready to find the right data solution for your needs.</p>
+      <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../../platform/analytics-framework/" class="hover:text-white transition-colors">Analytics Framework</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="./" class="text-white">Options Analytics</a></li>
+            <li><a href="../historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream API</a></li>
+            <li><a href="../volatility-charts/" class="hover:text-white transition-colors">Chart Tool</a></li>
+            <li><a href="../market-data-partners/" class="hover:text-white transition-colors">Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

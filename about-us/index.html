@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
+          <a href="../about-us/" class="text-blue-200">Leadership</a>
+          <a href="../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Company</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        About Us &amp; Leadership
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        SpiderRock is a technology provider creating and deploying some of the most innovative algorithmic execution and risk management solutions commercially available to service large hedge funds, bank trading desks, and proprietary trading firms around the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <p class="text-gray-700 leading-relaxed text-lg mb-6">
+          SpiderRock is a technology provider that creates and deploys some of the most innovative algorithmic execution and risk management solutions commercially available to service large hedge funds, bank trading desks, and proprietary trading firms around the world. The platform is a high-performance, cloud-based trading system empowering institutional clients with tools to construct, manage, and scale equity, futures, and options strategies.
+        </p>
+        <p class="text-gray-700 leading-relaxed text-lg">
+          SpiderRock is also a market data vendor specializing in low-latency data and analytics services. In addition, we offer electronic execution and market access services via SpiderRock EXS, an agency broker dealer regulated by FINRA and NFA.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LEADERSHIP TEAM ───────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Leadership Team</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">The People Behind SpiderRock</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">George Papa</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Chief Executive Officer</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            George is the visionary and chief architect behind SpiderRock, crafting its philosophy and leading technological innovation. With a distinguished career in the trading industry, including executive roles with Peak6 in Chicago and Cantor Fitzgerald in New York, George's expertise drives SpiderRock's innovative solutions. He holds degrees in Applied Physics and Economics from the California Institute of Technology and graduated with honors.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Annabelle Baldwin</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Chief Revenue Officer</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Annabelle spearheads business development and strategic planning at SpiderRock, leveraging her experience in exchanges, global banks, brokerage, and trading firms. Her leadership has propelled the firm's growth and evolution, delivering innovative solutions to clients worldwide. Annabelle holds degrees in Agronomy Engineering from Ecole Supérieure d'Agriculture, France, and a Master of Science in Ag-Business at Illinois State University.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Craig Iseli</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Chief Operating Officer</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            As a co-founder, Craig leads many of SpiderRock's new business activities and the firm's operational and risk management efforts. With a business and technology consulting background, Craig played a pivotal role in building SpiderRock from its inception. Craig holds a bachelor's in engineering, an M.B.A. from the University of Chicago, and is a graduate of Harvard's Business Analytics program. Craig's experience is global, having held leadership roles at firms in Europe and Asia.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Patrick Read</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Director of Business Development</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Pat brings extensive experience in derivatives trading to SpiderRock. He previously worked for ITG where he led global sales efforts and enhanced the firm's derivatives offering. Before ITG, Pat was a Managing Director and Partner at RedSky Financial, where he played a key role in commercializing and selling the broker-dealer to ITG in 2007. Early in his career, Pat worked on the trading floors and derivative exchanges in Chicago, Frankfurt, and London.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Erik Raschke</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Chief of Enterprise Operations</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Erik heads SpiderRock's Client Support, Quality Assurance, DevOps, Project Management, and Documentation. With a strong background in overseeing complex operations and driving customer service and organizational efficiency initiatives, Erik plays a crucial role in ensuring the proper functioning of the company's operations. Erik graduated from American University in Washington, DC, receiving a B.S.B.A. in Finance and International Marketing.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Aron Derstine</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Chief Client Experience Officer</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Aron leads SpiderRock's software development, IT, and networking teams, focusing on client experience initiatives. With over three decades of experience, he specializes in transforming client strategies into growth opportunities. Before SpiderRock, Aron spent 12 years in leadership positions with a SaaS provider, and implemented customer-centric programs that greatly enhanced product usability and customer retention rates.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Kevin Holbert</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Director of Business Development</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Kevin joined SpiderRock in 2020 to build and lead the firm's off-screen trading business through the creation of a new ATS. He started his finance career at Deutsche Bank in the equity derivatives sales &amp; trading group, and later was a founder of Woodlawn Advisors, a boutique derivatives firm. Following Woodlawn's acquisition, he led Robert W. Baird's new equity derivatives business and later joined Tullett Prebon. Kevin graduated from Columbia University with a BA in Economics, and from Cornell University's Johnson School with an MBA.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Dan Brodsky</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Head of Capital Markets</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Dan leads the SpiderRock Capital Markets initiatives from our New York office. His experience in both fintech startups and traditional financial institutions positions him as a strategic leader in SpiderRock's growth and innovation. Before joining SpiderRock, Dan co-founded the fintech firm ETFLogic and led it to acquisition, and he managed the equity derivatives desks at GFI Group. Dan holds a B.A. in Economics from George Washington University.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-100 md:col-span-2">
+          <div class="mb-4">
+            <h3 class="font-display text-xl font-bold text-gray-900">Kasia Kobylarz</h3>
+            <p class="text-sr-red text-sm font-semibold uppercase tracking-wide mt-1">Sales and Business Development, Data &amp; Analytics</p>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Kasia leads the business development efforts for SpiderRock's Data &amp; Analytics Business, which she helped to create in 2019. She joined SpiderRock in 2017 as a business analyst and has grown quickly into her leadership role in the Company's data business. Kasia holds undergraduate and graduate degrees in accounting, an M.B.A. from Northeastern Illinois University, and a PhD in Business Management from the University of the Cumberlands.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-navy py-24">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Work With Our Team</h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Behind any great technology is a team of experts. Let us help you consider whether SpiderRock is a good fit for bringing your team to the next chapter of its technology evolution.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Contact Us</a>
+        <a href="../careers/" class="inline-block bg-white/10 text-white font-semibold px-10 py-4 button-smooth text-lg hover:bg-white/20">View Careers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="../platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
+            <li><a href="../data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Updates — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
+          <a href="../about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
+          <a href="../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="../updates/" class="text-blue-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Stay Up to Date</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        News &amp; Updates
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Get important updates on market moves, volatility, and the leading technology innovations here at SpiderRock.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── NEWS LISTING ─────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+
+      <!-- FEATURED -->
+      <div class="mb-20">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-8">Latest News</p>
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <article class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <img src="../images/home/SpiderRock-QuantCrunch-Partnership-5-400x250.png" alt="QuantCrunch Partnership" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex gap-2 flex-wrap mb-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Partnerships</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 mb-3 leading-snug text-lg">SpiderRock Brings Live Options Pricing and Analytics to the QuantCrunch Platform</h3>
+              <p class="text-gray-500 text-sm mb-4">Jul 14, 2026</p>
+              <p class="text-gray-600 text-sm mb-4">SpiderRock, a provider of institutional level options and analytics, historical data, and trading technology solutions, announced a partnership with QuantCrunch to bring live options pricing and analytics to their platform.</p>
+              <a href="spiderrock-brings-live-options-pricing-and-analytics-to-the-quantcrunch-platform/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <img src="../images/home/CPZ-AI-Blog-400x250.png" alt="CPZAI Partnership" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex gap-2 flex-wrap mb-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Partnerships</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 mb-3 leading-snug text-lg">SpiderRock Partners with CPZAI to Deliver an AI-Native Systematic Options Trading Workflow</h3>
+              <p class="text-gray-500 text-sm mb-4">Jul 6, 2026</p>
+              <p class="text-gray-600 text-sm mb-4">SpiderRock's Options Data and Analytics are now available on CPZAI, an AI-native platform for systematic options trading workflows.</p>
+              <a href="spiderrock-partners-with-cpzai-to-deliver-an-ai-native-systematic-options-trading-workflow/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <img src="../images/home/Queryable-Dataset-Blog-400x250.jpg" alt="Queryable Dataset" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex gap-2 flex-wrap mb-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 mb-3 leading-snug text-lg">Turning Live Options Analytics into a Queryable Dataset</h3>
+              <p class="text-gray-500 text-sm mb-4">May 7, 2026</p>
+              <p class="text-gray-600 text-sm mb-4">SpiderRock was recently featured in a DataDrivenInvestor article exploring how to turn real-time options analytics into a structured, queryable dataset using Python.</p>
+              <a href="turning-live-options-analytics-into-a-queryable-dataset/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- MORE NEWS LIST -->
+      <div>
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-8">More Updates</p>
+        <div class="divide-y divide-gray-200">
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Apr 23, 2026</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Partnerships</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">BMLL Partners with SpiderRock to Expand Cross-Asset Market Analytics</h3>
+              <p class="text-gray-600 text-sm mb-2">SpiderRock US equity options print set data now available via BMLL Data Lab, enabling clients to combine cross-asset market analytics.</p>
+              <a href="bmll-partners-with-spiderrock-to-expand-cross-asset-market-analytics/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Feb 11, 2026</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">Using Generative AI to Automate Feature Discovery in US Equities</h3>
+              <p class="text-gray-600 text-sm mb-2">SpiderRock introduces the Option Features Dataset — a curated collection integrating options market sentiment and dynamics, offering actionable insights into market behavior.</p>
+              <a href="using-generative-ai-to-automate-feature-discovery-in-us-equities/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Nov 26, 2024</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Trading Platform</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">SpiderRock Connect and the SpiderRock ATS: The Benefits for Institutional Options Traders</h3>
+              <p class="text-gray-600 text-sm mb-2">A deep dive into how SpiderRock Connect and the ATS are transforming institutional options trading — bringing broad, agnostic market access and competitive liquidity to the market.</p>
+              <a href="spiderrock-connect-and-the-spiderrock-ats-the-benefits-for-institutional-options-traders/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Nov 10, 2024</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">Announcing Real-Time FLEX Option Pricing and Analytics</h3>
+              <p class="text-gray-600 text-sm mb-2">SpiderRock introduces FLEX Option Pricing and Analytics via its MLink API, serving traders, portfolio managers, brokers, and Option ETF dealers and issuers.</p>
+              <a href="announcing-real-time-flex-option-pricing-and-analytics-available-through-spiderrock/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Sep 30, 2024</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">SpiderRock Gateway Technologies Unveils Option Features Dataset</h3>
+              <p class="text-gray-600 text-sm mb-2">A curated collection of analytics leveraging option market sentiment and dynamics to include insights into market behavior — now available through SpiderRock.</p>
+              <a href="spiderrock-gateway-technologies-unveils-option-features-dataset/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Feb 11, 2025</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Partnerships</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">SpiderRock Data and Analytics and Nations Indexes Announce New Volatility Analytics Partnership</h3>
+              <p class="text-gray-600 text-sm mb-2">This partnership will help traders turn subjective opinions into data-driven decisions through enhanced volatility analytics capabilities.</p>
+              <a href="spiderrock-data-and-analytics-and-nations-indexes-announce-new-volatility-analytics-partnership/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+          <article class="py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-shrink-0 text-gray-400 text-sm w-28">Oct 24, 2023</div>
+            <div class="flex-1">
+              <div class="flex gap-2 flex-wrap mb-2">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data &amp; Analytics</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-1">SpiderRock Announces SpiderStream over MLink</h3>
+              <p class="text-gray-600 text-sm mb-2">An API that simplifies access to real-time and delayed institutional-grade market data and options analytics trusted by the industry's largest firms.</p>
+              <a href="spiderrock-gateway-technologies-announces-spiderstream-over-mlink/" class="text-sr-blue font-semibold text-sm hover:underline">Read More →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="../contact-us/" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3.5 button-smooth hover:bg-sr-navy hover:text-white">Contact Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="../platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
+            <li><a href="../data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

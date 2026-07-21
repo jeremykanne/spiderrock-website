@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turning Live Options Analytics into a Queryable Dataset — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .prose h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: #162032; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose h3 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose p { color: #3A3F4A; line-height: 1.8; margin-bottom: 1.25rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ul li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+    .prose a { color: #1B3D6B; text-decoration: underline; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- UTILITY BAR -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
+          <a href="../../about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
+          <a href="../../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="../../updates/" class="text-blue-200">News</a>
+          <a href="../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-20">
+      <a href="../../updates/" class="text-blue-300 text-sm hover:text-white transition-colors mb-6 inline-block">&larr; All Updates</a>
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">News &amp; Updates</p>
+      <h1 class="font-display text-[38px] md:text-[48px] font-bold leading-tight mb-4 max-w-4xl">
+        Turning Live Options Analytics into a Queryable Dataset
+      </h1>
+      <p class="text-white/60 text-sm">May 2026</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="bg-white py-20">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="prose">
+        <p>SpiderRock was recently featured in a DataDrivenInvestor article, <em>The Complete Guide to Building a Live Options Database in Python</em>, which explores how to turn real-time options analytics into a structured, queryable dataset.</p>
+
+        <p>The piece walks through a practical Python-based workflow for capturing live data and storing it in a lightweight database. Instead of relying on one-time snapshots, the approach focuses on continuously collecting analytics so they can be queried, compared, and revisited over time.</p>
+
+        <p>This shift from transient data to persistent infrastructure is what makes the difference. With stored analytics, it becomes possible to analyze how volatility surfaces evolve, monitor changes in skew, and reconstruct past market conditions with much greater clarity.</p>
+
+        <p>The tutorial keeps the build intentionally simple, showing how accessible this type of pipeline can be when working with clean, normalized data. Rather than spending time on heavy infrastructure, the focus stays on creating a usable dataset that supports real analysis.</p>
+
+        <h3>About SpiderRock Data and Analytics</h3>
+
+        <p>SpiderRock Data &amp; Analytics is a division of SpiderRock Technology Solutions, a provider of industry-leading options trading solutions. SpiderRock Data and Analytics is an exchange-licensed redistributor of market data, providing US stocks and options market data in a raw and normalized format.</p>
+
+        <p>SpiderRock's proprietary live analytics offer low-cost delivery of market data and options analytics without requiring clients to make a significant investment in infrastructure. SpiderRock's robust historical datasets updated daily from live markets are ideal for research, back testing, and making data-driven decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../../platform/analytics-framework/" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="../../platform/compliance-layer/" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../../data/historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>&copy; 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

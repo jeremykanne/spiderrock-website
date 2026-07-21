@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 200ms ease; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
+          <a href="../about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
+          <a href="../careers/" class="text-blue-200">Careers</a>
+          <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Careers</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        Innovation. Integration. Inspiration.
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
+        Join a fun and flexible environment where you will be inspired to do your best innovative work. SpiderRock's team-driven culture attracts top talent across trading technology, quantitative research, and client services.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ─── TOTAL REWARDS ─────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-20 items-start">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Benefits</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Total Rewards</h2>
+          <p class="text-gray-700 leading-relaxed text-lg mb-8">
+            SpiderRock's Total Rewards are designed to include programs that fit your lifestyle and your career trajectory. Our Total Rewards approach includes progressive Benefits, market-driven Compensation, and career Development strategies. These three pillars embody our most crucial investment for our most valuable asset — you.
+          </p>
+          <div class="grid grid-cols-3 gap-6">
+            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
+              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <p class="font-display font-bold text-gray-900 text-sm">Benefits</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
+              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <p class="font-display font-bold text-gray-900 text-sm">Compensation</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
+              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <p class="font-display font-bold text-gray-900 text-sm">Development</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-sr-navy to-sr-blue rounded-xl p-10 text-white">
+          <h3 class="font-display text-xl font-bold mb-8">Why SpiderRock</h3>
+          <ul class="space-y-5">
+            <li class="flex gap-4">
+              <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+              <span class="text-white/80">Work at the intersection of trading technology, quantitative research, and institutional finance</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+              <span class="text-white/80">Collaborative, team-driven culture with direct access to leadership</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+              <span class="text-white/80">High-impact work supporting $47B+ in daily trading volume</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+              <span class="text-white/80">Named Best and Brightest Companies to Work For in the Nation</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+              <span class="text-white/80">Training, development, and career growth opportunities throughout your tenure</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-2">
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            How current are job postings?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            The website is continually updated. Jobs are posted as soon as they become available and are removed once the position is filled.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            How do I apply for an open position?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Open positions are listed on the SpiderRock careers portal. You can also reach out directly via our <a href="../contact-us/" class="text-sr-blue hover:underline">Contact page</a> to express your interest.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            Will I need to go through the formal process even if I've interviewed with SpiderRock before?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Yes, all candidates go through the standard hiring process to ensure a consistent and fair evaluation. If you've interviewed before, your prior interaction may be noted and considered.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            How do I apply for an internship?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Internship opportunities are posted as they become available. Check the careers portal for current openings or reach out through our Contact page to inquire about upcoming internship programs.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            Does SpiderRock conduct background checks?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Yes, background checks are a standard part of the offer process for all positions at SpiderRock.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            Will I have opportunities for training and development after being hired?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Absolutely. Career development is a core pillar of our Total Rewards program. SpiderRock invests in training, mentorship, and growth opportunities throughout your tenure.
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+            Do you recruit new college graduates?
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600">
+            Yes, SpiderRock actively recruits new graduates, particularly in technology, computer science, mathematics, and finance. Entry-level positions and internship-to-hire pathways are available for exceptional candidates.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-navy py-24">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Ready to Join the Team?</h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Reach out to learn more about open opportunities at SpiderRock.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="../platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
+            <li><a href="../data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

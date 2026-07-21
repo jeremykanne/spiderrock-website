@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiderRock EXS — Brokerage &amp; Market Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="text-blue-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-5 text-white text-[13px] font-semibold">
+          <a href="./" class="text-blue-200">EXS Home</a>
+          <a href="ats/" class="hover:text-blue-200 transition-colors duration-200">SpiderRock ATS</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Regulatory <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[200px]">
+                <a href="regulatory/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Quarterly Order Reports</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Legal <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
+                <a href="legal-disclaimers/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Legal Disclaimers</a>
+                <a href="privacy-statement/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Privacy Statement</a>
+                <a href="website-terms-of-use/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Terms of Use</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://docs.spiderrockconnect.com/docs/next/SpiderRockConnectATS/SpiderRockConnectATS/" class="hover:text-blue-200 transition-colors duration-200">Documentation</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Brokerage Services</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        SpiderRock EXS
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
+        A FINRA-regulated broker dealer and NFA member specializing in electronic execution and market access services for institutional clients worldwide.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Get Started</a>
+    </div>
+  </section>
+
+  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-20 items-start">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">FINRA-Regulated Market Access</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Regulated Electronic Execution</h2>
+          <p class="text-gray-700 leading-relaxed text-lg mb-6">
+            SpiderRock EXS LLC is a FINRA-regulated broker dealer and NFA member specializing in electronic execution and market access services. EXS can facilitate execution of all U.S.-listed equities, equity options, and futures via a low-latency infrastructure directly connected to exchanges or other providers' DMA systems.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg mb-8">
+            EXS provides regulatory oversight for clients' trading activity, which includes provision of market access routes and risk controls, retention of all trading records, reporting, and surveillance obligations.
+          </p>
+          <div class="flex gap-4 flex-wrap">
+            <img src="images/finra.jpg" alt="FINRA" class="h-12 object-contain">
+            <img src="images/NFA.jpg" alt="NFA" class="h-12 object-contain">
+            <img src="images/SIPC.jpg" alt="SIPC" class="h-12 object-contain">
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-10 border border-gray-100">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-8">Market Access Coverage</h3>
+          <div class="space-y-6">
+            <div class="border-b border-gray-200 pb-6">
+              <p class="font-semibold text-gray-900 mb-1">U.S. Equities</p>
+              <p class="text-gray-600">All listed equities via low-latency connections to exchanges</p>
+            </div>
+            <div class="border-b border-gray-200 pb-6">
+              <p class="font-semibold text-gray-900 mb-1">Equity Options</p>
+              <p class="text-gray-600">Complete coverage across all U.S. options exchanges</p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900 mb-1">Futures</p>
+              <p class="text-gray-600">CME and CBOT contracts with optimized routing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">What EXS Provides</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Comprehensive Market Access</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Direct Market Access (DMA)</h3>
+          <p class="text-gray-600 leading-relaxed">
+            As a FINRA member, EXS can structure client-specific market access routes to optimize latency, minimize cost, preserve existing relationships, or provide redundancy. Clients can leverage their prime broker's infrastructure or use our direct connectivity to exchanges.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Pre-Trade Risk Layer</h3>
+          <p class="text-gray-600 leading-relaxed">
+            EXS provides a fully compliant 15c3-5 risk layer, allowing market access risk controls to check parent order validation, client firm risk exposure, and account authorization checks before any order reaches the market.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Expert Support Team</h3>
+          <p class="text-gray-600 leading-relaxed">
+            U.S.- and EU-based customer support specialists continually monitor the platform and respond to any client inquiries throughout the trading session. Dedicated coverage when it matters most.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Regulatory Oversight</h3>
+          <p class="text-gray-600 leading-relaxed">
+            EXS provides regulatory oversight including provision of market access routes and risk controls, retention of all trading records, reporting, and surveillance obligations.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Low-Latency Infrastructure</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Execute all U.S.-listed equities, options, and futures via a low-latency infrastructure directly connected to exchanges. Optimized routing designed for institutional options workflows and large money allocations.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Platform Access</h3>
+          <p class="text-gray-600 leading-relaxed">
+            EXS clients gain access to the <a href="../platform/" class="text-sr-blue hover:underline">SpiderRock Platform</a>, a high-performance cloud-based trading and risk system offering best-in-class algorithmic routing logic, real-time analytics, and integrated risk management.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ATS CALLOUT ───────────────────────────────────────────────────────── -->
+  <section class="bg-sr-navy py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center mb-16">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Alternative Trading System</p>
+          <h2 class="font-display text-4xl font-bold text-white mb-6">SpiderRock ATS</h2>
+          <p class="text-white/80 text-lg leading-relaxed mb-8">
+            The SpiderRock ATS is an electronic trading network where initiating interest is efficiently matched with a broad and diverse pool of liquidity via a competitive and open auction process. Block and Flash auction mechanisms provide off-screen access for institutional participants.
+          </p>
+          <a href="ats/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Learn About the ATS</a>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-white/10 rounded-lg p-6 flex gap-4 items-start">
+            <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+            <div>
+              <p class="text-white font-semibold mb-1">Block Auction</p>
+              <p class="text-white/60 text-sm">Electronic access to institutional counterparties and our network of liquidity providers via a competitive, open auction.</p>
+            </div>
+          </div>
+          <div class="bg-white/10 rounded-lg p-6 flex gap-4 items-start">
+            <span class="text-sr-red font-bold text-xl flex-shrink-0">✓</span>
+            <div>
+              <p class="text-white font-semibold mb-1">Flash Auction</p>
+              <p class="text-white/60 text-sm">Instantaneous auctions matching initiating orders with auto-responding liquidity and transparent price discovery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10" style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/1023013848" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-24 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
+      <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+        Contact the SpiderRock team to learn more about EXS market access and brokerage services for institutional clients.
+      </p>
+      <a href="../contact-us/" class="inline-block bg-sr-navy text-white font-semibold px-10 py-4 button-smooth text-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="../platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+            <li><a href="../exs/legal-disclaimers/" class="hover:text-white transition-colors">Legal Disclaimers</a></li>
+            <li><a href="../exs/privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a></li>
+            <li><a href="../exs/website-terms-of-use/" class="hover:text-white transition-colors">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
+            <li><a href="../data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+        <p>Additional information and regulatory standing of SpiderRock EXS can be found by using <a href="https://brokercheck.finra.org/" class="text-gray-400 hover:text-white">FINRA BrokerCheck</a> and <a href="https://www.nfa.futures.org/basicnet/" class="text-gray-400 hover:text-white">NFA Basicnet</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Glossary — SpiderRock Data &amp; Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+          colors: { 'sr-navy': '#162032', 'sr-blue': '#1B3D6B', 'sr-gray': '#5C6270', 'sr-dark': '#3A3F4A', 'sr-red': '#C0392B' },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- UTILITY BAR -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../../data/" class="text-blue-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-4 text-white text-[13px] font-semibold">
+          <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Data Home</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Data &amp; Analytics <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../options-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a><a href="../../data-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Data Delivery</a><a href="../../volatility-charts/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Charts</a><a href="../../data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Live APIs</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Historical <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../historical-data-analytics/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Data Overview</a><a href="../../historical-data-analytics/options-greeks/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Options &amp; Greeks</a><a href="../../historical-data-analytics/historic-stock-price-data/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Historical Stock Prices</a><a href="../../historical-data-analytics/volatility-surfaces/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Surfaces</a><a href="../../historical-data-analytics/vol2g/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Volatility Database (VOL2G)</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../spiderstream-market-data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">SpiderStream / MLink API</a><a href="../../stocks-options-futures/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Stocks, Options &amp; Futures</a><a href="../../option-features-dataset/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Option Features Dataset</a><a href="../../options-pricing-tool/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Pricing Tool</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../market-data-partners/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Market Data Partners</a><a href="../../updates/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">News &amp; Events</a><a href="../glossary/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Glossary</a>
+              </div>
+            </div>
+          </div>
+          <a href="../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Resources</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        Glossary of Common Terms
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Definitions of key terms used in stock and options trading, market data, and options analytics.
+      </p>
+    </div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+
+      <!-- A -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">A</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Auction Data</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Trade data from options trades that are routed to and matched in exchange-sponsored marketplaces outside the posted exchange market.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">B</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Box Trades</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A combination of options positions that create a synthetic bond-like instrument by combining a bull call spread and a bear put spread on the same underlying security.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Butterfly Spread</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">An options strategy combining bull and bear spreads with the same expiration date, using three different strike prices. The strategy profits when the underlying stays near the middle strike at expiration.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">C</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Calendar Spread</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">An options strategy involving buying and selling options with the same strike price but different expiration dates. Also known as a horizontal spread, it profits from the difference in time decay between the two expirations.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Call Options</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Contracts giving the holder the right, but not the obligation, to buy an underlying asset at a specified price (the strike price) on or before a specific expiration date.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">COB Data</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Close of Business data; end-of-day snapshots of prices, positions, and market activity captured at the close of the trading session.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Collar</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A protective options strategy combining a long put and short call on an existing stock position. The collar limits both downside risk and upside potential within a defined range.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">CTA Feed</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Consolidated Tape Association feed; provides real-time and historical trade and quote data for NYSE-listed and NYSE American securities. Part of the National Market System (NMS).</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">D</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Delta</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A measure of an option's price sensitivity relative to a $1 change in the underlying asset's price. Ranges from 0 to 1 for calls and -1 to 0 for puts. Also approximates the probability that an option will expire in the money.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- E -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">E</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">EOD Options Data</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">End-of-day options data capturing closing prices, implied volatilities, Greeks, and volumes at the close of each trading session. Foundational dataset for backtesting and historical volatility research.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- G -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">G</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Gamma</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">The rate of change of an option's delta for a $1 change in the underlying price. Measures the curvature of an option's price relative to the underlying. High gamma means delta changes rapidly with underlying moves.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- H -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">H</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Historical Option Analytics</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Analytics derived from historical options data including implied volatility, Greeks, and surface data. Used for backtesting trading strategies, calibrating pricing models, and conducting quantitative research.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- I -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">I</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Implied Volatility</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">The market's forecast of the likely magnitude of movement in a security's price, derived from the market price of an options contract. Unlike historical (realized) volatility, implied volatility is forward-looking and reflects market consensus on expected risk.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- M -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">M</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Market Data API</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A programmatic interface for accessing real-time or historical market data including prices, volumes, and analytics. Enables integration of market data into trading systems, risk platforms, and analytical tools via WebSocket or REST protocols.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Multicast Market Data Feeds</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A one-to-many data delivery mechanism where a single data stream is sent simultaneously to multiple recipients over a network. Highly efficient for distributing high-frequency market data to many consumers with minimal latency overhead.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- N -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">N</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Normalized OPRA Feed</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A processed version of the OPRA feed that reduces bandwidth to approximately 1/10th of the raw feed while preserving critical price and quote information. SpiderRock's normalization focuses on NBBO price level changes while holding back size-only updates.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- O -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">O</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">OPRA Data</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Options Price Reporting Authority data; the consolidated options market data feed for all US listed options. OPRA aggregates quote and trade information from all US options exchanges and distributes it via a single multicast stream.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Option Greeks</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Measures of option price sensitivity to various factors: Delta (underlying price), Gamma (delta change), Theta (time decay), Vega (implied volatility), Rho (interest rates), and Phi (dividend rate).</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Option Skew</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">The difference in implied volatility between out-of-the-money and at-the-money options for the same expiration. Skew reflects supply and demand imbalances and tail risk premiums — typically higher for downside puts than upside calls in equity markets.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Options Analytics</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Quantitative metrics derived from options market data including implied volatility, Greeks, volatility surfaces, and trade analytics. SpiderRock's options analytics are computed on every option tick using proprietary numerical pricing libraries.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- P -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">P</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Put Options</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Contracts giving the holder the right, but not the obligation, to sell an underlying asset at a specified price (the strike price) on or before a specific expiration date. Used for downside protection or directional bearish bets.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- R -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">R</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Real Time Analytics</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">Analytics computed and delivered in real time as market conditions change, including implied volatility and Greeks updated on every option tick. SpiderRock's real-time analytics update within sub-millisecond timeframes for all US-listed options.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Rho</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A measure of an option's sensitivity to changes in interest rates. Rho is typically most significant for long-dated options and LEAPS where the cost of carrying the position is affected more by interest rate changes.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- T -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">T</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Theta</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A measure of the rate of decline in an option's value due to the passage of time, also known as time decay. Theta accelerates as expiration approaches and is typically negative for long options positions.</dd>
+          </div>
+        </div>
+      </div>
+
+      <!-- V -->
+      <div class="mb-12">
+        <div class="border-b-2 border-sr-red mb-8"><h2 class="font-display text-3xl font-bold text-sr-navy mb-2">V</h2></div>
+        <div class="space-y-6">
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Vega</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A measure of an option's sensitivity to changes in implied volatility. A vega of 0.10 means the option's value changes by $0.10 for each 1% change in implied volatility.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Vertical Spread</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">An options strategy using two options of the same type (both calls or both puts) with the same expiration but different strike prices. Provides defined risk and reward with reduced cost compared to outright options positions.</dd>
+          </div>
+          <div>
+            <dt class="font-display font-bold text-gray-900 text-lg">Volatility Surface</dt>
+            <dd class="text-gray-600 mt-1 max-w-3xl">A three-dimensional representation of implied volatility across different strike prices and expiration dates for a given underlying asset. SpiderRock's volatility surfaces are computed continuously and are designed to be arbitrage-free across all strikes.</dd>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-20 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">Need More Information?</h2>
+      <p class="text-gray-600 mb-8">Contact our team of options data experts with any questions about our data products or analytics.</p>
+      <a href="../../../contact-us/" class="inline-block bg-sr-navy text-white font-semibold px-10 py-4 button-smooth">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../../options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../../historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../../volatility-charts/" class="hover:text-white transition-colors">Chart Tool</a></li>
+            <li><a href="./" class="text-white">Glossary</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

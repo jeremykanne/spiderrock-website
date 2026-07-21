@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRSE — SpiderRock Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card-hover { transition: all 200ms ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../platform/" class="text-blue-200">Trading Platform</a>
+      <a href="../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-5 text-white text-[13px] font-semibold">
+          <a href="../" class="hover:text-blue-200 transition-colors duration-200">Platform</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Our Platform <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
+                <a href="../routing-algos/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Order Management</a>
+                <a href="../risk-management/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Risk Management</a>
+                <a href="../analytics-framework/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Options Analytics</a>
+                <a href="../compliance-layer/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Compliance Layer</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Tools &amp; APIs <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[170px]">
+                <a href="../gui-tools/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Trading Tools</a>
+                <a href="../srse/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">Platform APIs</a>
+                <a href="../fix-gateway/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-xs transition-colors">FIX Gateway</a>
+              </div>
+            </div>
+          </div>
+          <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Trading Platform</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        SpiderRock Structured Engine
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Six live databases with bulk query and insert capabilities — the data backbone of the SpiderRock Platform.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── WHAT IS SRSE ─────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Architecture</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">The Engine Behind the Platform</h2>
+        <p class="text-gray-700 leading-relaxed text-lg mb-6">
+          SRSE (SpiderRock Structured Engine) is SpiderRock's custom high-performance live database engine. It is comprised of six MySQL live databases and enables bulk querying and insert operations to interact with the platform's core data in real time.
+        </p>
+        <p class="text-gray-700 leading-relaxed text-lg mb-6">
+          Clients integrate programmatically with SpiderRock via SRSE for trading, risk, data, and compliance. The MySQL interface means integration is straightforward — any environment with MySQL client libraries can connect. Client libraries are also available in C++ and C#.
+        </p>
+        <p class="text-gray-700 leading-relaxed text-lg">
+          Bulk select and insert operations enable high-throughput programmatic workflows, from strategy engines that query thousands of options simultaneously to risk systems that update positions across the entire portfolio on every trade.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SIX DATABASES ────────────────────────────────────────────────────── -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Live Databases</p>
+        <h2 class="font-display text-4xl font-bold text-gray-900">Six Specialized Data Stores</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">L</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Live</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Real-time market data: quotes, prints, and order book data across all listed US equity, options, and futures markets. Updated on every exchange message.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">T</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Theo</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Theoretical pricing: implied volatilities, Greeks, and volatility surface prices updated on every option tick and at regular intervals. The authoritative source for SpiderRock analytics.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">A</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Analytics</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Advanced analytics: alpha probabilities, trade performance metrics, and historical context drawn from SpiderRock's multi-year data archive.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">R</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Risk</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Portfolio risk: real-time Greeks aggregation, P&L calculations, and margin computations. Updated continuously as positions change and markets move.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">Tr</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Trade</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Trade records: execution history, fill details, and trade analytics. Every fill is captured with full context including analytics at time of execution.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 card-hover">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-bold text-sm">C</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-gray-900">SR Control</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            System state: account configuration, positions, locates, restricted lists, and operational controls. The primary interface for compliance and system management.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BULK OPS ──────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">API Capabilities</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Bulk Select &amp; Insert</h2>
+          <p class="text-gray-700 leading-relaxed text-lg mb-6">
+            SRSE's bulk operation capabilities enable strategy engines, risk systems, and analytics platforms to query large datasets efficiently. A single bulk select can retrieve quotes, analytics, and risk data across thousands of options simultaneously.
+          </p>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Bulk insert allows client systems to push configurations, compliance records, and done-away trades into the platform programmatically, enabling tight integration between SpiderRock and client-side systems.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+            <h3 class="font-display font-bold text-gray-900 mb-2">MySQL-Compatible Interface</h3>
+            <p class="text-gray-600 text-sm">Connect with any MySQL client. No proprietary drivers or custom protocols required.</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+            <h3 class="font-display font-bold text-gray-900 mb-2">C++ &amp; C# Client Libraries</h3>
+            <p class="text-gray-600 text-sm">High-performance native libraries for latency-sensitive applications.</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+            <h3 class="font-display font-bold text-gray-900 mb-2">Real-Time Data Access</h3>
+            <p class="text-gray-600 text-sm">Query live databases for current-state data with sub-second freshness across all six stores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-navy py-20">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <h2 class="font-display text-4xl font-bold text-white mb-6">Integrate with SpiderRock</h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Contact our team to discuss SRSE integration and get access to API documentation and sample code.
+      </p>
+      <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../routing-algos/" class="hover:text-white transition-colors">Order Management</a></li>
+            <li><a href="../risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../analytics-framework/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../compliance-layer/" class="hover:text-white transition-colors">Compliance Layer</a></li>
+            <li><a href="../gui-tools/" class="hover:text-white transition-colors">Trading Tools</a></li>
+            <li><a href="../srse/" class="hover:text-white transition-colors">SRSE</a></li>
+            <li><a href="../fix-gateway/" class="hover:text-white transition-colors">FIX Gateway</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="../../data/historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
