@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Historical Options & Greeks — SpiderRock Data & Analytics</title>
+  <title>Historical Options, Greeks & Stock Prices — SpiderRock Data & Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,6 +23,92 @@
     .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
     .card-hover { transition: all 200ms ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    /* ── ActiveCampaign form 40, restyled to match the site ──────────────────
+       CSS only: AC's markup, field names, validation and submit path are untouched. */
+    .ac-form { max-width: 100%; }
+    .ac-form ._form,
+    .ac-form ._form_element,
+    .ac-form ._form-content,
+    .ac-form ._field-wrapper { all: unset; display: block; width: 100%; box-sizing: border-box; }
+    .ac-form ._form { margin: 0 !important; padding: 0 !important; background: none !important; }
+    .ac-form ._form_element { margin: 0 0 1.25rem 0 !important; }
+    .ac-form,
+    .ac-form input, .ac-form textarea, .ac-form select, .ac-form button, .ac-form label {
+      font-family: 'Roboto', sans-serif !important;
+    }
+    /* AC serves its own form title (e.g. "Options Analytics"); the page heading above
+       already names the section, so suppress it. :has() collapses the empty wrapper too. */
+    .ac-form ._form-title { display: none !important; }
+    .ac-form ._form_element:has(._form-title) { display: none !important; margin: 0 !important; }
+    .ac-form ._form-label {
+      display: block !important;
+      font-size: .875rem !important;
+      font-weight: 600 !important;
+      color: #374151 !important;
+      margin: 0 0 .5rem 0 !important;
+    }
+    .ac-form .field-required { color: #C0392B !important; margin-left: .15rem; }
+    .ac-form input[type="text"],
+    .ac-form input[type="email"],
+    .ac-form input[type="tel"],
+    .ac-form textarea {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      border: 1px solid #D1D5DB !important;
+      border-radius: .5rem !important;
+      padding: .75rem 1rem !important;
+      font-size: 1rem !important;
+      color: #111827 !important;
+      background: #fff !important;
+      box-shadow: none !important;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .ac-form textarea { min-height: 8.5rem; resize: none !important; }
+    .ac-form input::placeholder, .ac-form textarea::placeholder { color: #9CA3AF !important; }
+    .ac-form input[type="text"]:focus,
+    .ac-form input[type="email"]:focus,
+    .ac-form textarea:focus {
+      outline: none !important;
+      border-color: transparent !important;
+      box-shadow: 0 0 0 2px #1B3D6B !important;
+    }
+    .ac-form ._button-wrapper { margin-top: .25rem !important; }
+    .ac-form button._submit {
+      width: 100% !important;
+      background: #162032 !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 1rem 2rem !important;
+      cursor: pointer;
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ac-form button._submit:hover {
+      background: #1B3D6B !important;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .ac-form ._html-code, .ac-form ._html-code p { font-size: .75rem !important; color: #9CA3AF !important; margin: 0 !important; }
+    .ac-form ._html-code a { color: #1B3D6B !important; text-decoration: underline; }
+    .ac-form ._error, .ac-form ._error-inner, .ac-form ._error-html {
+      background: #C0392B !important; color: #fff !important;
+      border-radius: .375rem !important; font-size: .8125rem !important;
+    }
+    .ac-form ._error-arrow { border-bottom-color: #C0392B !important; }
+    .ac-form ._form-thank-you { font-size: 1rem !important; color: #111827 !important; text-align: left !important; }
+    /* AC's own radio rows ("I'm interested in") */
+    .ac-form ._form_element._checkbox-radio ._row { margin: 0 0 .5rem 0 !important; }
+    .ac-form ._checkbox-radio label { display: flex !important; align-items: center; gap: .75rem;
+      font-size: .875rem !important; font-weight: 400 !important; color: #374151 !important; cursor: pointer; margin: 0 !important; }
+    .ac-form input[type="radio"], .ac-form input[type="checkbox"] {
+      width: 1rem !important; height: 1rem !important; margin: 0 !important; accent-color: #162032; flex: none; }
+    /* reCAPTCHA widget renders in a fixed-width iframe — keep it inside the column */
+    .ac-form .g-recaptcha { margin: 0 0 1.25rem 0 !important; transform-origin: 0 0; max-width: 100%; }
+    .ac-form .g-recaptcha > div { max-width: 100% !important; }
+    .ac-form ._form_element, .ac-form ._form-content, .ac-form input, .ac-form textarea, .ac-form select { max-width: 100% !important; box-sizing: border-box; }
+    .ac-form ._form { margin: 0 !important; padding: 0 !important; width: 100% !important; }
     /* ── Sticky header ──────────────────────────────────────────────────────
        The utility bar stays sticky in flow. The primary nav is fixed just below it
        so it keeps overlaying the hero exactly as before, and picks up a solid
@@ -66,7 +152,6 @@
       <a href="../../../data/" class="text-blue-200">Data &amp; Analytics</a>
     </div>
   </div>
-
   <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
        position:fixed, and goes compact once scrolled (see .is-stuck). -->
   <div id="siteNav" class="site-nav">
@@ -86,7 +171,7 @@
             </div>
           </div>
           <div class="relative group">
-            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Product Offerings <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <button class="flex items-center gap-1 text-blue-200 transition-colors duration-200 cursor-pointer">Product Offerings <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
             <div class="absolute top-full right-0 pt-2 hidden group-hover:block z-50">
               <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl p-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 min-w-[400px] lg:min-w-[720px] max-w-[calc(100vw-3rem)]">
                 <div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Real-Time Data</p><a href="../../stocks-options-futures/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Market Data Feeds</a><a href="../../options-analytics/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Analytics</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Historical Data</p><a href="../../historical-data-analytics/options-greeks-stock-prices/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options, Greeks &amp; Stock Prices</a><a href="../../option-features-dataset/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Option Features Dataset</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Volatility</p><a href="../../historical-data-analytics/volatility-surfaces/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Surfaces</a><a href="../../historical-data-analytics/vol2g/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Database (VOL2G)</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">MLink API</p><a href="../../spiderstream-market-data-api/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">SpiderStream / MLink API</a><a href="../../options-pricing-tool/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Pricing Tool</a></div>
@@ -110,25 +195,25 @@
   <section class="bg-gradient-to-br from-sr-navy to-sr-blue text-white hero-with-nav">
     <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Historical Data</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Historical Options &amp; Greeks Data</h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">Comprehensive end-of-day and intraday tick data for options contracts — including OHLCV, Greeks, and implied volatility — across the full U.S. listed options universe.</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Options, Greeks &amp; Stock Prices</h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">End-of-day and intraday tick history across the full U.S. listed options universe — including Greeks and implied volatility — alongside clean, corporate-action-adjusted equity prices, in one coordinated dataset.</p>
       <div class="flex gap-4 flex-wrap">
-        <a href="../../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Data Access</a>
-        <a href="../" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 hover:bg-white/10 transition-colors">Historical Data Overview</a>
+        <a href="#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Data Access</a>
       </div>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
+  <!-- OVERVIEW -->
   <section class="bg-white py-28">
     <div class="max-w-7xl mx-auto px-8">
-      <img src="../../images/options-greeks-hero.jpg" alt="Options Greeks Historical Data" class="w-full rounded-xl shadow-xl mb-16">
+      <img src="../../images/options-greeks-hero.jpg" alt="Historical options, Greeks, and stock price data" class="w-full rounded-xl shadow-xl mb-16">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Complete Options History</p>
-          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">The Full Options Record</h2>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">One Coordinated History</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Derivatives and Equities, Together</h2>
           <p class="text-gray-600 leading-relaxed mb-4">SpiderRock's historical options data spans years of end-of-day and intraday tick data across the entire U.S. listed options universe. Each record captures not just prices and volume but computed Greeks and implied volatility derived from SpiderRock's proprietary pricing models.</p>
-          <p class="text-gray-600 leading-relaxed">Whether you're building backtests, training ML models, or conducting academic research, this dataset gives you the depth and completeness to work with confidence.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Equity history is delivered on the same foundation — the full U.S. stock universe with corporate action adjustments, survivorship-bias awareness, and tick-level granularity for intraday research.</p>
+          <p class="text-gray-600 leading-relaxed">Because both sit in one dataset, workflows that require coordinated stock and derivatives analysis — backtests, ML feature sets, academic research — line up without reconciliation work.</p>
         </div>
         <div class="grid grid-cols-2 gap-6">
           <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
@@ -140,23 +225,24 @@
             <div class="text-sm text-gray-600 font-medium">Listed options universe</div>
           </div>
           <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-red mb-1">EOD</div>
-            <div class="text-sm text-gray-600 font-medium">&amp; intraday tick data</div>
+            <div class="text-3xl font-display font-bold text-sr-red mb-1">U.S.</div>
+            <div class="text-sm text-gray-600 font-medium">Full equity universe</div>
           </div>
           <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-gray mb-1">API</div>
-            <div class="text-sm text-gray-600 font-medium">&amp; flat file delivery</div>
+            <div class="text-3xl font-display font-bold text-sr-gray mb-1">EOD</div>
+            <div class="text-sm text-gray-600 font-medium">&amp; intraday tick data</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DATA FIELDS -->
+  <!-- DATA FIELDS - OPTIONS -->
   <section class="bg-gray-50 py-28 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-8">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Coverage</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-12">What's Included in Every Record</h2>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-3">Options &amp; Greeks</h2>
+      <p class="text-gray-600 mb-12 max-w-2xl">What's included in every options record.</p>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
           <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Price &amp; Volume</h3>
@@ -189,6 +275,91 @@
           </ul>
         </div>
       </div>
+      <p class="mt-10"><a href="../volatility-surfaces/" class="text-sr-blue font-semibold hover:underline">Historical volatility surfaces &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- DATA FIELDS - EQUITIES -->
+  <section class="bg-white py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Coverage</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-3">Stock Prices</h2>
+      <p class="text-gray-600 mb-12 max-w-2xl">Fields available per equity symbol.</p>
+      <img src="../../images/stock-price-hero.jpg" alt="Historical stock price data" class="w-full rounded-xl shadow-xl mb-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">End-of-Day (EOD)</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Open, High, Low, Close (OHLC)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Adjusted and unadjusted prices</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Volume and dollar volume</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Dividend and split adjustment factors</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Market cap and shares outstanding</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Closing bid/ask and spread</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Intraday Tick</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade price and size</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>NBBO bid/ask updates</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Exchange of execution</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade condition codes</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Nanosecond timestamps</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>OHLCV bars (1-min, 5-min, hourly)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-10"><a href="../../option-features-dataset/" class="text-sr-blue font-semibold hover:underline">Option Features Dataset &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- DATA QUALITY -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Quality</p>
+          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Rigorous Data Processing</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">Raw exchange data contains errors, anomalies, and inconsistencies. SpiderRock applies institutional-grade processing to deliver clean, research-ready data.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-navy rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">1</div>
+              <div><strong class="text-gray-900">Corporate Action Adjustments</strong><p class="text-gray-600 text-sm mt-1">Prices and volumes are adjusted for stock splits, reverse splits, spin-offs, and special dividends — ensuring continuity across the full history.</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-blue rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">2</div>
+              <div><strong class="text-gray-900">Outlier Detection &amp; Cleansing</strong><p class="text-gray-600 text-sm mt-1">Erroneous prints and quotes are flagged and removed. Obvious bad ticks are corrected, and suspicious data is annotated rather than silently discarded.</p></div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-sr-red rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">3</div>
+              <div><strong class="text-gray-900">Symbol Mapping &amp; Continuity</strong><p class="text-gray-600 text-sm mt-1">Ticker changes, mergers, delistings, and re-listings are tracked so you can follow securities through corporate events without losing historical context.</p></div>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-10 border border-gray-200">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-6">Compatible With Your Stack</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">Historical options and equity data is delivered in formats designed for direct ingestion into quantitative workflows:</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-navy rounded flex items-center justify-center text-white text-xs font-bold">CSV</div>
+              <span class="text-gray-700 text-sm">Flat CSV files for pandas, R, and spreadsheets</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-blue rounded flex items-center justify-center text-white text-xs font-bold">PQ</div>
+              <span class="text-gray-700 text-sm">Parquet format for large-scale analytics (Spark, Dask)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-red rounded flex items-center justify-center text-white text-xs font-bold">API</div>
+              <span class="text-gray-700 text-sm">Snowflake reader account for targeted, on-demand SQL queries</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+              <div class="w-8 h-8 bg-sr-gray rounded flex items-center justify-center text-white text-xs font-bold">S3</div>
+              <span class="text-gray-700 text-sm">Direct cloud delivery to AWS S3 or Azure Blob</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -204,7 +375,7 @@
           </div>
           <div>
             <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Quantitative Researchers</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Build and backtest options strategies with historically accurate pricing and Greeks. Validate pricing models against actual market data across multiple market regimes.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Build and backtest options strategies against historically accurate pricing, Greeks, and the underlying equity prints. Validate pricing models across multiple market regimes.</p>
           </div>
         </div>
         <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
@@ -213,7 +384,7 @@
           </div>
           <div>
             <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Machine Learning Teams</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Train predictive models on rich options features including Greeks, surface parameters, and volatility regime data across the full listed options universe.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Train predictive models on rich features spanning both sides of the market — Greeks, surface parameters, and volatility regimes joined to clean equity price series.</p>
           </div>
         </div>
         <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
@@ -231,10 +402,11 @@
           </div>
           <div>
             <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Academic Researchers</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Study options market microstructure, volatility risk premium, and information content of derivatives markets with comprehensive, clean historical data.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Study options market microstructure, volatility risk premium, and the information content of derivatives markets with comprehensive, clean historical data.</p>
           </div>
         </div>
       </div>
+      <p class="mt-10"><a href="../vol2g/" class="text-sr-blue font-semibold hover:underline">Volatility Database bundle (VOL2G) &rarr;</a></p>
     </div>
   </section>
 
@@ -245,9 +417,9 @@
         <div>
           <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Data Delivery</p>
           <h2 class="font-display text-4xl font-bold text-white mb-6">Flexible Access Methods</h2>
-          <p class="text-white/70 leading-relaxed mb-8">Historical options and Greeks data is available through multiple delivery channels to fit your workflow — from direct API access to bulk flat file downloads.</p>
+          <p class="text-white/70 leading-relaxed mb-8">Historical options, Greeks, and stock price data is available through multiple delivery channels to fit your workflow — from direct API access to bulk flat file downloads.</p>
           <ul class="space-y-4">
-            <li class="flex items-start gap-3 text-white/80"><svg class="w-5 h-5 text-sr-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><strong class="text-white">Liberator API</strong> — Programmatic access for targeted queries across dates, underlyings, and expirations</span></li>
+            <li class="flex items-start gap-3 text-white/80"><svg class="w-5 h-5 text-sr-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><strong class="text-white">Snowflake</strong> &mdash; SQL access for targeted queries across dates, underlyings, and expirations</span></li>
             <li class="flex items-start gap-3 text-white/80"><svg class="w-5 h-5 text-sr-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><strong class="text-white">Cloud Files</strong> — Daily flat files delivered to AWS S3 or Azure Blob Storage for bulk processing</span></li>
             <li class="flex items-start gap-3 text-white/80"><svg class="w-5 h-5 text-sr-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><strong class="text-white">Data Portal</strong> — Web-based exploration and ad-hoc download for research and validation</span></li>
           </ul>
@@ -257,6 +429,56 @@
           <p class="text-white/50 text-sm">Custom date ranges, underlyings, and formats available</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONSULT / AC FORM -->
+  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Consult With Us</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Request Historical Data</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-10">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
+
+      <!-- ActiveCampaign form 9 (srock.activehosted.com) -->
+      <div class="_form_9 ac-form"></div>
+      <script src="https://srock.activehosted.com/f/embed.php?id=9" type="text/javascript" charset="utf-8"></script>
+      <script>
+            // AC scopes its button/error CSS with the form's generated id, which outranks any
+            // class rule. Mirror that specificity, appended after their <style> to win on a tie.
+            (function () {
+              var wrap = document.querySelector('.ac-form');
+              function paint(form) {
+                var id = form.id;
+                if (!id) return;
+                var css = [
+                  '#' + id + '{max-width:100%!important;width:100%!important}',
+                  '#' + id + ' ._submit{width:100%!important;background:#162032!important;color:#fff!important;font-weight:600!important;font-size:1rem!important;border:none!important;border-radius:0!important;padding:1rem 2rem!important;cursor:pointer;transition:all 200ms cubic-bezier(0.4,0,0.2,1)}',
+                  '#' + id + ' ._submit:hover{background:#1B3D6B!important;transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,0.15)}',
+                  '#' + id + ' ._form-fieldset label{display:inline-flex!important;align-items:center;width:auto!important;float:none!important;margin:0 0 0 0.6rem!important;font-size:0.875rem!important;font-weight:400!important;color:#374151!important;vertical-align:middle}',
+                  '#' + id + ' ._form-fieldset ._row,#' + id + ' ._form-fieldset ._checkbox-radio{margin:0 0 0.5rem 0!important;display:block!important}',
+                  '#' + id + ' ._form-fieldset input[type="radio"],#' + id + ' ._form-fieldset input[type="checkbox"]{width:1rem!important;height:1rem!important;margin:0!important;accent-color:#162032;vertical-align:middle}',
+                  '#' + id + ' ._form-fieldset{border:0!important;padding:0!important;margin:0!important}',
+                  '#' + id + ' ._form-title{display:none!important}',
+                  '#' + id + ' ._form_element:has(._form-title){display:none!important;margin:0!important}',
+                  '#' + id + ' ._html-code,#' + id + ' ._html-code p{font-size:0.75rem!important;color:#9CA3AF!important}',
+                  '#' + id + ' ._html-code a{color:#1B3D6B!important;text-decoration:underline}',
+                  '#' + id + ' ._error-inner,#' + id + ' ._error-html,#' + id + ' ._error-inner._form_error{background:#C0392B!important;color:#fff!important;border-radius:0.375rem!important;font-size:0.8125rem!important}',
+                  '#' + id + ' ._error-arrow{border-bottom-color:#C0392B!important}',
+                  '#' + id + ' ._form-thank-you{color:#111827!important;text-align:left!important;font-size:1rem!important}'
+                ].join('');
+                var st = document.createElement('style');
+                st.textContent = css;
+                wrap.appendChild(st);
+              }
+              var form = wrap.querySelector('form');
+              if (form) return paint(form);
+              new MutationObserver(function (_m, obs) {
+                var f = wrap.querySelector('form');
+                if (f) { obs.disconnect(); paint(f); }
+              }).observe(wrap, { childList: true, subtree: true });
+            })();
+      </script>
+      <p class="text-gray-400 text-xs mt-6">By submitting this form you agree to SpiderRock&rsquo;s privacy policy. For institutional &amp; professional clients only.</p>
     </div>
   </section>
 

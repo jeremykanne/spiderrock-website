@@ -34,12 +34,43 @@
     .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
     .prose ul li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.5rem; }
     .prose a { color: #1B3D6B; text-decoration: underline; }
+    /* ── Sticky header ──────────────────────────────────────────────────────
+       The utility bar stays sticky in flow. The primary nav is fixed just below it
+       so it keeps overlaying the hero exactly as before, and picks up a solid
+       background + shadow once the page scrolls (.is-stuck, toggled in script). */
+    .site-nav {
+      position: fixed;
+      top: var(--util-h, 45px);
+      left: 0; right: 0;
+      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
+      background: transparent;
+      transition: background-color 200ms ease, box-shadow 200ms ease;
+    }
+    .site-nav.is-stuck {
+      background: #162032;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
+       back vertical space while scrolling. Logo height is inline, hence !important. */
+    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+    .site-nav img { transition: height 200ms ease; }
+    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    /* Logo keeps its full size when compact by overlapping the utility bar above it.
+       Negative margins stop it from driving the bar's height; the raised z-index lets it
+       paint over the utility bar (both are navy, so the overlap is seamless). */
+    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
+      position: relative; top: -11px; }   /* rides up into the utility bar */
+    @media (prefers-reduced-motion: reduce) {
+      .site-nav nav, .site-nav img { transition: none; }
+    }
+    .hero-with-nav { padding-top: var(--nav-h, 93px); }
+    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
 
   <!-- UTILITY BAR -->
-  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
       <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
       <a href="../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
@@ -49,13 +80,15 @@
   </div>
 
   <!-- HERO -->
-  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white">
+  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
+       position:fixed, and goes compact once scrolled (see .is-stuck). -->
+  <div id="siteNav" class="site-nav">
     <nav class="w-full py-6 px-8">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <a href="../../" class="hover:opacity-80 transition-opacity">
           <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
         </a>
-        <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
+        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
           <a href="../../about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
           <a href="../../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
           <a href="../../updates/" class="text-blue-200">News</a>
@@ -63,6 +96,9 @@
         </div>
       </div>
     </nav>
+  </div>
+
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
     <div class="max-w-7xl mx-auto px-8 py-16 pb-20">
       <a href="../../updates/" class="text-blue-300 text-sm hover:text-white transition-colors mb-6 inline-block">&larr; All Updates</a>
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">News &amp; Updates</p>
@@ -129,12 +165,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li>
-            <li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
-            <li><a href="../../data/historical-data-analytics/" class="hover:text-white transition-colors">Historical Data</a></li>
-            <li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">SpiderStream</a></li>
-          </ul>
+          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="../../data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="../../data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="../../data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="../../data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
@@ -154,5 +185,26 @@
     </div>
   </footer>
 
+  <script>
+    // Measure the two bars so the fixed nav and the hero offset stay in sync with
+    // whatever the real rendered heights are (font loading, wrapping, zoom).
+    (function () {
+      var util = document.querySelector('.sticky.top-0');
+      var nav  = document.getElementById('siteNav');
+      if (!util || !nav) return;
+      function measure() {
+        var wasStuck = nav.classList.contains('is-stuck');
+        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
+        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
+        if (wasStuck) nav.classList.add('is-stuck');
+      }
+      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
+      measure(); onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    })();
+  </script>
 </body>
 </html>

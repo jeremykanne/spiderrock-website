@@ -30,28 +30,70 @@
     html { scroll-behavior: smooth; }
     .hero-section {
       position: relative;
-      min-height: 100vh;
+      background: #0A1220;
+      /* Never taller than the viewport, and capped at 48vw so the photo panel stays
+         around two thirds of the width — leaving the solid navy third for the copy. */
+      min-height: max(640px, min(100vh, 48vw));
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
-    .hero-video {
+    /* The photo sits flush right at its native 2:1 aspect, so the whole canyon is in
+       frame at any height. Navy fills whatever is left of it — which is where the copy
+       sits anyway. */
+    /* The Spider Rock formation sits at 53.4% of the photo's width. The panel is 1.3211:1
+       while the photo is 1.6586:1, so `cover` + `object-position:left` trims 20.3% off the
+       photo's right edge, pushing the formation to 67% of the panel. The fade below clears
+       at 34%, so the clear area spans 34%→100% and its centre is 67% — the formation.
+       Both are fractions of the panel, so the centring holds at any size the panel fits. */
+    .hero-media {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      aspect-ratio: 1.3211;
+      z-index: 0;
+    }
+    /* Fade anchored to the photo's own left edge, not the viewport, so the seam between
+       image and navy always lands inside the solid part of the gradient. */
+    .hero-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(10,18,32,1) 0%,
+        rgba(10,18,32,0.94) 10%,
+        rgba(10,18,32,0.72) 18%,
+        rgba(10,18,32,0.40) 25%,
+        rgba(10,18,32,0.14) 30%,
+        rgba(10,18,32,0) 34%);
+    }
+    .hero-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 0;
+      object-position: left center;
+      display: block;
     }
+    /* Vertical scrim for nav and badge legibility */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(10,18,32,0.3) 0%, rgba(10,18,32,0.6) 100%);
+      background: linear-gradient(180deg,
+        rgba(10,18,32,0.55) 0%,
+        rgba(10,18,32,0.12) 35%,
+        rgba(10,18,32,0.35) 100%);
       z-index: 1;
+    }
+    @media (max-width: 768px) {
+      /* Narrow screens: darken evenly so the headline stays legible over the image */
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(10,18,32,0.75) 0%, rgba(10,18,32,0.6) 50%, rgba(10,18,32,0.8) 100%);
+      }
     }
     .hero-content {
       position: relative;
@@ -73,12 +115,43 @@
       height: auto;
       display: block;
     }
+    /* ── Sticky header ──────────────────────────────────────────────────────
+       The utility bar stays sticky in flow. The primary nav is fixed just below it
+       so it keeps overlaying the hero exactly as before, and picks up a solid
+       background + shadow once the page scrolls (.is-stuck, toggled in script). */
+    .site-nav {
+      position: fixed;
+      top: var(--util-h, 45px);
+      left: 0; right: 0;
+      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
+      background: transparent;
+      transition: background-color 200ms ease, box-shadow 200ms ease;
+    }
+    .site-nav.is-stuck {
+      background: #162032;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
+       back vertical space while scrolling. Logo height is inline, hence !important. */
+    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+    .site-nav img { transition: height 200ms ease; }
+    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    /* Logo keeps its full size when compact by overlapping the utility bar above it.
+       Negative margins stop it from driving the bar's height; the raised z-index lets it
+       paint over the utility bar (both are navy, so the overlap is seamless). */
+    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
+      position: relative; top: -11px; }   /* rides up into the utility bar */
+    @media (prefers-reduced-motion: reduce) {
+      .site-nav nav, .site-nav img { transition: none; }
+    }
+    .hero-with-nav { padding-top: var(--nav-h, 93px); }
+    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
 
   <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
-  <div class="bg-sr-navy text-white text-xs font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
       <a href="./" class="hover:text-blue-200 transition-colors duration-200">Home</a>
       <a href="platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
@@ -87,52 +160,55 @@
     </div>
   </div>
 
-  <!-- ─── HERO WITH VIDEO ───────────────────────────────────────────────────── -->
-  <section class="hero-section">
-    <!-- Video Background -->
-    <video class="hero-video" autoplay muted playsinline>
-      <source src="Sequence_01_4.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <!-- ─── HERO WITH IMAGE ───────────────────────────────────────────────────── -->
+  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
+       position:fixed, and goes compact once scrolled (see .is-stuck). -->
+  <div id="siteNav" class="site-nav">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="/" class="hover:opacity-80 transition-opacity flex items-center gap-3">
+          <img src="logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" class="logo-img h-[53px]">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
+          <a href="about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
+          <a href="careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero-section hero-with-nav">
+    <!-- Background Image -->
+    <div class="hero-media">
+      <img class="hero-image" src="images/home/spider-rock-hero.jpg" alt="Spider Rock spire at dusk, Canyon de Chelly">
+    </div>
 
     <!-- Overlay -->
     <div class="hero-overlay"></div>
 
     <!-- Content -->
     <div class="hero-content">
-      <!-- Nav -->
-      <nav class="w-full py-6 px-8 relative">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-          <a href="/" class="hover:opacity-80 transition-opacity flex items-center gap-3">
-            <img src="logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" class="logo-img h-[53px]">
-          </a>
-          <div class="hidden md:flex items-center gap-10 text-white text-[15px] font-semibold">
-            <a href="about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
-            <a href="careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
-            <a href="updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
-            <a href="contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
-          </div>
-        </div>
-      </nav>
 
       <!-- Hero Text -->
-      <div class="flex-1 flex items-center px-8 pt-24">
+      <div class="flex-1 flex items-center px-8 pt-16">
         <div class="max-w-7xl mx-auto w-full">
-          <h1 class="font-display text-white text-[43px] md:text-[70px] font-bold leading-tight mb-6 max-w-5xl">
+          <h1 class="font-display text-white text-[43px] md:text-[70px] font-bold leading-tight mb-6 max-w-3xl">
             Stay Competitive in Modern Derivatives Markets
           </h1>
-          <p class="text-white/80 text-[17px] max-w-3xl leading-relaxed font-semibold">
+          <p class="text-white/80 text-[17px] max-w-2xl leading-relaxed font-semibold">
             SpiderRock delivers cloud-based trading technology, institutional brokerage, and options data &amp; analytics so professional market participants can trade, model, and manage risk on a consistent foundation.
           </p>
         </div>
       </div>
 
       <!-- Announcement Badge -->
-      <div class="px-8 pb-16 mt-20">
+      <div class="px-8 pb-14 mt-10">
         <div class="max-w-7xl mx-auto">
           <div class="flex items-stretch gap-0 w-fit">
             <span class="bg-sr-red text-white font-bold text-[17px] px-6 flex items-center select-none">NEW</span>
-            <a href="#" class="bg-sr-red/80 text-white text-[17px] px-7 py-[14px] font-medium button-smooth hover:opacity-90">
+            <a href="data/european-data/" class="bg-sr-red/80 text-white text-[17px] px-7 py-[14px] font-medium button-smooth hover:opacity-90">
               SpiderRock Announces European Expansion
             </a>
           </div>
@@ -320,7 +396,7 @@
         <img src="logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" class="logo-img h-[45px]">
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div>
           <h4 class="text-white font-bold mb-6 text-sm font-semibold uppercase tracking-wide">Trading Platform</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
@@ -341,11 +417,15 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm font-semibold uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="data/" class="hover:text-white transition-colors">Data Overview</a></li>
-            <li><a href="data/#realtime" class="hover:text-white transition-colors">Real-Time Data</a></li>
-            <li><a href="data/#options-analytics" class="hover:text-white transition-colors">Options Analytics</a></li>
-            <li><a href="data/#historical" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="contact-us/" class="hover:text-white transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -358,14 +438,25 @@
   </footer>
 
   <script>
-    // Prevent video from looping - play once then pause
-    const video = document.querySelector('.hero-video');
-    if (video) {
-      video.addEventListener('ended', function() {
-        this.pause();
-      });
-    }
+    // Measure the two bars so the fixed nav and the hero offset stay in sync with
+    // whatever the real rendered heights are (font loading, wrapping, zoom).
+    (function () {
+      var util = document.querySelector('.sticky.top-0');
+      var nav  = document.getElementById('siteNav');
+      if (!util || !nav) return;
+      function measure() {
+        var wasStuck = nav.classList.contains('is-stuck');
+        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
+        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
+        if (wasStuck) nav.classList.add('is-stuck');
+      }
+      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
+      measure(); onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    })();
   </script>
-
 </body>
 </html>
