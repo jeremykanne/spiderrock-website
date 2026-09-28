@@ -1,96 +1,65 @@
-# SpiderRock Website Deployment Guide
+# SpiderRock Website Deployment
 
-## What You Have
+## Overview
 
-✅ **Version 1** (main branch): Enhanced Polish
-- Smooth animations and transitions
-- Refined components and spacing
-- Modern fintech aesthetic
-- Files: index.html, platform.html, brokerage.html, data.html, contact.html
+- **Live site**: https://spiderrock.netlify.app/ (currently in client review)
+- **Repo**: https://github.com/jeremykanne/spiderrock-website
+- **Hosting**: Netlify, auto-deploys from `main`
+- **Build**: none — static HTML with Tailwind via CDN, published from the repo root (`.`)
 
-✅ **Version 2** (index-v2.html): Bold Alternative
-- Bolder typography and colors
-- Strong red accent bar
-- More editorial approach
-- Alternative design direction
-
-## Deploy to Netlify (5 minutes)
-
-### Step 1: Create GitHub Repository
-
-1. Go to https://github.com/new
-2. **Repository name**: `spiderrock-website`
-3. **Description**: "SpiderRock institutional trading platform website redesign"
-4. Choose **Public** (optional)
-5. Click **Create repository**
-6. Copy the URL shown (something like `https://github.com/jeremykanne/spiderrock-website.git`)
-
-### Step 2: Push to GitHub
-
-In Terminal, navigate to the project and push:
+## Deploying Changes
 
 ```bash
-cd ~/Claude/SpiderRock/spiderrock-build
-
-# Add the remote (replace with your repo URL from Step 1)
-git remote add origin https://github.com/jeremykanne/spiderrock-website.git
-git branch -M main
-git push -u origin main
-
-# Also push Version 2 as a branch for preview
-git checkout -b design-v2
-# Create a copy of index-v2.html as index.html for this branch
-cp index-v2.html index.html
-git add index.html
-git commit -m "Version 2: Bold alternative design"
-git push -u origin design-v2
+git add .
+git commit -m "Describe the change"
+git push
 ```
 
-### Step 3: Deploy to Netlify
+Netlify picks up every push to `main` and the live site updates within about a minute. Every page is served with `max-age=0`, so reviewers see the latest version on a normal reload.
 
-1. Go to https://app.netlify.com (log in with your account)
-2. Click **Add new site** → **Import an existing project**
-3. Choose **GitHub**
-4. Select `jeremykanne/spiderrock-website`
-5. **Build command**: (leave blank - it's just HTML)
-6. **Publish directory**: `.` (current directory)
-7. Click **Deploy site**
+## Working on a Branch
 
-### Step 4: View Your Designs
+For larger changes you want to preview before they go live:
 
-Once deployed, you'll get URLs like:
-- **Main URL**: `https://your-site-name.netlify.app` (Version 1)
-- **Design V2 Preview**: https://design-v2--your-site-name.netlify.app (Version 2)
+```bash
+git checkout -b my-change
+git push -u origin my-change
+gh pr create
+```
 
-## Compare Both Versions
+Netlify builds a deploy preview for each pull request and links it on the PR. When the PR is merged, GitHub deletes the branch automatically (auto-delete on merge is enabled).
 
-1. Open both URLs side-by-side
-2. Review the design directions
-3. Pick which resonates, or combine elements from both
-4. Share feedback
+## Site Structure
 
-## Next Steps for Iteration
-
-To make changes:
-1. Edit HTML files locally
-2. Push to GitHub: `git add . && git commit -m "your message" && git push`
-3. Netlify auto-deploys (updates live in ~30 seconds)
-4. Share feedback on the live site
-
-## File Structure
+Each page is a directory with its own `index.html`, which gives clean URLs (e.g. `/platform/`).
 
 ```
 spiderrock-website/
-├── index.html          (Version 1 - Homepage)
-├── index-v2.html       (Version 2 - Alternative)
-├── platform.html       (Trading Platform page)
-├── brokerage.html      (Brokerage Services page)
-├── data.html           (Data & Analytics page)
-├── contact.html        (Contact page)
-├── .gitignore
-└── DEPLOYMENT.md       (This file)
+├── index.html      Homepage
+├── about-us/
+├── careers/
+├── contact-us/
+├── data/           Data & Analytics section
+├── exs/            EXS pages
+├── platform/       Platform pages
+├── updates/
+├── images/
+└── logos/
 ```
 
-## Questions?
+## Settings
 
-If you hit any issues during deployment, let me know and I can help troubleshoot!
+**GitHub**
+- Default branch: `main`
+- Auto-delete head branches on merge: on
+- Secret scanning and push protection: on
+
+**Netlify**
+- Production branch: `main`
+- Build command: none
+- Publish directory: `.`
+
+## Pending
+
+- Contact forms are set up for ActiveCampaign and still need to be connected and tested.
+- Add caching headers for `/images` and `/logos` before launch.
