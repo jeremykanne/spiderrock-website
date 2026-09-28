@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiderStream Equity Options Analytics — SpiderRock Data &amp; Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+          colors: { 'sr-navy': '#162032', 'sr-blue': '#1B3D6B', 'sr-gray': '#5C6270', 'sr-dark': '#3A3F4A', 'sr-red': '#C0392B' },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card-hover { transition: all 200ms ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    /* ── ActiveCampaign form 40, restyled to match the site ──────────────────
+       CSS only: AC's markup, field names, validation and submit path are untouched. */
+    .ac-form { max-width: 100%; }
+    .ac-form ._form,
+    .ac-form ._form_element,
+    .ac-form ._form-content,
+    .ac-form ._field-wrapper { all: unset; display: block; width: 100%; box-sizing: border-box; }
+    .ac-form ._form { margin: 0 !important; padding: 0 !important; background: none !important; }
+    .ac-form ._form_element { margin: 0 0 1.25rem 0 !important; }
+    .ac-form,
+    .ac-form input, .ac-form textarea, .ac-form select, .ac-form button, .ac-form label {
+      font-family: 'Roboto', sans-serif !important;
+    }
+    /* AC serves its own form title (e.g. "Options Analytics"); the page heading above
+       already names the section, so suppress it. :has() collapses the empty wrapper too. */
+    .ac-form ._form-title { display: none !important; }
+    .ac-form ._form_element:has(._form-title) { display: none !important; margin: 0 !important; }
+    .ac-form ._form-label {
+      display: block !important;
+      font-size: .875rem !important;
+      font-weight: 600 !important;
+      color: #374151 !important;
+      margin: 0 0 .5rem 0 !important;
+    }
+    .ac-form .field-required { color: #C0392B !important; margin-left: .15rem; }
+    .ac-form input[type="text"],
+    .ac-form input[type="email"],
+    .ac-form input[type="tel"],
+    .ac-form textarea {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      border: 1px solid #D1D5DB !important;
+      border-radius: .5rem !important;
+      padding: .75rem 1rem !important;
+      font-size: 1rem !important;
+      color: #111827 !important;
+      background: #fff !important;
+      box-shadow: none !important;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .ac-form textarea { min-height: 8.5rem; resize: none !important; }
+    .ac-form input::placeholder, .ac-form textarea::placeholder { color: #9CA3AF !important; }
+    .ac-form input[type="text"]:focus,
+    .ac-form input[type="email"]:focus,
+    .ac-form textarea:focus {
+      outline: none !important;
+      border-color: transparent !important;
+      box-shadow: 0 0 0 2px #1B3D6B !important;
+    }
+    .ac-form ._button-wrapper { margin-top: .25rem !important; }
+    .ac-form button._submit {
+      width: 100% !important;
+      background: #162032 !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 1rem 2rem !important;
+      cursor: pointer;
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ac-form button._submit:hover {
+      background: #1B3D6B !important;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .ac-form ._html-code, .ac-form ._html-code p { font-size: .75rem !important; color: #9CA3AF !important; margin: 0 !important; }
+    .ac-form ._html-code a { color: #1B3D6B !important; text-decoration: underline; }
+    .ac-form ._error, .ac-form ._error-inner, .ac-form ._error-html {
+      background: #C0392B !important; color: #fff !important;
+      border-radius: .375rem !important; font-size: .8125rem !important;
+    }
+    .ac-form ._error-arrow { border-bottom-color: #C0392B !important; }
+    .ac-form ._form-thank-you { font-size: 1rem !important; color: #111827 !important; text-align: left !important; }
+    /* AC's own radio rows ("I'm interested in") */
+    .ac-form ._form_element._checkbox-radio ._row { margin: 0 0 .5rem 0 !important; }
+    .ac-form ._checkbox-radio label { display: flex !important; align-items: center; gap: .75rem;
+      font-size: .875rem !important; font-weight: 400 !important; color: #374151 !important; cursor: pointer; margin: 0 !important; }
+    .ac-form input[type="radio"], .ac-form input[type="checkbox"] {
+      width: 1rem !important; height: 1rem !important; margin: 0 !important; accent-color: #162032; flex: none; }
+    /* reCAPTCHA widget renders in a fixed-width iframe — keep it inside the column */
+    .ac-form .g-recaptcha { margin: 0 0 1.25rem 0 !important; transform-origin: 0 0; max-width: 100%; }
+    .ac-form .g-recaptcha > div { max-width: 100% !important; }
+    .ac-form ._form_element, .ac-form ._form-content, .ac-form input, .ac-form textarea, .ac-form select { max-width: 100% !important; box-sizing: border-box; }
+    .ac-form ._form { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    /* ── Sticky header ──────────────────────────────────────────────────────
+       The utility bar stays sticky in flow. The primary nav is fixed just below it
+       so it keeps overlaying the hero exactly as before, and picks up a solid
+       background + shadow once the page scrolls (.is-stuck, toggled in script). */
+    .site-nav {
+      position: fixed;
+      top: var(--util-h, 45px);
+      left: 0; right: 0;
+      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
+      background: transparent;
+      transition: background-color 200ms ease, box-shadow 200ms ease;
+    }
+    .site-nav.is-stuck {
+      background: #162032;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
+       back vertical space while scrolling. Logo height is inline, hence !important. */
+    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+    .site-nav img { transition: height 200ms ease; }
+    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    /* Logo keeps its full size when compact by overlapping the utility bar above it.
+       Negative margins stop it from driving the bar's height; the raised z-index lets it
+       paint over the utility bar (both are navy, so the overlap is seamless). */
+    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
+      position: relative; top: -11px; }   /* rides up into the utility bar */
+    @media (prefers-reduced-motion: reduce) {
+      .site-nav nav, .site-nav img { transition: none; }
+    }
+    .hero-with-nav { padding-top: var(--nav-h, 93px); }
+    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- UTILITY BAR -->
+  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../../../data/" class="text-blue-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
+       position:fixed, and goes compact once scrolled (see .is-stuck). -->
+  <div id="siteNav" class="site-nav">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../../../" class="hover:opacity-80 transition-opacity">
+          <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-4 text-white text-[15.6px] font-semibold">
+          <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Data Home</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-blue-200 transition-colors duration-200 cursor-pointer">Featured Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[250px]">
+                <a href="../../dividend-forecast/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">SpiderRock Dividend Forecast</a><a href="../../european-data/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">European Data</a><a href="../../spiderstream-market-data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">MLink API</a><a href="../../historical-data-analytics/vol2g/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Volatility Database (VOL2G)</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Product Offerings <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full right-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl p-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 min-w-[400px] lg:min-w-[720px] max-w-[calc(100vw-3rem)]">
+                <div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Real-Time Data</p><a href="../../stocks-options-futures/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Market Data Feeds</a><a href="../../options-analytics/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Analytics</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Historical Data</p><a href="../../historical-data-analytics/options-greeks-stock-prices/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options, Greeks &amp; Stock Prices</a><a href="../../option-features-dataset/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Option Features Dataset</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Volatility</p><a href="../../historical-data-analytics/volatility-surfaces/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Surfaces</a><a href="../../historical-data-analytics/vol2g/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Database (VOL2G)</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">MLink API</p><a href="../../spiderstream-market-data-api/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">SpiderStream / MLink API</a><a href="../../options-pricing-tool/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Pricing Tool</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
+                <a href="../../market-data-partners/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Market Data Partners</a><a href="../../updates/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">News &amp; Events</a><a href="../../aws-infrastructure/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">AWS &amp; Infrastructure</a>
+              </div>
+            </div>
+          </div>
+          <a href="../../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5"><a href="../" class="hover:text-white transition-colors">SpiderStream</a></p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-10 max-w-4xl">Equity Options Analytics</h1>
+      <div class="flex flex-wrap gap-4">
+        <a href="../#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Information</a>
+        <a href="../#data-products" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">All Data Products</a>
+        <a href="../pdfs/MLink-Feeds-Analytics.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS & PRICING -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-7xl mx-auto px-8 space-y-8">
+      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="bg-sr-navy text-white px-8 md:px-10 py-6 flex flex-wrap items-baseline justify-between gap-4">
+          <h2 class="font-display text-2xl font-bold tracking-wide">EQUITY OPTION ANALYTICS</h2>
+          <p class="text-white/70">OPRA &middot; Real-time or delayed</p>
+        </div>
+        <div class="p-8 md:p-10 grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Available Messages</h3>
+            <ul class="space-y-2 text-gray-700"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Implied Quote</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Print Mark-up</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Surface Curve</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Fixed Term</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Skew Curves</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option EOD Close Marks</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Open Marks</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Realized Volatilities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Risk Factors</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Ticker/Root Definitions</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Option Print Types</li></ul>
+          </div>
+          <div>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+              <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Individual (Monthly)</p>
+                <div class="font-display text-3xl font-bold text-sr-navy">$2500</div><div class="text-gray-500 text-sm mt-1">+ $.25 per million messages</div>
+              </div>
+              <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Institutional (Monthly)</p>
+                <div class="font-display text-3xl font-bold text-sr-navy">$4500</div>
+              </div>
+            </div>
+            <dl class="grid sm:grid-cols-2 gap-x-10 border-t border-gray-200">
+            <div class="py-4 border-b border-gray-200">
+              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Filters (Stream Topics)</dt>
+              <dd class="text-gray-800">Option Key, Ticker Key, Expiry Key, [A-Z] Stripes</dd>
+            </div>
+            <div class="py-4 border-b border-gray-200">
+              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Data Redistribution License</dt>
+              <dd class="text-gray-800">Rate tiers available</dd>
+            </div>
+            <div class="py-4 border-b border-gray-200">
+              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">WebSocket &amp; REST APIs (HTTP/HTTPS)</dt>
+              <dd class="text-gray-800">Live Stream, Active Sampling, Queries (no limits)</dd>
+            </div>
+            <div class="py-4 border-b border-gray-200">
+              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Protocols</dt>
+              <dd class="text-gray-800">JSON, Google Protocol buffers, Bytes, C++ and C# are available</dd>
+            </div>
+            <div class="py-4 border-b border-gray-200">
+              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Connection (Types)</dt>
+              <dd class="text-gray-800">Internet and direct connections</dd>
+            </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL ANALYTICS FEEDS -->
+  <section class="bg-white py-24 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Compare</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-10">All Analytics Feeds</h2>
+      <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 p-6">
+        <table class="w-full border-collapse">
+          <thead><tr><th scope="col" class="py-4 pr-6"><span class="sr-only">Field</span></th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">OPTIONS, GREEKS, &amp; IMPLIED VOL</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] bg-sr-navy text-white">EQUITY OPTION ANALYTICS<span class="block normal-case tracking-normal font-semibold text-blue-300 mt-1">This product</span></th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">OPTIONS ON FUTURES ANALYTICS</th></tr></thead>
+          <tbody>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Exchange Feeds</th><td class="py-4 px-5 align-top text-sm text-gray-700">OPRA</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">OPRA</td><td class="py-4 px-5 align-top text-sm text-gray-700">CME/NYMEX/COMEX/<br>CBOT/CFE</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Feed Type</th><td class="py-4 px-5 align-top text-sm text-gray-700">Real-time or Delayed</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Real-time or delayed</td><td class="py-4 px-5 align-top text-sm text-gray-700">Real-time or delayed</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Available Messages</th><td class="py-4 px-5 align-top text-sm text-gray-700">Option Implied Quote<br>Option Print Mark-up</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Option Implied Quote<br>Option Print Mark-up<br>Option Surface Curve<br>Option Fixed Term<br>Option Skew Curves<br>Option EOD Close Marks<br>Option Open Marks<br>Realized Volatilities<br>Risk Factors<br>Ticker/Root Definitions<br>Option Print Types</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option Implied Quote<br>Option Print Mark-up<br>Option Surface Curve<br>Option Fixed Term<br>Option Skew Curves<br>Option EOD Close Marks<br>Option Open Marks<br>Settlement Marks<br>Realized Volatilities<br>Product Definitions<br>Code Definitions</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Individual<br>(Monthly)</th><td class="py-4 px-5 align-top text-sm text-gray-700">$750<br>+ $.25 per million messages</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">$2500<br>+ $.25 per million messages</td><td class="py-4 px-5 align-top text-sm text-gray-700">$1500 / $3750<br>+ $.25 per million messages<br>(per DCM / All DCM)</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Institutional<br>(Monthly)</th><td class="py-4 px-5 align-top text-sm text-gray-700">$2500</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">$4500</td><td class="py-4 px-5 align-top text-sm text-gray-700">$2000 / $5000<br>(per DCM / All DCM)</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Filters<br>(Stream Topics)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Option Key, Ticker/Future Key, Expiry Key, [A-Z] Stripes</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Option Key, Ticker Key, Expiry Key, [A-Z] Stripes</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option Key, Future Key, Expiry Key, [A-Z] Stripes</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Data Redistribution License</th><td class="py-4 px-5 align-top text-sm text-gray-700">Rate tiers available</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Rate tiers available</td><td class="py-4 px-5 align-top text-sm text-gray-700">Rate tiers available</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">WebSocket<br>&amp; REST APIs<br>(HTTP/HTTPS)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Live Stream, Active Sampling, Queries (no limits)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Live Stream, Active Sampling, Queries (no limits)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Live Stream, Active Sampling, Queries (no limits)</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Protocols</th><td class="py-4 px-5 align-top text-sm text-gray-700">JSON, Google Protocol buffers, C++ and C# are available</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">JSON, Google Protocol buffers, C++ and C# are available</td><td class="py-4 px-5 align-top text-sm text-gray-700">JSON, Google Protocol buffers, C++ and C# are available</td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Connection<br>(Types)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Internet and direct connections</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Internet and direct connections</td><td class="py-4 px-5 align-top text-sm text-gray-700">Internet and direct connections</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href="../#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Information</a>
+        <a href="../#data-products" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">All Data Products</a>
+        <a href="../pdfs/MLink-Feeds-Analytics.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="../../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="../../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="../../../platform/analytics-framework/" class="hover:text-white transition-colors">Analytics Framework</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="../../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="../../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../../data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="../../../data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="../../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="../../../data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="../../../data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="../../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="../../../data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="../../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="../../../careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="../../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="../../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Measure the two bars so the fixed nav and the hero offset stay in sync with
+    // whatever the real rendered heights are (font loading, wrapping, zoom).
+    (function () {
+      var util = document.querySelector('.sticky.top-0');
+      var nav  = document.getElementById('siteNav');
+      if (!util || !nav) return;
+      function measure() {
+        var wasStuck = nav.classList.contains('is-stuck');
+        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
+        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
+        if (wasStuck) nav.classList.add('is-stuck');
+      }
+      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
+      measure(); onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    })();
+  </script>
+</body>
+</html>
