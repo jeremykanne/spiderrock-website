@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AWS &amp; Infrastructure — SpiderRock Data &amp; Analytics</title>
+  <title>Infrastructure &amp; Access — SpiderRock Data &amp; Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -200,58 +200,35 @@
 
   <section class="bg-gradient-to-br from-sr-navy to-sr-blue text-white hero-with-nav">
     <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">AWS &amp; Infrastructure</h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">SpiderRock historical data is delivered as Parquet files on AWS S3 and through Snowflake reader accounts &mdash; query it with the tools your team already uses.</p>
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Infrastructure &amp; Access</h1>
+      <p class="text-white/80 text-xl max-w-3xl leading-relaxed mb-10">SpiderRock&rsquo;s historical datasets are delivered through the infrastructure our clients already use, covering both U.S. and European markets.</p>
       <a href="#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Sample Access</a>
     </div>
   </section>
 
-  <!-- AWS S3 -->
-  <section class="bg-white py-28">
+  <!-- DELIVERY: AWS + SNOWFLAKE -->
+  <section class="bg-gray-50 py-28">
     <div class="max-w-7xl mx-auto px-8">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Cloud Storage</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Parquet Files on AWS S3</h2>
-      <div class="grid md:grid-cols-2 gap-16 max-w-6xl mb-12">
-        <p class="text-gray-600 leading-relaxed">All SpiderRock historical data is available as Parquet files hosted on AWS S3, partitioned Hive-style by date. Date partitioning follows Central Time for US datasets and Central European Time for European data; the partition key is named <code class="text-sr-navy font-semibold">date_p</code> to avoid clashing with date columns inside the files.</p>
-        <p class="text-gray-600 leading-relaxed">Options datasets add a second partition by <code class="text-sr-navy font-semibold">type</code> &mdash; futures (FUT) and equities (EQT) &mdash; and European data adds a third level by exchange. Records are sorted by ticker, option characteristics, and timestamp, so filtering on the partition key in a WHERE clause stays fast. All timestamps are UTC.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Access methods</h3>
-          <ul class="space-y-2 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>AWS CLI with access keys</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>IAM role assumption via AWS CLI</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>IAM role assumption from Python</li></ul>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Reading the data</h3>
-          <ul class="space-y-2 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>DuckDB &mdash; query Parquet directly</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Polars &mdash; lazy scans over partitions</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Any Parquet-aware engine</li></ul>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Partitioning</h3>
-          <ul class="space-y-2 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span><code class="text-sr-navy font-semibold">date_p</code> &mdash; date (CT / CET)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span><code class="text-sr-navy font-semibold">type</code> &mdash; FUT or EQT for options</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Exchange level for European data</li></ul>
-        </div>
-      </div>
-      <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/parquet_files/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Parquet on S3 documentation <span aria-hidden="true">&#8599;</span></a></p>
-    </div>
-  </section>
-
-  <!-- SNOWFLAKE -->
-  <section class="bg-gray-50 py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Query in Place</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Snowflake Reader Accounts</h2>
-      <p class="text-gray-600 leading-relaxed max-w-3xl mb-12">SpiderRock provides clients with Snowflake reader accounts to the historical data. Reader accounts let you query the datasets you subscribe to through the Snowflake SQL interface &mdash; no file transfer or local storage required.</p>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Connect from</h3>
-          <ul class="space-y-2 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Python</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Polars</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Pandas</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>C#</li></ul>
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover flex flex-col">
+          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-gray-900 mb-4">AWS</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">Data tables are organized for customer access and loaded into cloud-based storage overnight. This primary copy of daily subscription files is available for daily download or direct pipeline integration.</p>
+          <p class="mt-auto"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/parquet_files/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Parquet on S3 documentation <span aria-hidden="true">&#8599;</span></a></p>
         </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Query performance</h3>
-          <ul class="space-y-2 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Always filter on <code class="text-sr-navy font-semibold">date_p</code> &mdash; queries without it are slow</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Select only the columns you need rather than SELECT *</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>The more specific the WHERE clause, the faster the retrieval</li></ul>
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover flex flex-col">
+          <div class="w-12 h-12 bg-sr-blue rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-gray-900 mb-4">Snowflake</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">Clients can also access historical datasets on-demand via a Snowflake reader account, querying subscribed datasets directly through the Snowflake SQL interface.</p>
+          <p class="mt-auto"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/snowflake/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Snowflake documentation <span aria-hidden="true">&#8599;</span></a></p>
         </div>
       </div>
-      <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/snowflake/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Snowflake API documentation <span aria-hidden="true">&#8599;</span></a></p>
-      <p class="mt-4"><a href="../historical-data-analytics/options-greeks-stock-prices/" class="text-sr-blue font-semibold hover:underline">Historical data products &rarr;</a></p>
+      <p class="mt-10"><a href="../historical-data-analytics/options-greeks-stock-prices/" class="text-sr-blue font-semibold hover:underline">Historical data products &rarr;</a></p>
     </div>
   </section>
 
@@ -260,7 +237,8 @@
     <div class="max-w-3xl mx-auto px-8">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Consult With Us</p>
       <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Request Sample Access</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-10">Tell us which datasets you&rsquo;re evaluating and we&rsquo;ll arrange sample files or a Snowflake reader account.</p>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">Interested in sample access? Fill out the form below and our data team will follow up.</p>
+      <a href="https://docs.spiderrockconnect.com/docs/HistoricalData/snowflake/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 7 (srock.activehosted.com) -->
       <div class="_form_7 ac-form"></div>

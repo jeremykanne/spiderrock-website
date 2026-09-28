@@ -1,0 +1,105 @@
+<!-- ARCHIVED 2026-09-28 from data/stocks-options-futures/index.html (commit c0481b0).
+     "Real-Time and Historical Data Delivery" section: architecture diagram (inline SVG) + three cards
+     (Market Data Feeds / Live Analytics / Historical Analytics). Removed from the Market Data Feeds page
+     per client copy; kept for reuse on another page.
+     Depends on the page Tailwind config (sr-navy, sr-red, sr-blue, font-display) and the .card-hover
+     rule from the page <style>. Links are relative to /data/<page>/. -->
+  <!-- DATA DELIVERY OVERVIEW -->
+  <section class="bg-gray-50 py-28 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Overview</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Real-Time and Historical Data Delivery</h2>
+      <p class="text-gray-600 leading-relaxed max-w-3xl mb-12">Our analytics framework provides a low latency and scalable solution for clients to consume live and historical data. Below is a representation of our features and delivery mechanisms.</p>
+
+      <div class="bg-white rounded-xl border border-gray-200 p-6 md:p-12 mb-12">
+        <!-- min-width keeps diagram labels legible on phones; the wrapper scrolls instead of shrinking -->
+        <div class="overflow-x-auto">
+        <svg viewBox="0 0 960 560" role="img" aria-labelledby="ddTitle ddDesc" class="w-full h-auto max-w-4xl mx-auto min-w-[620px]">
+          <title id="ddTitle">SpiderRock data delivery architecture</title>
+          <desc id="ddDesc">Market data feeds, live analytics, and historical analytics run in the SpiderRock Cloud. Market data and live analytics reach the client environment as live data delivery via the MLink API and C++/C# API. Live analytics are snapshotted into historical analytics, which reach the client as historical data delivery via the Chart Tool, Snowflake, and Data Portal.</desc>
+
+          <!-- ── CLIENT ENVIRONMENT ─────────────────────────────── -->
+          <rect x="20" y="20" width="920" height="168" rx="10" fill="#162032"/>
+          <text x="48" y="58" font-family="Montserrat, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">CLIENT ENVIRONMENT</text>
+
+          <!-- live delivery panel -->
+          <rect x="48" y="76" width="376" height="66" rx="6" fill="#fff"/>
+          <line x1="236" y1="88" x2="236" y2="130" stroke="#E2E8F0" stroke-width="1"/>
+          <text x="142" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">MLink API</text>
+          <text x="142" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">bulk querying</text>
+          <text x="330" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">C++/C# API</text>
+          <text x="330" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">multicast</text>
+          <text x="236" y="166" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#93A4BC" letter-spacing="0.4">live data delivery</text>
+
+          <!-- historical delivery panel -->
+          <rect x="460" y="76" width="452" height="66" rx="6" fill="#fff"/>
+          <line x1="610" y1="88" x2="610" y2="130" stroke="#E2E8F0" stroke-width="1"/>
+          <line x1="762" y1="88" x2="762" y2="130" stroke="#E2E8F0" stroke-width="1"/>
+          <text x="535" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Chart Tool</text>
+          <text x="535" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">research</text>
+          <text x="686" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Snowflake</text>
+          <text x="686" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">SQL queries</text>
+          <text x="837" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Data Portal</text>
+          <text x="837" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">flat files</text>
+          <text x="686" y="166" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#93A4BC" letter-spacing="0.4">historical data delivery</text>
+
+          <!-- ── SPIDERROCK CLOUD ───────────────────────────────── -->
+          <rect x="20" y="252" width="920" height="288" rx="10" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="1.5"/>
+          <text x="48" y="288" font-family="Montserrat, sans-serif" font-size="14" font-weight="700" fill="#B6C0CE" letter-spacing="0.8">SPIDERROCK CLOUD</text>
+
+          <g font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032" text-anchor="middle">
+            <rect x="48" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
+            <text x="180" y="455">MARKET DATA</text><text x="180" y="476">FEEDS</text>
+            <rect x="348" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
+            <text x="480" y="455">LIVE</text><text x="480" y="476">ANALYTICS</text>
+            <rect x="648" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
+            <text x="780" y="455">HISTORICAL</text><text x="780" y="476">ANALYTICS</text>
+          </g>
+
+          <!-- ── FLOW ───────────────────────────────────────────── -->
+          <defs>
+            <marker id="ddArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/>
+            </marker>
+          </defs>
+          <g fill="none" stroke="#A9B6C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- market data feeds + live analytics -> live delivery -->
+            <path d="M180,420 V372 H480 V420"/>
+            <path d="M236,372 V196" marker-end="url(#ddArrow)"/>
+            <!-- live analytics -> historical analytics (snapshots) -->
+            <path d="M560,420 V396 H700 V420" marker-end="url(#ddArrow)" stroke-dasharray="5 4"/>
+            <!-- historical analytics -> historical delivery -->
+            <path d="M860,420 V372 H686 V196" marker-end="url(#ddArrow)"/>
+          </g>
+          <text x="630" y="388" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-style="italic" fill="#8A97A8">snapshots</text>
+        </svg>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Market Data Feeds</h3>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Vendor of record</span>
+            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Low latency</span>
+            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Raw / Normalized</span>
+          </div>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed equities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed options</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed futures</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Quotes &amp; prints</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>European venues (Eurex, Euronext)</li></ul>
+          <a href="#exchange-feeds" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-5">Live Analytics</h3>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Greeks</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Implied volatilities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Volatility surfaces</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Historical volatilities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Risk factors</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Trade performance</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Opening / closing marks</li></ul>
+          <a href="../options-analytics/" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Historical Analytics</h3>
+          <p class="text-gray-500 text-sm mb-4">Snapshots of live data and analytics:</p>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>End-of-day</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Intraday</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Minute bar</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Previous day</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Up to 10 years</li></ul>
+          <a href="../historical-data-analytics/options-greeks-stock-prices/" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>

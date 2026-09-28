@@ -199,9 +199,10 @@
 
   <section class="bg-gradient-to-br from-sr-navy to-sr-blue text-white hero-with-nav">
     <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Real-Time Stocks, Options &amp; Futures Data</h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">Raw and normalized US and European equity, options, and futures data feeds via multicast channels and TCP connection &mdash; with reduced bandwidth and low latency.</p>
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-4xl">Real-Time Stocks, Options, and Futures Price Data</h1>
+      <p class="text-white/80 text-xl max-w-3xl leading-relaxed mb-5">SpiderRock delivers raw and normalized equity, options, and futures data feeds via multicast channels and TCP connection, covering U.S. markets. SpiderRock also provides real-time market data and execution connectivity for European derivatives markets including Eurex, Euronext, and ICE Europe.</p>
+      <p class="text-white/65 text-lg max-w-3xl leading-relaxed mb-10">Our normalized feed provides a reduced bandwidth profile for better manageability and cost effectiveness, and our client-side APIs turn high multicast packet volumes into individual messages at low latencies.</p>
       <a href="#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Get Access</a>
     </div>
   </section>
@@ -210,110 +211,47 @@
   <section class="bg-white py-28">
     <div class="max-w-7xl mx-auto px-8">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Product Overview</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Real-Time Market Data Feeds</h2>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Real-Time Market Data</h2>
       <div class="grid md:grid-cols-2 gap-16 max-w-6xl">
-        <p class="text-gray-600 leading-relaxed">SpiderRock provides a wide range of raw and normalized low latency multicast feeds covering US equities, options, and futures markets, with coverage extending to European markets &mdash; Eurex and Euronext, with ICE Europe coming soon.</p>
+        <p class="text-gray-600 leading-relaxed">SpiderRock provides a wide range of raw and normalized low latency multicast feeds covering US equities, options, and futures markets.</p>
         <p class="text-gray-600 leading-relaxed">We offer a client-side API suitable for turning multicast packets into individual message events within your software. This API is optimized for the efficient processing of very high packet volumes and very low latencies. The data is available, with source code, free of charge for consumers of SpiderRock feed products. This API is currently available in C++ and C# versions. Clients interested in accessing our API code can contact us and request a GitHub login.</p>
       </div>
       <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/Documentation/PlatformAPIs/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">See the API reference <span aria-hidden="true">&#8599;</span></a></p>
     </div>
   </section>
 
-  <!-- DATA DELIVERY OVERVIEW -->
+  <!-- MARKET COVERAGE -->
   <section class="bg-gray-50 py-28 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-8">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Overview</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Real-Time and Historical Data Delivery</h2>
-      <p class="text-gray-600 leading-relaxed max-w-3xl mb-12">Our analytics framework provides a low latency and scalable solution for clients to consume live and historical data. Below is a representation of our features and delivery mechanisms.</p>
-
-      <div class="bg-white rounded-xl border border-gray-200 p-6 md:p-12 mb-12">
-        <!-- min-width keeps diagram labels legible on phones; the wrapper scrolls instead of shrinking -->
-        <div class="overflow-x-auto">
-        <svg viewBox="0 0 960 560" role="img" aria-labelledby="ddTitle ddDesc" class="w-full h-auto max-w-4xl mx-auto min-w-[620px]">
-          <title id="ddTitle">SpiderRock data delivery architecture</title>
-          <desc id="ddDesc">Market data feeds, live analytics, and historical analytics run in the SpiderRock Cloud. Market data and live analytics reach the client environment as live data delivery via the MLink API and C++/C# API. Live analytics are snapshotted into historical analytics, which reach the client as historical data delivery via the Chart Tool, Snowflake, and Data Portal.</desc>
-
-          <!-- ── CLIENT ENVIRONMENT ─────────────────────────────── -->
-          <rect x="20" y="20" width="920" height="168" rx="10" fill="#162032"/>
-          <text x="48" y="58" font-family="Montserrat, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">CLIENT ENVIRONMENT</text>
-
-          <!-- live delivery panel -->
-          <rect x="48" y="76" width="376" height="66" rx="6" fill="#fff"/>
-          <line x1="236" y1="88" x2="236" y2="130" stroke="#E2E8F0" stroke-width="1"/>
-          <text x="142" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">MLink API</text>
-          <text x="142" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">bulk querying</text>
-          <text x="330" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">C++/C# API</text>
-          <text x="330" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">multicast</text>
-          <text x="236" y="166" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#93A4BC" letter-spacing="0.4">live data delivery</text>
-
-          <!-- historical delivery panel -->
-          <rect x="460" y="76" width="452" height="66" rx="6" fill="#fff"/>
-          <line x1="610" y1="88" x2="610" y2="130" stroke="#E2E8F0" stroke-width="1"/>
-          <line x1="762" y1="88" x2="762" y2="130" stroke="#E2E8F0" stroke-width="1"/>
-          <text x="535" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Chart Tool</text>
-          <text x="535" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">research</text>
-          <text x="686" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Snowflake</text>
-          <text x="686" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">SQL queries</text>
-          <text x="837" y="104" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032">Data Portal</text>
-          <text x="837" y="124" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12.5" fill="#5C6270">flat files</text>
-          <text x="686" y="166" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#93A4BC" letter-spacing="0.4">historical data delivery</text>
-
-          <!-- ── SPIDERROCK CLOUD ───────────────────────────────── -->
-          <rect x="20" y="252" width="920" height="288" rx="10" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="1.5"/>
-          <text x="48" y="288" font-family="Montserrat, sans-serif" font-size="14" font-weight="700" fill="#B6C0CE" letter-spacing="0.8">SPIDERROCK CLOUD</text>
-
-          <g font-family="Montserrat, sans-serif" font-size="15" font-weight="700" fill="#162032" text-anchor="middle">
-            <rect x="48" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
-            <text x="180" y="455">MARKET DATA</text><text x="180" y="476">FEEDS</text>
-            <rect x="348" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
-            <text x="480" y="455">LIVE</text><text x="480" y="476">ANALYTICS</text>
-            <rect x="648" y="420" width="264" height="82" rx="6" fill="#fff" stroke="#D9E1EA" stroke-width="1.5"/>
-            <text x="780" y="455">HISTORICAL</text><text x="780" y="476">ANALYTICS</text>
-          </g>
-
-          <!-- ── FLOW ───────────────────────────────────────────── -->
-          <defs>
-            <marker id="ddArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/>
-            </marker>
-          </defs>
-          <g fill="none" stroke="#A9B6C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- market data feeds + live analytics -> live delivery -->
-            <path d="M180,420 V372 H480 V420"/>
-            <path d="M236,372 V196" marker-end="url(#ddArrow)"/>
-            <!-- live analytics -> historical analytics (snapshots) -->
-            <path d="M560,420 V396 H700 V420" marker-end="url(#ddArrow)" stroke-dasharray="5 4"/>
-            <!-- historical analytics -> historical delivery -->
-            <path d="M860,420 V372 H686 V196" marker-end="url(#ddArrow)"/>
-          </g>
-          <text x="630" y="388" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-style="italic" fill="#8A97A8">snapshots</text>
-        </svg>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Markets</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-12">Stocks, Options, Futures &amp; European Markets</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl">
         <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Market Data Feeds</h3>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Vendor of record</span>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Low latency</span>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-gray-100 text-gray-600 px-2.5 py-1 rounded">Raw / Normalized</span>
-          </div>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed equities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed options</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>US-listed futures</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Quotes &amp; prints</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>European venues (Eurex, Euronext)</li></ul>
-          <a href="#exchange-feeds" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Stocks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">SpiderRock offers a range of U.S. equity feeds focused on low latency top-of-book consolidated market data and specialty data to support users who need pricing and market data.</p>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Consolidated equity SIP feeds from NYSE (CTA) and NASDAQ (UTP)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Select order imbalance feeds from ARCA / NYSE / NASDAQ</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Mutual Funds, OTC Markets, Dow Jones feeds, CBOE Indices</li></ul>
+          <a href="#exchange-feeds" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">See exchange feeds &rarr;</a>
         </div>
 
         <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-5">Live Analytics</h3>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Greeks</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Implied volatilities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Volatility surfaces</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Historical volatilities</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Risk factors</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Trade performance</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Opening / closing marks</li></ul>
-          <a href="../options-analytics/" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Options</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">All the relevant options market data needed to support access to a wide range of market liquidity from multiple exchange venues in normalized feeds formats that help manage the infrastructure demands and organize different and complex proprietary exchange feeds.</p>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>OPRA&rsquo;s raw multicast feed in a reduced bandwidth normalized format</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Complex order books from PHLX, MIAX, BOX, CBOE, C2, EDGX, ISE</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Direct connections to proprietary auction feeds and a normalized auction feed format</li></ul>
+          <a href="#exchange-feeds" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">See exchange feeds &rarr;</a>
         </div>
 
         <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Historical Analytics</h3>
-          <p class="text-gray-500 text-sm mb-4">Snapshots of live data and analytics:</p>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>End-of-day</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Intraday</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Minute bar</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Previous day</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Up to 10 years</li></ul>
-          <a href="../historical-data-analytics/options-greeks-stock-prices/" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">Find out more &rarr;</a>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Futures</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">A full range of futures data from the CME and critical specialty data that supports CBOE volatility (VIX) markets.</p>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>CME consolidated feeds from CME, CBOT, NYMEX, COMEX</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>CBOE futures feed on the CFE</li></ul>
+          <a href="#exchange-feeds" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">See exchange feeds &rarr;</a>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">European Markets</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">SpiderRock also provides low-latency real-time market data across European futures, options, and equity venues, including Eurex, Euronext, ICE, and Cboe Europe.</p>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Futures and options quotes and prints across Eurex, Euronext, and ICE</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Equity quotes and trades on Cboe Europe (BXE, CXE, and DXE)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Market summary data (1-minute bars)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>End-of-day pricing and settlement data</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Real-time analytics, including implied volatility and volatility surfaces</li></ul>
+          <a href="../european-data/" class="mt-auto text-sr-blue font-semibold text-sm hover:underline">European data &rarr;</a>
         </div>
       </div>
     </div>
@@ -325,7 +263,7 @@
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Coverage</p>
       <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Exchange Feeds</h2>
       <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">Every feed below is available in all three delivery formats &mdash; <strong class="text-gray-900">raw multicast</strong>, <strong class="text-gray-900">normalized multicast</strong>, and <strong class="text-gray-900">MLink TCP stream</strong>.</p>
-      <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">The sources below are US venues. European market data &mdash; Eurex and Euronext, with ICE Europe coming soon &mdash; is delivered through SpiderRock Connect&rsquo;s European platform. <a href="../european-data/" class="text-sr-blue font-semibold hover:underline">European data &rarr;</a></p>
+      <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">The sources below are US venues. European market data &mdash; Eurex, Euronext, ICE Europe, and Cboe Europe &mdash; is delivered through SpiderRock Connect&rsquo;s European platform. <a href="../european-data/" class="text-sr-blue font-semibold hover:underline">European data &rarr;</a></p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse text-left">
           <thead>
@@ -384,31 +322,26 @@
     </div>
   </section>
 
-  <!-- INFRASTRUCTURE -->
+  <!-- OTHER DATA PRODUCTS -->
   <section class="bg-sr-navy py-28">
     <div class="max-w-7xl mx-auto px-8">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Product Overview</p>
-      <h2 class="font-display text-4xl font-bold text-white mb-6 max-w-3xl">Grow Your Strategy With Our Real-Time Price Data</h2>
-      <p class="text-white/70 leading-relaxed max-w-4xl mb-16">SpiderRock can reduce your overall operating expenses without leaving you at a disadvantage in the marketplace as you process the ever-increasing data stream that is the heartbeat of modern trading and risk management. We offer innovative technical solutions to difficult problems and we are a reliable partner that can help you to build and grow your business.</p>
-      <div class="grid md:grid-cols-2 gap-12">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">More Data</p>
+      <h2 class="font-display text-4xl font-bold text-white mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
+      <p class="text-white/70 leading-relaxed max-w-3xl mb-14">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
+      <div class="grid md:grid-cols-3 gap-12">
         <div>
-          <h3 class="font-display text-xl font-bold text-white mb-4">Infrastructure Built for Low-Latency</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>We run Arista switches and a mix of 10GB and 40GB fiber connections and utilize FPGA data processing and kernel bypass technology to deliver both low and ultra-low latency data feed products for institutions, other vendors, and professional trading firms.</li>
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>The primary equity SpiderRock data center is in NY4/5, the Equinix data center in Secaucus NJ. The DR equity and primary SpiderRock data center for futures are in CH2 in Chicago.</li>
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>We are a team with a rapid response time and the capacity to handle fast markets. We proactively monitor systems for potential failures and react ahead of your call to minimize impact and reduce risk.</li>
-          </ul>
+          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Real-Time</h3>
+          <a href="../data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Real-Time Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../options-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Real-Time Volatility</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
         <div>
-          <h3 class="font-display text-xl font-bold text-white mb-4">Raw &amp; Normalized Data Feeds</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>SpiderRock offers normalized low latency multicast feeds covering U.S. equities, options, and futures markets.</li>
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>A highly efficient normalization process is provided for several feeds, including OPRA with 10:1 conflation (under 100&micro;s translation). A normalized feed is more manageable through a reduced bandwidth profile.</li>
-            <li class="flex items-start gap-3 text-white/70"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>All normalized feed products are disseminated in native ticker formats and include the ticker source information in each packet, allowing seamless integration of data from multiple sources even when native tickers collide.</li>
-          </ul>
+          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Historical</h3>
+          <a href="../historical-data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Historical Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/options-greeks/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Options &amp; Greeks</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/historic-stock-price-data/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Stock Prices</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Volatility Surfaces</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/vol2g/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Volatility Database Bundle</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div>
+          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Tools &amp; APIs</h3>
+          <a href="../volatility-charts/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Intuitive Volatility Charts</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../spiderstream-market-data-api/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>SpiderStream Market Data API</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
-      <p class="mt-10"><a href="../spiderstream-market-data-api/" class="text-blue-200 font-semibold hover:underline">Explore the SpiderStream / MLink API &rarr;</a></p>
     </div>
   </section>
 
@@ -463,7 +396,8 @@
     <div class="max-w-3xl mx-auto px-8">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Consult With Us</p>
       <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Access SpiderRock Market Data</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-10">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the contact form below, or visit our documentation site for full feed specifications.</p>
+      <a href="https://docs.spiderrockconnect.com/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 7 (srock.activehosted.com) — the form the live data pages run.
            Fields: firstname, lastname, email, phone, field[2] "company_name",

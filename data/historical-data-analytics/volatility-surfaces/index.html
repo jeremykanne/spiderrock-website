@@ -202,150 +202,96 @@
 
   <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
     <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Data &amp; Analytics</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
-        Historical Volatility Surface Datasets
-      </h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
-        Point-in-time implied volatility surfaces archived at regular intervals — the foundation for accurate options pricing and risk modeling.
-      </p>
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Historical Data</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">Historical Volatility Surfaces</h1>
+      <p class="text-white/80 text-xl max-w-3xl leading-relaxed mb-10">SpiderRock operates servers that continually compute implied volatility surfaces for all option expiration months with live market quotes. These surfaces reflect a SpiderRock best fit of current markets and are subject to change if market conditions change. SpiderRock archives these surfaces at regular intervals for historical analysis for all options on stocks, ETFs, and options on futures indexes.</p>
       <a href="#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Consult With Us</a>
     </div>
   </section>
 
-  <!-- WHAT ARE SURFACES -->
-  <section class="bg-white py-28">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid md:grid-cols-2 gap-20 items-start">
-        <div>
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Overview</p>
-          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">What Are Volatility Surfaces?</h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Theoretical volatility surfaces are models of the fair market volatility of an option. Volatility is a measure of the speed and amount of change in the underlying asset. For options, it's a vital part of how they are priced and valued.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            The surface for an option is the fit of the market between the bid and ask for a given term. SpiderRock operates servers that continually compute implied volatility surfaces for all option expiration months with live market quotes, archiving these surfaces at regular intervals for all options on stocks, ETFs, and options on futures indexes.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            SpiderRock surfaces reflect a best fit of current markets and are subject to change if or when market conditions change. These surfaces are proven in live market operations and provide more accurate valuations than simple surface fits like averaging prices or taking the bid/ask as closing price.
-          </p>
-        </div>
-        <div>
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">About Our Feed</p>
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Options Price Feed with Volatility Surfaces</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">SpiderRock continually computes dynamic implied volatility surfaces for all options expiration months, updating as new live market quotes are received. Each curve record contains:</p>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-start gap-2"><span class="text-sr-red mt-1">•</span><span>Spline parameters for the shape of a surface</span></li>
-            <li class="flex items-start gap-2"><span class="text-sr-red mt-1">•</span><span>Live calibrated at-the-money volatility</span></li>
-            <li class="flex items-start gap-2"><span class="text-sr-red mt-1">•</span><span>Stock dividend rate and price offset</span></li>
-            <li class="flex items-start gap-2"><span class="text-sr-red mt-1">•</span><span>Other related curve adjustments</span></li>
-          </ul>
-          <p class="text-gray-600 text-sm mt-4">Strikes on the X-axis expressed in moneyness (lognormal or normal), volatilities on Y-axis as a multiple of ATM volatility.</p>
-        </div>
-      </div>
-      <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Option pricing methodology <span aria-hidden="true">&#8599;</span></a></p>
-    </div>
-  </section>
-
-  <!-- SURFACE TYPES -->
-  <section class="bg-gray-50 py-28 border-t border-gray-200">
+  <!-- SURFACE DATASETS -->
+  <section class="bg-gray-50 py-28">
     <div class="max-w-7xl mx-auto px-8">
       <div class="mb-16">
         <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Surface Types</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900">Three Volatility Surface Datasets</h2>
+        <h2 class="font-display text-4xl font-bold text-gray-900 mb-0">Volatility Surface Datasets</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+      <div class="space-y-8">
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
+          <div>
+            <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Curve</h3>
           </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Surface Curve</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">Spline curve parameters, implied volatility surfaces, Greeks, and hedge deltas for all options expiration months. Two-dimensional curve with strikes in moneyness on the X-axis and volatilities as a multiple of ATM vol on the Y-axis.</p>
+          <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This table contains spline curve parameters, implied volatility surfaces, Greeks, and hedge deltas for all options expiration months with live market quotes. The records backing each SpiderRock surface represent a two-dimensional curve with strikes on the X-axis expressed in terms of moneyness, and options volatilities on the Y-axis expressed as a multiple of at-the-money volatility.</p></div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-blue rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
+          <div>
+            <div class="w-12 h-12 bg-sr-blue rounded-lg flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Grid Records (Skew Surfaces)</h3>
           </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Surface Grid Records (Skew)</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">Fixed grid of volatility for a given expiration as a function of delta for uncensored curves. Includes days until the next earnings date and implied earnings moves — ideal for skew analysis and tail risk modeling.</p>
+          <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This table contains a fixed grid of volatility for a given expiration as a function of delta for uncensored curves. The file also includes days until the next earnings date and implied earnings moves.</p></div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-dark rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
+          <div>
+            <div class="w-12 h-12 bg-sr-dark rounded-lg flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Fixed Term</h3>
           </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Fixed Term Surface (Censored)</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">Snapshots of censored ATM volatility term structure with the impact of implied earnings events removed. Constant maturity points: 5d, 10d, 21d, 42d, 63d, 84d, 105d, 126d, 189d, 252d, 378d, and 504d (2 years).</p>
+          <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This dataset contains snapshots of the censored at-the-money volatility term structure with the impact of implied earnings events removed for each ticker. Censored curves are created by eliminating the earnings volatility from the observed fitted curve, which enables the user to better understand the ticker&rsquo;s underlying volatility.</p><p class="text-gray-600 leading-relaxed mt-4">Each snapshot contains at-the-money volatilities for fixed-term expirations from 5 days out to 504 days (two years). The data also includes historical earnings move history, estimated implied earnings moves, uncensored curves with earnings events included, and censored curves with the impact removed.</p></div>
         </div>
-
       </div>
-      <p class="mt-10"><a href="../vol2g/" class="text-sr-blue font-semibold hover:underline">Volatility Database bundle (VOL2G) &rarr;</a></p>
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">Option pricing methodology <span aria-hidden="true">&#8599;</span></a><a href="../vol2g/" class="text-sr-blue font-semibold hover:underline">Volatility Database bundle (VOL2G) &rarr;</a></p>
     </div>
   </section>
 
-  <!-- PRODUCT OFFERING TABLE -->
+  <!-- PRODUCT OFFERING: OPTIONS VOLATILITY SURFACES -->
   <section class="bg-white py-28 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-12">
-        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Product Offering</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900">Volatility Surface Datasets</h2>
-        <p class="text-gray-600 mt-4">Each product name links to its field-level data dictionary in the SpiderRock Connect documentation &mdash; schema, start dates, and delivery times.</p>
-      </div>
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Product Offering</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Options Volatility Surfaces</h2>
+      <p class="text-gray-600 leading-relaxed max-w-3xl mb-10">Each dataset name links to its field-level data dictionary in the SpiderRock documentation.</p>
       <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left">
-          <thead>
-            <tr class="bg-sr-navy text-white">
-              <th class="px-4 py-3 font-semibold">Product</th>
-              <th class="px-4 py-3 font-semibold">Frequency</th>
-              <th class="px-4 py-3 font-semibold">History From</th>
-              <th class="px-4 py-3 font-semibold text-center">Prices</th>
-              <th class="px-4 py-3 font-semibold text-center">Greeks</th>
-              <th class="px-4 py-3 font-semibold text-center">Impl. Vol</th>
-              <th class="px-4 py-3 font-semibold text-center">Vol Surface</th>
-            </tr>
-          </thead>
-          <tbody class="text-gray-700">
-            <tr class="hover:bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveHist/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceCurveHist data dictionary">Surface Curves EOD</a></td><td class="px-4 py-3">EOD</td><td class="px-4 py-3">Jan-10</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50 bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridHist/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceFixedGridHist data dictionary">Fixed Grid Surface EOD</a></td><td class="px-4 py-3">EOD</td><td class="px-4 py-3">Jan-10</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedTermHist/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceFixedTermHist data dictionary">Fixed Term Surface ATM EOD</a></td><td class="px-4 py-3">EOD</td><td class="px-4 py-3">Jan-10</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50 bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceCurveIntradayHist_30min data dictionary">Surface Curves 30-Min</a></td><td class="px-4 py-3">30 Min</td><td class="px-4 py-3">Mar-16</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceFixedGridIntradayHist_30min data dictionary">Fixed Grid Surface 30-Min</a></td><td class="px-4 py-3">30 Min</td><td class="px-4 py-3">Mar-16</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50 bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedTermIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceFixedTermIntradayHist_30min data dictionary">Fixed Term Surface ATM 30-Min</a></td><td class="px-4 py-3">30 Min</td><td class="px-4 py-3">Mar-16</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveIntradayHist/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceCurveIntradayHist data dictionary">Surface Curves 5-Min</a></td><td class="px-4 py-3">5 Min</td><td class="px-4 py-3">Aug-20</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
-            <tr class="hover:bg-gray-50 bg-gray-50"><td class="px-4 py-3"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridIntradayHist/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline" title="SurfaceFixedGridIntradayHist data dictionary">Fixed Grid Surface 5-Min</a></td><td class="px-4 py-3">5 Min</td><td class="px-4 py-3">Dec-20</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-gray-300">—</td><td class="px-4 py-3 text-center text-sr-red">✓</td><td class="px-4 py-3 text-center text-sr-red">✓</td></tr>
+        <table class="w-full border-collapse text-left">
+          <thead><tr class="border-b-2 border-gray-300"><th scope="col" class="py-3 pr-6 text-xs font-bold uppercase tracking-wider text-gray-500">Item</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Frequency</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">History</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Greeks</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Implied Vol</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Vol Surfaces</th></tr></thead>
+          <tbody>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceCurveHist data dictionary">Surface Curves EOD <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2014</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceAtmHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceAtmHist data dictionary">Surface ATM EOD <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2014</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedGridHist data dictionary">Surface Grid EOD <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2014</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedTermHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedTermHist data dictionary">Fixed Term Surface ATM EOD <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2014</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceCurveIntradayHist_30min data dictionary">Surface Curves ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">30 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Mar 2016</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedGridIntradayHist_30min data dictionary">Surface Grid ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">30 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Mar 2016</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedTermIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedTermIntradayHist_30min data dictionary">Surface Fixed Term ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">30 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Mar 2016</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceCurveIntradayHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceCurveIntradayHist data dictionary">Surface Curves ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">5 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Aug 2020</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedGridIntradayHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedGridIntradayHist data dictionary">Surface Grid ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">5 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Dec 2020</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
+            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/SurfaceFixedTermIntradayHist/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline" title="SurfaceFixedTermIntradayHist data dictionary">Surface Fixed Term ID <span class="text-gray-400 font-normal" aria-hidden="true">&#8599;</span></a></th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">5 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Dec 2020</td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">All historical data dictionaries <span aria-hidden="true">&#8599;</span></a></p>
+      <p class="text-gray-500 text-sm mt-6">History shows the month and year each dataset begins. ID = intraday. <a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/#options-volatility-surfaces" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">See the latest on our documentation site <span aria-hidden="true">&#8599;</span></a></p>
+      <p class="mt-6"><a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="text-sr-blue font-semibold hover:underline">All historical data dictionaries <span aria-hidden="true">&#8599;</span></a></p>
     </div>
   </section>
 
   <!-- WHY USE -->
   <section class="bg-gray-50 py-28 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-12">
-        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Use Cases</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900">Why Use Volatility Surface Data?</h2>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
+      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Use Cases</p>
+      <h2 class="font-display text-4xl font-bold text-gray-900 mb-12 max-w-4xl">Why Use Our Historical Options Data With Volatility?</h2>
+      <div class="grid md:grid-cols-2 gap-16">
         <div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Leverage Accurate Surface Prices for:</h3>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-red rounded-full flex-shrink-0 mt-2"></span>Trading strategy development and backtesting</li>
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-red rounded-full flex-shrink-0 mt-2"></span>Evaluating portfolio risk with accurate Greeks</li>
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-red rounded-full flex-shrink-0 mt-2"></span>Calculating portfolio valuation consistently over time</li>
-          </ul>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">There are many use cases for volatility surface data and volatility term structure data. Accurate options pricing makes up the basis for valuation and risk calculations that are the foundations of strategy modeling, portfolio risk management, portfolio valuation, and return calculations.</p>
+          <p class="text-gray-600 leading-relaxed">A better understanding of a strike&rsquo;s surface price allows for the valuation of those options more accurately and consistently. Compared to simple surface fits, like averaging prices for mid-market or taking the bid or ask as a closing price, SpiderRock surface pricing results in more accurate valuations and risk calculations. Over time, better valuations from surfaces can lower standard deviations and enable potentially better quantitative models.</p>
         </div>
         <div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Use Live Surface Curves to:</h3>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-blue rounded-full flex-shrink-0 mt-2"></span>Model dynamic short-term volatility for each option strike</li>
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-blue rounded-full flex-shrink-0 mt-2"></span>Model upside and downside risk by aggregating curves and measuring skew</li>
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-blue rounded-full flex-shrink-0 mt-2"></span>Model implied earnings moves and historical earnings expectations</li>
-            <li class="flex items-start gap-3"><span class="w-2 h-2 bg-sr-blue rounded-full flex-shrink-0 mt-2"></span>Model the implied market borrow rate</li>
-          </ul>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Common Applications</h3>
+          <ul class="border-t border-gray-200"><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Trading strategy development and portfolio valuation</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Evaluating portfolio risk, including upside/downside risk via skew</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Modeling short-term volatility markets at the individual strike level</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Modeling volatility over time, implied earnings moves, market skew ahead of events, and implied market borrow rate</li></ul>
         </div>
       </div>
       <p class="mt-10"><a href="../../options-analytics/" class="text-sr-blue font-semibold hover:underline">Real-time volatility analytics &rarr;</a></p>
@@ -357,7 +303,8 @@
     <div class="max-w-3xl mx-auto px-8">
       <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Get in Touch</p>
       <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Consult With Us</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-10">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the contact form below, or visit our documentation site for full dataset specifications.</p>
+      <a href="https://docs.spiderrockconnect.com/docs/8.6.8.1/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 13 (srock.activehosted.com) -->
       <div class="_form_13 ac-form"></div>
