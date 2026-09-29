@@ -1,3 +1,11 @@
+# Netlify builds the News & Updates blog with Eleventy; every other page is copied through unchanged.
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
 # Keep search engines from indexing the review site while the redesign is in client review.
 # REMOVE THIS BLOCK AT LAUNCH, when the site moves to spiderrock.net.
 [[headers]]

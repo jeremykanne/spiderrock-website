@@ -1,0 +1,42 @@
+/* Decap CMS preview pane — mirrors the post page (_includes/layouts/post.njk)
+   and the News & Updates listing card (updates/index.njk). The pane is an iframe,
+   so the site's Tailwind classes aren't available here; these rules reproduce them. */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap");
+
+body { margin: 0; font-family: "Roboto", sans-serif; color: #111827; background: #fff; -webkit-font-smoothing: antialiased; }
+
+/* Hero — .bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy */
+.pv-hero { background: linear-gradient(to bottom right, #162032, #1B3D6B, #162032); color: #fff; padding: 3rem 2rem 3.5rem; }
+.pv-back { color: #93C5FD; font-size: 0.875rem; margin-bottom: 1.5rem; display: inline-block; }
+.pv-eyebrow { color: #93C5FD; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1rem; }
+.pv-title { font-family: "Montserrat", sans-serif; font-size: 2.5rem; font-weight: 700; line-height: 1.25; margin: 0 0 1rem; max-width: 56rem; }
+.pv-date { color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; margin: 0; }
+.pv-empty { opacity: 0.45; font-style: italic; }
+
+/* Article — section.bg-white.py-20 > .max-w-3xl.px-8 > .prose */
+.pv-article { max-width: 48rem; margin: 0 auto; padding: 4rem 2rem; }
+.prose h2 { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #162032; margin-top: 2rem; margin-bottom: 0.75rem; }
+.prose h3 { font-family: "Montserrat", sans-serif; font-size: 1.15rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.prose p { color: #3A3F4A; line-height: 1.8; margin: 0 0 1.25rem; }
+.prose ul { list-style: disc; padding-left: 1.5rem; margin: 0 0 1.25rem; }
+.prose ol { list-style: decimal; padding-left: 1.5rem; margin: 0 0 1.25rem; }
+.prose li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+.prose a { color: #1B3D6B; text-decoration: underline; }
+.prose blockquote { border-left: 3px solid #C0392B; margin: 0 0 1.25rem; padding-left: 1rem; }
+.prose h4 { font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 700; color: #162032; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+.prose img { max-width: 100%; height: auto; margin: 1.5rem 0; border-radius: 0.5rem; }
+.prose .video-embed { position: relative; aspect-ratio: 16 / 9; margin: 1.5rem 0; }
+.prose .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0.5rem; }
+
+/* Listing card — the "Latest News" card on /updates/ */
+.pv-listing { background: #F9FAFB; border-top: 1px solid #E5E7EB; padding: 2.5rem 2rem 3rem; }
+.pv-listing-label { color: #C0392B; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1rem; }
+.pv-lead { max-width: 40rem; background: linear-gradient(to bottom right, #162032, #1B3D6B, #162032); color: #fff; border-radius: 0.75rem; padding: 2.5rem; }
+.pv-lead-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
+.pv-lead-latest { color: #93C5FD; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.pv-lead-tag { font-size: 0.75rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+.pv-lead-title { font-family: "Montserrat", sans-serif; font-size: 1.75rem; font-weight: 700; line-height: 1.25; margin: 0 0 0.75rem; }
+.pv-lead-date { color: rgba(255,255,255,0.6); font-size: 0.875rem; margin: 0 0 1.25rem; }
+.pv-lead-summary { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.75rem; }
+.pv-lead-btn { display: inline-block; background: #C0392B; color: #fff; font-weight: 600; padding: 0.75rem 1.5rem; }
+.pv-note { color: #6B7280; font-size: 0.75rem; margin-top: 0.75rem; }

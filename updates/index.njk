@@ -1,0 +1,217 @@
+---
+pagination:
+  data: collections.olderPosts
+  size: 20
+  alias: rows
+permalink: "updates/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Updates — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    /* ── Sticky header ──────────────────────────────────────────────────────
+       The utility bar stays sticky in flow. The primary nav is fixed just below it
+       so it keeps overlaying the hero exactly as before, and picks up a solid
+       background + shadow once the page scrolls (.is-stuck, toggled in script). */
+    .site-nav {
+      position: fixed;
+      top: var(--util-h, 45px);
+      left: 0; right: 0;
+      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
+      background: transparent;
+      transition: background-color 200ms ease, box-shadow 200ms ease;
+    }
+    .site-nav.is-stuck {
+      background: #162032;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
+       back vertical space while scrolling. Logo height is inline, hence !important. */
+    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+    .site-nav img { transition: height 200ms ease; }
+    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    /* Logo keeps its full size when compact by overlapping the utility bar above it.
+       Negative margins stop it from driving the bar's height; the raised z-index lets it
+       paint over the utility bar (both are navy, so the overlap is seamless). */
+    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
+      position: relative; top: -11px; }   /* rides up into the utility bar */
+    @media (prefers-reduced-motion: reduce) {
+      .site-nav nav, .site-nav img { transition: none; }
+    }
+    .hero-with-nav { padding-top: var(--nav-h, 93px); }
+    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="/" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="/platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="/exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="/data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
+       position:fixed, and goes compact once scrolled (see .is-stuck). -->
+  <div id="siteNav" class="site-nav">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="/" class="hover:opacity-80 transition-opacity">
+          <img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
+          <a href="/about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
+          <a href="/careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="/updates/" class="text-blue-200">News</a>
+          <a href="/contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Stay Up to Date</p>
+      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
+        News &amp; Updates
+      </h1>
+      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
+        Get important updates on market moves, volatility, and the leading technology innovations here at SpiderRock.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── NEWS LISTING ─────────────────────────────────────────────────────── -->
+  <section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-8">
+
+      {%- set activeCategory = "" %}
+      {% include "partials/category-filter.njk" %}
+
+      <!-- FEATURED: the three newest posts — a lead story plus two secondary cards (generated from updates/posts/*.md) -->
+{%- if pagination.pageNumber == 0 %}
+      {%- set featured = collections.posts | head(3) %}
+      {% include "partials/latest-news.njk" %}
+{%- endif %}
+
+      <!-- MORE NEWS LIST -->
+      <div>
+        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-8">{% if pagination.pageNumber == 0 %}More Updates{% else %}Updates &mdash; Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}{% endif %}</p>
+        <div class="divide-y divide-gray-200">
+{%- for post in rows %}
+{% include "partials/news-row.njk" %}
+{%- endfor %}
+        </div>
+      </div>
+
+      {%- set pager = { hrefs: pagination.hrefs, current: pagination.pageNumber, previous: pagination.href.previous, next: pagination.href.next } %}
+      {% include "partials/pager.njk" %}
+
+      <div class="mt-12 text-center">
+        <a href="/contact-us/" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3.5 button-smooth hover:bg-sr-navy hover:text-white">Contact Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+  <footer class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="/platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="/platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="/data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="/data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="/data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="/data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="/contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
+        <p>© 2026 SpiderRock. All rights reserved.</p>
+        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
+        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="/exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Measure the two bars so the fixed nav and the hero offset stay in sync with
+    // whatever the real rendered heights are (font loading, wrapping, zoom).
+    (function () {
+      var util = document.querySelector('.sticky.top-0');
+      var nav  = document.getElementById('siteNav');
+      if (!util || !nav) return;
+      function measure() {
+        var wasStuck = nav.classList.contains('is-stuck');
+        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
+        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
+        if (wasStuck) nav.classList.add('is-stuck');
+      }
+      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
+      measure(); onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    })();
+  </script>
+</body>
+</html>

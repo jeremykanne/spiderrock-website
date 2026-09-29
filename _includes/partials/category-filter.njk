@@ -1,0 +1,10 @@
+{#- Category filter pills for News & Updates. Set `activeCategory` to a category slug, or "" for All. -#}
+<nav class="mb-14" aria-label="Filter news by category">
+  <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-3">Filter by category</p>
+  <ul class="flex flex-wrap gap-2">
+    <li><a href="/updates/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-colors {% if not activeCategory %}bg-sr-navy border-sr-navy text-white{% else %}border-gray-300 text-sr-navy hover:border-sr-navy{% endif %}"{% if not activeCategory %} aria-current="page"{% endif %}>All <span class="{% if not activeCategory %}text-white/60{% else %}text-gray-400{% endif %} font-normal">{{ collections.posts.length }}</span></a></li>
+    {%- for cat in collections.categoryList %}
+    <li><a href="/updates/category/{{ cat.slug }}/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-colors {% if activeCategory == cat.slug %}bg-sr-navy border-sr-navy text-white{% else %}border-gray-300 text-sr-navy hover:border-sr-navy{% endif %}"{% if activeCategory == cat.slug %} aria-current="page"{% endif %}>{{ cat.name }} <span class="{% if activeCategory == cat.slug %}text-white/60{% else %}text-gray-400{% endif %} font-normal">{{ cat.count }}</span></a></li>
+    {%- endfor %}
+  </ul>
+</nav>
