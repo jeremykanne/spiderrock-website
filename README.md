@@ -43,7 +43,7 @@ Each post is a Markdown file in `updates/posts/`, served at `/updates/<file-name
 | `updates/posts/posts.11tydata.js` | Gives every post the post layout and its URL |
 | `_includes/layouts/post.njk` | Post page template (head, nav, footer, article) |
 | `updates/index.njk` | News & Updates listing template |
-| `admin/config.yml` | Editor fields and GitHub settings for Decap CMS |
+| `admin/config.yml` | Editor fields and DecapBridge login settings for Decap CMS |
 
 To try the editor locally without logging in, run `npm run cms` alongside `npm start`, then open http://localhost:8080/admin/. Saving there writes directly to `updates/posts/`.
 
