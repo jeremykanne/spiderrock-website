@@ -75,6 +75,14 @@ export default function (eleventyConfig) {
     return pages;
   });
 
+  // Data & Analytics posts only, for the Data section's own News page (/data/updates/).
+  eleventyConfig.addCollection("dataPosts", (api) =>
+    sortedPosts(api).filter((p) => (p.data.categories || []).includes("Data & Analytics"))
+  );
+  eleventyConfig.addCollection("dataOlderPosts", (api) =>
+    sortedPosts(api).filter((p) => (p.data.categories || []).includes("Data & Analytics")).slice(3)
+  );
+
   // Everything after the three featured posts, paginated on /updates/.
   eleventyConfig.addCollection("olderPosts", (api) =>
     api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date).slice(3)
