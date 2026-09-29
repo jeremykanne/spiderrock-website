@@ -5,7 +5,7 @@
 - **Live site**: https://spiderrock.netlify.app/ (currently in client review)
 - **Repo**: https://github.com/jeremykanne/spiderrock-website
 - **Hosting**: Netlify, auto-deploys from `main`
-- **Build**: none — static HTML with Tailwind via CDN, published from the repo root (`.`)
+- **Build**: `npm run build` (Eleventy) — builds the News & Updates blog and copies every other page unchanged into `_site/`
 
 ## Deploying Changes
 
@@ -56,10 +56,15 @@ spiderrock-website/
 
 **Netlify**
 - Production branch: `main`
-- Build command: none
-- Publish directory: `.`
+- Build command: `npm run build` (set in `netlify.toml`)
+- Publish directory: `_site` (set in `netlify.toml`)
+- Search engines: blocked with an `X-Robots-Tag: noindex` header in `netlify.toml` until launch
 
 ## Pending
 
 - Contact forms are set up for ActiveCampaign and still need to be connected and tested.
 - Add caching headers for `/images` and `/logos` before launch.
+
+## Blog Editor
+
+Posts are managed at `/admin/` (Decap CMS). Editors sign in with email and password through DecapBridge; each published post is committed to `main` and Netlify rebuilds the site automatically. See the README for how posts are stored.

@@ -5,7 +5,7 @@
 backend:
   name: git-gateway
   repo: jeremykanne/spiderrock-website
-  branch: blog                      # change to main when the blog branch is merged
+  branch: main
   auth_type: pkce
   base_url: https://auth.decapbridge.com
   auth_endpoint: /sites/eb51be85-7acd-4756-b9d6-dbd099c5c800/pkce
