@@ -1,7 +1,7 @@
 ---
 title: "Consider the Approach: Quant Modeling and Retail Flows in Equity Options Markets"
 date: 2022-04-21
-summary: "It’s well-documented that equity and options markets underwent drastic participatory change over the past few years, though retail traders’ presence has declined since its peak GME frenzy — see that oft-cited anecdotal proxy, a chart of…"
+summary: "It’s well-documented that equity and options markets underwent drastic participatory change over the past few years, though retail traders’ presence has declined since its peak GME frenzy — see that oft-cited anecdotal proxy, a chart of Robinhood’s stock performance."
 image: /images/uploads/updates/quant-modeling-and-retail-flows-in-equity-options-markets/spiderrock-blog-web-4.21-768x505.jpg
 image_alt: "Consider the Approach: Quant Modeling and Retail Flows in Equity Options Markets"
 categories:

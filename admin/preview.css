@@ -31,14 +31,12 @@ body { margin: 0; font-family: "Roboto", sans-serif; color: #111827; background:
 /* Listing card — the "Latest News" card on /updates/ */
 .pv-listing { background: #F9FAFB; border-top: 1px solid #E5E7EB; padding: 2.5rem 2rem 3rem; }
 .pv-listing-label { color: #C0392B; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1rem; }
-.pv-card { max-width: 24rem; background: #fff; border: 1px solid #E5E7EB; border-radius: 0.75rem; overflow: hidden; }
-.pv-card-img { width: 100%; height: 12rem; object-fit: cover; display: block; }
-.pv-card-ph { height: 12rem; background: linear-gradient(to bottom right, #162032, #1B3D6B); }
-.pv-card-body { padding: 1.5rem; }
-.pv-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
-.pv-tag { font-size: 0.75rem; background: #F3F4F6; color: #4B5563; padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
-.pv-card-title { font-family: "Montserrat", sans-serif; font-size: 1.125rem; font-weight: 700; line-height: 1.375; color: #111827; margin: 0 0 0.75rem; }
-.pv-card-date { color: #6B7280; font-size: 0.875rem; margin: 0 0 1rem; }
-.pv-card-summary { color: #4B5563; font-size: 0.875rem; line-height: 1.5; margin: 0 0 1rem; }
-.pv-card-link { color: #1B3D6B; font-weight: 600; font-size: 0.875rem; }
+.pv-lead { max-width: 40rem; background: linear-gradient(to bottom right, #162032, #1B3D6B, #162032); color: #fff; border-radius: 0.75rem; padding: 2.5rem; }
+.pv-lead-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
+.pv-lead-latest { color: #93C5FD; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.pv-lead-tag { font-size: 0.75rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+.pv-lead-title { font-family: "Montserrat", sans-serif; font-size: 1.75rem; font-weight: 700; line-height: 1.25; margin: 0 0 0.75rem; }
+.pv-lead-date { color: rgba(255,255,255,0.6); font-size: 0.875rem; margin: 0 0 1.25rem; }
+.pv-lead-summary { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.75rem; }
+.pv-lead-btn { display: inline-block; background: #C0392B; color: #fff; font-weight: 600; padding: 0.75rem 1.5rem; }
 .pv-note { color: #6B7280; font-size: 0.75rem; margin-top: 0.75rem; }

@@ -1,7 +1,7 @@
 ---
 title: "Enhancing Equity Strategies with Option Trading Signals Using SpiderRock Skew Datasets"
 date: 2021-07-21
-summary: "Option skew data points – specifically option implied volatility as a function of a strike for a fixed expiration – are a rich and an exploitable source of opportunity to take advantage of the flow of information between the equity…"
+summary: "Option skew data points – specifically option implied volatility as a function of a strike for a fixed expiration – are a rich and an exploitable source of opportunity to take advantage of the flow of information between the equity (underlying) and options (derivatives) markets."
 image: /images/uploads/updates/enhancing-equity-strategies-with-option-trading-signals-using-spiderrock-skew-datasets/0721-006-Enhancing-Equity-Strategies-Graphic-BLOG-768x505.jpg
 image_alt: "Enhancing Equity Strategies with Option Trading Signals Using SpiderRock Skew Datasets"
 categories:

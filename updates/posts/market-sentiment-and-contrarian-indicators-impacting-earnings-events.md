@@ -1,7 +1,7 @@
 ---
 title: "Part 3: Market Sentiment and Contrarian Indicators Impacting Earnings Events"
 date: 2022-10-18
-summary: "Following up our previous blog post and focusing on earnings events, we discuss other metrics and ways in which SpiderRock Gateway’s database of historical options data, such as stockclosemarks and optionclosemarks (and their intraday…"
+summary: "Following up our previous blog post and focusing on earnings events, we discuss other metrics and ways in which SpiderRock Gateway’s database of historical options data, such as stockclosemarks and optionclosemarks (and their intraday counterparts), allows market participants to extract insights…"
 image: /images/uploads/updates/market-sentiment-and-contrarian-indicators-impacting-earnings-events/blog-3-image-768x389.jpg
 image_alt: "Part 3: Market Sentiment and Contrarian Indicators Impacting Earnings Events"
 categories:

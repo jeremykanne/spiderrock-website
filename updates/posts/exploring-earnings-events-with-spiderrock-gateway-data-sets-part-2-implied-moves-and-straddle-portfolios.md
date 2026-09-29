@@ -1,7 +1,7 @@
 ---
 title: "Exploring Earnings Events with SpiderRock Gateway Data Sets Part 2: Implied Moves and Straddle Portfolios"
 date: 2022-10-01
-summary: "We follow up our previous blog post focusing on earnings events and discuss other metrics and ways in which SpiderRock Gateway database of historical options data such as stockclosemarks and optionclosemarks (and their intraday…"
+summary: "We follow up our previous blog post focusing on earnings events and discuss other metrics and ways in which SpiderRock Gateway database of historical options data such as stockclosemarks and optionclosemarks (and their intraday counterparts) allow one to extract insights and perform various types of analysis."
 image: /images/uploads/updates/exploring-earnings-events-with-spiderrock-gateway-data-sets-part-2-implied-moves-and-straddle-portfolios/blog-post-visual-part-2-768x387.jpg
 image_alt: "Exploring Earnings Events with SpiderRock Gateway Data Sets Part 2: Implied Moves and Straddle Portfolios"
 categories:

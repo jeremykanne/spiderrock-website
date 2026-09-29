@@ -1,7 +1,7 @@
 ---
 title: "Fear and Subdued Exuberance Regimes in March-Apr’20"
 date: 2020-05-05
-summary: "We used CBOE end-of-data from January to beginning of April 2020, classified in two subsets based on SPX returns greater than 20 bps or lower than -20 bps and selected the corresponding returns in three macro factors, VIX, TYVIX and OVX…"
+summary: "We used CBOE end-of-data from January to beginning of April 2020, classified in two subsets based on SPX returns greater than 20 bps or lower than -20 bps and selected the corresponding returns in three macro factors, VIX, TYVIX and OVX (the last two being the VIX-like indices based on the 30 days…"
 image: /images/uploads/updates/fear-and-subdued-exuberance-regimes-in-march-apr20/Screen-Shot-2020-05-05-at-2.00.06-PM-768x474.png
 image_alt: "Fear and Subdued Exuberance Regimes in March-Apr’20"
 categories:

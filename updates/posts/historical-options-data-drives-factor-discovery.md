@@ -1,7 +1,7 @@
 ---
 title: "Historical Options Data Drives Factor Discovery"
 date: 2021-11-15
-summary: "Consider the ocean of elements that comprise U.S. equity derivatives markets — 16 options exchanges, thousands of optionable securities, tens of millions in average daily volume, billions of daily messages, and a growing constituency of…"
+summary: "Consider the ocean of elements that comprise U.S. equity derivatives markets — 16 options exchanges, thousands of optionable securities, tens of millions in average daily volume, billions of daily messages, and a growing constituency of active, self-directed options market participants."
 image: /images/uploads/updates/historical-options-data-drives-factor-discovery/Spider-Rock-social-updatesweb3-768x505.jpg
 image_alt: "Historical Options Data"
 categories:

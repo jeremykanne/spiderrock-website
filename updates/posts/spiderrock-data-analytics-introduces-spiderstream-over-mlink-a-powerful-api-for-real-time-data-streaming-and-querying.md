@@ -1,7 +1,7 @@
 ---
 title: "SpiderRock Data & Analytics Introduces SpiderStream over MLink: A Powerful API for Real-Time Data Streaming and Querying"
 date: 2023-06-13
-summary: "SpiderRock Data & Analytics, a leading provider of financial technology solutions, is thrilled to announce the launch of SpiderStream over MLink, a cutting-edge API that offers seamless access to live U.S. equities, futures, and options…"
+summary: "SpiderRock Data & Analytics, a leading provider of financial technology solutions, is thrilled to announce the launch of SpiderStream over MLink, a cutting-edge API that offers seamless access to live U.S. equities, futures, and options market data and analytics."
 image: /images/uploads/updates/spiderrock-data-analytics-introduces-spiderstream-over-mlink-a-powerful-api-for-real-time-data-streaming-and-querying/MLink-Blog-Post-2-768x398.png
 image_alt: "SpiderRock Data & Analytics Introduces SpiderStream over MLink: A Powerful API for Real-Time Data Streaming and Querying"
 categories:

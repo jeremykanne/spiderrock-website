@@ -53,7 +53,7 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: date, label: Publish Date, widget: datetime, format: YYYY-MM-DD, date_format: MMM D, YYYY, time_format: false, picker_utc: true }
       - { name: summary, label: Summary, widget: text, hint: One or two sentences shown on the News & Updates listing. }
-      - { name: image, label: Listing Image, widget: image, required: false, hint: Shown when the post is one of the three newest. 400×250 or larger. }
+      - { name: image, label: Share Image, widget: image, required: false, hint: "Not shown on the site. Kept for link previews when the post is shared (LinkedIn, X). 1200×630 works best." }
       - { name: image_alt, label: Image Description, widget: string, required: false, hint: Describe the image for screen readers. }
       - name: categories
         label: Categories

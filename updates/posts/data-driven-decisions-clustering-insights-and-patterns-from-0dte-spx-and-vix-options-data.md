@@ -1,7 +1,7 @@
 ---
 title: "Data-Driven Decisions: Clustering Insights and Patterns from 0DTE SPX and VIX Options Data"
 date: 2024-04-16
-summary: "In today’s market environment, underpinned by elevated rates, recession fears, fundamental technology changes, and geo-political crises, it is important to discover how option trade flow is structured and classified across market…"
+summary: "In today’s market environment, underpinned by elevated rates, recession fears, fundamental technology changes, and geo-political crises, it is important to discover how option trade flow is structured and classified across market participants (Institutional, Market Makers, Retail, et al.) and…"
 image: /images/uploads/updates/data-driven-decisions-clustering-insights-and-patterns-from-0dte-spx-and-vix-options-data/Copy-of-SR-Options-Data-Partner-P1-768x398.png
 image_alt: "Data-Driven Decisions: Clustering Insights and Patterns from 0DTE SPX and VIX Options Data"
 categories:

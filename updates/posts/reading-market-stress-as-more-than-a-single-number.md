@@ -1,7 +1,7 @@
 ---
 title: "Reading Market Stress as More Than a Single Number"
 date: 2026-09-29
-summary: "SpiderRock was recently featured in a DataDrivenInvestor article, How to Break Down Market Stress with Options Data in Python, which explores how options data can be used to move beyond a single volatility reading and pinpoint where market…"
+summary: "SpiderRock was recently featured in a DataDrivenInvestor article, How to Break Down Market Stress with Options Data in Python, which explores how options data can be used to move beyond a single volatility reading and pinpoint where market stress is showing up."
 image: /images/uploads/updates/reading-market-stress-as-more-than-a-single-number/SpiderRock-x-Nations-Indexes-Blog-768x398.jpg
 image_alt: "Reading Market Stress as More Than a Single Number"
 categories:

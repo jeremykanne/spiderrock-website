@@ -1,7 +1,7 @@
 ---
 title: "How Is Machine Learning Used in Trading?"
 date: 2021-07-13
-summary: "Although the term “machine learning” was coined at IBM in the late 1950s, and the methods and models that underpin machine learning applications were developed in the following decades, only since the turn of the century has it exerted…"
+summary: "Although the term “machine learning” was coined at IBM in the late 1950s, and the methods and models that underpin machine learning applications were developed in the following decades, only since the turn of the century has it exerted significant influence outside of academia and research institutions."
 image: /images/uploads/updates/how-is-machine-learning-used-in-trading/0621-017-Machine-Learning-Graphic-BLOG-768x505.jpg
 image_alt: "How Is Machine Learning Used in Trading?"
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "SpiderRock selects Eventus for trade surveillance solution"
 date: 2022-09-28
-summary: "Eventus, a leading global provider of multi-asset class trade surveillance and market risk solutions, announced today that SpiderRock Technology Services, a high-performance algorithmic execution and risk management technology provider to…"
+summary: "Eventus, a leading global provider of multi-asset class trade surveillance and market risk solutions, announced today that SpiderRock Technology Services, a high-performance algorithmic execution and risk management technology provider to institutional trading clients, as well as agency…"
 image: /images/uploads/updates/spiderrock-selects-eventus/Eventus-Blog-Pic-768x398.png
 image_alt: "SpiderRock selects Eventus for trade surveillance solution"
 categories:

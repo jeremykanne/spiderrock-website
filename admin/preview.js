@@ -20,7 +20,6 @@ const UpdatePreview = createClass({
     const title = get("title");
     const date = get("date");
     const summary = get("summary");
-    const image = get("image");
     const categories = (get("categories") || []).toJS ? get("categories").toJS() : get("categories") || [];
 
     return h("div", {},
@@ -34,20 +33,18 @@ const UpdatePreview = createClass({
         h("div", { className: "prose" }, widgetFor("body"))
       ),
       h("section", { className: "pv-listing" },
-        h("p", { className: "pv-listing-label" }, "On the News & Updates page"),
-        h("div", { className: "pv-card" },
-          image
-            ? h("img", { className: "pv-card-img", src: getAsset(image).toString(), alt: get("image_alt") || "" })
-            : h("div", { className: "pv-card-ph" }),
-          h("div", { className: "pv-card-body" },
-            categories.length ? h("div", { className: "pv-tags" }, categories.map((c) => h("span", { className: "pv-tag", key: c }, c))) : null,
-            h("h3", { className: "pv-card-title" }, title || "Post title"),
-            h("p", { className: "pv-card-date" }, formatDate(date, true)),
-            h("p", { className: "pv-card-summary" + (summary ? "" : " pv-empty") }, summary || "Summary shown on the listing"),
-            h("span", { className: "pv-card-link" }, "Read More →")
-          )
+        h("p", { className: "pv-listing-label" }, "Latest News on the News & Updates page"),
+        h("div", { className: "pv-lead" },
+          h("div", { className: "pv-lead-tags" },
+            h("span", { className: "pv-lead-latest" }, "Latest"),
+            categories.map((c) => h("span", { className: "pv-lead-tag", key: c }, c))
+          ),
+          h("h3", { className: "pv-lead-title" + (title ? "" : " pv-empty") }, title || "Post title"),
+          h("p", { className: "pv-lead-date" }, formatDate(date)),
+          h("p", { className: "pv-lead-summary" + (summary ? "" : " pv-empty") }, summary || "Summary shown on the listing"),
+          h("span", { className: "pv-lead-btn" }, "Read More →")
         ),
-        h("p", { className: "pv-note" }, "The three newest posts show this card with the listing image; older posts appear as a text row.")
+        h("p", { className: "pv-note" }, "The newest post appears as this lead story; the next two sit beside it as smaller cards, and older posts appear as text rows.")
       )
     );
   },

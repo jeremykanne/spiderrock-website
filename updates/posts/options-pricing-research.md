@@ -1,7 +1,7 @@
 ---
 title: "The Benefits of Transacted Options Prices in Quantitative Research"
 date: 2021-11-29
-summary: "As equity derivatives markets have grown in terms of volumes, products offered, number of exchanges, and technological sophistication, so too has the literature surrounding options pricing models and the challenges posed by quantifying…"
+summary: "As equity derivatives markets have grown in terms of volumes, products offered, number of exchanges, and technological sophistication, so too has the literature surrounding options pricing models and the challenges posed by quantifying that all-important variable: volatility."
 image: /images/uploads/updates/options-pricing-research/spider-rock-web-graphic-formatted-768x505.jpg
 image_alt: "Options Pricing Models Research"
 categories:
