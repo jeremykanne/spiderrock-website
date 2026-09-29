@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpiderRock Data and Analytics and Nations Indexes Announce New Volatility Analytics Partnership — SpiderRock</title>
+  <title>{{ title }} — SpiderRock</title>
+  <meta name="description" content="{{ summary }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,7 +33,8 @@
     .prose h3 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
     .prose p { color: #3A3F4A; line-height: 1.8; margin-bottom: 1.25rem; }
     .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
-    .prose ul li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+    .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ul li, .prose ol li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
     .prose a { color: #1B3D6B; text-decoration: underline; }
     /* ── Sticky header ──────────────────────────────────────────────────────
        The utility bar stays sticky in flow. The primary nav is fixed just below it
@@ -102,10 +104,8 @@
     <div class="max-w-7xl mx-auto px-8 py-16 pb-20">
       <a href="../../updates/" class="text-blue-300 text-sm hover:text-white transition-colors mb-6 inline-block">&larr; All Updates</a>
       <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">News &amp; Updates</p>
-      <h1 class="font-display text-[38px] md:text-[48px] font-bold leading-tight mb-4 max-w-4xl">
-        SpiderRock Data and Analytics and Nations Indexes Announce New Volatility Analytics Partnership
-      </h1>
-      <p class="text-white/60 text-sm">2024</p>
+      <h1 class="font-display text-[38px] md:text-[48px] font-bold leading-tight mb-4 max-w-4xl">{{ title }}</h1>
+      <p class="text-white/60 text-sm"><time datetime="{{ page.date | isoDate }}">{{ page.date | dateLong }}</time></p>
     </div>
   </section>
 
@@ -113,23 +113,7 @@
   <section class="bg-white py-20">
     <div class="max-w-3xl mx-auto px-8">
       <div class="prose">
-        <h3>Partnership Will Help Traders Turn Subjective Opinions into Data-Driven Decisions</h3>
-
-        <p>SpiderRock Data and Analytics, an options market data and analytics solutions provider for fund advisors, portfolio managers, quantitative researchers, and other investment institutions, announced a partnership with Nations Indexes, the world's leading independent developer of volatility and option-enhanced indexes. This collaboration combines SpiderRock's comprehensive options market data and analytics with Nations Indexes' next-generation methodologies to deliver innovative tools designed for traders and investors.</p>
-
-        <p>By integrating SpiderRock's robust analytics with Nations Indexes pioneering methodologies, this partnership creates powerful opportunities for retail and institutional investors and traders to access deeper insights into volatility, option skew, and market behavior.</p>
-
-        <p>Scott Nations, President of Nations Indexes, stated: "SpiderRock is the best purveyor of options market data, and this partnership will further enhance our suite of indexes."</p>
-
-        <p>Craig Iseli, Chief Operating Officer and lead Partner for SpiderRock's Data and Analytics team, remarked: "For SpiderRock, this partnership enhances our focus on being a leading option analytics solution provider."</p>
-
-        <h3>About Nations Indexes</h3>
-
-        <p>Nations Indexes is the world's leading independent developer of volatility and option-enhanced indexes, providing deeper insight into option prices allowing traders and investors to quantify subjective market assessments.</p>
-
-        <h3>About SpiderRock Data and Analytics</h3>
-
-        <p>SpiderRock Data &amp; Analytics is a division of SpiderRock Technology Solutions, providing US stocks and options market data in raw and normalized formats. SpiderRock's proprietary live analytics offer low-cost delivery of market data and options analytics ideal for research and back testing.</p>
+{{ content | safe }}
       </div>
     </div>
   </section>

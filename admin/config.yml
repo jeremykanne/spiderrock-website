@@ -1,0 +1,42 @@
+# Decap CMS — News & Updates editor at /admin/
+# Each published post is committed to GitHub as updates/posts/<slug>.md; Netlify rebuilds the site.
+
+backend:
+  name: github                      # replaced by the DecapBridge settings once that account is set up
+  repo: jeremykanne/spiderrock-website
+  branch: blog                      # change to main when the blog branch is merged
+
+# `npm run cms` + `npm start` lets the editor work locally with no login, writing straight to this folder.
+local_backend: true
+
+site_url: https://spiderrock.netlify.app
+display_url: https://spiderrock.netlify.app
+logo_url: /logos/Horizontal/Vector/SVG/SpiderRock%20-%20Logo%20-%20Horizontal%20-%20Color.svg
+
+media_folder: images/uploads        # where uploaded images are saved in the repo
+public_folder: /images/uploads      # how pages reference them
+
+collections:
+  - name: updates
+    label: News & Updates
+    label_singular: Update
+    description: Posts appear at /updates/ and on the News & Updates listing, newest first.
+    folder: updates/posts
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title]
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Publish Date, widget: datetime, format: YYYY-MM-DD, date_format: MMM D, YYYY, time_format: false, picker_utc: true }
+      - { name: summary, label: Summary, widget: text, hint: One or two sentences shown on the News & Updates listing. }
+      - { name: image, label: Listing Image, widget: image, required: false, hint: Shown when the post is one of the three newest. 400×250 or larger. }
+      - { name: image_alt, label: Image Description, widget: string, required: false, hint: Describe the image for screen readers. }
+      - name: categories
+        label: Categories
+        widget: select
+        multiple: true
+        options: ["Partnerships", "Data & Analytics", "Trading Platform"]
+      - { name: body, label: Article, widget: markdown, buttons: [bold, italic, link, heading-three, bulleted-list, numbered-list, quote], editor_components: [image] }
