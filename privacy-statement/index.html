@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Statement — SpiderRock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            'sr-navy':   '#162032',
+            'sr-blue':   '#1B3D6B',
+            'sr-gray':   '#5C6270',
+            'sr-dark':   '#3A3F4A',
+            'sr-red':    '#C0392B',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    /* ── Sticky header ──────────────────────────────────────────────────────
+       The utility bar stays sticky in flow. The primary nav is fixed just below it
+       so it keeps overlaying the hero exactly as before, and picks up a solid
+       background + shadow once the page scrolls (.is-stuck, toggled in script). */
+    .site-nav {
+      position: fixed;
+      top: var(--util-h, 45px);
+      left: 0; right: 0;
+      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
+      background: transparent;
+      transition: background-color 200ms ease, box-shadow 200ms ease;
+    }
+    .site-nav.is-stuck {
+      background: #162032;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
+       back vertical space while scrolling. Logo height is inline, hence !important. */
+    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+    .site-nav img { transition: height 200ms ease; }
+    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    /* Logo keeps its full size when compact by overlapping the utility bar above it.
+       Negative margins stop it from driving the bar's height; the raised z-index lets it
+       paint over the utility bar (both are navy, so the overlap is seamless). */
+    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
+      position: relative; top: -11px; }   /* rides up into the utility bar */
+    @media (prefers-reduced-motion: reduce) {
+      .site-nav nav, .site-nav img { transition: none; }
+    }
+    .hero-with-nav { padding-top: var(--nav-h, 93px); }
+    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
+    .prose h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #162032; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .prose p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; line-height: 1.75; }
+    .prose li { margin-bottom: 0.25rem; }
+    .prose a { color: #1B3D6B; text-decoration: underline; }
+    .prose h2 { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #162032; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ol li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    .prose td, .prose th { border: 1px solid #E5E7EB; padding: 0.6rem 0.75rem; vertical-align: top; color: #3A3F4A; }
+    .prose a { color: #1B3D6B; text-decoration: underline; word-break: break-word; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
+  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
+       position:fixed, and goes compact once scrolled (see .is-stuck). -->
+  <div id="siteNav" class="site-nav">
+    <nav class="w-full py-6 px-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        </a>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
+          <a href="../about-us/" class="text-blue-200">Leadership</a>
+          <a href="../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
+          <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark text-white hero-with-nav">
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Legal</p>
+      <h1 class="font-display text-[48px] md:text-[60px] font-bold leading-tight max-w-3xl">Privacy Statement</h1>
+    </div>
+  </section>
+
+  <!-- CONTENT: verbatim from spiderrock.net/privacy-statement/ -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 prose">
+<p>SpiderRock’s Privacy Policy describes how SpiderRock Technology Solutions, LLC and its affiliates (collectively “SpiderRock”) collects, uses and shares your personal data. The Privacy Policy covers how SpiderRock handles personal data whether you interact with us on our website or, our trading platform.</p>
+<ol>
+<li><strong>What is Personal Data at SpiderRock?</strong></li>
+</ol>
+<p>SpiderRock treats any data that relates to an identified or identifiable individual or that is linked or linkable to them as “personal data.” This means that data that directly identifies you, such as your name, is personal data, and also data that does not directly identify you, but that can be reasonably used to identify you, such as your email address, is personal data. Aggregated data is considered non-personal data for the purpose of this Privacy Policy.</p>
+<ol>
+<li><strong>Your Privacy Rights at SpiderRock.</strong></li>
+</ol>
+<p>At SpiderRock, we respect your ability to know, access, correct, transfer, restrict the processing of, and delete your personal data. We have provided these rights to our customer base and if you exercise these privacy rights, you have the right not to be treated in a discriminatory way nor to receive a lesser degree of service from SpiderRock. SpiderRock does not sell your data, including as “sale” is defined in Nevada and California.</p>
+<p>To exercise your privacy rights and choices, including where a third-party provider is acting on SpiderRock’s behalf, please contact SpiderRock at <a href="mailto:privacy@spiderrock.net">privacy@spiderrock.net</a> or toll free at 855-563-3600. We will require you to prove your identity when making most types of requests. We may verify your identity by phone or email. Depending on your request, we will ask for information such as your name or email address. We may also ask you to send us a signed declaration confirming your identity.</p>
+<p>In some circumstances, you may designate an authorized agent to exercise rights on your behalf. If you are an authorized agent, you must attach a copy of a completed <a href="/files/legal/SpiderRock-Authorized-Agent-Designation-Form.docx">Authorized Agent Designation Form</a> which shows that you may act on another’s behalf.</p>
+<p>There may be situations where we cannot grant your request, for example, if you ask us to delete your transaction data and SpiderRock is legally obligated to keep a record of that transaction to comply with applicable law. We may also decline to grant a request where doing so would undermine our legitimate use of data for anti-fraud and security purposes, such as when you request deletion of an account that is being investigated for security concerns. Other reasons your privacy request may be denied are if it jeopardizes the privacy of others, is frivolous or vexatious, would be extremely impractical, or is not allowable pursuant to rules and regulations SpiderRock may be subject to.</p>
+<ol>
+<li><strong>Personal Data SpiderRock Collects from You. </strong></li>
+</ol>
+<p>SpiderRock only collects the personal data that we need, and the specific data collected depends on how you interact with SpiderRock. When you create a user ID, purchase and/or activate a product or service, request additional information about SpiderRock, or otherwise interact with us, we collect a variety of information, including:</p>
+<ul>
+<li><strong>Account Information:</strong> Your SpiderRock ID and related account details, including email address.</li>
+<li><strong>Contact Information:</strong> Data such as name, email address, physical address, phone number, or other contact information.</li>
+<li><strong>Payment Information:</strong> Data about your billing address and method of payment, such as bank details, credit, debit or other payment card information.</li>
+<li><strong>Transaction Information:</strong> Data about purchases of SpiderRock products and services or transactions facilitated by SpiderRock.</li>
+<li><strong>Usage Data:</strong> Data on your activity and use of our products and services, including product interaction, crash data, performance and other diagnostic data, and other usage data.</li>
+<li><strong>Other Information You Provide to SpiderRock:</strong> Details such as the content of your communications with SpiderRock, including interactions with customer support and contacts through social media channels.</li>
+</ul>
+<p>You are not required to provide the personal data that we have requested. However, if you choose not to do so, in many cases we will not be able to provide you with our products or services or respond to requests that you may have.</p>
+<ol>
+<li><strong>Personal Data SpiderRock Receives from Other Sources.</strong></li>
+</ol>
+<p>SpiderRock may receive personal data about you from third parties who work with us to provide our products and services and assist us in payment processing, security and fraud prevention, and from other lawful sources. For research and development purposes, . When acquiring such datasets, SpiderRock does so in accordance with applicable law, including the law in the jurisdiction in which the data set is hosted. When using such datasets for research and development, we do not attempt to reidentify individuals who may appear therein.</p>
+<ol>
+<li><strong>SpiderRock’s Use of Personal Data.</strong></li>
+</ol>
+<p>SpiderRock uses personal data to provide our services, to process your transactions, to communicate with you, for security and fraud prevention, and to comply with law. We may also use personal data for other purposes with your consent.</p>
+<p>SpiderRock uses your personal data where we have a business purpose to do so. If you have questions about the legal basis, you can contact us at <a href="mailto:privacy@spiderrock.net">privacy@spiderrock.net</a>.</p>
+<ul>
+<li><strong>Process your Transactions:</strong> To process transactions, SpiderRock must collect data such as your name, purchase, and payment information.</li>
+<li><strong>Communicate with you:</strong> To respond to communications, reach out to you about your transactions or account, market our products and services, provide other relevant information, or request information or feedback. From time to time, we may use your personal data to send important notices, such as communications about purchases and changes to our terms, conditions, and policies. Because this information is important to your interaction with SpiderRock, you may not opt out of receiving these important notices.</li>
+<li><strong>Security and Fraud Prevention:</strong> To protect individuals, employees, and SpiderRock and for loss prevention and to prevent fraud, including to protect individuals, employees, and SpiderRock for the benefit of all our clients.</li>
+<li><strong>Comply with Law:</strong> To comply with applicable law – for example, to satisfy tax or reporting obligations, or to comply with a lawful governmental request.</li>
+</ul>
+<p>SpiderRock retains personal data only for so long as necessary to fulfill the purposes for which it was collected, including as described in this Privacy Policy or as required by law. We will retain your personal data for the period necessary to fulfill the purposes outlined in this Privacy Policy. When assessing retention periods, we first carefully examine whether it is necessary to retain the personal data collected and, if retention is required, work to retain the personal data for the shortest possible period permissible under law.</p>
+<ol>
+<li><strong>SpiderRock Sharing of Personal Data.</strong></li>
+</ol>
+<p>SpiderRock may share personal data with SpiderRock-affiliated companies and service providers who act on our behalf. Further, SpiderRock does not share personal data with third parties for their own marketing purposes.</p>
+<ul>
+<li><strong>Service Providers:</strong> SpiderRock may engage third parties to act as our service providers and perform certain tasks on our behalf, such as processing or storing data, including personal data, in connection with your use of our services and to assist us in marketing products and services to you. SpiderRock service providers are obligated to handle personal data consistent with this Privacy Policy and according to our instructions. They cannot use the personal data we share for their own purposes and must delete or return the personal data once they have fulfilled our request.</li>
+<li><strong>Others:</strong> SpiderRock may disclose information about you if we determine that for purposes of national security, law enforcement, or other issues of public importance, disclosure is necessary or appropriate. We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our terms and conditions or to protect our operations or users, or in the event of a reorganization, merger, or sale.</li>
+<li><strong>Other Disclosures with Your Consent.</strong> We may share your data with third parties when you consent or direct us to.</li>
+</ul>
+<p>Some jurisdictions require us to disclose whether the following categories of personal data are collected, shared with third parties for a “business purpose,” or “sold,” or transferred for “valuable consideration.”  The table below indicates the categories of personal data we collect and transfer in a variety of contexts.  We do not “sell” your personal data for money.</p>
+<table width="91%">
+<tbody>
+<tr>
+<td width="33%"><strong>Category of Personal Data</strong></td>
+<td width="35%"></td>
+<td width="30%"></td>
+</tr>
+<tr>
+<td width="33%"><strong>Identifiers</strong> – this may include things like name, alias, postal address, unique personal identifier, online identifier, email address, or account name.</td>
+<td width="35%">
+<p>·    Affiliates or subsidiaries.</p>
+<p>·    Business partners.</p>
+<p>·    Data analytics providers.</p>
+<p>·    Internet service providers.</p>
+<p>·    Joint marketing partners.</p>
+<p>·    Operating systems and platforms.</p>
+<p>·    Other Service Providers.</p>
+<p>·    Professional services organizations, this may include auditors and law firms.</p>
+</td>
+<td width="30%">
+<p>·             Advertising networks.</p>
+</td>
+</tr>
+<tr>
+<td width="33%"><strong>Internet or other electronic network activity information</strong> – this may include browsing history, search history, and information regarding an individual’s interaction with an internet website, app, or ad.</td>
+<td width="35%">
+<p>·    Affiliates or subsidiaries.</p>
+<p>·    Business partners.</p>
+<p>·    Data analytics providers.</p>
+<p>·    Internet service providers.</p>
+<p>·    Joint marketing partners.</p>
+<p>·    Operating systems and platforms.</p>
+<p>·    Other Service Providers.</p>
+<p>·    Professional services organizations, this may include auditors and law firms.</p>
+</td>
+<td width="30%">
+<p>·             Advertising networks.</p>
+</td>
+</tr>
+<tr>
+<td width="33%"><strong>Inferences drawn from any of the information listed above</strong></td>
+<td width="35%">
+<p>·    Affiliates or subsidiaries.</p>
+<p>·    Business partners.</p>
+<p>·    Data analytics providers.</p>
+<p>·    Internet service providers.</p>
+<p>·    Joint marketing partners.</p>
+<p>·    Operating systems and platforms.</p>
+<p>·    Other Service Providers.</p>
+<p>·    Professional services organizations, this may include auditors and law firms.</p>
+</td>
+<td width="30%">
+<p>·             Advertising networks.</p>
+</td>
+</tr>
+<tr>
+<td width="33%"><strong>Additional categories of personal data described in the California Customer Records statute </strong>(Cal. Civ. Code § 1798.80(e)) – this may include signature, physical characteristics, or description, insurance policy number.</td>
+<td width="35%">
+<p>·    Affiliates or subsidiaries.</p>
+<p>·    Business partners.</p>
+<p>·    Data analytics providers.</p>
+<p>·    Internet service providers.</p>
+<p>·    Joint marketing partners.</p>
+<p>·    Operating systems and platforms.</p>
+<p>·    Other Service Providers.</p>
+<p>·    Professional services organizations, this may include auditors and law firms.</p>
+</td>
+<td width="30%">
+<p>·             Advertising networks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>California Sensitive Information Disclosure.</strong> We collect the following categories of sensitive personal data (as defined under California law): A client’s social security, driver’s license, state identification card, or passport number. We collect this data to verify your identity, comply with laws and regulations, meet know your customer requirements, comply with anti-money laundering rules, manage our business, or provide services. Note that we do not use such data for any purposes that are not identified within the California Privacy Rights Act Section 1798.121. We do not “sell” or “share” sensitive personal data for cross-context behavioral advertising, although we may transfer it to third parties when you instruct us to do so.  When that occurs, third parties will use it for the purposes indicated in their privacy notices.</p>
+<ol>
+<li><strong>Protection of Personal Data at SpiderRock.</strong></li>
+</ol>
+<p>We use administrative, technical, and physical safeguards to protect your personal data, taking into account the nature of the personal data and the processing, and the threats posed. We are constantly working to improve on these safeguards to help keep your personal data secure. If we are required to inform you about a security incident, we will do so electronically, in writing, or by phone, as the law permits.</p>
+<ol>
+<li><strong>Cookies and Other Technologies.</strong></li>
+</ol>
+<p>SpiderRock’s websites, online services, interactive applications, and advertisements may use “cookies” and other technologies such as web beacons. These technologies help us to better understand user behavior including for security and fraud prevention purposes, tell us which parts of our websites people have visited, and facilitate and measure the effectiveness of advertisements and web searches.</p>
+<ul>
+<li><strong>Communications Cookies:</strong> These cookies are used to enable network traffic to and from SpiderRock’s systems, including by helping us detect any errors.</li>
+<li><strong>Strictly Necessary Cookies:</strong> These cookies are set as required to provide a specific feature or service that you have accessed or requested. For example, they allow us to display our websites and services in the proper format and to authenticate and verify your transactions.</li>
+<li><strong>Other Cookies:</strong> These cookies are used to understand how visitors interact with our websites and online services, including by helping us to assess the effectiveness of advertisements and web searches. These may also be third party cookies that collect data over time and across other websites. Among other things, they may use this data to serve ads tailored to your interests, which may include ads about our products or services.</li>
+</ul>
+<p>If you want to disable cookies, please visit our cookies settings link here. We recognize <a href="https://globalprivacycontrol.org/" rel="noopener noreferrer" target="_blank">Global Privacy Control (GPC) signals</a> broadcast from web browsers as a valid opt-out request where required by applicable law. Please note that the GPC will apply only to your current browser. We do not recognize the “Do Not Track Signal.”</p>
+<p>In addition to cookies, SpiderRock may use other technologies that help us achieve similar objectives.  In some email messages SpiderRock sends to you, we provide a “click-through URL” that links you to content on the SpiderRock website. When you click one of these URLs, they pass through a separate server before arriving at the destination page on our website. We track this click-through to help us determine interest in particular topics and measure whether we are communicating with you effectively. If you prefer not to be tracked in this way, you should not click graphic or text links in email messages.</p>
+<ol>
+<li><strong>Our Companywide Commitment to Your Privacy.</strong></li>
+</ol>
+<p>To make sure your personal data is secure, we communicate our privacy and security guidelines to SpiderRock employees and strictly enforce privacy safeguards within the company. Any questions regarding this Privacy Policy, or if you need to access this Privacy Policy in a different form due to a disability, should be directed to <a href="mailto:privacy@spiderrock.net">privacy@spiderrock.net</a>.</p>
+<p>Last Updated Date: June 16, 2025</p>
+<p>Effective Date: June 16, 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — single source of truth: _includes/partials/footer.njk.
+       Blog templates include it; hand-built pages get a copy via `npm run sync-footer`.
+       Legal copy is verbatim from spiderrock.net; links are root-relative so it works on every page. -->
+  <footer class="bg-gray-900 pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_repeat(4,1fr)] gap-12 mb-16">
+        <div>
+          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;"></a>
+          <div class="flex gap-3 mt-8">
+            <a href="https://www.linkedin.com/company/spiderrock/" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on LinkedIn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@SpiderRockData" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on YouTube" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="/platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="/platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li>
+            <li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="/data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="/data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li>
+            <li><a href="/data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li>
+            <li><a href="/data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="/contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-10 space-y-5 text-sm leading-relaxed">
+        <p class="text-gray-300">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
+        <p class="text-gray-400 flex flex-wrap gap-x-2 gap-y-1">
+          <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Member FINRA</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">SIPC</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="/exs/regulatory/" class="text-gray-300 hover:text-white underline underline-offset-2">Rule 606</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="/legal-disclaimers/" class="text-gray-300 hover:text-white underline underline-offset-2">Disclosures</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Characteristics and Risks of Standardized Options</a>
+        </p>
+        <p class="text-white font-semibold tracking-wider text-xs">FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY &ndash; NOT INTENDED FOR RETAIL CUSTOMER USE</p>
+        <p class="text-gray-500 text-xs">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <a href="/privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a>
+        <a href="/cookie-policy/" class="hover:text-white transition-colors">Cookie Policy</a>
+        <a href="/biometric-information-privacy-policy/" class="hover:text-white transition-colors">Biometric Information Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Measure the two bars so the fixed nav and the hero offset stay in sync with
+    // whatever the real rendered heights are (font loading, wrapping, zoom).
+    (function () {
+      var util = document.querySelector('.sticky.top-0');
+      var nav  = document.getElementById('siteNav');
+      if (!util || !nav) return;
+      function measure() {
+        var wasStuck = nav.classList.contains('is-stuck');
+        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
+        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
+        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
+        if (wasStuck) nav.classList.add('is-stuck');
+      }
+      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
+      measure(); onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    })();
+  </script>
+</body>
+</html>

@@ -137,52 +137,7 @@ eleventyComputed:
     </div>
   </section>
 
-  <!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
-  <footer class="bg-gray-900 py-20">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-16">
-        <img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div>
-          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
-            <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
-            <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
-            <li><a href="/platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
-            <li><a href="/platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
-            <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
-            <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
-          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="/data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="/data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="/data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="/data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
-            <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
-            <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
-            <li><a href="/contact-us/" class="hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
-        <p>© 2026 SpiderRock. All rights reserved.</p>
-        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
-        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="/exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
-      </div>
-    </div>
-  </footer>
+{% include "partials/footer.njk" %}
 
   <script>
     // Measure the two bars so the fixed nav and the hero offset stay in sync with

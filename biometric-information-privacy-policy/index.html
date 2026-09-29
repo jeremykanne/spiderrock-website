@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Careers — SpiderRock</title>
+  <title>Biometric Information Privacy Policy — SpiderRock</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,10 +30,6 @@
     html { scroll-behavior: smooth; }
     .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
     .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-    details summary { cursor: pointer; list-style: none; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .faq-chevron { transform: rotate(180deg); }
-    .faq-chevron { transition: transform 200ms ease; }
     /* ── Sticky header ──────────────────────────────────────────────────────
        The utility bar stays sticky in flow. The primary nav is fixed just below it
        so it keeps overlaying the hero exactly as before, and picks up a solid
@@ -65,6 +61,18 @@
     }
     .hero-with-nav { padding-top: var(--nav-h, 93px); }
     @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
+    .prose h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #162032; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .prose p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; line-height: 1.75; }
+    .prose li { margin-bottom: 0.25rem; }
+    .prose a { color: #1B3D6B; text-decoration: underline; }
+    .prose h2 { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #162032; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ol li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    .prose td, .prose th { border: 1px solid #E5E7EB; padding: 0.6rem 0.75rem; vertical-align: top; color: #3A3F4A; }
+    .prose a { color: #1B3D6B; text-decoration: underline; word-break: break-word; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
@@ -89,8 +97,8 @@
           <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
         </a>
         <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
-          <a href="../about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
-          <a href="../careers/" class="text-blue-200">Careers</a>
+          <a href="../about-us/" class="text-blue-200">Leadership</a>
+          <a href="../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
           <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
           <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
         </div>
@@ -98,171 +106,88 @@
     </nav>
   </div>
 
-  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
-    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
-      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Careers</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
-        Innovation. Integration. Inspiration.
-      </h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed mb-10">
-        Join a fun and flexible environment where you will be inspired to do your best innovative work. SpiderRock's team-driven culture attracts top talent across trading technology, quantitative research, and client services.
-      </p>
-      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Get in Touch</a>
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark text-white hero-with-nav">
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Legal</p>
+      <h1 class="font-display text-[48px] md:text-[60px] font-bold leading-tight max-w-3xl">Biometric Information Privacy Policy</h1>
     </div>
   </section>
 
-  <!-- ─── TOTAL REWARDS ─────────────────────────────────────────────────────── -->
-  <section class="bg-white py-28">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid md:grid-cols-2 gap-20 items-start">
-        <div>
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Benefits</p>
-          <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Total Rewards</h2>
-          <p class="text-gray-700 leading-relaxed text-lg mb-8">
-            SpiderRock's Total Rewards are designed to include programs that fit your lifestyle and your career trajectory. Our Total Rewards approach includes progressive Benefits, market-driven Compensation, and career Development strategies. These three pillars embody our most crucial investment for our most valuable asset — you.
-          </p>
-          <div class="grid grid-cols-3 gap-6">
-            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
-              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-              </div>
-              <p class="font-display font-bold text-gray-900 text-sm">Benefits</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
-              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <p class="font-display font-bold text-gray-900 text-sm">Compensation</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
-              <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-              </div>
-              <p class="font-display font-bold text-gray-900 text-sm">Development</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gradient-to-br from-sr-navy to-sr-blue rounded-xl p-10 text-white">
-          <h3 class="font-display text-xl font-bold mb-8">Why SpiderRock</h3>
-          <ul class="space-y-5">
-            <li class="flex gap-4">
-              <span class="text-blue-300 font-bold text-xl flex-shrink-0">✓</span>
-              <span class="text-white/80">Work at the intersection of trading technology, quantitative research, and institutional finance</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-blue-300 font-bold text-xl flex-shrink-0">✓</span>
-              <span class="text-white/80">Collaborative, team-driven culture with direct access to leadership</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-blue-300 font-bold text-xl flex-shrink-0">✓</span>
-              <span class="text-white/80">High-impact work supporting $47B+ in daily trading volume</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-blue-300 font-bold text-xl flex-shrink-0">✓</span>
-              <span class="text-white/80">Named Best and Brightest Companies to Work For in the Nation</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-blue-300 font-bold text-xl flex-shrink-0">✓</span>
-              <span class="text-white/80">Training, development, and career growth opportunities throughout your tenure</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── FAQ ───────────────────────────────────────────────────────────────── -->
-  <section class="bg-gray-50 py-28 border-t border-gray-200">
+  <!-- CONTENT: verbatim from spiderrock.net/biometric-information-privacy-policy/ -->
+  <section class="bg-gray-50 py-24">
     <div class="max-w-3xl mx-auto px-8">
-      <div class="mb-16">
-        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+      <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 prose">
+<p>This Biometric Information Privacy Policy (“Policy”) is adopted by SpiderRock Technology Solutions, LLC, on behalf of itself and each of its present and future subsidiaries and affiliates (collectively, “SpiderRock”), effective as of September 15, 2026.</p>
+<h3>1. Purpose and Scope</h3>
+<p>SpiderRock is committed to complying with the Illinois Biometric Information Privacy Act, 740 ILCS 14/1 et seq. (“BIPA”). This Policy establishes SpiderRock’s practices for the collection, storage, use, retention, and destruction of biometric identifiers and biometric information, and sets out the retention schedule and destruction guidelines required by 740 ILCS 14/15(a). This Policy applies to biometric identifiers and biometric information SpiderRock collects from employees, contractors, and other individuals in the course of its operations in Illinois.</p>
+<h3>2. Definitions</h3>
+<p><strong>2.1 “Biometric identifier”</strong> means a retina or iris scan, fingerprint, voiceprint, or scan of hand or face geometry. It does not include writing samples, written signatures, photographs, human biological samples used for valid scientific testing or screening, demographic data, tattoo descriptions, or physical descriptions such as height, weight, hair color, or eye color, consistent with BIPA’s statutory definition.</p>
+<p><strong>2.2 “Biometric information”</strong> means any information, regardless of how it is captured, converted, stored, or shared, based on an individual’s biometric identifier used to identify an individual.</p>
+<h3>3. Biometric Data SpiderRock Collects</h3>
+<p>As of the effective date of this Policy, SpiderRock may collect voice recordings and derived voiceprints and/or AI voice models from employees who separately and voluntarily consent to participate in creating AI-generated voiceover content describing the features of SpiderRock’s trading platform. Any such collection is governed by an individual written disclosure and consent/release agreement executed with the participating individual, in addition to this Policy.</p>
+<h3>4. Written Disclosure and Consent Required Before Collection (740 ILCS 14/15(b))</h3>
+<p>Before collecting any individual’s biometric identifier or biometric information, SpiderRock will: (a) inform the individual in writing that biometric data is being collected or stored; (b) inform the individual in writing of the specific purpose and length of time for which the biometric data will be collected, stored, and used; and (c) obtain a written release, which may be provided by electronic signature, from the individual or the individual’s legally authorized representative.</p>
+<h3>5. Retention Schedule (740 ILCS 14/15(a))</h3>
+<p>SpiderRock will retain biometric identifiers and biometric information only for as long as reasonably necessary to fulfill the purpose for which it was collected, as stated in the applicable written disclosure and consent, and in no event longer than the earliest of:</p>
+<ul>
+<li>the date on which the initial purpose for collecting the biometric data has been satisfied (for example, completion of the specific project for which an individual’s voice was recorded);</li>
+<li>three (3) years after the individual’s last interaction with SpiderRock (including, for an employee or contractor, separation from SpiderRock); or</li>
+<li>the effective date of a valid revocation of consent by the individual, where revocation is available under the applicable consent agreement.</li>
+</ul>
+<h3>6. Destruction Guidelines</h3>
+<p>Upon expiration of the retention period described in Section 5, SpiderRock will permanently destroy the biometric identifiers and biometric information in its possession, using a secure deletion method reasonably designed to render the data unrecoverable, including by instructing any third-party vendor holding the data on SpiderRock’s behalf to do the same.</p>
+<p><strong>6.1 What Must Be Destroyed.</strong> “Biometric identifiers and biometric information” subject to destruction include, without limitation:</p>
+<ul>
+<li>
+<ul>
+<li>the original audio Recordings, in every location where a copy exists (local devices, shared drives, email, collaboration tools, and cloud storage);</li>
+<li>any voiceprint, embedding, or other feature data extracted or derived from the Recordings;</li>
+<li>Employee-specific training data, fine-tuning artifacts, or model checkpoints created to build or adapt an AI Voice Model on that individual’s voice;</li>
+<li>copies held by any third-party vendor or service provider processing the data on Company’s behalf; and</li>
+<li>associated metadata that identifies the individual (for example, file names, transcripts, or labels tying a recording or voiceprint to a specific person).</li>
+</ul>
+</li>
+</ul>
+<p>Finished Voiceover Content that has already been publicly released is addressed separately in the applicable individual consent agreement and is not, by itself, “biometric information” requiring destruction under this Section, unless it embeds a recoverable voiceprint or model file.</p>
+<p><strong>6.2 Destruction Method.</strong> Standard operating-system deletion (e.g., moving a file to a recycle bin) does not by itself satisfy “permanently destroy.” Company will use one or more of the following, as appropriate to where the data is stored:</p>
+<ul>
+<li>
+<ul>
+<li>secure/permanent deletion tools or processes for on-premises and endpoint storage that overwrite or otherwise render the data unrecoverable, not simply hidden from ordinary view;</li>
+<li>cryptographic erasure for encrypted data at rest (destroying the encryption key so the underlying ciphertext is permanently unreadable), where supported by the storage platform;</li>
+<li>use of the applicable cloud or SaaS provider’s “hard delete” or permanent-deletion function, followed by confirmation that the provider’s own backup/retention cycle has purged the data (cloud platforms often retain “deleted” data in backups for a defined window — that window should be tracked and closed out, not assumed);</li>
+<li>physical destruction (e.g., degaussing or shredding) of any physical media that cannot be securely wiped; and</li>
+<li>for any third-party vendor (including an AI voiceover-generation vendor): a written deletion request, and a written or system-generated confirmation from the vendor that the data was deleted from its production systems and backups within the timeframe required by Company’s vendor agreement.</li>
+</ul>
+</li>
+</ul>
+<p><strong>6.3 AI Voice Model Handling.</strong> Because a trained AI Voice Model does not store an individual’s voice data as a separately deletable file, “destruction” of Employee-specific data embedded in a model is handled as follows: (a) Company will immediately stop using the AI Voice Model to generate any new Synthetic Voice Output upon the retention trigger described in Section 5; (b) Company will delete the individual-specific model checkpoint, fine-tuning weights, or voice-cloning profile associated with that individual; and (c) where the individual’s voice data cannot practicably be isolated and removed from a shared or base model without retraining, Company will decommission and delete that model version entirely rather than continue to rely on techniques (such as partial “machine unlearning”) that are not presently reliable enough to treat as equivalent to destruction.</p>
+<p><strong>6.4 Timing.</strong> Destruction will be completed promptly, and in any event within ninety (90) days, after the applicable retention trigger in Section 5, except to the extent a litigation hold, regulatory inquiry, or other legal obligation requires Company to preserve the data longer, in which case destruction will occur promptly once that obligation ends.</p>
+<p><strong>6.5 Recordkeeping.</strong> For each destruction event, Company will document the individual (or category) whose data was destroyed, the date of destruction, the data destroyed, the method used, and, where a vendor was involved, the vendor’s confirmation of deletion. These records will be retained for five (5) years to demonstrate compliance with this Policy.</p>
+<p><strong>6.6 Responsible Party.</strong> SpiderRock Chief Compliance Officer, together with IT/Information Security, is responsible for tracking each individual’s retention period, triggering the destruction process on schedule, and confirming and documenting completion.</p>
+<h3>7. No Sale or Profit (740 ILCS 14/15(c))</h3>
+<p>SpiderRock will not sell, lease, trade, or otherwise profit from any individual’s biometric identifier or biometric information.</p>
+<h3>8. Restrictions on Disclosure (740 ILCS 14/15(d))</h3>
+<p>SpiderRock will not disclose, redisclose, or otherwise disseminate an individual’s biometric identifier or biometric information unless:</p>
+<ul>
+<li>the individual consents to the disclosure;</li>
+<li>the disclosure completes a financial transaction requested or authorized by the individual;</li>
+<li>the disclosure is required by state or federal law or municipal ordinance; or</li>
+<li>the disclosure is required pursuant to a valid warrant or subpoena issued by a court of competent jurisdiction. Any third-party vendor engaged to process biometric data on SpiderRock’s behalf will be contractually bound to use, retention, and disclosure restrictions consistent with this Policy and the applicable individual consent.</li>
+</ul>
+<h3>9. Data Security (740 ILCS 14/15(e))</h3>
+<p>SpiderRock will store, transmit, and protect from disclosure all biometric identifiers and biometric information using the reasonable standard of care within SpiderRock’s industry, and in a manner that is the same as or more protective than the manner in which SpiderRock stores, transmits, and protects other confidential and sensitive information.</p>
+<h3>10. Individual Inquiries</h3>
+<p>An individual with questions about this Policy, or requests concerning their own biometric data, may contact SpiderRock at <a href="mailto:legal@spiderrock.net">legal@spiderrock.net. </a></p>
+<h3>11. Availability of This Policy</h3>
+<p>Consistent with 740 ILCS 14/15(a), this Policy is made available to the public at SpiderRock’s website – www.spiderrock.net and upon request directed to <a href="mailto:legal@spiderrock.net">legal@spiderrock.net. </a></p>
+<h3>12. Relationship to Individual Consent Agreements</h3>
+<p>This Policy describes SpiderRock’s general retention schedule, destruction practices, and related BIPA obligations. It supplements, and does not replace, any individual written disclosure and consent or release agreement SpiderRock obtains from a specific individual before collecting that individual’s biometric identifiers or biometric information (for example, a Voice Recording, Biometric Information, and AI Voice Replica Consent and Release Agreement). Where an individual agreement states a shorter or more specific retention period or purpose, that agreement controls for that individual’s data, subject to the outer limits of this Policy.</p>
+<h3>13. Policy Administration; Amendment</h3>
+<p>SpiderRock may review and update this Policy from time to time; the version then made publicly available under Section 11 is the operative version.</p>
+<h3>14. Effective Date</h3>
+<p>This Policy is effective as of September 15, 2026</p>
       </div>
-
-      <div class="space-y-2">
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            How current are job postings?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            The website is continually updated. Jobs are posted as soon as they become available and are removed once the position is filled.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            How do I apply for an open position?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Open positions are listed on the SpiderRock careers portal. You can also reach out directly via our <a href="../contact-us/" class="text-sr-blue hover:underline">Contact page</a> to express your interest.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            Will I need to go through the formal process even if I've interviewed with SpiderRock before?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Yes, all candidates go through the standard hiring process to ensure a consistent and fair evaluation. If you've interviewed before, your prior interaction may be noted and considered.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            How do I apply for an internship?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Internship opportunities are posted as they become available. Check the careers portal for current openings or reach out through our Contact page to inquire about upcoming internship programs.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            Does SpiderRock conduct background checks?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Yes, background checks are a standard part of the offer process for all positions at SpiderRock.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            Will I have opportunities for training and development after being hired?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Absolutely. Career development is a core pillar of our Total Rewards program. SpiderRock invests in training, mentorship, and growth opportunities throughout your tenure.
-          </div>
-        </details>
-
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
-            Do you recruit new college graduates?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600">
-            Yes, SpiderRock actively recruits new graduates, particularly in technology, computer science, mathematics, and finance. Entry-level positions and internship-to-hire pathways are available for exceptional candidates.
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
-  <section class="bg-sr-navy py-24">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Ready to Join the Team?</h2>
-      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-        Reach out to learn more about open opportunities at SpiderRock.
-      </p>
-      <a href="../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Get in Touch</a>
     </div>
   </section>
 

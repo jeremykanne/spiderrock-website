@@ -280,47 +280,83 @@
       <p class="text-gray-400 text-xs mt-6">By submitting this form you agree to SpiderRock&rsquo;s privacy policy. For institutional &amp; professional clients only.</p>
     </div>
   </section>
-  <footer class="bg-gray-900 py-20">
+  <!-- FOOTER — single source of truth: _includes/partials/footer.njk.
+       Blog templates include it; hand-built pages get a copy via `npm run sync-footer`.
+       Legal copy is verbatim from spiderrock.net; links are root-relative so it works on every page. -->
+  <footer class="bg-gray-900 pt-20 pb-12">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-16">
-        <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_repeat(4,1fr)] gap-12 mb-16">
+        <div>
+          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;"></a>
+          <div class="flex gap-3 mt-8">
+            <a href="https://www.linkedin.com/company/spiderrock/" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on LinkedIn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@SpiderRockData" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on YouTube" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+            </a>
+          </div>
+        </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="../../platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
-            <li><a href="../../platform/routing-algos/" class="hover:text-white transition-colors">Routing Algos</a></li>
-            <li><a href="../../platform/risk-management/" class="hover:text-white transition-colors">Risk Management</a></li>
-            <li><a href="../../platform/analytics-framework/" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
+            <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
+            <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
+            <li><a href="/platform/#analytics" class="hover:text-white transition-colors">Analytics Framework</a></li>
+            <li><a href="/platform/#compliance" class="hover:text-white transition-colors">Compliance Layer</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="../../exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
-            <li><a href="../../exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
-            <li><a href="../../exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
+            <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
+            <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
+            <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
-          <ul class="space-y-3 text-gray-400 text-sm"><li><a href="../../data/" class="hover:text-white transition-colors">Data Overview</a></li><li><a href="../../data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li><li><a href="../../data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li><li><a href="../../data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li><li><a href="../../data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li><li><a href="../../data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li><li><a href="../../data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li></ul>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li>
+            <li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li>
+            <li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
+            <li><a href="/data/historical-data-analytics/options-greeks-stock-prices/" class="hover:text-white transition-colors">Historical Data</a></li>
+            <li><a href="/data/historical-data-analytics/volatility-surfaces/" class="hover:text-white transition-colors">Volatility Surfaces</a></li>
+            <li><a href="/data/spiderstream-market-data-api/" class="hover:text-white transition-colors">MLink API</a></li>
+            <li><a href="/data/aws-infrastructure/" class="hover:text-white transition-colors">AWS &amp; Infrastructure</a></li>
+          </ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
-            <li><a href="../../about-us/" class="hover:text-white transition-colors">Leadership</a></li>
-            <li><a href="../../careers/" class="hover:text-white transition-colors">Careers</a></li>
-            <li><a href="../../updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
-            <li><a href="../../contact-us/" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
+            <li><a href="/contact-us/" class="hover:text-white transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-12 text-center text-gray-500 text-xs space-y-2">
-        <p>© 2026 SpiderRock. All rights reserved.</p>
-        <p>FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY — NOT INTENDED FOR RETAIL CUSTOMER USE.</p>
-        <p>SpiderRock EXS LLC is a registered broker dealer. Member <a href="https://www.finra.org/" class="text-gray-400 hover:text-white">FINRA</a> / <a href="https://www.sipc.org/" class="text-gray-400 hover:text-white">SIPC</a>. <a href="../../exs/regulatory/" class="text-gray-400 hover:text-white">Rule 606</a>.</p>
+
+      <div class="border-t border-white/10 pt-10 space-y-5 text-sm leading-relaxed">
+        <p class="text-gray-300">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
+        <p class="text-gray-400 flex flex-wrap gap-x-2 gap-y-1">
+          <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Member FINRA</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">SIPC</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="/exs/regulatory/" class="text-gray-300 hover:text-white underline underline-offset-2">Rule 606</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="/legal-disclaimers/" class="text-gray-300 hover:text-white underline underline-offset-2">Disclosures</a><span class="text-gray-600" aria-hidden="true">|</span>
+          <a href="https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Characteristics and Risks of Standardized Options</a>
+        </p>
+        <p class="text-white font-semibold tracking-wider text-xs">FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY &ndash; NOT INTENDED FOR RETAIL CUSTOMER USE</p>
+        <p class="text-gray-500 text-xs">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <a href="/privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a>
+        <a href="/cookie-policy/" class="hover:text-white transition-colors">Cookie Policy</a>
+        <a href="/biometric-information-privacy-policy/" class="hover:text-white transition-colors">Biometric Information Privacy Policy</a>
       </div>
     </div>
   </footer>

@@ -52,3 +52,17 @@ Uploaded images are stored in `images/uploads/`.
 ## Deploying
 
 Push to `main` and Netlify deploys automatically. See [DEPLOYMENT.md](DEPLOYMENT.md) for branches, previews, and settings.
+
+## Footer
+
+The footer is defined once in `_includes/partials/footer.njk`. Blog templates include it directly; the hand-built HTML pages carry a copy. After editing the footer, run:
+
+```bash
+npm run sync-footer
+```
+
+Its legal text is copied verbatim from spiderrock.net — change it only with the client's approval.
+
+## Legal Pages
+
+`/privacy-statement/`, `/cookie-policy/`, `/biometric-information-privacy-policy/`, and `/legal-disclaimers/` carry the live site's text verbatim. The Authorized Agent Designation Form linked from the Privacy Statement is in `files/legal/`.

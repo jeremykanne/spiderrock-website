@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Management — SpiderRock Platform</title>
+  <title>Cookie Policy — SpiderRock</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,8 +30,6 @@
     html { scroll-behavior: smooth; }
     .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
     .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-    .card-hover { transition: all 200ms ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
     /* ── Sticky header ──────────────────────────────────────────────────────
        The utility bar stays sticky in flow. The primary nav is fixed just below it
        so it keeps overlaying the hero exactly as before, and picks up a solid
@@ -63,6 +61,18 @@
     }
     .hero-with-nav { padding-top: var(--nav-h, 93px); }
     @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
+    .prose h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #162032; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .prose p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; line-height: 1.75; }
+    .prose li { margin-bottom: 0.25rem; }
+    .prose a { color: #1B3D6B; text-decoration: underline; }
+    .prose h2 { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 700; color: #162032; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: #162032; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ol li { color: #3A3F4A; line-height: 1.8; margin-bottom: 0.25rem; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    .prose td, .prose th { border: 1px solid #E5E7EB; padding: 0.6rem 0.75rem; vertical-align: top; color: #3A3F4A; }
+    .prose a { color: #1B3D6B; text-decoration: underline; word-break: break-word; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
@@ -70,10 +80,10 @@
   <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
   <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
-      <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
-      <a href="../../platform/" class="text-blue-200">Trading Platform</a>
-      <a href="../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
-      <a href="../../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+      <a href="../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
+      <a href="../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
+      <a href="../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
+      <a href="../data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
     </div>
   </div>
 
@@ -83,170 +93,47 @@
   <div id="siteNav" class="site-nav">
     <nav class="w-full py-6 px-8">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="../../" class="hover:opacity-80 transition-opacity">
-          <img src="../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+        <a href="../" class="hover:opacity-80 transition-opacity">
+          <img src="../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
         </a>
-        <div class="hidden md:flex items-center gap-5 text-white text-[15.6px] font-semibold">
-          <a href="../" class="hover:text-blue-200 transition-colors duration-200">Platform</a>
-          <div class="relative group">
-            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Our Platform <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
-              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[190px]">
-                <a href="../routing-algos/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Order Management</a>
-                <a href="../risk-management/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Risk Management</a>
-                <a href="../analytics-framework/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Options Analytics</a>
-                <a href="../compliance-layer/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Compliance Layer</a>
-              </div>
-            </div>
-          </div>
-          <div class="relative group">
-            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Tools &amp; APIs <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
-              <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[170px]">
-                <a href="../gui-tools/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Trading Tools</a>
-                <a href="../srse/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Platform APIs</a>
-                <a href="../fix-gateway/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">FIX Gateway</a>
-              </div>
-            </div>
-          </div>
+        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
+          <a href="../about-us/" class="text-blue-200">Leadership</a>
+          <a href="../careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
           <a href="../updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
-          <a href="../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+          <a href="../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
         </div>
       </div>
     </nav>
   </div>
 
-  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
-    <div class="max-w-7xl mx-auto px-8 py-16 pb-28">
-      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Trading Platform</p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-6 max-w-3xl">
-        Intelligent Order Routing
-      </h1>
-      <p class="text-white/80 text-xl max-w-2xl leading-relaxed">
-        Quantitative routing built on volatility surfaces, alpha probabilities, and multi-venue market intelligence.
-      </p>
+  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-dark text-white hero-with-nav">
+    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5">Legal</p>
+      <h1 class="font-display text-[48px] md:text-[60px] font-bold leading-tight max-w-3xl">Cookie Policy</h1>
     </div>
   </section>
 
-  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
-  <section class="bg-white py-28">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="max-w-3xl">
-        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Quantitative Approach</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Routing That Learns from the Market</h2>
-        <p class="text-gray-700 leading-relaxed text-lg mb-6">
-          SpiderRock's routing algorithms use a quantitative approach to order routing, enabling you to actively participate in price discovery by leaning on real-time fair value calculations. Orders are routed to maximize execution quality based on volatility surfaces, alpha probabilities, and live market microstructure data.
-        </p>
-        <p class="text-gray-700 leading-relaxed text-lg mb-6">
-          Our machine learning framework continually monitors and takes advantage of market micro-dynamic shifts, allowing for precise order routing based on a user-defined level of aggression. The system supports multi-leg spread orders, limit orders, and dark quotes, with basket risk controls managing position limits across all orders simultaneously.
-        </p>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          This systematizes and scales derivatives strategy execution to institutional capacity while maintaining the precision required for complex options strategies.
-        </p>
+  <!-- CONTENT: verbatim from spiderrock.net/cookie-policy/ -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 prose">
+<h2>About this cookie policy</h2>
+<p> This Cookie Policy explains what cookies are and how we use them, the types of cookies we use i.e, the information we collect using cookies and how that information is used, and how to control the cookie preferences. For further information on how we use, store, and keep your personal data secure, see our Privacy Policy.</p>
+<p>You can at any time change or withdraw your consent from the Cookie Declaration on our website. Learn more about who we are, how you can contact us, and how we process personal data in our Privacy Policy.<br/>Your consent applies to the following domains: spiderrock.net<br/>Your current state: No consent given. <a>Manage your consent.</a> </p>
+<h3>What are cookies ?</h3>
+<p>Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.</p>
+<h3>How do we use cookies ?</h3>
+<p>As most of the online services, our website uses first-party and third-party cookies for several purposes. First-party cookies are mostly necessary for the website to function the right way, and they do not collect any of your personally identifiable data. The third-party cookies used on our website are mainly for understanding how the website performs, how you interact with our website, keeping our services secure, providing advertisements that are relevant to you, and all in all providing you with a better and improved user experience and help speed up your future interactions with our website.</p>
+<h3>What types of cookies do we use ?</h3>
+<p>Essential: Some cookies are essential for you to be able to experience the full functionality of our site. They allow us to maintain user sessions and prevent any security threats. They do not collect or store any personal information. For example, these cookies allow you to log-in to your account and add products to your basket, and checkout securely.</p>
+<p>Statistics: These cookies store information like the number of visitors to the website, the number of unique visitors, which pages of the website have been visited, the source of the visit, etc. These data help us understand and analyze how well the website performs and where it needs improvement.</p>
+<p>Marketing: Our website displays advertisements. These cookies are used to personalize the advertisements that we show to you so that they are meaningful to you. These cookies also help us keep track of the efficiency of these ad campaigns. The information stored in these cookies may also be used by the third-party ad providers to show you ads on other websites on the browser as well.</p>
+<p>Functional: These are the cookies that help certain non-essential functionalities on our website. These functionalities include embedding content like videos or sharing content of the website on social media platforms.</p>
+<p>Preferences: These cookies help us store your settings and browsing preferences like language preferences so that you have a better and efficient experience on future visits to the website.<br/></p>
+<h3>How can I control the cookie preferences ?</h3>
+<p>Should you decide to change your preferences later through your browsing session, you can click on the “Manage consent” tab on your screen. This will display the consent notice again enabling you to change your preferences or withdraw your consent entirely.</p>
+<p>In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. To find out more about how to manage and delete cookies, visit wikipedia.org, www.allaboutcookies.org.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ─── ORDER HANDLING ───────────────────────────────────────────────────── -->
-  <section class="bg-gray-50 py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-16">
-        <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Order Handling</p>
-        <h2 class="font-display text-4xl font-bold text-gray-900">Multi-Mode Execution</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Market Sweeping</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Aggressively sweep across multiple exchanges simultaneously to fill orders quickly, leveraging SpiderRock's direct exchange connectivity and low-latency infrastructure.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Spread Orders</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Route multi-leg spread orders to maximize fill rates while managing leg risk across execution venues. The system handles complex options spreads with real-time leg risk monitoring.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-10 shadow-sm border border-gray-100 card-hover">
-          <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Limit Orders</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Intelligent limit order management with dynamic repricing based on surface analytics and changing market conditions. Configurable aggression parameters adapt to your trading objectives.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── KEY FEATURES ─────────────────────────────────────────────────────── -->
-  <section class="bg-white py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid md:grid-cols-2 gap-20 items-start">
-        <div>
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-5">Capabilities</p>
-          <h2 class="font-display text-4xl font-bold text-gray-900 mb-8">Built for Institutional Complexity</h2>
-          <p class="text-gray-700 leading-relaxed text-lg">
-            SpiderRock routing combines proprietary pricing models with market microstructure intelligence to deliver execution quality at institutional scale. Every routing decision is informed by live volatility data computed directly from exchange feeds.
-          </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Volatility surface-based routing decisions</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Alpha probability scoring per order</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Dark quote access and posting</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Basket risk controls and position limits</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Multi-venue simultaneous execution</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Real-time market sweeping</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Spread order leg management</span>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-sr-blue font-bold text-lg mt-0.5">✓</span>
-            <span class="text-gray-700">Configurable routing parameters</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
-  <section class="bg-sr-navy py-20">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="font-display text-4xl font-bold text-white mb-6">See SpiderRock Routing in Action</h2>
-      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-        Contact our team to request a platform demonstration and discuss how SpiderRock's routing algorithms can improve your execution quality.
-      </p>
-      <a href="../../contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">Request a Demo</a>
     </div>
   </section>
 

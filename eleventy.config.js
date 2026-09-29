@@ -13,6 +13,11 @@ const PASSTHROUGH = [
   "logos",
   "_archive",
   "admin",
+  "files",
+  "privacy-statement",
+  "cookie-policy",
+  "biometric-information-privacy-policy",
+  "legal-disclaimers",
 ];
 
 const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July",
