@@ -44,6 +44,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date)
   );
+  // Everything after the three featured posts, paginated on /updates/.
+  eleventyConfig.addCollection("olderPosts", (api) =>
+    api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date).slice(3)
+  );
 
   return {
     dir: { input: ".", output: "_site", includes: "_includes" },

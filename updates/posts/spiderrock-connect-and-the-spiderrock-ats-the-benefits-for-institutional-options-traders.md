@@ -2,6 +2,8 @@
 title: "SpiderRock Connect and the SpiderRock ATS: The Benefits for Institutional Options Traders"
 date: 2024-11-26
 summary: "A deep dive into how SpiderRock Connect and the ATS are transforming institutional options trading — bringing broad, agnostic market access and competitive liquidity to the market."
+image: /images/uploads/updates/spiderrock-connect-and-the-spiderrock-ats-the-benefits-for-institutional-options-traders/KH-ATS-Marketing-Piece-768x398.jpg
+image_alt: "SpiderRock Connect and the SpiderRock ATS: The Benefits for Institutional Options Traders"
 categories:
   - "Trading Platform"
 ---

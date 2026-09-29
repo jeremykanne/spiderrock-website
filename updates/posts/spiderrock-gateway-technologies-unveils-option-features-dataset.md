@@ -2,6 +2,8 @@
 title: "SpiderRock Gateway Technologies Unveils Option Features Dataset"
 date: 2024-09-30
 summary: "A curated collection of analytics leveraging option market sentiment and dynamics to include insights into market behavior — now available through SpiderRock."
+image: /images/uploads/updates/spiderrock-gateway-technologies-unveils-option-features-dataset/SR-Blog-Images-3-768x398.jpg
+image_alt: "SpiderRock Gateway Technologies Unveils Option Features Dataset"
 categories:
   - "Data & Analytics"
 ---

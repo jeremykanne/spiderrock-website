@@ -2,6 +2,8 @@
 title: "Announcing Real-Time FLEX Option Pricing and Analytics Available Through SpiderRock"
 date: 2024-11-10
 summary: "SpiderRock introduces FLEX Option Pricing and Analytics via its MLink API, serving traders, portfolio managers, brokers, and Option ETF dealers and issuers."
+image: /images/uploads/updates/announcing-real-time-flex-option-pricing-and-analytics-available-through-spiderrock/SR-Blog-Images-5-768x398.jpg
+image_alt: "Announcing Real-Time FLEX Option Pricing and Analytics Available Through SpiderRock"
 categories:
   - "Data & Analytics"
 ---

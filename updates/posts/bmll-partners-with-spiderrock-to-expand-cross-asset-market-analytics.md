@@ -2,6 +2,8 @@
 title: "BMLL Partners with SpiderRock to Expand Cross-Asset Market Analytics"
 date: 2026-04-23
 summary: "SpiderRock US equity options print set data now available via BMLL Data Lab, enabling clients to combine cross-asset market analytics."
+image: /images/uploads/updates/bmll-partners-with-spiderrock-to-expand-cross-asset-market-analytics/BMLL-x-SpiderRock-768x398.jpg
+image_alt: "BMLL Partners with SpiderRock to Expand Cross-Asset Market Analytics"
 categories:
   - "Partnerships"
 ---

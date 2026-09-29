@@ -2,6 +2,8 @@
 title: "SpiderRock Gateway Technologies Announces SpiderStream over MLink"
 date: 2023-10-24
 summary: "An API that simplifies access to real-time and delayed institutional-grade market data and options analytics trusted by the industry's largest firms."
+image: /images/uploads/updates/spiderrock-gateway-technologies-announces-spiderstream-over-mlink/MLink-Press-Release-1-1-768x398.png
+image_alt: "SpiderRock Gateway Technologies Announces SpiderStream over MLink"
 categories:
   - "Data & Analytics"
 ---

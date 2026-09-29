@@ -2,6 +2,8 @@
 title: "Using Generative AI to Automate Feature Discovery in US Equities"
 date: 2026-02-11
 summary: "SpiderRock introduces the Option Features Dataset — a curated collection integrating options market sentiment and dynamics, offering actionable insights into market behavior."
+image: /images/uploads/updates/using-generative-ai-to-automate-feature-discovery-in-us-equities/Option-Features-Blog-1-768x398.jpg
+image_alt: "Using Generative AI to Automate Feature Discovery in US Equities"
 categories:
   - "Data & Analytics"
 ---
