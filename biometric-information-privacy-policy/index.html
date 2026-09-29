@@ -73,6 +73,8 @@
     .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
     .prose td, .prose th { border: 1px solid #E5E7EB; padding: 0.6rem 0.75rem; vertical-align: top; color: #3A3F4A; }
     .prose a { color: #1B3D6B; text-decoration: underline; word-break: break-word; }
+    .prose .sub { padding-left: 2.5rem; }
+    .prose .sub + ul, .prose .sub + ol { margin-left: 2.5rem; }
     .prose td ul { margin: 0; padding-left: 1.1rem; }
     .prose td li { line-height: 1.5; margin-bottom: 0.5rem; }
     .prose td li:last-child { margin-bottom: 0; }
@@ -124,8 +126,8 @@
 <h3>1. Purpose and Scope</h3>
 <p>SpiderRock is committed to complying with the Illinois Biometric Information Privacy Act, 740 ILCS 14/1 et seq. (“BIPA”). This Policy establishes SpiderRock’s practices for the collection, storage, use, retention, and destruction of biometric identifiers and biometric information, and sets out the retention schedule and destruction guidelines required by 740 ILCS 14/15(a). This Policy applies to biometric identifiers and biometric information SpiderRock collects from employees, contractors, and other individuals in the course of its operations in Illinois.</p>
 <h3>2. Definitions</h3>
-<p><strong>2.1 “Biometric identifier”</strong> means a retina or iris scan, fingerprint, voiceprint, or scan of hand or face geometry. It does not include writing samples, written signatures, photographs, human biological samples used for valid scientific testing or screening, demographic data, tattoo descriptions, or physical descriptions such as height, weight, hair color, or eye color, consistent with BIPA’s statutory definition.</p>
-<p><strong>2.2 “Biometric information”</strong> means any information, regardless of how it is captured, converted, stored, or shared, based on an individual’s biometric identifier used to identify an individual.</p>
+<p class="sub"><strong>2.1 “Biometric identifier”</strong> means a retina or iris scan, fingerprint, voiceprint, or scan of hand or face geometry. It does not include writing samples, written signatures, photographs, human biological samples used for valid scientific testing or screening, demographic data, tattoo descriptions, or physical descriptions such as height, weight, hair color, or eye color, consistent with BIPA’s statutory definition.</p>
+<p class="sub"><strong>2.2 “Biometric information”</strong> means any information, regardless of how it is captured, converted, stored, or shared, based on an individual’s biometric identifier used to identify an individual.</p>
 <h3>3. Biometric Data SpiderRock Collects</h3>
 <p>As of the effective date of this Policy, SpiderRock may collect voice recordings and derived voiceprints and/or AI voice models from employees who separately and voluntarily consent to participate in creating AI-generated voiceover content describing the features of SpiderRock’s trading platform. Any such collection is governed by an individual written disclosure and consent/release agreement executed with the participating individual, in addition to this Policy.</p>
 <h3>4. Written Disclosure and Consent Required Before Collection (740 ILCS 14/15(b))</h3>
@@ -139,7 +141,7 @@
 </ul>
 <h3>6. Destruction Guidelines</h3>
 <p>Upon expiration of the retention period described in Section 5, SpiderRock will permanently destroy the biometric identifiers and biometric information in its possession, using a secure deletion method reasonably designed to render the data unrecoverable, including by instructing any third-party vendor holding the data on SpiderRock’s behalf to do the same.</p>
-<p><strong>6.1 What Must Be Destroyed.</strong> “Biometric identifiers and biometric information” subject to destruction include, without limitation:</p>
+<p class="sub"><strong>6.1 What Must Be Destroyed.</strong> “Biometric identifiers and biometric information” subject to destruction include, without limitation:</p>
 <ul>
 <li>the original audio Recordings, in every location where a copy exists (local devices, shared drives, email, collaboration tools, and cloud storage);</li>
 <li>any voiceprint, embedding, or other feature data extracted or derived from the Recordings;</li>
@@ -148,7 +150,7 @@
 <li>associated metadata that identifies the individual (for example, file names, transcripts, or labels tying a recording or voiceprint to a specific person).</li>
 </ul>
 <p>Finished Voiceover Content that has already been publicly released is addressed separately in the applicable individual consent agreement and is not, by itself, “biometric information” requiring destruction under this Section, unless it embeds a recoverable voiceprint or model file.</p>
-<p><strong>6.2 Destruction Method.</strong> Standard operating-system deletion (e.g., moving a file to a recycle bin) does not by itself satisfy “permanently destroy.” Company will use one or more of the following, as appropriate to where the data is stored:</p>
+<p class="sub"><strong>6.2 Destruction Method.</strong> Standard operating-system deletion (e.g., moving a file to a recycle bin) does not by itself satisfy “permanently destroy.” Company will use one or more of the following, as appropriate to where the data is stored:</p>
 <ul>
 <li>secure/permanent deletion tools or processes for on-premises and endpoint storage that overwrite or otherwise render the data unrecoverable, not simply hidden from ordinary view;</li>
 <li>cryptographic erasure for encrypted data at rest (destroying the encryption key so the underlying ciphertext is permanently unreadable), where supported by the storage platform;</li>
@@ -156,10 +158,10 @@
 <li>physical destruction (e.g., degaussing or shredding) of any physical media that cannot be securely wiped; and</li>
 <li>for any third-party vendor (including an AI voiceover-generation vendor): a written deletion request, and a written or system-generated confirmation from the vendor that the data was deleted from its production systems and backups within the timeframe required by Company’s vendor agreement.</li>
 </ul>
-<p><strong>6.3 AI Voice Model Handling.</strong> Because a trained AI Voice Model does not store an individual’s voice data as a separately deletable file, “destruction” of Employee-specific data embedded in a model is handled as follows: (a) Company will immediately stop using the AI Voice Model to generate any new Synthetic Voice Output upon the retention trigger described in Section 5; (b) Company will delete the individual-specific model checkpoint, fine-tuning weights, or voice-cloning profile associated with that individual; and (c) where the individual’s voice data cannot practicably be isolated and removed from a shared or base model without retraining, Company will decommission and delete that model version entirely rather than continue to rely on techniques (such as partial “machine unlearning”) that are not presently reliable enough to treat as equivalent to destruction.</p>
-<p><strong>6.4 Timing.</strong> Destruction will be completed promptly, and in any event within ninety (90) days, after the applicable retention trigger in Section 5, except to the extent a litigation hold, regulatory inquiry, or other legal obligation requires Company to preserve the data longer, in which case destruction will occur promptly once that obligation ends.</p>
-<p><strong>6.5 Recordkeeping.</strong> For each destruction event, Company will document the individual (or category) whose data was destroyed, the date of destruction, the data destroyed, the method used, and, where a vendor was involved, the vendor’s confirmation of deletion. These records will be retained for five (5) years to demonstrate compliance with this Policy.</p>
-<p><strong>6.6 Responsible Party.</strong> SpiderRock Chief Compliance Officer, together with IT/Information Security, is responsible for tracking each individual’s retention period, triggering the destruction process on schedule, and confirming and documenting completion.</p>
+<p class="sub"><strong>6.3 AI Voice Model Handling.</strong> Because a trained AI Voice Model does not store an individual’s voice data as a separately deletable file, “destruction” of Employee-specific data embedded in a model is handled as follows: (a) Company will immediately stop using the AI Voice Model to generate any new Synthetic Voice Output upon the retention trigger described in Section 5; (b) Company will delete the individual-specific model checkpoint, fine-tuning weights, or voice-cloning profile associated with that individual; and (c) where the individual’s voice data cannot practicably be isolated and removed from a shared or base model without retraining, Company will decommission and delete that model version entirely rather than continue to rely on techniques (such as partial “machine unlearning”) that are not presently reliable enough to treat as equivalent to destruction.</p>
+<p class="sub"><strong>6.4 Timing.</strong> Destruction will be completed promptly, and in any event within ninety (90) days, after the applicable retention trigger in Section 5, except to the extent a litigation hold, regulatory inquiry, or other legal obligation requires Company to preserve the data longer, in which case destruction will occur promptly once that obligation ends.</p>
+<p class="sub"><strong>6.5 Recordkeeping.</strong> For each destruction event, Company will document the individual (or category) whose data was destroyed, the date of destruction, the data destroyed, the method used, and, where a vendor was involved, the vendor’s confirmation of deletion. These records will be retained for five (5) years to demonstrate compliance with this Policy.</p>
+<p class="sub"><strong>6.6 Responsible Party.</strong> SpiderRock Chief Compliance Officer, together with IT/Information Security, is responsible for tracking each individual’s retention period, triggering the destruction process on schedule, and confirming and documenting completion.</p>
 <h3>7. No Sale or Profit (740 ILCS 14/15(c))</h3>
 <p>SpiderRock will not sell, lease, trade, or otherwise profit from any individual’s biometric identifier or biometric information.</p>
 <h3>8. Restrictions on Disclosure (740 ILCS 14/15(d))</h3>
