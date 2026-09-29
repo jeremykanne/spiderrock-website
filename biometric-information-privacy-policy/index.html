@@ -141,28 +141,20 @@
 <p>Upon expiration of the retention period described in Section 5, SpiderRock will permanently destroy the biometric identifiers and biometric information in its possession, using a secure deletion method reasonably designed to render the data unrecoverable, including by instructing any third-party vendor holding the data on SpiderRock’s behalf to do the same.</p>
 <p><strong>6.1 What Must Be Destroyed.</strong> “Biometric identifiers and biometric information” subject to destruction include, without limitation:</p>
 <ul>
-<li>
-<ul>
 <li>the original audio Recordings, in every location where a copy exists (local devices, shared drives, email, collaboration tools, and cloud storage);</li>
 <li>any voiceprint, embedding, or other feature data extracted or derived from the Recordings;</li>
 <li>Employee-specific training data, fine-tuning artifacts, or model checkpoints created to build or adapt an AI Voice Model on that individual’s voice;</li>
 <li>copies held by any third-party vendor or service provider processing the data on Company’s behalf; and</li>
 <li>associated metadata that identifies the individual (for example, file names, transcripts, or labels tying a recording or voiceprint to a specific person).</li>
 </ul>
-</li>
-</ul>
 <p>Finished Voiceover Content that has already been publicly released is addressed separately in the applicable individual consent agreement and is not, by itself, “biometric information” requiring destruction under this Section, unless it embeds a recoverable voiceprint or model file.</p>
 <p><strong>6.2 Destruction Method.</strong> Standard operating-system deletion (e.g., moving a file to a recycle bin) does not by itself satisfy “permanently destroy.” Company will use one or more of the following, as appropriate to where the data is stored:</p>
-<ul>
-<li>
 <ul>
 <li>secure/permanent deletion tools or processes for on-premises and endpoint storage that overwrite or otherwise render the data unrecoverable, not simply hidden from ordinary view;</li>
 <li>cryptographic erasure for encrypted data at rest (destroying the encryption key so the underlying ciphertext is permanently unreadable), where supported by the storage platform;</li>
 <li>use of the applicable cloud or SaaS provider’s “hard delete” or permanent-deletion function, followed by confirmation that the provider’s own backup/retention cycle has purged the data (cloud platforms often retain “deleted” data in backups for a defined window — that window should be tracked and closed out, not assumed);</li>
 <li>physical destruction (e.g., degaussing or shredding) of any physical media that cannot be securely wiped; and</li>
 <li>for any third-party vendor (including an AI voiceover-generation vendor): a written deletion request, and a written or system-generated confirmation from the vendor that the data was deleted from its production systems and backups within the timeframe required by Company’s vendor agreement.</li>
-</ul>
-</li>
 </ul>
 <p><strong>6.3 AI Voice Model Handling.</strong> Because a trained AI Voice Model does not store an individual’s voice data as a separately deletable file, “destruction” of Employee-specific data embedded in a model is handled as follows: (a) Company will immediately stop using the AI Voice Model to generate any new Synthetic Voice Output upon the retention trigger described in Section 5; (b) Company will delete the individual-specific model checkpoint, fine-tuning weights, or voice-cloning profile associated with that individual; and (c) where the individual’s voice data cannot practicably be isolated and removed from a shared or base model without retraining, Company will decommission and delete that model version entirely rather than continue to rely on techniques (such as partial “machine unlearning”) that are not presently reliable enough to treat as equivalent to destruction.</p>
 <p><strong>6.4 Timing.</strong> Destruction will be completed promptly, and in any event within ninety (90) days, after the applicable retention trigger in Section 5, except to the extent a litigation hold, regulatory inquiry, or other legal obligation requires Company to preserve the data longer, in which case destruction will occur promptly once that obligation ends.</p>
