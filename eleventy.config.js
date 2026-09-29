@@ -44,6 +44,37 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date)
   );
+  // Categories for the News & Updates filter, most posts first: [{ name, slug, count }]
+  const PAGE_SIZE = 20;
+  const slug = (s) => s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const sortedPosts = (api) => api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date);
+  const categoriesOf = (posts) => {
+    const counts = new Map();
+    for (const p of posts) for (const c of p.data.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
+    return [...counts].map(([name, count]) => ({ name, slug: slug(name), count })).sort((a, b) => b.count - a.count);
+  };
+  eleventyConfig.addCollection("categoryList", (api) => categoriesOf(sortedPosts(api)));
+
+  // One entry per page of each category: /updates/category/<slug>/ and /updates/category/<slug>/page/<n>/
+  eleventyConfig.addCollection("categoryPages", (api) => {
+    const posts = sortedPosts(api);
+    const pages = [];
+    for (const cat of categoriesOf(posts)) {
+      const inCat = posts.filter((p) => (p.data.categories || []).includes(cat.name));
+      const total = Math.ceil(inCat.length / PAGE_SIZE);
+      const href = (n) => `/updates/category/${cat.slug}/${n > 0 ? `page/${n + 1}/` : ""}`;
+      const hrefs = Array.from({ length: total }, (_, n) => href(n));
+      for (let n = 0; n < total; n++) {
+        pages.push({
+          ...cat, pageNumber: n, total, hrefs, url: hrefs[n],
+          previous: n > 0 ? hrefs[n - 1] : null, next: n < total - 1 ? hrefs[n + 1] : null,
+          posts: inCat.slice(n * PAGE_SIZE, (n + 1) * PAGE_SIZE),
+        });
+      }
+    }
+    return pages;
+  });
+
   // Everything after the three featured posts, paginated on /updates/.
   eleventyConfig.addCollection("olderPosts", (api) =>
     api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date).slice(3)

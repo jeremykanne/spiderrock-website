@@ -1,0 +1,14 @@
+{#- Page navigation. Expects `pager` = { hrefs, current (0-based), previous, next }. -#}
+{%- if pager.hrefs.length > 1 %}
+      <nav class="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label="News & Updates pages">
+        {%- if pager.previous %}
+        <a href="{{ pager.previous }}" class="px-4 py-2 border border-gray-300 rounded text-sm font-semibold text-sr-navy hover:bg-gray-50">&larr; Newer</a>
+        {%- endif %}
+        {%- for href in pager.hrefs %}
+        <a href="{{ href }}" class="w-10 py-2 text-center rounded text-sm font-semibold {% if loop.index0 == pager.current %}bg-sr-navy text-white{% else %}border border-gray-300 text-sr-navy hover:bg-gray-50{% endif %}"{% if loop.index0 == pager.current %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+        {%- endfor %}
+        {%- if pager.next %}
+        <a href="{{ pager.next }}" class="px-4 py-2 border border-gray-300 rounded text-sm font-semibold text-sr-navy hover:bg-gray-50">Older &rarr;</a>
+        {%- endif %}
+      </nav>
+{%- endif %}
