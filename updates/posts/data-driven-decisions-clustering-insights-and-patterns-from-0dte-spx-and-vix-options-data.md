@@ -25,11 +25,9 @@ Similarly, users can implement data from SpiderRock’s Option Features Dataset,
 
 For more information, please visit [www.spiderrock.net/data](/data/), follow us on Twitter at [@SpiderRockChi](https://twitter.com/SpiderRockChi), and visit our [LinkedIn Page](https://www.linkedin.com/company/spiderrock). 
 
-## Get The Full
-
-## White Paper
+## Get The Full White Paper
 
 Fill out the form below and we’ll send you an email with the full PDF
 
-<div class="_form_50"></div><script src="https://srock.activehosted.com/f/embed.php?id=50" type="text/javascript" charset="utf-8"></script>
+<div class="_form_50 ac-form"></div><script src="https://srock.activehosted.com/f/embed.php?id=50" type="text/javascript" charset="utf-8"></script>
 

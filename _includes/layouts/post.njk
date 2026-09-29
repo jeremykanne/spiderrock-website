@@ -209,11 +209,18 @@
 
       <div class="_form_40 ac-form"></div>
       <script src="https://srock.activehosted.com/f/embed.php?id=40" type="text/javascript" charset="utf-8"></script>
-      <script>
+      <p class="text-gray-400 text-xs mt-6">By submitting this form you agree to SpiderRock&rsquo;s privacy policy. For institutional &amp; professional clients only.</p>
+    </div>
+  </section>
+{%- endif %}
+
+  <!-- AC FORM STYLING -->
+  <script>
+            // Styles every ActiveCampaign form on the page (contact form and white-paper downloads).
             // AC scopes its button/error CSS with the form's generated id, which outranks any
             // class rule. Mirror that specificity, appended after their <style> to win on a tie.
             (function () {
-              var wrap = document.querySelector('.ac-form');
+              document.querySelectorAll('.ac-form').forEach(function (wrap) {
               function paint(form) {
                 var id = form.id;
                 if (!id) return;
@@ -243,12 +250,9 @@
                 var f = wrap.querySelector('form');
                 if (f) { obs.disconnect(); paint(f); }
               }).observe(wrap, { childList: true, subtree: true });
+              });
             })();
       </script>
-      <p class="text-gray-400 text-xs mt-6">By submitting this form you agree to SpiderRock&rsquo;s privacy policy. For institutional &amp; professional clients only.</p>
-    </div>
-  </section>
-{%- endif %}
 
   <!-- FOOTER -->
   <footer class="bg-gray-900 py-20">

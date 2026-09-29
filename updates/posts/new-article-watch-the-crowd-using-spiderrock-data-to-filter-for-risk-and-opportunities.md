@@ -23,5 +23,5 @@ In the following, we show how to extract, construct, and interpret these options
 
 ## Get The Full White Paper
 
-<div class="_form_46"></div><script src="https://srock.activehosted.com/f/embed.php?id=46" type="text/javascript" charset="utf-8"></script>
+<div class="_form_46 ac-form"></div><script src="https://srock.activehosted.com/f/embed.php?id=46" type="text/javascript" charset="utf-8"></script>
 

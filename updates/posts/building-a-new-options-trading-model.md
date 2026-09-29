@@ -15,5 +15,5 @@ Many investors who are getting started with options begin by analyzing historica
 
 **For an instant download of the full white paper, enter your details below.**
 
-<div class="_form_46"></div><script src="https://srock.activehosted.com/f/embed.php?id=46" type="text/javascript" charset="utf-8"></script>
+<div class="_form_46 ac-form"></div><script src="https://srock.activehosted.com/f/embed.php?id=46" type="text/javascript" charset="utf-8"></script>
 
