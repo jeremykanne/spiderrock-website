@@ -5,3 +5,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Keep search engines from indexing the review site while the redesign is in client review.
+# REMOVE THIS BLOCK AT LAUNCH, when the site moves to spiderrock.net.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
