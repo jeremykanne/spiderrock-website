@@ -12,7 +12,8 @@
   <style>
     .hero-section {
       position: relative;
-      background: #0A1220;
+      background: #1E3043;
+      border-bottom: 3px solid #BA4838;
       /* Never taller than the viewport, and capped at 48vw so the photo panel stays
          around two thirds of the width — leaving the solid navy third for the copy. */
       min-height: max(640px, min(100vh, 48vw));
@@ -44,12 +45,12 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(90deg,
-        rgba(10,18,32,1) 0%,
-        rgba(10,18,32,0.94) 10%,
-        rgba(10,18,32,0.72) 18%,
-        rgba(10,18,32,0.40) 25%,
-        rgba(10,18,32,0.14) 30%,
-        rgba(10,18,32,0) 34%);
+        rgba(30,48,67,1) 0%,
+        rgba(30,48,67,0.94) 10%,
+        rgba(30,48,67,0.72) 18%,
+        rgba(30,48,67,0.40) 25%,
+        rgba(30,48,67,0.14) 30%,
+        rgba(30,48,67,0) 34%);
     }
     .hero-image {
       width: 100%;
@@ -66,15 +67,15 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(180deg,
-        rgba(10,18,32,0.55) 0%,
-        rgba(10,18,32,0.12) 35%,
-        rgba(10,18,32,0.35) 100%);
+        rgba(30,48,67,0.55) 0%,
+        rgba(30,48,67,0.12) 35%,
+        rgba(30,48,67,0.35) 100%);
       z-index: 1;
     }
     @media (max-width: 768px) {
       /* Narrow screens: darken evenly so the headline stays legible over the image */
       .hero-overlay {
-        background: linear-gradient(180deg, rgba(10,18,32,0.75) 0%, rgba(10,18,32,0.6) 50%, rgba(10,18,32,0.8) 100%);
+        background: linear-gradient(180deg, rgba(30,48,67,0.75) 0%, rgba(30,48,67,0.6) 50%, rgba(30,48,67,0.8) 100%);
       }
     }
     .hero-content {
@@ -141,7 +142,7 @@
           <h1 class="font-display text-white text-[43px] md:text-[70px] font-bold leading-[1.06] tracking-[-0.02em] mb-6 max-w-3xl">
             Stay Competitive in Modern Derivatives Markets
           </h1>
-          <p class="text-white/80 text-[17px] max-w-2xl leading-relaxed font-semibold">
+          <p class="hero-lead">
             SpiderRock delivers cloud-based trading technology, institutional brokerage, and options data &amp; analytics so professional market participants can trade, model, and manage risk on a consistent foundation.
           </p>
         </div>
@@ -164,41 +165,41 @@
   <!-- ─── VALUE PROPOSITION ────────────────────────────────────────────────── -->
   <section class="bg-white section">
     <div class="wrap">
-      <div class="mb-12">
-          <h2 class="font-display text-5xl md:text-6xl font-bold text-gray-900">
+      <div class="section-head">
+          <h2 class="h2 text-gray-900">
             Cloud-Based Trading, Risk, Analytics
           </h2>
-          <p class="text-gray-600 text-lg font-medium mt-3">
+          <p class="text-sr-blue text-[15px] font-bold mt-3">
             Multi-tenant &nbsp;|&nbsp; High Performance &nbsp;|&nbsp; Derivatives For Global Institutional Clients
           </p>
       </div>
       <div class="grid md:grid-cols-2 gap-20 items-center">
         <div class="space-y-8">
-          <p class="text-gray-700 leading-relaxed text-lg">
+          <p class="text-gray-600 text-[17px] leading-[1.75]">
             SpiderRock is a technology provider that creates and deploys advanced algorithmic execution, risk management, and data analytics solutions for volatility funds, hedge funds, bank trading desks, and proprietary trading firms worldwide.
           </p>
-          <p class="text-gray-700 leading-relaxed text-lg">
+          <p class="text-gray-600 text-[17px] leading-[1.75]">
             Our high-performance, cloud-based platform empowers institutional clients to construct, execute, and scale equity, futures, and options strategies, while our brokerage and data businesses provide the market access and information needed to support those workflows end to end.
           </p>
           <div class="flex flex-wrap gap-3 pt-4">
-            <a href="platform/" class="btn btn-dark">Trading Platform</a>
-            <a href="exs/" class="btn btn-dark">Brokerage Services</a>
-            <a href="data/" class="btn btn-dark">Data &amp; Analytics</a>
+            <a href="platform/" class="btn btn-outline">Trading Platform</a>
+            <a href="exs/" class="btn btn-outline">Brokerage Services</a>
+            <a href="data/" class="btn btn-outline">Data &amp; Analytics</a>
           </div>
         </div>
-        <div class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy rounded-xl p-12 text-white shadow-2xl border border-white/10">
+        <div class="news-lead p-12 text-white">
           <div class="space-y-12">
             <div class="stat">
-              <div class="text-6xl font-bold font-display mb-2">$47B</div>
-              <p class="text-blue-100 text-base">Daily Trading Volume</p>
+              <div class="stat-figure">$47B</div>
+              <p class="stat-label">Daily Trading Volume</p>
             </div>
             <div class="stat">
-              <div class="text-6xl font-bold font-display mb-2">200+</div>
-              <p class="text-blue-100 text-base">Institutional Clients</p>
+              <div class="stat-figure">200+</div>
+              <p class="stat-label">Institutional Clients</p>
             </div>
             <div class="stat">
-              <div class="text-6xl font-bold font-display mb-2">12.5M</div>
-              <p class="text-blue-100 text-base">Improved Prices</p>
+              <div class="stat-figure">12.5M</div>
+              <p class="stat-label">Improved Prices</p>
             </div>
           </div>
         </div>
@@ -207,13 +208,15 @@
   </section>
 
   <!-- ─── PLATFORM OVERVIEW ────────────────────────────────────────────────── -->
-  <section id="platform" class="bg-gray-50 py-28 border-t border-gray-200">
+  <section id="platform" class="bg-gray-50 section">
     <div class="wrap">
-      <h2 class="h2 text-gray-900 mb-16">Trading Platform</h2>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Cloud-based multi-asset execution</p>
+        <h2 class="h2 text-gray-900">Trading Platform</h2>
+      </div>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="eyebrow mb-6">Cloud-based multi-asset execution</p>
-          <p class="text-gray-800 leading-relaxed text-lg">
+          <p class="text-gray-600 text-[17px] leading-[1.75]">
             SpiderRock's trading platform is a high-performance, cloud-based system for building and managing equity, futures, and options strategies. It's an integrated platform designed for institutional workflows at scale.
           </p>
           <ul class="space-y-4 text-gray-700">
@@ -234,7 +237,7 @@
               <span>Support both point-and-click and systematic trading styles</span>
             </li>
           </ul>
-          <a href="platform/" class="btn btn-dark mt-6">Learn More</a>
+          <a href="platform/" class="btn btn-primary mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
           <img src="images/SR-Connect-3.1.png" alt="SpiderRock Connect trading platform interface" class="w-full h-auto block">
@@ -244,13 +247,15 @@
   </section>
 
   <!-- ─── BROKERAGE ────────────────────────────────────────────────────────── -->
-  <section id="brokerage" class="bg-white py-28 border-t border-gray-200">
+  <section id="brokerage" class="bg-white section">
     <div class="wrap">
-      <h2 class="h2 text-gray-900 mb-16">Brokerage &amp; Market Access</h2>
+      <div class="section-head">
+        <p class="eyebrow mb-3">FINRA-regulated market access</p>
+        <h2 class="h2 text-gray-900">Brokerage &amp; Market Access</h2>
+      </div>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="eyebrow mb-6">FINRA-regulated market access</p>
-          <p class="text-gray-800 leading-relaxed text-lg">
+          <p class="text-gray-600 text-[17px] leading-[1.75]">
             Through SpiderRock EXS, a FINRA-regulated broker-dealer and NFA member, we provide electronic execution and market access services for institutional clients.
           </p>
           <ul class="space-y-4 text-gray-700">
@@ -271,7 +276,7 @@
               <span>Access SpiderRock Trading Platform as your front-end and risk system</span>
             </li>
           </ul>
-          <a href="exs/" class="btn btn-dark mt-6">Learn More</a>
+          <a href="exs/" class="btn btn-primary mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl">
           <img src="images/close-up-of-financial-broker-working-on-computer-w-2026-01-08-05-50-16-utc-scaled.jpg" alt="Financial broker working on trading platform" class="w-full h-auto block object-cover" style="max-height: 480px; object-position: center;">
@@ -281,13 +286,15 @@
   </section>
 
   <!-- ─── DATA & ANALYTICS ─────────────────────────────────────────────────── -->
-  <section id="data" class="bg-gray-50 py-28 border-t border-gray-200">
+  <section id="data" class="bg-gray-50 section">
     <div class="wrap">
-      <h2 class="h2 text-gray-900 mb-16">Data &amp; Analytics</h2>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Institutional-grade market data</p>
+        <h2 class="h2 text-gray-900">Data &amp; Analytics</h2>
+      </div>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="eyebrow mb-6">Institutional-grade market data</p>
-          <p class="text-gray-800 leading-relaxed text-lg">
+          <p class="text-gray-600 text-[17px] leading-[1.75]">
             SpiderRock Data &amp; Analytics delivers exchange-licensed U.S. equity options and futures data plus proprietary options analytics for research and production trading.
           </p>
           <ul class="space-y-4 text-gray-700">
@@ -308,7 +315,7 @@
               <span>Integrate via APIs and cloud-based delivery</span>
             </li>
           </ul>
-          <a href="data/" class="btn btn-dark mt-6">Learn More</a>
+          <a href="data/" class="btn btn-primary mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl">
           <img src="images/PGvsSR-Stock-Image-5-scaled.jpg" alt="Options analytics and market data visualization" class="w-full h-auto block object-cover" style="max-height: 480px; object-position: center;">
@@ -319,14 +326,14 @@
 
   <!-- ─── CTA SECTION ──────────────────────────────────────────────────────── -->
   <section class="bg-sr-navy section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
+    <div class="wrap max-w-[56rem] text-center">
       <h2 class="h2 text-white mb-6">
         Ready to Elevate Your Trading Operations?
       </h2>
-      <p class="text-white/80 text-lg mb-10">
+      <p class="text-[#E6ECF2] text-[18px] leading-relaxed mb-9">
         Join institutional traders who trust SpiderRock for their derivatives operations.
       </p>
-      <a href="contact-us/" class="btn btn-primary">
+      <a href="contact-us/" class="btn btn-contact">
         Get in Touch
       </a>
     </div>

@@ -173,9 +173,6 @@
       <div class="space-y-8">
         <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
           <div>
-            <div class="w-12 h-12 bg-sr-navy rounded-lg flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
-            </div>
             <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Curve</h3>
           </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This table contains spline curve parameters, implied volatility surfaces, Greeks, and hedge deltas for all options expiration months with live market quotes. The records backing each SpiderRock surface represent a two-dimensional curve with strikes on the X-axis expressed in terms of moneyness, and options volatilities on the Y-axis expressed as a multiple of at-the-money volatility.</p></div>
@@ -183,9 +180,6 @@
 
         <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
           <div>
-            <div class="w-12 h-12 bg-sr-blue rounded-lg flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
-            </div>
             <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Grid Records (Skew Surfaces)</h3>
           </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This table contains a fixed grid of volatility for a given expiration as a function of delta for uncensored curves. The file also includes days until the next earnings date and implied earnings moves.</p></div>
@@ -193,9 +187,6 @@
 
         <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
           <div>
-            <div class="w-12 h-12 bg-sr-dark rounded-lg flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-            </div>
             <h3 class="font-display text-2xl font-bold text-gray-900">Live Surface Fixed Term</h3>
           </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-16"><p class="text-gray-600 leading-relaxed">This dataset contains snapshots of the censored at-the-money volatility term structure with the impact of implied earnings events removed for each ticker. Censored curves are created by eliminating the earnings volatility from the observed fitted curve, which enables the user to better understand the ticker&rsquo;s underlying volatility.</p><p class="text-gray-600 leading-relaxed mt-4">Each snapshot contains at-the-money volatilities for fixed-term expirations from 5 days out to 504 days (two years). The data also includes historical earnings move history, estimated implied earnings moves, uncensored curves with earnings events included, and censored curves with the impact removed.</p></div>
