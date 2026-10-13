@@ -7,22 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Roboto', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-          colors: { 'sr-navy': '#162032', 'sr-blue': '#1B3D6B', 'sr-gray': '#5C6270', 'sr-dark': '#3A3F4A', 'sr-red': '#C0392B' },
-        },
-      },
-    };
-  </script>
+  <script src="/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="/css/site.css" />
   <style>
-    html { scroll-behavior: smooth; }
-    .button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
-    .button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-    .card-hover { transition: all 200ms ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
     /* ── ActiveCampaign form 40, restyled to match the site ──────────────────
        CSS only: AC's markup, field names, validation and submit path are untouched. */
     .ac-form { max-width: 100%; }
@@ -47,7 +34,7 @@
       color: #374151 !important;
       margin: 0 0 .5rem 0 !important;
     }
-    .ac-form .field-required { color: #C0392B !important; margin-left: .15rem; }
+    .ac-form .field-required { color: #BA4838 !important; margin-left: .15rem; }
     .ac-form input[type="text"],
     .ac-form input[type="email"],
     .ac-form input[type="tel"],
@@ -70,87 +57,56 @@
     .ac-form textarea:focus {
       outline: none !important;
       border-color: transparent !important;
-      box-shadow: 0 0 0 2px #1B3D6B !important;
+      box-shadow: 0 0 0 2px #3C5E80 !important;
     }
     .ac-form ._button-wrapper { margin-top: .25rem !important; }
     .ac-form button._submit {
       width: 100% !important;
-      background: #162032 !important;
+      background: #BA4838 !important;
       color: #fff !important;
       font-weight: 600 !important;
       font-size: 1rem !important;
       border: none !important;
-      border-radius: 0 !important;
+      border-radius: 6px !important; min-height: 52px !important;
       padding: 1rem 2rem !important;
       cursor: pointer;
       transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .ac-form button._submit:hover {
-      background: #1B3D6B !important;
+      background: #A03C2E !important;
       transform: translateY(-2px);
       box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
     .ac-form ._html-code, .ac-form ._html-code p { font-size: .75rem !important; color: #9CA3AF !important; margin: 0 !important; }
-    .ac-form ._html-code a { color: #1B3D6B !important; text-decoration: underline; }
+    .ac-form ._html-code a { color: #3C5E80 !important; text-decoration: underline; }
     .ac-form ._error, .ac-form ._error-inner, .ac-form ._error-html {
-      background: #C0392B !important; color: #fff !important;
+      background: #BA4838 !important; color: #fff !important;
       border-radius: .375rem !important; font-size: .8125rem !important;
     }
-    .ac-form ._error-arrow { border-bottom-color: #C0392B !important; }
+    .ac-form ._error-arrow { border-bottom-color: #BA4838 !important; }
     .ac-form ._form-thank-you { font-size: 1rem !important; color: #111827 !important; text-align: left !important; }
     /* AC's own radio rows ("I'm interested in") */
     .ac-form ._form_element._checkbox-radio ._row { margin: 0 0 .5rem 0 !important; }
     .ac-form ._checkbox-radio label { display: flex !important; align-items: center; gap: .75rem;
       font-size: .875rem !important; font-weight: 400 !important; color: #374151 !important; cursor: pointer; margin: 0 !important; }
     .ac-form input[type="radio"], .ac-form input[type="checkbox"] {
-      width: 1rem !important; height: 1rem !important; margin: 0 !important; accent-color: #162032; flex: none; }
+      width: 1rem !important; height: 1rem !important; margin: 0 !important; accent-color: #2C4660; flex: none; }
     /* reCAPTCHA widget renders in a fixed-width iframe — keep it inside the column */
     .ac-form .g-recaptcha { margin: 0 0 1.25rem 0 !important; transform-origin: 0 0; max-width: 100%; }
     .ac-form .g-recaptcha > div { max-width: 100% !important; }
     .ac-form ._form_element, .ac-form ._form-content, .ac-form input, .ac-form textarea, .ac-form select { max-width: 100% !important; box-sizing: border-box; }
     .ac-form ._form { margin: 0 !important; padding: 0 !important; width: 100% !important; }
-    /* ── Sticky header ──────────────────────────────────────────────────────
-       The utility bar stays sticky in flow. The primary nav is fixed just below it
-       so it keeps overlaying the hero exactly as before, and picks up a solid
-       background + shadow once the page scrolls (.is-stuck, toggled in script). */
-    .site-nav {
-      position: fixed;
-      top: var(--util-h, 45px);
-      left: 0; right: 0;
-      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
-      background: transparent;
-      transition: background-color 200ms ease, box-shadow 200ms ease;
-    }
-    .site-nav.is-stuck {
-      background: #162032;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
-    }
-    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
-       back vertical space while scrolling. Logo height is inline, hence !important. */
-    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
-    .site-nav img { transition: height 200ms ease; }
-    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
-    /* Logo keeps its full size when compact by overlapping the utility bar above it.
-       Negative margins stop it from driving the bar's height; the raised z-index lets it
-       paint over the utility bar (both are navy, so the overlap is seamless). */
-    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
-      position: relative; top: -11px; }   /* rides up into the utility bar */
-    @media (prefers-reduced-motion: reduce) {
-      .site-nav nav, .site-nav img { transition: none; }
-    }
-    .hero-with-nav { padding-top: var(--nav-h, 93px); }
-    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
 
   <!-- UTILITY BAR -->
-  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 sticky top-0 z-50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-8 flex justify-end items-center gap-8">
-      <a href="../../../" class="hover:text-blue-200 transition-colors duration-200">Home</a>
-      <a href="../../../platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
-      <a href="../../../exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
-      <a href="../../../data/" class="text-blue-200">Data &amp; Analytics</a>
+  <div class="bg-sr-charcoal text-white/80 text-[0.85rem] font-semibold h-11 sticky top-0 z-50">
+    <div class="wrap h-full flex justify-end items-center gap-8">
+      <a href="../../../" class="hover:text-white transition-colors duration-200">Home</a>
+      <a href="../../../platform/" class="hover:text-white transition-colors duration-200">Trading Platform</a>
+      <a href="../../../exs/" class="hover:text-white transition-colors duration-200">Brokerage Services</a>
+      <a href="../../../data/" class="text-white nav-active util-active">Data &amp; Analytics</a>
     </div>
   </div>
 
@@ -159,14 +115,14 @@
        position:fixed, and goes compact once scrolled (see .is-stuck). -->
   <div id="siteNav" class="site-nav">
     <nav class="w-full py-6">
-      <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+      <div class="wrap flex justify-between items-center">
         <a href="../../../" class="hover:opacity-80 transition-opacity">
-          <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;">
+          <img src="../../../logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color - Reversed.svg" alt="SpiderRock" style="height:46px;">
         </a>
-        <div class="hidden md:flex items-center gap-4 text-white text-[15.6px] font-semibold">
-          <a href="../../" class="hover:text-blue-200 transition-colors duration-200">Data Home</a>
+        <div class="hidden md:flex items-center gap-4 text-white/90 text-[16px] font-bold">
+          <a href="../../" class="hover:text-white transition-colors duration-200">Data Home</a>
           <div class="relative group">
-            <button class="flex items-center gap-1 text-blue-200 transition-colors duration-200 cursor-pointer">Featured Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <button class="flex items-center gap-1 nav-active transition-colors duration-200 cursor-pointer">Featured Products <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
             <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
               <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[250px]">
                 <a href="../../dividend-forecast/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">SpiderRock Dividend Forecast</a><a href="../../european-data/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">European Data</a><a href="../../spiderstream-market-data-api/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">MLink API</a><a href="../../historical-data-analytics/vol2g/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Volatility Database (VOL2G)</a>
@@ -174,7 +130,7 @@
             </div>
           </div>
           <div class="relative group">
-            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Product Offerings <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <button class="flex items-center gap-1 hover:text-white transition-colors duration-200 cursor-pointer">Product Offerings <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
             <div class="absolute top-full right-0 pt-2 hidden group-hover:block z-50">
               <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl p-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 min-w-[400px] lg:min-w-[720px] max-w-[calc(100vw-3rem)]">
                 <div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Real-Time Data</p><a href="../../stocks-options-futures/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Market Data Feeds</a><a href="../../options-analytics/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Analytics</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Historical Data</p><a href="../../historical-data-analytics/options-greeks-stock-prices/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options, Greeks &amp; Stock Prices</a><a href="../../option-features-dataset/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Option Features Dataset</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">Volatility</p><a href="../../historical-data-analytics/volatility-surfaces/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Surfaces</a><a href="../../historical-data-analytics/vol2g/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Volatility Database (VOL2G)</a></div><div><p class="text-white/45 text-[11px] font-bold uppercase tracking-wider mb-2 px-2 select-none">MLink API</p><a href="../../spiderstream-market-data-api/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">SpiderStream / MLink API</a><a href="../../options-pricing-tool/" class="block px-2 py-1.5 text-white/90 hover:text-blue-200 hover:bg-white/10 rounded text-[0.85rem] transition-colors">Options Pricing Tool</a></div>
@@ -182,25 +138,25 @@
             </div>
           </div>
           <div class="relative group">
-            <button class="flex items-center gap-1 hover:text-blue-200 transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <button class="flex items-center gap-1 hover:text-white transition-colors duration-200 cursor-pointer">Resources <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
             <div class="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
               <div class="bg-sr-navy border border-white/20 rounded-lg shadow-2xl py-2 min-w-[210px]">
                 <a href="../../market-data-partners/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">Market Data Partners</a><a href="../../updates/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">News &amp; Events</a><a href="../../aws-infrastructure/" class="block px-4 py-2 text-white/90 hover:text-blue-200 hover:bg-white/10 text-[0.85rem] transition-colors">AWS &amp; Infrastructure</a>
               </div>
             </div>
           </div>
-          <a href="../../../contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+          <a href="../../../contact-us/" class="hover:text-white transition-colors duration-200">Contact</a>
         </div>
       </div>
     </nav>
   </div>
 
-  <section class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy text-white hero-with-nav">
-    <div class="max-w-7xl mx-auto px-8 py-16 pb-24">
-      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-5"><a href="../" class="hover:text-white transition-colors">SpiderStream</a></p>
-      <h1 class="font-display text-[52px] md:text-[64px] font-bold leading-tight mb-10 max-w-4xl">Options on Futures Analytics</h1>
+  <section class="hero-steel text-white hero-with-nav">
+    <div class="wrap py-16 pb-24">
+      <p class="eyebrow eyebrow-dark mb-5"><a href="../" class="hover:text-white transition-colors">SpiderStream</a></p>
+      <h1 class="hero-h1 mb-10 max-w-4xl">Options on Futures Analytics</h1>
       <div class="flex flex-wrap gap-4">
-        <a href="../#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Information</a>
+        <a href="../#request-access" class="btn btn-primary">Request Information</a>
         <a href="../#data-products" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">All Data Products</a>
         <a href="../pdfs/MLink-Feeds-Analytics.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
       </div>
@@ -208,8 +164,8 @@
   </section>
 
   <!-- PRODUCT DETAILS & PRICING -->
-  <section class="bg-gray-50 py-24">
-    <div class="max-w-7xl mx-auto px-8 space-y-8">
+  <section class="bg-gray-50 section">
+    <div class="wrap space-y-8">
       <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <div class="bg-sr-navy text-white px-8 md:px-10 py-6 flex flex-wrap items-baseline justify-between gap-4">
           <h2 class="font-display text-2xl font-bold tracking-wide">OPTIONS ON FUTURES ANALYTICS</h2>
@@ -260,10 +216,10 @@
   </section>
 
   <!-- ALL ANALYTICS FEEDS -->
-  <section class="bg-white py-24 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-4">Compare</p>
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-10">All Analytics Feeds</h2>
+  <section class="bg-white section">
+    <div class="wrap">
+      <p class="eyebrow mb-4">Compare</p>
+      <h2 class="h2 text-gray-900 mb-10">All Analytics Feeds</h2>
       <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 p-6">
         <table class="w-full border-collapse">
           <thead><tr><th scope="col" class="py-4 pr-6"><span class="sr-only">Field</span></th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">OPTIONS, GREEKS, &amp; IMPLIED VOL</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">EQUITY OPTION ANALYTICS</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] bg-sr-navy text-white">OPTIONS ON FUTURES ANALYTICS<span class="block normal-case tracking-normal font-semibold text-blue-300 mt-1">This product</span></th></tr></thead>
@@ -282,7 +238,7 @@
         </table>
       </div>
       <div class="mt-12 flex flex-wrap gap-4">
-        <a href="../#request-access" class="inline-block bg-sr-red text-white font-semibold px-8 py-3.5 button-smooth">Request Information</a>
+        <a href="../#request-access" class="btn btn-primary">Request Information</a>
         <a href="../#data-products" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">All Data Products</a>
         <a href="../pdfs/MLink-Feeds-Analytics.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
       </div>
@@ -292,12 +248,12 @@
   <!-- FOOTER — single source of truth: _includes/partials/footer.njk.
        Blog templates include it; hand-built pages get a copy via `npm run sync-footer`.
        Legal copy is verbatim from spiderrock.net; links are root-relative so it works on every page. -->
-  <footer class="bg-gray-900 pt-20 pb-12">
-    <div class="max-w-7xl mx-auto px-8">
+  <footer class="bg-sr-charcoal pt-20 pb-12">
+    <div class="wrap">
 
       <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_repeat(4,1fr)] gap-12 mb-16">
         <div>
-          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;"></a>
+          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color - Reversed.svg" alt="SpiderRock" style="height:54px;"></a>
           <div class="flex gap-3 mt-8">
             <a href="https://www.linkedin.com/company/spiderrock/" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on LinkedIn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -309,7 +265,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
             <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
             <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
@@ -319,7 +275,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
             <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
             <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
@@ -327,7 +283,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li>
             <li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li>
             <li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
@@ -339,7 +295,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
             <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
             <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
@@ -348,8 +304,8 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-10 space-y-5 text-sm leading-relaxed">
-        <p class="text-gray-300">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
+      <div class="border-t border-white/10 pt-10 space-y-5 text-[15px] leading-relaxed">
+        <p class="text-[#D3D6D6]">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
         <p class="text-gray-400 flex flex-wrap gap-x-2 gap-y-1">
           <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Member FINRA</a><span class="text-gray-600" aria-hidden="true">|</span>
           <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">SIPC</a><span class="text-gray-600" aria-hidden="true">|</span>
@@ -358,10 +314,10 @@
           <a href="https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Characteristics and Risks of Standardized Options</a>
         </p>
         <p class="text-white font-semibold tracking-wider text-xs">FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY &ndash; NOT INTENDED FOR RETAIL CUSTOMER USE</p>
-        <p class="text-gray-500 text-xs">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
+        <p class="text-[#8E9495] text-sm">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
       </div>
 
-      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#AEB3B4]">
         <a href="/" class="hover:text-white transition-colors">Home</a>
         <a href="/privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a>
         <a href="/cookie-policy/" class="hover:text-white transition-colors">Cookie Policy</a>

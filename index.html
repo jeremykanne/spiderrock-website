@@ -7,27 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
-            display: ['Montserrat', 'sans-serif']
-          },
-          colors: {
-            'sr-navy':   '#162032',
-            'sr-blue':   '#1B3D6B',
-            'sr-gray':   '#5C6270',
-            'sr-dark':   '#3A3F4A',
-            'sr-red':    '#C0392B',
-          },
-        },
-      },
-    };
-  </script>
+  <script src="/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="/css/site.css" />
   <style>
-    html { scroll-behavior: smooth; }
     .hero-section {
       position: relative;
       background: #0A1220;
@@ -103,60 +85,22 @@
       justify-content: space-between;
       height: 100%;
     }
-    .button-smooth {
-      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .button-smooth:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
     .logo-img {
       max-width: 100%;
       height: auto;
       display: block;
     }
-    /* ── Sticky header ──────────────────────────────────────────────────────
-       The utility bar stays sticky in flow. The primary nav is fixed just below it
-       so it keeps overlaying the hero exactly as before, and picks up a solid
-       background + shadow once the page scrolls (.is-stuck, toggled in script). */
-    .site-nav {
-      position: fixed;
-      top: var(--util-h, 45px);
-      left: 0; right: 0;
-      z-index: 60;              /* above the utility bar (z-50) so the logo can overlap it */
-      background: transparent;
-      transition: background-color 200ms ease, box-shadow 200ms ease;
-    }
-    .site-nav.is-stuck {
-      background: #162032;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
-    }
-    /* Compact once stuck: tighter padding and a smaller logo, so the header gives
-       back vertical space while scrolling. Logo height is inline, hence !important. */
-    .site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
-    .site-nav img { transition: height 200ms ease; }
-    .site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
-    /* Logo keeps its full size when compact by overlapping the utility bar above it.
-       Negative margins stop it from driving the bar's height; the raised z-index lets it
-       paint over the utility bar (both are navy, so the overlap is seamless). */
-    .site-nav.is-stuck img { height: 45px !important; margin-top: -13px; margin-bottom: -13px;
-      position: relative; top: -11px; }   /* rides up into the utility bar */
-    @media (prefers-reduced-motion: reduce) {
-      .site-nav nav, .site-nav img { transition: none; }
-    }
-    .hero-with-nav { padding-top: var(--nav-h, 93px); }
-    @media (prefers-reduced-motion: reduce) { .site-nav { transition: none; } }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
 
   <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
-  <div class="bg-sr-navy text-white text-[0.85rem] font-semibold py-3 px-8 sticky top-0 z-50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto flex justify-end items-center gap-8">
-      <a href="./" class="hover:text-blue-200 transition-colors duration-200">Home</a>
-      <a href="platform/" class="hover:text-blue-200 transition-colors duration-200">Trading Platform</a>
-      <a href="exs/" class="hover:text-blue-200 transition-colors duration-200">Brokerage Services</a>
-      <a href="data/" class="hover:text-blue-200 transition-colors duration-200">Data &amp; Analytics</a>
+  <div class="bg-sr-charcoal text-white/80 text-[0.85rem] font-semibold h-11 sticky top-0 z-50">
+    <div class="wrap h-full flex justify-end items-center gap-8">
+      <a href="./" class="text-white nav-active util-active">Home</a>
+      <a href="platform/" class="hover:text-white transition-colors duration-200">Trading Platform</a>
+      <a href="exs/" class="hover:text-white transition-colors duration-200">Brokerage Services</a>
+      <a href="data/" class="hover:text-white transition-colors duration-200">Data &amp; Analytics</a>
     </div>
   </div>
 
@@ -164,16 +108,16 @@
   <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
        position:fixed, and goes compact once scrolled (see .is-stuck). -->
   <div id="siteNav" class="site-nav">
-    <nav class="w-full py-6 px-8">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <nav class="w-full py-6">
+      <div class="wrap flex justify-between items-center">
         <a href="/" class="hover:opacity-80 transition-opacity flex items-center gap-3">
-          <img src="logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" class="logo-img h-[53px]">
+          <img src="logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color - Reversed.svg" alt="SpiderRock" class="logo-img h-[53px]">
         </a>
-        <div class="hidden md:flex items-center gap-10 text-white text-[15.6px] font-semibold">
-          <a href="about-us/" class="hover:text-blue-200 transition-colors duration-200">Leadership</a>
-          <a href="careers/" class="hover:text-blue-200 transition-colors duration-200">Careers</a>
-          <a href="updates/" class="hover:text-blue-200 transition-colors duration-200">News</a>
-          <a href="contact-us/" class="hover:text-blue-200 transition-colors duration-200">Contact</a>
+        <div class="hidden md:flex items-center gap-10 text-white/90 text-[16px] font-bold">
+          <a href="about-us/" class="hover:text-white transition-colors duration-200">Leadership</a>
+          <a href="careers/" class="hover:text-white transition-colors duration-200">Careers</a>
+          <a href="updates/" class="hover:text-white transition-colors duration-200">News</a>
+          <a href="contact-us/" class="hover:text-white transition-colors duration-200">Contact</a>
         </div>
       </div>
     </nav>
@@ -192,9 +136,9 @@
     <div class="hero-content">
 
       <!-- Hero Text -->
-      <div class="flex-1 flex items-center px-8 pt-16">
-        <div class="max-w-7xl mx-auto w-full">
-          <h1 class="font-display text-white text-[43px] md:text-[70px] font-bold leading-tight mb-6 max-w-3xl">
+      <div class="flex-1 flex items-center pt-16">
+        <div class="wrap w-full">
+          <h1 class="font-display text-white text-[43px] md:text-[70px] font-bold leading-[1.06] tracking-[-0.02em] mb-6 max-w-3xl">
             Stay Competitive in Modern Derivatives Markets
           </h1>
           <p class="text-white/80 text-[17px] max-w-2xl leading-relaxed font-semibold">
@@ -204,11 +148,11 @@
       </div>
 
       <!-- Announcement Badge -->
-      <div class="px-8 pb-14 mt-10">
-        <div class="max-w-7xl mx-auto">
+      <div class="pb-14 mt-10">
+        <div class="wrap">
           <div class="flex items-stretch gap-0 w-fit">
-            <span class="bg-sr-red text-white font-bold text-[17px] px-6 flex items-center select-none">NEW</span>
-            <a href="data/european-data/" class="bg-sr-red/80 text-white text-[17px] px-7 py-[14px] font-medium button-smooth hover:opacity-90">
+            <span class="bg-sr-red text-white font-bold text-[17px] px-6 flex items-center select-none rounded-l-[6px]">NEW</span>
+            <a href="data/european-data/" class="bg-sr-red/80 text-white text-[17px] px-7 py-[14px] font-medium rounded-r-[6px] button-smooth hover:opacity-90">
               SpiderRock Announces European Expansion
             </a>
           </div>
@@ -218,8 +162,8 @@
   </section>
 
   <!-- ─── VALUE PROPOSITION ────────────────────────────────────────────────── -->
-  <section class="bg-white py-28">
-    <div class="max-w-7xl mx-auto px-8">
+  <section class="bg-white section">
+    <div class="wrap">
       <div class="mb-12">
           <h2 class="font-display text-5xl md:text-6xl font-bold text-gray-900">
             Cloud-Based Trading, Risk, Analytics
@@ -237,22 +181,22 @@
             Our high-performance, cloud-based platform empowers institutional clients to construct, execute, and scale equity, futures, and options strategies, while our brokerage and data businesses provide the market access and information needed to support those workflows end to end.
           </p>
           <div class="flex flex-wrap gap-3 pt-4">
-            <a href="platform/" class="bg-sr-dark text-white text-sm font-semibold px-7 py-3.5 button-smooth">Trading Platform</a>
-            <a href="exs/" class="bg-sr-dark text-white text-sm font-semibold px-7 py-3.5 button-smooth">Brokerage Services</a>
-            <a href="data/" class="bg-sr-dark text-white text-sm font-semibold px-7 py-3.5 button-smooth">Data &amp; Analytics</a>
+            <a href="platform/" class="btn btn-dark">Trading Platform</a>
+            <a href="exs/" class="btn btn-dark">Brokerage Services</a>
+            <a href="data/" class="btn btn-dark">Data &amp; Analytics</a>
           </div>
         </div>
         <div class="bg-gradient-to-br from-sr-navy via-sr-blue to-sr-navy rounded-xl p-12 text-white shadow-2xl border border-white/10">
           <div class="space-y-12">
-            <div class="border-l-4 border-sr-red pl-6">
+            <div class="stat">
               <div class="text-6xl font-bold font-display mb-2">$47B</div>
               <p class="text-blue-100 text-base">Daily Trading Volume</p>
             </div>
-            <div class="border-l-4 border-sr-red pl-6">
+            <div class="stat">
               <div class="text-6xl font-bold font-display mb-2">200+</div>
               <p class="text-blue-100 text-base">Institutional Clients</p>
             </div>
-            <div class="border-l-4 border-sr-red pl-6">
+            <div class="stat">
               <div class="text-6xl font-bold font-display mb-2">12.5M</div>
               <p class="text-blue-100 text-base">Improved Prices</p>
             </div>
@@ -264,11 +208,11 @@
 
   <!-- ─── PLATFORM OVERVIEW ────────────────────────────────────────────────── -->
   <section id="platform" class="bg-gray-50 py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-16">Trading Platform</h2>
+    <div class="wrap">
+      <h2 class="h2 text-gray-900 mb-16">Trading Platform</h2>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-6">Cloud-based multi-asset execution</p>
+          <p class="eyebrow mb-6">Cloud-based multi-asset execution</p>
           <p class="text-gray-800 leading-relaxed text-lg">
             SpiderRock's trading platform is a high-performance, cloud-based system for building and managing equity, futures, and options strategies. It's an integrated platform designed for institutional workflows at scale.
           </p>
@@ -290,7 +234,7 @@
               <span>Support both point-and-click and systematic trading styles</span>
             </li>
           </ul>
-          <a href="platform/" class="inline-block bg-sr-dark text-white font-semibold px-7 py-3.5 button-smooth mt-6">Learn More</a>
+          <a href="platform/" class="btn btn-dark mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
           <img src="images/SR-Connect-3.1.png" alt="SpiderRock Connect trading platform interface" class="w-full h-auto block">
@@ -301,11 +245,11 @@
 
   <!-- ─── BROKERAGE ────────────────────────────────────────────────────────── -->
   <section id="brokerage" class="bg-white py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-16">Brokerage &amp; Market Access</h2>
+    <div class="wrap">
+      <h2 class="h2 text-gray-900 mb-16">Brokerage &amp; Market Access</h2>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-6">FINRA-regulated market access</p>
+          <p class="eyebrow mb-6">FINRA-regulated market access</p>
           <p class="text-gray-800 leading-relaxed text-lg">
             Through SpiderRock EXS, a FINRA-regulated broker-dealer and NFA member, we provide electronic execution and market access services for institutional clients.
           </p>
@@ -327,7 +271,7 @@
               <span>Access SpiderRock Trading Platform as your front-end and risk system</span>
             </li>
           </ul>
-          <a href="exs/" class="inline-block bg-sr-dark text-white font-semibold px-7 py-3.5 button-smooth mt-6">Learn More</a>
+          <a href="exs/" class="btn btn-dark mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl">
           <img src="images/close-up-of-financial-broker-working-on-computer-w-2026-01-08-05-50-16-utc-scaled.jpg" alt="Financial broker working on trading platform" class="w-full h-auto block object-cover" style="max-height: 480px; object-position: center;">
@@ -338,11 +282,11 @@
 
   <!-- ─── DATA & ANALYTICS ─────────────────────────────────────────────────── -->
   <section id="data" class="bg-gray-50 py-28 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="font-display text-4xl font-bold text-gray-900 mb-16">Data &amp; Analytics</h2>
+    <div class="wrap">
+      <h2 class="h2 text-gray-900 mb-16">Data &amp; Analytics</h2>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-6">
-          <p class="text-sr-red text-sm font-semibold uppercase tracking-widest mb-6">Institutional-grade market data</p>
+          <p class="eyebrow mb-6">Institutional-grade market data</p>
           <p class="text-gray-800 leading-relaxed text-lg">
             SpiderRock Data &amp; Analytics delivers exchange-licensed U.S. equity options and futures data plus proprietary options analytics for research and production trading.
           </p>
@@ -364,7 +308,7 @@
               <span>Integrate via APIs and cloud-based delivery</span>
             </li>
           </ul>
-          <a href="data/" class="inline-block bg-sr-dark text-white font-semibold px-7 py-3.5 button-smooth mt-6">Learn More</a>
+          <a href="data/" class="btn btn-dark mt-6">Learn More</a>
         </div>
         <div class="rounded-xl overflow-hidden shadow-2xl">
           <img src="images/PGvsSR-Stock-Image-5-scaled.jpg" alt="Options analytics and market data visualization" class="w-full h-auto block object-cover" style="max-height: 480px; object-position: center;">
@@ -374,15 +318,15 @@
   </section>
 
   <!-- ─── CTA SECTION ──────────────────────────────────────────────────────── -->
-  <section class="bg-sr-navy py-24 border-t border-gray-200">
+  <section class="bg-sr-navy section">
     <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+      <h2 class="h2 text-white mb-6">
         Ready to Elevate Your Trading Operations?
       </h2>
       <p class="text-white/80 text-lg mb-10">
         Join institutional traders who trust SpiderRock for their derivatives operations.
       </p>
-      <a href="contact-us/" class="inline-block bg-sr-red text-white font-semibold px-10 py-4 button-smooth text-lg">
+      <a href="contact-us/" class="btn btn-primary">
         Get in Touch
       </a>
     </div>
@@ -391,12 +335,12 @@
   <!-- FOOTER — single source of truth: _includes/partials/footer.njk.
        Blog templates include it; hand-built pages get a copy via `npm run sync-footer`.
        Legal copy is verbatim from spiderrock.net; links are root-relative so it works on every page. -->
-  <footer class="bg-gray-900 pt-20 pb-12">
-    <div class="max-w-7xl mx-auto px-8">
+  <footer class="bg-sr-charcoal pt-20 pb-12">
+    <div class="wrap">
 
       <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_repeat(4,1fr)] gap-12 mb-16">
         <div>
-          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - White.svg" alt="SpiderRock" style="height:45px;"></a>
+          <a href="/" aria-label="SpiderRock home"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color - Reversed.svg" alt="SpiderRock" style="height:54px;"></a>
           <div class="flex gap-3 mt-8">
             <a href="https://www.linkedin.com/company/spiderrock/" target="_blank" rel="noopener noreferrer" aria-label="Follow SpiderRock on LinkedIn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -408,7 +352,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Trading Platform</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/platform/" class="hover:text-white transition-colors">Platform Overview</a></li>
             <li><a href="/platform/#routing" class="hover:text-white transition-colors">Routing Algos</a></li>
             <li><a href="/platform/#risk" class="hover:text-white transition-colors">Risk Management</a></li>
@@ -418,7 +362,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Brokerage Services</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/exs/" class="hover:text-white transition-colors">SpiderRock EXS</a></li>
             <li><a href="/exs/ats/" class="hover:text-white transition-colors">SpiderRock ATS</a></li>
             <li><a href="/exs/regulatory/" class="hover:text-white transition-colors">Regulatory</a></li>
@@ -426,7 +370,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Data &amp; Analytics</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/data/" class="hover:text-white transition-colors">Data Overview</a></li>
             <li><a href="/data/stocks-options-futures/" class="hover:text-white transition-colors">Market Data Feeds</a></li>
             <li><a href="/data/options-analytics/" class="hover:text-white transition-colors">Options Analytics</a></li>
@@ -438,7 +382,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wide">Company</h4>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-[#AEB3B4] text-[15px]">
             <li><a href="/about-us/" class="hover:text-white transition-colors">Leadership</a></li>
             <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
             <li><a href="/updates/" class="hover:text-white transition-colors">News &amp; Updates</a></li>
@@ -447,8 +391,8 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-10 space-y-5 text-sm leading-relaxed">
-        <p class="text-gray-300">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
+      <div class="border-t border-white/10 pt-10 space-y-5 text-[15px] leading-relaxed">
+        <p class="text-[#D3D6D6]">&copy; SpiderRock Technology Solutions, LLC (&ldquo;SpiderRock&rdquo;). SpiderRock offers certain financial services through its wholly owned broker-dealer subsidiary, SpiderRock EXS, LLC (member of FINRA/SIPC). These services, including the SpiderRock ATS, are offered via a trading platform licensed to SpiderRock EXS, LLC by SpiderRock&rsquo;s wholly owned subsidiary SpiderRock Platform Services, LLC. SpiderRock also offers market data and analytics services through its wholly owned subsidiary, SpiderRock Gateway Technologies, LLC. Please refer to additional important disclosures found here.</p>
         <p class="text-gray-400 flex flex-wrap gap-x-2 gap-y-1">
           <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Member FINRA</a><span class="text-gray-600" aria-hidden="true">|</span>
           <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">SIPC</a><span class="text-gray-600" aria-hidden="true">|</span>
@@ -457,10 +401,10 @@
           <a href="https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline underline-offset-2">Characteristics and Risks of Standardized Options</a>
         </p>
         <p class="text-white font-semibold tracking-wider text-xs">FOR INSTITUTIONAL &amp; PROFESSIONAL CLIENTS ONLY &ndash; NOT INTENDED FOR RETAIL CUSTOMER USE</p>
-        <p class="text-gray-500 text-xs">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
+        <p class="text-[#8E9495] text-sm">The services and information described on this site are provided to you &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. The products, services, and materials listed on this site may not be suitable for your particular circumstances. All content on this site is provided for informational purposes only and is subject to change without notice. Nothing on this site is intended as research or an offer, solicitation, advice, or recommendation to buy or sell any financial product or service. Nothing on this site should be used in any way to evaluate any particular transaction. Please consult your own independent professional advisors regarding financial, investment, legal, tax, accounting and other considerations relating to a transaction, including its suitability for you. SpiderRock disclaims all responsibility and liability whatsoever for the quality, accuracy, and completeness of the content on this site, any reliance thereon, and any use thereof.</p>
       </div>
 
-      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+      <div class="border-t border-white/10 mt-10 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#AEB3B4]">
         <a href="/" class="hover:text-white transition-colors">Home</a>
         <a href="/privacy-statement/" class="hover:text-white transition-colors">Privacy Statement</a>
         <a href="/cookie-policy/" class="hover:text-white transition-colors">Cookie Policy</a>

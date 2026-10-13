@@ -1,0 +1,115 @@
+/* SpiderRock site styles, shared by every page.
+   Design system from the client's handoff doc (Data & Analytics template).
+   Colors and the neutral scale live in /js/tailwind-config.js. */
+
+html { scroll-behavior: smooth; }
+body { color: #3B3F40; }
+
+/* ── Sticky header ──────────────────────────────────────────────────────────
+   The utility bar stays sticky in flow. The primary nav is fixed just below it so
+   it overlays the hero, and picks up a solid background + shadow once the page
+   scrolls (.is-stuck, toggled in each page's script). */
+.site-nav {
+  position: fixed;
+  top: var(--util-h, 44px);
+  left: 0; right: 0;
+  z-index: 60;
+  background: transparent;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+.site-nav > nav { border-bottom: 1px solid rgba(255,255,255,0.12); }
+.site-nav.is-stuck { background: #2C4660; box-shadow: 0 6px 20px rgba(0,0,0,0.22); }
+/* Compact once stuck: tighter padding and a smaller logo. Logo height is inline, hence !important. */
+.site-nav nav { transition: padding-top 200ms ease, padding-bottom 200ms ease; }
+.site-nav img { transition: height 200ms ease; }
+.site-nav.is-stuck nav { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+.site-nav.is-stuck img { height: 38px !important; }
+.hero-with-nav { padding-top: var(--nav-h, 93px); }
+@media (prefers-reduced-motion: reduce) {
+  .site-nav, .site-nav nav, .site-nav img { transition: none; }
+}
+/* Active nav item: white with a 2px red underline (utility bar + primary nav). */
+.nav-active { position: relative; color: #fff; }
+.nav-active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #BA4838; }
+.util-active::after { bottom: -12px; }
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+@media (min-width: 768px) { .wrap { padding-left: 40px; padding-right: 40px; } }  /* 1160px content */
+.section { padding-top: 104px; padding-bottom: 104px; }
+.section-head { margin-bottom: 48px; }
+
+/* ── Type ───────────────────────────────────────────────────────────────── */
+.eyebrow { font: 700 14px/1.4 Roboto, sans-serif; text-transform: uppercase; letter-spacing: 0.16em; color: #BA4838; }
+.eyebrow-dark { color: #D3DEE8; display: inline-flex; align-items: center; gap: 14px; }
+.eyebrow-dark::before { content: ""; width: 28px; height: 2px; background: #BA4838; flex-shrink: 0; }
+.hero-h1 { font: 700 46px/1.06 Montserrat, sans-serif; letter-spacing: -0.02em; }
+@media (min-width: 768px) { .hero-h1 { font-size: 64px; } }
+.hero-h1-sm { font: 700 40px/1.08 Montserrat, sans-serif; letter-spacing: -0.02em; }   /* long titles */
+@media (min-width: 768px) { .hero-h1-sm { font-size: 54px; } }
+.hero-lead { font-size: 19px; line-height: 1.65; max-width: 30em; color: #E6ECF2; }
+.h2 { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 32px; line-height: 1.15; letter-spacing: -0.015em; }
+@media (min-width: 768px) { .h2 { font-size: 40px; } }
+.card-title-3, .card-title-2 { font-family: Montserrat, sans-serif; font-weight: 700; color: #3B3F40; line-height: 1.25; }
+.card-title-3 { font-size: 24px; }
+.card-title-2 { font-size: 26px; }
+.body-copy { font-size: 16px; line-height: 1.75; color: #5A6060; }
+.meta { font-size: 14px; color: #7A8080; }
+
+/* ── Hero: gradient + soft red glow bottom-right + 3px red rule ─────────── */
+.hero-steel {
+  background:
+    radial-gradient(38% 55% at 96% 108%, rgba(186,72,56,0.30), transparent 70%),
+    linear-gradient(120deg, #2C4660 0%, #355473 50%, #3C5E80 100%);
+  border-bottom: 3px solid #BA4838;
+}
+
+/* ── Buttons: 52px tall, 6px corners ────────────────────────────────────── */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
+  padding: 0 32px; border-radius: 6px; font: 700 17px/1 Roboto, sans-serif; color: #fff; text-align: center;
+  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+.btn-primary { background: #BA4838; }
+.btn-primary:hover { background: #A03C2E; }
+.btn-contact { background: #C1492F; }
+.btn-contact:hover { background: #A03C2E; }
+.btn-outline { color: #3C5E80; border: 2px solid #3C5E80; background: transparent; }
+.btn-outline:hover { background: #3C5E80; color: #fff; }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.55); background: transparent; }
+.btn-ghost:hover { background: rgba(255,255,255,0.10); }
+.btn-dark { background: #3B3F40; }
+.btn-dark:hover { background: #2A2E2F; }
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+.card { display: flex; flex-direction: column; border: 1px solid #E3E5E5; border-radius: 10px;
+  padding: 40px 36px 32px; transition: transform 200ms ease, box-shadow 200ms ease; }
+.card:hover, .card-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
+.card-hover { transition: transform 200ms ease, box-shadow 200ms ease; }
+.card-accent { position: relative; }
+.card-accent::before { content: ""; position: absolute; top: -1px; left: 36px;
+  width: 40px; height: 3px; background: #BA4838; }
+.button-smooth { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+.button-smooth:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+
+/* Links: blue, bold, with an arrow that slides 4px on hover. */
+.arrow-link { color: #3C5E80; font-weight: 700; }
+.arrow-link .arrow { display: inline-block; margin-left: 6px; transition: transform 200ms ease; }
+.arrow-link:hover .arrow { transform: translateX(4px); }
+
+/* ── Stats band ─────────────────────────────────────────────────────────── */
+.stat { border-left: 4px solid #BA4838; padding-left: 24px; }
+.stat-figure { font: 700 44px/1.1 Montserrat, sans-serif; color: #fff; margin-bottom: 6px; }
+@media (min-width: 768px) { .stat-figure { font-size: 60px; } }
+.stat-label { font-size: 17px; color: #C9D3DD; }
+
+/* ── News: lead story + side cards (partials/latest-news.njk) ───────────── */
+.news-lead { border-radius: 10px;
+  background:
+    radial-gradient(38% 55% at 96% 108%, rgba(186,72,56,0.30), transparent 70%),
+    linear-gradient(120deg, #2C4660 0%, #355473 50%, #3C5E80 100%); }
+.news-side { display: flex; flex-direction: column; background: #F5F6F6; border: 1px solid #E3E5E5;
+  border-left: 4px solid #2C4660; border-radius: 10px; padding: 24px;
+  transition: transform 200ms ease, box-shadow 200ms ease; }
+.news-side:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
+.news-chip { font-size: 12px; background: #fff; border: 1px solid #E3E5E5; color: #5A6060; padding: 4px 8px; border-radius: 6px; }
+.news-chip-dark { font-size: 12px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); color: rgba(255,255,255,0.9); padding: 4px 8px; border-radius: 6px; }

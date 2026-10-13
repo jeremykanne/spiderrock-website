@@ -1,5 +1,5 @@
-// Eleventy builds only the News & Updates blog (updates/). Every other page on the
-// site is hand-authored HTML and is copied through to _site/ unchanged.
+// Eleventy builds the News & Updates blog (updates/) and the Data homepage (data/index.njk,
+// for its live news section). Every other page is hand-authored HTML, copied through unchanged.
 
 const PASSTHROUGH = [
   "index.html",
@@ -11,6 +11,8 @@ const PASSTHROUGH = [
   "platform",
   "images",
   "logos",
+  "css",
+  "js",
   "_archive",
   "admin",
   "files",
@@ -31,7 +33,8 @@ function formatDate(value, style) {
 }
 
 export default function (eleventyConfig) {
-  for (const path of PASSTHROUGH) eleventyConfig.addPassthroughCopy(path);
+  // Templates inside passthrough folders (data/index.njk) are built, not copied raw.
+  for (const path of PASSTHROUGH) eleventyConfig.addPassthroughCopy(path, { filter: ["**", "!**/*.njk"] });
 
   // Hand-authored pages are .html; only Markdown posts and Nunjucks templates are built.
   eleventyConfig.setTemplateFormats(["md", "njk"]);
