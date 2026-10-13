@@ -113,3 +113,8 @@ body { color: #3B3F40; }
 .news-side:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
 .news-chip { font-size: 12px; background: #fff; border: 1px solid #E3E5E5; color: #5A6060; padding: 4px 8px; border-radius: 6px; }
 .news-chip-dark { font-size: 12px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); color: rgba(255,255,255,0.9); padding: 4px 8px; border-radius: 6px; }
+
+/* Standard bullet (replaces checkmarks): a small red dot centred on the first line of text. */
+.bullet { display: inline-block; flex-shrink: 0; width: 6px; height: 6px; border-radius: 9999px;
+  background: #BA4838; margin-top: calc(0.5lh - 3px); }
+td .bullet { margin-top: 0; vertical-align: middle; }
