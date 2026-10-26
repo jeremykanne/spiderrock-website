@@ -1,0 +1,21 @@
+{#- "Other SpiderRock Data Products": the Data sub-nav's Product Offerings groups (from
+    _data/nav.js), so it always matches the menu. The current page is left out. -#}
+{%- set offerings = nav.sections.data.items | selectattr("groups") | first %}
+  <!-- OTHER DATA PRODUCTS -->
+  <section class="bg-sr-mist section">
+    <div class="wrap">
+      <p class="eyebrow mb-3">More Data</p>
+      <h2 class="h2 mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
+      <p class="body-copy max-w-3xl mb-12">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+        {%- for group in offerings.groups %}
+        <div>
+          <h3 class="includes-label">{{ group.label }}</h3>
+          {%- for link in group.links %}{% if link.href != page.url %}
+          <a href="{{ link.href }}" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>{{ link.label }}</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          {%- endif %}{% endfor %}
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
