@@ -7,6 +7,7 @@ tailwind.config = {
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
         display: ['Montserrat', 'sans-serif'],
+        mono: ['"Roboto Mono"', 'monospace'],
       },
       colors: {
         'sr-navy':     '#2C4660',   // dark panels, stats band

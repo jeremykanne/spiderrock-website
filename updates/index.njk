@@ -12,43 +12,18 @@ permalink: "updates/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNum
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News &amp; Updates — SpiderRock</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/js/tailwind-config.js"></script>
   <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body class="font-sans antialiased text-gray-900">
 
-  <!-- ─── UTILITY BAR ──────────────────────────────────────────────────────── -->
-  <div class="bg-sr-charcoal text-white/80 text-[0.85rem] font-semibold h-11 sticky top-0 z-50">
-    <div class="wrap h-full flex justify-end items-center gap-8">
-      <a href="/" class="hover:text-white transition-colors duration-200">Home</a>
-      <a href="/platform/" class="hover:text-white transition-colors duration-200">Trading Platform</a>
-      <a href="/exs/" class="hover:text-white transition-colors duration-200">Brokerage Services</a>
-      <a href="/data/" class="hover:text-white transition-colors duration-200">Data &amp; Analytics</a>
-    </div>
-  </div>
+{% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-  <!-- PRIMARY NAV — lifted out of the hero so it can stick; overlays the hero via
-       position:fixed, and goes compact once scrolled (see .is-stuck). -->
-  <div id="siteNav" class="site-nav">
-    <nav class="w-full py-6">
-      <div class="wrap flex justify-between items-center">
-        <a href="/" class="hover:opacity-80 transition-opacity">
-          <img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color - Reversed.svg" alt="SpiderRock" style="height:46px;">
-        </a>
-        <div class="hidden md:flex items-center gap-10 text-white/90 text-[16px] font-bold">
-          <a href="/about-us/" class="hover:text-white transition-colors duration-200">Leadership</a>
-          <a href="/careers/" class="hover:text-white transition-colors duration-200">Careers</a>
-          <a href="/updates/" class="nav-active">News</a>
-          <a href="/contact-us/" class="hover:text-white transition-colors duration-200">Contact</a>
-        </div>
-      </div>
-    </nav>
-  </div>
 
-  <section class="hero-steel text-white hero-with-nav">
+  <section class="hero-steel text-white">
     <div class="wrap pt-20 pb-24">
       <p class="eyebrow eyebrow-dark mb-5">Stay Up to Date</p>
       <h1 class="hero-h1 mb-6 max-w-3xl">
@@ -94,26 +69,5 @@ permalink: "updates/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNum
 
 {% include "partials/footer.njk" %}
 
-  <script>
-    // Measure the two bars so the fixed nav and the hero offset stay in sync with
-    // whatever the real rendered heights are (font loading, wrapping, zoom).
-    (function () {
-      var util = document.querySelector('.sticky.top-0');
-      var nav  = document.getElementById('siteNav');
-      if (!util || !nav) return;
-      function measure() {
-        var wasStuck = nav.classList.contains('is-stuck');
-        if (wasStuck) nav.classList.remove('is-stuck');   // measure the expanded height
-        document.documentElement.style.setProperty('--util-h', util.offsetHeight + 'px');
-        document.documentElement.style.setProperty('--nav-h',  nav.offsetHeight  + 'px');
-        if (wasStuck) nav.classList.add('is-stuck');
-      }
-      function onScroll() { nav.classList.toggle('is-stuck', window.scrollY > 8); }
-      measure(); onScroll();
-      addEventListener('scroll', onScroll, { passive: true });
-      addEventListener('resize', measure);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-    })();
-  </script>
 </body>
 </html>

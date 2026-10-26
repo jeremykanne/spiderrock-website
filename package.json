@@ -6,8 +6,7 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve --port=8080",
-    "cms": "decap-server",
-    "sync-footer": "node scripts/sync-footer.mjs"
+    "cms": "decap-server"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",

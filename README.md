@@ -22,7 +22,7 @@ Each page is a directory with its own `index.html`. Shared assets live in `image
 ## Tech
 
 - Static HTML pages, Tailwind CSS via CDN
-- News & Updates blog built with [Eleventy](https://www.11ty.dev/); every other page is copied through unchanged
+- Built with [Eleventy](https://www.11ty.dev/): the News & Updates blog is generated from Markdown, and the hand-authored `.html` pages are run through Nunjucks so they can share the header and footer
 - Posts edited through [Decap CMS](https://decapcms.org/) at `/admin/`
 - Hosted on Netlify: `npm run build` outputs the site to `_site/`
 
@@ -53,15 +53,18 @@ Uploaded images are stored in `images/uploads/`.
 
 Push to `main` and Netlify deploys automatically. See [DEPLOYMENT.md](DEPLOYMENT.md) for branches, previews, and settings.
 
-## Footer
+## Header and Footer
 
-The footer is defined once in `_includes/partials/footer.njk`. Blog templates include it directly; the hand-built HTML pages carry a copy. After editing the footer, run:
+Every page includes the same two partials:
 
-```bash
-npm run sync-footer
-```
+| File | Purpose |
+|---|---|
+| `_includes/partials/header.njk` | Utility bar, main bar with docs search, section sub-nav, mobile menu |
+| `_data/nav.js` | The links in the header and mobile menu, per section |
+| `js/site.js` | Dropdowns (click, tap, keyboard), mobile menu, Ctrl/Cmd+K search |
+| `_includes/partials/footer.njk` | Footer links and legal block |
 
-Its legal text is copied verbatim from spiderrock.net — change it only with the client's approval.
+The header works out the current section from the page URL (`/platform/`, `/exs/`, `/data/`), so pages need no extra setup. The footer's legal text is copied verbatim from spiderrock.net — change it only with the client's approval.
 
 ## Legal Pages
 

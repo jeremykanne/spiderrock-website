@@ -1,0 +1,127 @@
+{#- Site header: utility bar, main bar, the current section's sub-nav, the mobile menu and the
+    docs search dialog. Links come from _data/nav.js; behaviour is in /js/site.js. -#}
+{%- set section = "home" if page.url == "/" else page.url.split("/")[1] %}
+{%- set sub = nav.sections[section] %}
+{%- set caret %}<svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>{% endset %}
+{%- set magnifier %}<svg class="magnifier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M20 20l-3.5-3.5"/></svg>{% endset %}
+  <!-- ─── HEADER ───────────────────────────────────────────────────────────── -->
+  <div class="util-bar">
+    <div class="wrap util-inner">
+      {%- for item in nav.utility %}
+      <a href="{{ item.href }}"{% if page.url.startsWith(item.href) %} class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+      <a href="{{ nav.docs }}" class="util-docs" target="_blank" rel="noopener noreferrer">Documentation <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <header class="main-bar">
+    <div class="wrap main-inner">
+      <a href="/" class="main-logo"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color.svg" alt="SpiderRock" height="52"></a>
+      <nav class="main-nav" aria-label="Main">
+        {%- for item in nav.main %}
+        <a href="{{ item.href }}"{% if item.section == section %} class="is-active" aria-current="{{ 'page' if page.url == item.href else 'true' }}"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+      </nav>
+      <button type="button" class="search-pill" data-search-open aria-label="Search the documentation">
+        {{ magnifier | safe }}<span>Search</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+      <div class="mobile-actions">
+        <button type="button" class="icon-btn icon-btn-round" data-search-open aria-label="Search the documentation">{{ magnifier | safe }}</button>
+        <button type="button" class="icon-btn" data-menu-open aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+{%- if sub %}
+
+  <nav class="sub-nav" aria-label="Section">
+    <div class="wrap sub-inner">
+      <a href="{{ sub.home.href }}" class="sub-home"{% if page.url == sub.home.href %} aria-current="page"{% endif %}>{{ sub.home.label }}</a>
+      {%- for item in sub.items %}
+      {%- if item.links or item.groups %}
+      <div class="dd{% if item.wide %} dd-wide{% endif %}">
+        <button type="button" class="sub-link dd-btn" aria-expanded="false">{{ item.label }}{{ caret | safe }}</button>
+        <div class="dd-panel">
+          {%- if item.groups %}
+          <div class="dd-groups">
+            {%- for group in item.groups %}
+            <div>
+              <p class="dd-label">{{ group.label }}</p>
+              {%- for link in group.links %}
+              <a href="{{ link.href }}">{{ link.label }}</a>
+              {%- endfor %}
+            </div>
+            {%- endfor %}
+          </div>
+          {%- else %}
+          {%- for link in item.links %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+          {%- endfor %}
+          {%- endif %}
+        </div>
+      </div>
+      {%- else %}
+      <a href="{{ item.href }}" class="sub-link"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.label }}{% if item.external %} <span aria-hidden="true">↗</span>{% endif %}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </nav>
+{%- endif %}
+
+  <div id="mobileMenu" class="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="m-head">
+      <a href="/" class="main-logo"><img src="/logos/Horizontal/Vector/SVG/SpiderRock - Logo - Horizontal - Color.svg" alt="SpiderRock" height="40"></a>
+      <button type="button" class="icon-btn" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="m-body" aria-label="Mobile">
+      {%- for item in nav.main %}
+      {%- set s = nav.sections[item.section] %}
+      {%- if s %}
+      {%- set open = item.section == section %}
+      <div class="m-group{% if open %} is-open{% endif %}">
+        <button type="button" class="m-row" aria-expanded="{{ 'true' if open else 'false' }}" aria-controls="m-{{ item.section }}">{{ item.label }}{{ caret | safe }}</button>
+        <div id="m-{{ item.section }}" class="m-sub"{% if not open %} hidden{% endif %}>
+          <a href="{{ s.home.href }}">{{ s.home.label }}</a>
+          {%- for i in s.items %}{% if not (i.links or i.groups) %}
+          <a href="{{ i.href }}"{% if i.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ i.label }}{% if i.external %} <span aria-hidden="true">↗</span>{% endif %}</a>
+          {%- endif %}{% endfor %}
+          {%- for i in s.items %}
+          {%- for group in (i.groups or [{ "label": i.label, "links": i.links }]) %}{% if group.links %}
+          <p class="m-label">{{ group.label }}</p>
+          {%- for link in group.links %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+          {%- endfor %}
+          {%- endif %}{% endfor %}
+          {%- endfor %}
+        </div>
+      </div>
+      {%- else %}
+      <a href="{{ item.href }}" class="m-row{% if item.section == section %} is-current{% endif %}">{{ item.label }}</a>
+      {%- endif %}
+      {%- endfor %}
+      <div class="m-utility">
+        {%- for item in nav.utility %}
+        <a href="{{ item.href }}">{{ item.label }}</a>
+        {%- endfor %}
+      </div>
+    </nav>
+    <div class="m-foot">
+      <a href="/contact-us/" class="btn btn-primary">Get Access</a>
+      <a href="{{ nav.docs }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Documentation&nbsp;<span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <dialog id="siteSearch" class="search-dialog" aria-label="Search the documentation">
+    <form action="{{ nav.docsSearch }}" method="get" target="_blank">
+      <label for="siteSearchInput" class="search-label">Search the SpiderRock documentation</label>
+      <div class="search-field">
+        {{ magnifier | safe }}
+        <input id="siteSearchInput" name="q" type="search" placeholder="Search documentation" autocomplete="off" required>
+        <kbd>Esc</kbd>
+      </div>
+    </form>
+  </dialog>
+  <script src="/js/site.js" defer></script>

@@ -1,8 +1,10 @@
-// Eleventy builds the News & Updates blog (updates/) and the Data homepage (data/index.njk,
-// for its live news section). Every other page is hand-authored HTML, copied through unchanged.
+// Eleventy builds every page. The News & Updates blog (updates/) and the Data homepage
+// (data/index.njk) are Nunjucks templates; the other pages are hand-authored HTML, run through
+// Nunjucks only so they can include the shared header and footer partials.
 
+// Folders copied through as-is. Their .html and .njk pages are built instead, except in
+// _archive/, which is copied whole and never built.
 const PASSTHROUGH = [
-  "index.html",
   "about-us",
   "careers",
   "contact-us",
@@ -33,11 +35,15 @@ function formatDate(value, style) {
 }
 
 export default function (eleventyConfig) {
-  // Templates inside passthrough folders (data/index.njk) are built, not copied raw.
-  for (const path of PASSTHROUGH) eleventyConfig.addPassthroughCopy(path, { filter: ["**", "!**/*.njk"] });
+  for (const path of PASSTHROUGH) {
+    const filter = path === "_archive" ? ["**"] : ["**", "!**/*.njk", "!**/*.html"];
+    eleventyConfig.addPassthroughCopy(path, { filter });
+  }
+  // The Decap CMS page is copied as-is, never run through Nunjucks.
+  eleventyConfig.ignores.add("admin/index.html");
+  eleventyConfig.addPassthroughCopy("admin/index.html");
 
-  // Hand-authored pages are .html; only Markdown posts and Nunjucks templates are built.
-  eleventyConfig.setTemplateFormats(["md", "njk"]);
+  eleventyConfig.setTemplateFormats(["md", "njk", "html"]);
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("DEPLOYMENT.md");
   eleventyConfig.ignores.add("_archive/**");
@@ -99,5 +105,6 @@ export default function (eleventyConfig) {
   return {
     dir: { input: ".", output: "_site", includes: "_includes" },
     markdownTemplateEngine: false,
+    htmlTemplateEngine: "njk",
   };
 }
