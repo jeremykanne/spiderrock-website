@@ -38,3 +38,14 @@
   from = "/data/historical-data-analytics/"
   to = "/data/historical-data-analytics/options-greeks-stock-prices/"
   status = 301
+
+# Retired data delivery pages (kept in _archive/); send old links to How We Deliver Data.
+[[redirects]]
+  from = "/data/data-api/"
+  to = "/data/#delivery"
+  status = 301
+
+[[redirects]]
+  from = "/data/data-analytics/"
+  to = "/data/#delivery"
+  status = 301

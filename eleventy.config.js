@@ -2,8 +2,8 @@
 // (data/index.njk) are Nunjucks templates; the other pages are hand-authored HTML, run through
 // Nunjucks only so they can include the shared header and footer partials.
 
-// Folders copied through as-is. Their .html and .njk pages are built instead, except in
-// _archive/, which is copied whole and never built.
+// Folders copied through as-is. Their .html and .njk pages are built instead.
+// Retired pages live in _archive/, which is neither built nor published.
 const PASSTHROUGH = [
   "about-us",
   "careers",
@@ -15,7 +15,6 @@ const PASSTHROUGH = [
   "logos",
   "css",
   "js",
-  "_archive",
   "admin",
   "files",
   "privacy-statement",
@@ -36,8 +35,7 @@ function formatDate(value, style) {
 
 export default function (eleventyConfig) {
   for (const path of PASSTHROUGH) {
-    const filter = path === "_archive" ? ["**"] : ["**", "!**/*.njk", "!**/*.html"];
-    eleventyConfig.addPassthroughCopy(path, { filter });
+    eleventyConfig.addPassthroughCopy(path, { filter: ["**", "!**/*.njk", "!**/*.html"] });
   }
   // The Decap CMS page is copied as-is, never run through Nunjucks.
   eleventyConfig.ignores.add("admin/index.html");
