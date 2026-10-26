@@ -14,7 +14,7 @@
 {%- for post in featured %}
         <article class="news-card">
           <a href="{{ post.url }}" class="news-card-media" tabindex="-1" aria-hidden="true">
-            {%- if post.data.image %}<img src="{{ post.data.image }}" alt="" loading="lazy">{% endif %}
+            {%- if post.data.image %}<img src="{{ post.data.image }}" alt="" loading="lazy">{% endif -%}
           </a>
           <div class="news-card-body">
             <p class="news-card-meta">
