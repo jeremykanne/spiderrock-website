@@ -266,10 +266,10 @@ a.reg-row:hover .arrow { transform: translateX(4px); }
 .news-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #E3E5E5; border-radius: 10px;
   overflow: hidden; transition: transform 200ms ease, box-shadow 200ms ease; }
 .news-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
-/* Listing images keep their own proportions so nothing is cropped; a post without one gets a navy block. */
-.news-card-media { display: block; background: #2C4660; }
-.news-card-media:empty { aspect-ratio: 16 / 10; }
-.news-card-media img { width: 100%; height: auto; display: block; }
+/* One frame for every listing image, in the proportions of the standard 768x398 blog graphic;
+   images of other proportions fill it, centred. */
+.news-card-media { display: block; aspect-ratio: 768 / 398; overflow: hidden; background: #2C4660; }
+.news-card-media img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .news-card-body { flex: 1; display: flex; flex-direction: column; padding: 22px 24px 24px; }
 .news-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 13px; color: #7A8080; }
 .news-card-title { font: 600 19px/1.35 Montserrat, sans-serif; color: #3B3F40; margin-bottom: 20px; }
