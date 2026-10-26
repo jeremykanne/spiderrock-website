@@ -193,6 +193,17 @@ body { color: #3B3F40; }
 .arch-core-grid span { background: #F5F6F6; border-radius: 4px; padding: 10px 12px; font-size: 14px; font-weight: 500; color: #2C4660; }
 .arch .arch-link + .dark-panel-label { margin-top: 0; }
 
+/* EXS "Registered Broker-Dealer" card: regulator logos, then compliance rows. */
+.reg-card { background: #fff; color: #3B3F40; border-radius: 10px; padding: 26px; box-shadow: 0 20px 48px rgba(10,22,34,0.28); }
+.reg-card-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #BA4838; }
+.reg-logos { display: flex; align-items: center; gap: 28px; padding: 16px 0 18px; }
+.reg-logos img { height: 40px; width: auto; }
+.reg-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid #E3E5E5; }
+.reg-row-title { font-weight: 700; font-size: 15px; color: #2C4660; }
+.reg-row-text { font-size: 14px; color: #5A6060; }
+.reg-row .arrow-link { flex-shrink: 0; font-size: 14px; }
+a.reg-row:hover .arrow { transform: translateX(4px); }
+
 /* ── Buttons: 52px tall, 6px corners ────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
   padding: 0 30px; border-radius: 6px; font: 700 17px/1 Roboto, sans-serif; color: #fff; text-align: center;
@@ -284,6 +295,11 @@ body { color: #3B3F40; }
 .doc-row-name { font: 600 18px/1.3 Montserrat, sans-serif; color: #3B3F40; margin-bottom: 3px; }
 .doc-row-text { font-size: 15px; color: #5A6060; }
 .doc-row .arrow-link { flex-shrink: 0; font-size: 15px; }
+/* Two-column spec list (ATS auction cards). */
+.spec-list > div { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 9px 0; border-top: 1px solid #E3E5E5; font-size: 14px; }
+.spec-list > div:last-child { border-bottom: 1px solid #E3E5E5; }
+.spec-list dt { color: #5A6060; }
+.spec-list dd { color: #3B3F40; font-weight: 500; }
 /* Closing call to action: heading and text left, buttons right. */
 .cta-band { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; }
 .cta-band > :first-child { max-width: 50rem; }
