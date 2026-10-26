@@ -1,4 +1,4 @@
-# Netlify builds the News & Updates blog with Eleventy; every other page is copied through unchanged.
+# Netlify builds the whole site with Eleventy.
 [build]
   command = "npm run build"
   publish = "_site"
@@ -12,3 +12,23 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Leftover section pages whose forms don't submit: send visitors to the working pages.
+# `force` is needed because the old pages still exist in the build.
+[[redirects]]
+  from = "/platform/contact-us/*"
+  to = "/contact-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/contact-us/*"
+  to = "/contact-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/platform/updates/*"
+  to = "/updates/"
+  status = 301
+  force = true
