@@ -44,6 +44,92 @@
           This systematizes and scales derivatives strategy execution to institutional capacity while maintaining the precision required for complex options strategies.
         </p>
       </div>
+
+      <!-- Routing diagram, redrawn from spiderrock.net/platform/routing-algos/ in the site's diagram style.
+           Scrolls sideways on phones rather than shrinking the text. -->
+      <div class="mt-16">
+        <p class="eyebrow mb-3">A Closer Look</p>
+        <p class="body-copy max-w-3xl mb-8">Order entry of simple and complex orders is equally supported via multiple access points making it flexible for clients to interact with our execution engines. Orders are being handled according to clients&rsquo; instructions, market conditions as well as a number of risk checks controlling the creation of downstream &ldquo;child&rdquo; orders.</p>
+        <div class="rounded-xl overflow-x-auto border border-gray-200 shadow-[0_14px_40px_rgba(30,41,51,0.12)]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" class="block w-full h-auto min-w-[760px]" role="img" aria-labelledby="routing-diagram-title routing-diagram-desc">
+            <title id="routing-diagram-title">SpiderRock order routing</title>
+            <desc id="routing-diagram-desc">Orders enter from the client environment (desktop, OMS, scripts) through GUI Tools, FIXBase or SRSE on the SpiderRock cloud message bus. In the execution engines, parent order management runs initial risk checks and algo selection, then child order management applies live risk counters that restrict child order size while continuously analyzing market data and the exchange fee and rebate matrix. Child orders go to exchanges and brokers; fill reports return to the engines and on to the client's risk and compliance systems, along with any rejected orders.</desc>
+            <defs>
+              <pattern id="rt-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.65" fill="#A8BED4" opacity="0.5"/></pattern>
+              <marker id="rt-arr-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0,1 7,4 0,7" fill="#BA4838"/></marker>
+              <marker id="rt-arr-gray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0,1 6,3.5 0,6" fill="#94AABF" opacity="0.8"/></marker>
+            </defs>
+            <rect width="880" height="560" fill="#F4F7FA"/>
+            <rect width="880" height="560" fill="url(#rt-dots)"/>
+            <!-- Order entry -->
+            <line x1="137.0" y1="74" x2="137.0" y2="121" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="137.0" y1="156" x2="137.0" y2="191" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="339.0" y1="74" x2="339.0" y2="121" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="339.0" y1="156" x2="339.0" y2="191" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="541.0" y1="74" x2="541.0" y2="121" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="541.0" y1="156" x2="541.0" y2="191" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <!-- Fill reports and rejected orders back to the client -->
+            <line x1="708" y1="196" x2="708" y2="80" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="784" y1="196" x2="784" y2="80" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <text x="700" y="146" fill="#6B8299" font-size="9" text-anchor="end" font-family="'Roboto',sans-serif">Rejected orders</text>
+            <text x="792" y="146" fill="#BA4838" font-size="9" font-family="'Roboto',sans-serif">Fill reports</text>
+            <!-- CLIENT ENVIRONMENT -->
+            <line x1="44" y1="32" x2="836" y2="32" stroke="#BA4838" stroke-width="0.75" opacity="0.4"/>
+            <text x="44" y="26" fill="#BA4838" font-size="8.5" font-weight="700" letter-spacing="3.5" font-family="'Montserrat',sans-serif">CLIENT ENVIRONMENT</text>
+            <rect x="44" y="40" width="186" height="34" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="137" y="61" fill="#2D3F52" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Desktop</text>
+            <rect x="246" y="40" width="186" height="34" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="339" y="61" fill="#2D3F52" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">OMS</text>
+            <rect x="448" y="40" width="186" height="34" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="541" y="61" fill="#2D3F52" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Scripts</text>
+            <rect x="650" y="40" width="186" height="34" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="743" y="61" fill="#2D3F52" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Risk / Compliance</text>
+            <!-- SPIDERROCK CLOUD / MESSAGE BUS: access points -->
+            <rect x="40" y="94" width="300" height="14" fill="#F4F7FA"/>
+            <line x1="44" y1="110" x2="836" y2="110" stroke="#BA4838" stroke-width="0.75" opacity="0.4"/>
+            <text x="44" y="104" fill="#BA4838" font-size="8.5" font-weight="700" letter-spacing="3.5" font-family="'Montserrat',sans-serif">SPIDERROCK CLOUD / MESSAGE BUS</text>
+            <rect x="44" y="126" width="186" height="30" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="137" y="145" fill="#2D3F52" font-size="11" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">GUI Tools</text>
+            <rect x="246" y="126" width="186" height="30" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="339" y="145" fill="#2D3F52" font-size="11" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">FIXBase</text>
+            <rect x="448" y="126" width="186" height="30" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/><text x="541" y="145" fill="#2D3F52" font-size="11" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">SRSE</text>
+            <!-- EXECUTION ENGINES -->
+            <rect x="44" y="196" width="792" height="224" rx="3" fill="#2C4660" stroke="#3C5E80" stroke-width="1.5"/>
+            <line x1="45.75" y1="224" x2="834.25" y2="224" stroke="#3C5E80" stroke-width="1"/>
+            <text x="440" y="214" fill="white" fill-opacity="0.9" font-size="9.5" font-weight="700" letter-spacing="4.5" text-anchor="middle" font-family="'Montserrat',sans-serif">EXECUTION ENGINES</text>
+            <rect x="66" y="238" width="356" height="164" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="244" y="260" fill="#7EB5F5" font-size="8" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">PARENT ORDER MANAGEMENT</text>
+            <line x1="86" y1="268" x2="402" y2="268" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <rect x="86" y="280" width="316" height="32" rx="2" fill="#BA4838"/>
+            <text x="244" y="300" fill="white" font-size="9.5" font-weight="700" letter-spacing="1.5" text-anchor="middle" font-family="'Roboto',sans-serif">INITIAL RISK CHECKS</text>
+            <rect x="86" y="324" width="316" height="58" rx="2" fill="#ffffff" fill-opacity="0.06"/>
+            <text x="244" y="356" fill="white" fill-opacity="0.75" font-size="10.5" text-anchor="middle" font-family="'Roboto',sans-serif">Algo selection implementation</text>
+            <line x1="424" y1="320" x2="454" y2="320" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <rect x="458" y="238" width="356" height="164" rx="2" fill="#0D1928" stroke="#1E4A82" stroke-width="0.8"/>
+            <text x="636" y="260" fill="#7EB5F5" font-size="8" font-weight="700" letter-spacing="1.8" text-anchor="middle" font-family="'Montserrat',sans-serif">CHILD ORDER MANAGEMENT</text>
+            <line x1="478" y1="268" x2="794" y2="268" stroke="#1E4A82" stroke-width="0.5" opacity="0.6"/>
+            <rect x="478" y="280" width="316" height="32" rx="2" fill="#BA4838"/>
+            <text x="636" y="294" fill="white" font-size="9.5" font-weight="700" letter-spacing="1.5" text-anchor="middle" font-family="'Roboto',sans-serif">LIVE RISK COUNTERS</text>
+            <text x="636" y="306" fill="white" fill-opacity="0.85" font-size="8" text-anchor="middle" font-family="'Roboto',sans-serif">Restricts child order size</text>
+            <rect x="478" y="324" width="316" height="58" rx="2" fill="#ffffff" fill-opacity="0.06"/>
+            <text x="636" y="349" fill="white" fill-opacity="0.75" font-size="10.5" text-anchor="middle" font-family="'Roboto',sans-serif">Continuously analyzing market data</text>
+            <text x="636" y="364" fill="white" fill-opacity="0.75" font-size="10.5" text-anchor="middle" font-family="'Roboto',sans-serif">&amp; exchange fee / rebate matrix</text>
+            <!-- Child orders out, fill reports back -->
+            <line x1="140" y1="420" x2="140" y2="485" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="180" y1="420" x2="180" y2="485" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="220" y1="420" x2="220" y2="485" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="260" y1="420" x2="260" y2="485" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="300" y1="420" x2="300" y2="485" stroke="#94AABF" stroke-width="1" marker-end="url(#rt-arr-gray)"/>
+            <line x1="580" y1="490" x2="580" y2="425" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <line x1="620" y1="490" x2="620" y2="425" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <line x1="660" y1="490" x2="660" y2="425" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <line x1="700" y1="490" x2="700" y2="425" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <line x1="740" y1="490" x2="740" y2="425" stroke="#BA4838" stroke-width="1.5" marker-end="url(#rt-arr-red)"/>
+            <line x1="44" y1="455" x2="836" y2="455" stroke="#A8BECE" stroke-width="0.75" stroke-dasharray="4,4"/>
+            <rect x="352" y="446" width="176" height="16" fill="#F4F7FA"/>
+            <text x="440" y="458" fill="#94A3B8" font-size="8" letter-spacing="1" text-anchor="middle" font-family="'Roboto',sans-serif">SPIDERROCK CLOUD / MESSAGE BUS</text>
+            <text x="312" y="442" fill="#6B8299" font-size="9" font-family="'Roboto',sans-serif">Child orders</text>
+            <text x="568" y="442" fill="#BA4838" font-size="9" text-anchor="end" font-family="'Roboto',sans-serif">Fill reports</text>
+            <!-- EXCHANGES & BROKERS -->
+            <rect x="44" y="490" width="792" height="44" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1.5"/>
+            <text x="440" y="517" fill="white" font-size="11" font-weight="700" letter-spacing="3" text-anchor="middle" font-family="'Montserrat',sans-serif">EXCHANGES &amp; BROKERS</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
