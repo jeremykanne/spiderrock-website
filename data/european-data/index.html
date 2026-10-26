@@ -104,25 +104,140 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Featured Product</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">European Data</h1>
-      <p class="hero-lead mb-10">SpiderRock is extending its data and analytics coverage into European markets.</p>
-      <div class="flex gap-4 flex-wrap">
-        <a href="#request-access" class="btn btn-primary">Contact the Data Team</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">European Data</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1 mb-9">European Offerings</h1>
+        <a href="#request-access" class="btn btn-primary">Request Information</a>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">European Venues</p>
+        <div class="arch-chips">
+          <span>Eurex</span><span>Euronext</span><span>ICE</span><span>Cboe Europe</span>
+        </div>
+        <p class="dark-panel-label mt-6">Delivery</p>
+        <div class="arch-chips">
+          <span>WebSocket &amp; REST APIs</span><span>AWS S3</span><span>Snowflake</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PLACEHOLDER: awaiting final copy — replace this whole section -->
+  <!-- ─── MARKET DATA & ANALYTICS ──────────────────────────────────────────── -->
   <section class="bg-white section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="h2 text-gray-900 mb-6">Details Coming Soon</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-10">Full product details for European Data are on the way. In the meantime, our data team can walk you through coverage, delivery, and pricing directly.</p>
-      <a href="../../contact-us/" class="btn btn-primary">Request Information</a>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">European Markets</p>
+        <h2 class="h2">European Market Data &amp; Analytics</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Real-Time Data</h3>
+          <p class="lead mb-5">Low-latency access to futures and options data across EUREX, EURONEXT, and ICE.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>The best bid &amp; ask prices, the last traded price</li>
+            <li>Volatility index derivatives</li>
+            <li>Fixed income, ETFs, dividend derivatives</li>
+            <li>Futures and options on agriculture &amp; softs markets</li>
+          </ul>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Options Analytics</h3>
+          <p class="lead mb-5">Comprehensive analytics designed for volatility trading, pricing, and research workflows.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>Implied quotes and trades</li>
+            <li>Implied volatilities</li>
+            <li>Realized volatilities</li>
+            <li>Options Greeks</li>
+            <li>Forecasted dividends, and interest rates</li>
+          </ul>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Historical Data</h3>
+          <p class="lead mb-5">Structured datasets for backtesting, modeling, and market analysis delivered T + 1.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>Implied quotes &amp; volatility surfaces</li>
+            <li>Trades with print details &amp; analytics</li>
+            <li>5-min and 30-min intervals</li>
+            <li>EOD Market summaries and derived metrics</li>
+            <li>Reference data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DATA PRODUCTS ────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Product Coverage</p>
+        <h2 class="h2">European Data Products</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-3">Futures &amp; Options</h3>
+          <p class="lead mb-5">Comprehensive data delivered in real-time historical and delayed formats.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>Futures and option quotes and trades</li>
+            <li>Equity quotes and trades (Cboe EU)</li>
+            <li>Market summary (1-minute bars)</li>
+            <li>End-of-day pricing and settlement data</li>
+          </ul>
+        </div>
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-3">Options Analytics &amp; Implied Quote</h3>
+          <p class="lead mb-5">Integrated options market data and analytics delivering implied pricing, trade transparency, and market structure insight.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>Volatility surfaces</li>
+            <li>Surface prices and volatilities</li>
+            <li>Options trades marked up with analytics</li>
+            <li>Closing prices &amp; analytics</li>
+          </ul>
+        </div>
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-3">Cboe Stock</h3>
+          <p class="lead mb-5">Equity market data across Cboe Europe venues including BXE, CXE, and DXE.</p>
+          <p class="includes-label">Includes:</p>
+          <ul class="bullets">
+            <li>Stock quotes</li>
+            <li>Trade details</li>
+            <li>Market summary (1-minute bars)</li>
+            <li>Closing prices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DATA DELIVERY ────────────────────────────────────────────────────── -->
+  <section class="bg-white section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Delivery</p>
+        <h2 class="h2">Data Delivery</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Live Data</h3>
+          <p class="body-copy mb-7">Real-time and delayed data is available through WebSocket and REST APIs, providing access to European futures, options, and equity markets, including quotes, trades, and derived analytics.</p>
+          <a href="../spiderstream-market-data-api/" class="arrow-link mt-auto">SpiderStream / MLink API <span class="arrow">→</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Historical Data</h3>
+          <p class="body-copy mb-7">Historical datasets are available via AWS S3 and Snowflake, providing flexible access to European market data for research, backtesting, and quantitative analysis.</p>
+          <a href="../aws-infrastructure/" class="arrow-link mt-auto">AWS &amp; Snowflake delivery <span class="arrow">→</span></a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -130,12 +245,11 @@
   <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
-      <h2 class="h2 text-gray-900 mb-4">Consult with Our Data Team</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-10">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
+      <h2 class="h2 text-gray-900 mb-4">Request More Information</h2>
 
-      <!-- ActiveCampaign form 7 (srock.activehosted.com) -->
-      <div class="_form_7 ac-form"></div>
-      <script src="https://srock.activehosted.com/f/embed.php?id=7" type="text/javascript" charset="utf-8"></script>
+      <!-- ActiveCampaign form 80, the European data form (srock.activehosted.com) -->
+      <div class="_form_80 ac-form"></div>
+      <script src="https://srock.activehosted.com/f/embed.php?id=80" type="text/javascript" charset="utf-8"></script>
       <script>
             // AC scopes its button/error CSS with the form's generated id, which outranks any
             // class rule. Mirror that specificity, appended after their <style> to win on a tie.

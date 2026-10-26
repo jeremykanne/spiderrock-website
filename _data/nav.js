@@ -63,8 +63,9 @@ export default {
     data: {
       home: { label: "Data Home", href: "/data/" },
       items: [
-        // Dividend Forecast and European Data are placeholder pages, hidden until they have content.
+        // Dividend Forecast is a placeholder page, hidden until it has content.
         { label: "Featured Products", links: [
+          { label: "European Data", href: "/data/european-data/" },
           { label: "MLink API", href: "/data/spiderstream-market-data-api/" },
           { label: "Volatility Database (VOL2G)", href: "/data/historical-data-analytics/vol2g/" },
         ] },

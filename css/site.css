@@ -284,6 +284,7 @@ a.reg-row:hover .arrow { transform: translateX(4px); }
 .bullets li::before { content: ""; flex-shrink: 0; width: 6px; height: 6px; border-radius: 9999px; background: #BA4838;
   margin-top: calc(0.8em - 3px); }
 .card .bullets li { font-size: 15px; }
+.includes-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4660; margin-bottom: 10px; }
 .tag { display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; color: #3B3F40;
   background: #F5F6F6; border: 1px solid #E3E5E5; border-radius: 6px; padding: 6px 12px; }
 .bg-sr-mist .tag { background: #fff; }
