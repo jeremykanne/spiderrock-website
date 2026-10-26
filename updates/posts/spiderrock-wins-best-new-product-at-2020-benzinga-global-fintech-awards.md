@@ -20,7 +20,7 @@ The Benzinga Fintech Awards are an annual competition which recognizes companies
 
 SpiderRock Gateway Technologies is the data & analytics division of SpiderRock. Spiderrock is a technology provider that creates and deploys some of the most innovative algorithmic routing and risk management solutions commercially available to service buy-side funds, investment advisors, bank desks and proprietary trading firms around the world. The SpiderRock platform is a high-performance, cloud-based trading system empowering institutional clients with tools to construct, manage, and scale equity, futures and option strategies.
 
-For more information, please check [SpiderRock Data & Analytics](/data/data-analytics/) or visit our [LinkedIn Page](https://www.linkedin.com/company/spiderrock/).
+For more information, please check [SpiderRock Data & Analytics](/data/) or visit our [LinkedIn Page](https://www.linkedin.com/company/spiderrock/).
 
 **About QuantHouse**
 

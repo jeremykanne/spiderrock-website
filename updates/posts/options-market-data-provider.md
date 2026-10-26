@@ -17,7 +17,7 @@ The difference in market data providers is most noticeable in how a provider app
 
 Likewise, [historical options analytics](/data/historical-data-analytics/options-greeks/) provide an edge by expanding modeling from moment-to-moment risk analysis to empowering traders to develop a real sense of longer-term trendlines. Does the provider know the difference and how to provide historical options analytics to fit your purpose?
 
-SpiderRock offers highly specialized project management teams who are on call to answer not only technical issues but provide real analytical support to empower traders and fund managers to convert data into information. Our team supports you from start to finish with market data, options analytics, and infrastructure to protect your trading edge. [For more information, click here.](/data/data-analytics/)
+SpiderRock offers highly specialized project management teams who are on call to answer not only technical issues but provide real analytical support to empower traders and fund managers to convert data into information. Our team supports you from start to finish with market data, options analytics, and infrastructure to protect your trading edge. [For more information, click here.](/data/)
 
 ## Get The Full White Paper
 

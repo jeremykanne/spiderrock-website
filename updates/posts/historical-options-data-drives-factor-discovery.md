@@ -21,6 +21,6 @@ Is the flow institutional or retail? Does this imply a degree of toxicity? Does 
 
 Another arena for analysis of actionable factors is options skew data. The dynamics of “skew steepening” and “skew flattening” (or “sticky delta” and “sticky strike” skew) have predictive possibilities for cross-section stock portfolio returns. Those parameters can be pulled from SpiderRock’s volatility surface datasets.
 
-This SpiderRock data  — real-time options data, volatility surfaces, and historical pricing, including the Greeks and implied volatility  — can be delivered via different methods. [Learn more about data delivery here.](/data/data-analytics/)
+This SpiderRock data  — real-time options data, volatility surfaces, and historical pricing, including the Greeks and implied volatility  — can be delivered via different methods. [Learn more about data delivery here.](/data/#delivery)
 
 To learn more about using SpiderRock’s data to help find actionable factors, reach out to SpiderRock or [download the whitepaper, Watch the Crowd: Using SpiderRock Options and Stock Data to Filter for Risk and Opportunity in Equities](/updates/new-article-watch-the-crowd-using-spiderrock-data-to-filter-for-risk-and-opportunities/).
