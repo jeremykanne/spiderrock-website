@@ -102,242 +102,242 @@
 
 {% include "partials/header.njk" %}
 
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">Options, Greeks &amp; Stock Prices</h1>
-      <p class="hero-lead mb-5">SpiderRock has provided options analytics as part of its trading platform for over 15 years. SpiderRock analytics are used and trusted by large bank trading desks, large global hedge funds, and many proprietary trading firms. Our historical data and options analytics, including implied volatility (IV), Greeks, risk metrics, and volatility surfaces, are derived from the live data that powers the SpiderRock trading systems, helping to ensure its accuracy and consistency.</p>
-      <p class="text-white/65 text-lg max-w-3xl leading-relaxed mb-10">We offer robust historical options, stock, and market data enabling our clients to gain insights and make data-driven decisions.</p>
-      <a href="#request-access" class="btn btn-primary">Request Data Access</a>
-    </div>
-  </section>
-
-  <!-- HISTORICAL OPTIONS PRICE DATA -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <div class="mb-14 max-w-4xl">
-        <p class="eyebrow mb-4">Historical Data</p>
-        <h2 class="h2 text-gray-900 mb-6">Historical Options Price Data</h2>
-        <p class="text-gray-600 text-lg leading-relaxed">SpiderRock provides historical data feeds that include quotes, volume, and market sizes for each traded asset, along with additional options analytics (implied volatility, Greeks, volatility surfaces, and skews) that help clients better value assets, calculate risk, hedge assets, and identify trends. Historical price feeds consist of archived records of the day&rsquo;s trading, delivered overnight, in four general formats:</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Options Close Marks</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">EOD</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created immediately after the market closes and when exchanges publish official marks. Contains closing quotes, prices, and markup details for all outright options, using algorithms that estimate the correct theoretical price.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Options Quote Intervals</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">5 Min</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created every 5 minutes while options markets are open. Contains call and put prices and sizes, the underlying stock price, and SpiderRock fitted surface implied volatilities and Greeks.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Options ATM Volatility Minute Bars</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">1 Min</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created at 1-minute intervals for all at-the-money options markets by symbol expiration. Includes open/high/low/close values and volatility data.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Options Print Set</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">Every Print</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created on every option print along with the quote, surface, size, and trade volume at print time, plus all relevant options analytics, exchange-published print types, and SpiderRock&rsquo;s estimated trade side (buy/sell). Records also contain T+1M and T+10M forward mark details to support trade cost analysis (TCA).</p>
-        </div>
-      </div>
-      <div class="mt-12 bg-sr-navy text-white rounded-xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-center">
-        <p class="text-white/80 leading-relaxed">All datasets are well-documented with an extensive data dictionary. Data is point-in-time. SpiderRock evaluates the data for validity and accuracy and performs statistical checks on the production databases daily to verify completeness, and includes multiple error codes and surface quality parameters to identify when input data does not support accurate options analytic calculations.</p>
-        <p class="md:whitespace-nowrap"><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="text-blue-200 font-semibold hover:underline">Data dictionaries <span aria-hidden="true">&#8599;</span></a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HISTORICAL GREEKS + IMPLIED VOLATILITY -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <div class="mb-14 max-w-4xl">
-        <p class="eyebrow mb-4">Greeks</p>
-        <h2 class="h2 text-gray-900 mb-6">Historical Greeks Data</h2>
-        <p class="text-gray-600 text-lg leading-relaxed">Our historical data packages contain all the option Greeks, including:</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&Delta;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Delta</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of option price with respect to a 1-point change in the underlying price.</p>
-        </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&Gamma;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Gamma</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of Delta with respect to a 1-point change in the underlying price.</p>
-        </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&nu;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Vega</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of the option price with respect to a 1% change in volatility.</p>
-        </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&Theta;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Theta</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of the option price with respect to 1-day change in time to expiration.</p>
-        </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&rho;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Rho</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of the option price with respect to a 1% change in the interest rate.</p>
-        </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-200">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-10 h-10 rounded-lg bg-sr-navy text-white font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">&phi;</span>
-            <h3 class="font-display text-lg font-bold text-gray-900">Phi</h3>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed">Measures the rate of change of the option price with respect to a 1% change in the dividend rate.</p>
-        </div>
-      </div>
-      <div class="mt-16 pt-16 border-t border-gray-200 grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
-        <h3 class="font-display text-3xl font-bold text-gray-900">Historical Implied Volatility Calculations</h3>
-        <div>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">SpiderRock historical implied volatility data uses a family of proprietary pricing models to compute prices, implied volatilities, common options Greeks (delta, gamma, theta, vega, rho, phi, volga, and vanna), and various scenario risk slides for equity and futures options. Full methodology and technical notes are available on our documentation site.</p>
-          <p><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#historical-implied-volatility-calculations" target="_blank" rel="noopener noreferrer" class="arrow-link">Methodology &amp; technical notes <span aria-hidden="true">&#8599;</span></a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT OFFERING: EQUITY OPTIONS -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Product Offering</p>
-      <h2 class="h2 text-gray-900 mb-10">Equity Options</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse text-left">
-          <thead><tr class="border-b-2 border-gray-300"><th scope="col" class="py-3 pr-6 text-xs font-bold uppercase tracking-wider text-gray-500">Item</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Frequency</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">History</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Prices</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Volume</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Size</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Greeks</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Implied Vol</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Vol Surfaces</th></tr></thead>
-          <tbody>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Option Close Marks</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2014</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Option Price History ID</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">30 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Sep 2014</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Option Price History ID</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">5 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2020</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Option 1 Minute Bars ATM</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">1 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Aug 2020</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Options Print Set</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Trades</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2016</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-gray-500 text-sm mt-6">History shows the month and year each dataset begins. <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#equity-options" target="_blank" rel="noopener noreferrer" class="arrow-link">See the latest on our documentation site <span aria-hidden="true">&#8599;</span></a></p>
-    </div>
-  </section>
-
-  <!-- HISTORICAL STOCK PRICE DATA -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <div class="mb-14 max-w-4xl">
-        <p class="eyebrow mb-4">Historical Data</p>
-        <h2 class="h2 text-gray-900 mb-6">Historical Stock Price Data</h2>
-        <p class="text-gray-600 text-lg leading-relaxed mb-4">Our historical stock datasets recap the day&rsquo;s trading activity in the underlying security. Files show open/high/low/close/volume data for stocks, ETFs, and indexes from US exchanges. SpiderRock offers high-quality data that is a point-in-time record of the market, along with corporate action information for historical adjustments in backtesting.</p>
-        <p class="text-gray-600 leading-relaxed">SpiderRock provides four basic formats for stock feed subscriptions:</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Stock Closing Marks</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">EOD</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created immediately after the market close when exchanges publish official marks. Contains closing quotes and prices, prior day opening and closing data with corporate action adjustments and daily returns, tracked with reference data and security IDs.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Stock Minute Bars</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">1 Min</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created once per minute for each open stock and index market. Includes high/low values, spread data, print information, and bid/ask data.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Stock Print Set</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">Every Trade</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Created for each trade with trade cost analysis (TCA). Records are updated 1-minute and 10-minutes after the print.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <div class="flex items-start justify-between gap-4 mb-4">
-            <h3 class="font-display text-2xl font-bold text-gray-900">Stock Imbalances</h3>
-            <span class="text-[11px] font-semibold uppercase tracking-wide bg-sr-navy text-white px-2.5 py-1 rounded whitespace-nowrap">Auctions</span>
-          </div>
-          <p class="text-gray-600 leading-relaxed">Buy and sell imbalance records during auctions throughout the trading day, available for both NYSE and ARCA listed securities.</p>
-        </div>
-      </div>
-      <p class="mt-12 text-gray-900 font-display text-xl font-bold">Our stock historical datasets go back 10+ years and support all listed US stocks, ETFs, and ADRs.</p>
-    </div>
-  </section>
-
-  <!-- PRODUCT OFFERING: STOCKS -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Product Offering</p>
-      <h2 class="h2 text-gray-900 mb-10">Stocks</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse text-left">
-          <thead><tr class="border-b-2 border-gray-300"><th scope="col" class="py-3 pr-6 text-xs font-bold uppercase tracking-wider text-gray-500">Item</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Frequency</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">History</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Prices</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Volume</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Size</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Greeks</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Implied Vol</th><th scope="col" class="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-500 text-center whitespace-nowrap">Vol Surfaces</th></tr></thead>
-          <tbody>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Stock Close Marks</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">EOD</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2010</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Stock Minute Bars</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">1 Min</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2010</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Stock Print Set</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Trades</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Jan 2016</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">Stock Imbalances</th><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Every Tick</td><td class="py-4 px-4 text-center text-gray-600 text-sm whitespace-nowrap">Aug 2010</td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-sr-navy font-bold" aria-label="Included">&#10003;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td><td class="py-4 px-4 text-center"><span class="text-gray-300" aria-label="Not included">&ndash;</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-gray-500 text-sm mt-6">History shows the month and year each dataset begins. <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#stocks-1" target="_blank" rel="noopener noreferrer" class="arrow-link">See the latest on our documentation site <span aria-hidden="true">&#8599;</span></a></p>
-    </div>
-  </section>
-
-  <!-- WHY SPIDERROCK + TCA -->
-  <section class="bg-sr-navy section">
-    <div class="wrap grid md:grid-cols-2 gap-16">
+    <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow eyebrow-dark mb-4">Why SpiderRock</p>
-        <h2 class="h2 text-white mb-6">Why Use SpiderRock&rsquo;s Historical Data</h2>
-        <p class="text-white/75 leading-relaxed mb-5">Our historical data is derived from the live market data and analytics which power the SpiderRock trading system, ensuring a high level of accuracy and consistency. Datasets are synchronized across asset classes (stocks, options, futures), improving the accuracy of trade performance calculations and supporting multi-asset strategy testing.</p>
-        <p class="text-white/75 leading-relaxed">Print Sets are typically used to replay market patterns, as they contain every print along with the quote and mid-market surface at print time, with most datasets offering records dating back to 2016.</p>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><a href="/data/historical-data-analytics/">Historical Data</a><span aria-hidden="true">›</span><span aria-current="page">Options, Greeks &amp; Stock Prices</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
+        <h1 class="hero-h1-sm mb-6">Options, Greeks &amp; Stock Prices</h1>
+        <p class="hero-lead mb-4">SpiderRock has provided options analytics as part of its trading platform for over 15 years. SpiderRock analytics are used and trusted by large bank trading desks, large global hedge funds, and many proprietary trading firms. Our historical data and options analytics, including implied volatility (IV), Greeks, risk metrics, and volatility surfaces, are derived from the live data that powers the SpiderRock trading systems, helping to ensure its accuracy and consistency.</p>
+        <p class="hero-lead mb-9">We offer robust historical options, stock, and market data enabling our clients to gain insights and make data-driven decisions.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#request-access" class="btn btn-primary">Request Data Access</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
+        </div>
       </div>
-      <div class="md:border-l md:border-white/15 md:pl-16">
-        <p class="eyebrow eyebrow-dark mb-4">Trade Cost Analysis</p>
-        <h2 class="h2 text-white mb-6">Trade Cost Analysis (TCA)</h2>
-        <p class="text-white/75 leading-relaxed">Market participants can use our TCA metrics data to analyze trade performance. SpiderRock specializes in computing TCA for options and provides similar TCA data for other asset classes as well. Our TCA metrics consider the mean-reverting characteristics of markets and help you understand the true cost of accessing the liquidity.</p>
+      <div class="dark-panel">
+        <p class="dark-panel-label">History Begins</p>
+        <ol class="timeline">
+          <li><span class="timeline-date">Jan 2010</span><span>Stock Close Marks &amp; Minute Bars</span></li>
+          <li><span class="timeline-date">Jan 2014</span><span>Option Close Marks</span></li>
+          <li><span class="timeline-date">Sep 2014</span><span>Option Price History, 30 Min</span></li>
+          <li><span class="timeline-date">Jan 2016</span><span>Option &amp; Stock Print Sets</span></li>
+          <li><span class="timeline-date">Jan 2020</span><span>Option Price History, 5 Min</span></li>
+          <li><span class="timeline-date">Aug 2020</span><span>Option 1 Minute Bars ATM</span></li>
+        </ol>
+        <div class="arch-chips">
+          <span>Delivered overnight</span><span>Parquet on AWS S3</span><span>Snowflake</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EUROPEAN HISTORICAL DATA -->
-  <section class="bg-gray-50 section">
+  <!-- In-page tabs: a marketing version of the docs' "On this page" (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#options">Options</a>
+      <a href="#greeks">Greeks</a>
+      <a href="#equity-options">Equity Options Table</a>
+      <a href="#stocks">Stocks</a>
+      <a href="#why">Why SpiderRock</a>
+      <a href="#european">European Data</a>
+    </div>
+  </nav>
+
+  <!-- ─── HISTORICAL OPTIONS PRICE DATA ────────────────────────────────────── -->
+  <section id="options" class="bg-white section tab-target">
     <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="eyebrow mb-4">European Markets</p>
-          <h2 class="h2 text-gray-900 mb-6">European Historical Data</h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">SpiderRock also provides structured historical datasets for European futures, options, and equity markets, supporting backtesting, modeling, and market analysis.</p>
-          <p class="text-gray-600 leading-relaxed mb-8">European historical data is delivered through the same AWS S3 and Snowflake infrastructure used for our U.S. datasets.</p>
-          <a href="../../european-data/" class="arrow-link">European data <span class="arrow">&rarr;</span></a>
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Historical Data</p>
+        <h2 class="h2 mb-5">Historical Options Price Data</h2>
+        <p class="body-copy">SpiderRock provides historical data feeds that include quotes, volume, and market sizes for each traded asset, along with additional options analytics (implied volatility, Greeks, volatility surfaces, and skews) that help clients better value assets, calculate risk, hedge assets, and identify trends. Historical price feeds consist of archived records of the day&rsquo;s trading, delivered overnight, in four general formats:</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Option Close Marks</h3>
+            <span class="freq-tag">EOD</span>
+          </div>
+          <p class="body-copy">Created immediately after the market closes and when exchanges publish official marks. Contains closing quotes, prices, and markup details for all outright options, using algorithms that estimate the correct theoretical price.</p>
         </div>
-        <div class="grid sm:grid-cols-2 gap-4"><div class="bg-white border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>End-of-day data at five-minute frequencies, delivered T+1</div><div class="bg-white border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Trades and analytics</div><div class="bg-white border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Time-series market data</div><div class="bg-white border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Market summaries and derived metrics</div></div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Options Quote Intervals</h3>
+            <span class="freq-tag">5 Min</span>
+          </div>
+          <p class="body-copy">Created every 5 minutes while options markets are open. Contains call and put prices and sizes, the underlying stock price, and SpiderRock fitted surface implied volatilities and Greeks.</p>
+        </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Options ATM Volatility Minute Bars</h3>
+            <span class="freq-tag">1 Min</span>
+          </div>
+          <p class="body-copy">Created at 1-minute intervals for all at-the-money options markets by symbol expiration. Includes open/high/low/close values and volatility data.</p>
+        </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Options Print Set</h3>
+            <span class="freq-tag">Every Print</span>
+          </div>
+          <p class="body-copy">Created on every option print along with the quote, surface, size, and trade volume at print time, plus all relevant options analytics, exchange-published print types, and SpiderRock&rsquo;s estimated trade side (buy/sell). Records also contain T+1M and T+10M forward mark details to support trade cost analysis (TCA).</p>
+        </div>
+      </div>
+      <div class="note-box">
+        <p class="note-label">Data quality</p>
+        <p>All datasets are well-documented with an extensive data dictionary. Data is point-in-time. SpiderRock evaluates the data for validity and accuracy and performs statistical checks on the production databases daily to verify completeness, and includes multiple error codes and surface quality parameters to identify when input data does not support accurate options analytic calculations.</p>
+        <p class="mt-3"><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="arrow-link">Data dictionaries <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GREEKS ───────────────────────────────────────────────────────────── -->
+  <section id="greeks" class="bg-sr-mist section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Greeks</p>
+        <h2 class="h2 mb-5">Historical Greeks Data</h2>
+        <p class="body-copy">Our historical data packages contain all the option Greeks, including:</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div class="greek-tile"><h3>Delta</h3><p>Measures the rate of change of option price with respect to a 1-point change in the underlying price.</p></div>
+        <div class="greek-tile"><h3>Gamma</h3><p>Measures the rate of change of Delta with respect to a 1-point change in the underlying price.</p></div>
+        <div class="greek-tile"><h3>Vega</h3><p>Measures the rate of change of the option price with respect to a 1% change in volatility.</p></div>
+        <div class="greek-tile"><h3>Theta</h3><p>Measures the rate of change of the option price with respect to 1-day change in time to expiration.</p></div>
+        <div class="greek-tile"><h3>Rho</h3><p>Measures the rate of change of the option price with respect to a 1% change in the interest rate.</p></div>
+        <div class="greek-tile"><h3>Phi</h3><p>Measures the rate of change of the option price with respect to a 1% change in the dividend rate.</p></div>
+      </div>
+      <div class="card bg-white">
+        <h3 class="card-title-3 mb-3">Historical Implied Volatility Calculations</h3>
+        <p class="body-copy mb-4">SpiderRock historical implied volatility data uses a family of proprietary pricing models to compute prices, implied volatilities, common options Greeks (delta, gamma, theta, vega, rho, phi, volga, and vanna), and various scenario risk slides for equity and futures options. Full methodology and technical notes are available on our documentation site.</p>
+        <p><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#historical-implied-volatility-calculations" target="_blank" rel="noopener noreferrer" class="arrow-link">Methodology &amp; technical notes <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EQUITY OPTIONS TABLE ─────────────────────────────────────────────── -->
+  <section id="equity-options" class="bg-white section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Product Offering</p>
+        <h2 class="h2">Equity Options</h2>
+      </div>
+      <div class="table-box">
+        <table class="product-table">
+          <caption class="sr-only">Equity options datasets</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">Frequency</th><th scope="col">History</th><th scope="col">Prices</th><th scope="col">Volume</th><th scope="col">Size</th><th scope="col">Greeks</th><th scope="col">Implied Vol</th><th scope="col">Vol Surfaces</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Option Close Marks<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/OptionCloseMarkHist/" target="_blank" rel="noopener noreferrer" class="code-tag">OptionCloseMarkHist</a></th><td>EOD</td><td>Jan 2014</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td></tr>
+            <tr><th scope="row">Option Price History ID<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/OptionIntradayHist_30min/" target="_blank" rel="noopener noreferrer" class="code-tag">OptionIntradayHist_30min</a></th><td>30 Min</td><td>Sep 2014</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td></tr>
+            <tr><th scope="row">Option Price History ID<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/OptionIntradayHist/" target="_blank" rel="noopener noreferrer" class="code-tag">OptionIntradayHist</a></th><td>5 Min</td><td>Jan 2020</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td></tr>
+            <tr><th scope="row">Option 1 Minute Bars ATM</th><td>1 Min</td><td>Aug 2020</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td></tr>
+            <tr><th scope="row">Options Print Set<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/OptionPrintSetHist/" target="_blank" rel="noopener noreferrer" class="code-tag">OptionPrintSetHist</a></th><td>Trades</td><td>Jan 2016</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">
+        <p class="note-label">Note</p>
+        <p>History shows the month and year each dataset begins. <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#equity-options" target="_blank" rel="noopener noreferrer" class="arrow-link">See the latest on our documentation site <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STOCKS ───────────────────────────────────────────────────────────── -->
+  <section id="stocks" class="bg-sr-mist section tab-target">
+    <div class="wrap">
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Historical Data</p>
+        <h2 class="h2 mb-5">Historical Stock Price Data</h2>
+        <p class="body-copy mb-4">Our historical stock datasets recap the day&rsquo;s trading activity in the underlying security. Files show open/high/low/close/volume data for stocks, ETFs, and indexes from US exchanges. SpiderRock offers high-quality data that is a point-in-time record of the market, along with corporate action information for historical adjustments in backtesting.</p>
+        <p class="body-copy">SpiderRock provides four basic formats for stock feed subscriptions:</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Stock Close Marks</h3>
+            <span class="freq-tag">EOD</span>
+          </div>
+          <p class="body-copy">Created immediately after the market close when exchanges publish official marks. Contains closing quotes and prices, prior day opening and closing data with corporate action adjustments and daily returns, tracked with reference data and security IDs.</p>
+        </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Stock Minute Bars</h3>
+            <span class="freq-tag">1 Min</span>
+          </div>
+          <p class="body-copy">Created once per minute for each open stock and index market. Includes high/low values, spread data, print information, and bid/ask data.</p>
+        </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Stock Print Set</h3>
+            <span class="freq-tag">Every Trade</span>
+          </div>
+          <p class="body-copy">Created for each trade with trade cost analysis (TCA). Records are updated 1-minute and 10-minutes after the print.</p>
+        </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Stock Imbalances</h3>
+            <span class="freq-tag">Every Tick</span>
+          </div>
+          <p class="body-copy">Buy and sell imbalance records during auctions throughout the trading day, available for both NYSE and ARCA listed securities.</p>
+        </div>
+      </div>
+      <p class="body-copy mb-14">Our stock historical datasets go back 10+ years and support all listed US stocks, ETFs, and ADRs.</p>
+      <p class="eyebrow mb-3">Product Offering</p>
+      <h3 class="h2 mb-8">Stocks</h3>
+      <div class="table-box">
+        <table class="product-table">
+          <caption class="sr-only">Stock datasets</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">Frequency</th><th scope="col">History</th><th scope="col">Prices</th><th scope="col">Volume</th><th scope="col">Size</th><th scope="col">Greeks</th><th scope="col">Implied Vol</th><th scope="col">Vol Surfaces</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Stock Close Marks<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/StockCloseMarkHist/" target="_blank" rel="noopener noreferrer" class="code-tag">StockCloseMarkHist</a></th><td>EOD</td><td>Jan 2010</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td></tr>
+            <tr><th scope="row">Stock Minute Bars<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/StockMinuteBarHist/" target="_blank" rel="noopener noreferrer" class="code-tag">StockMinuteBarHist</a></th><td>1 Min</td><td>Jan 2010</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td></tr>
+            <tr><th scope="row">Stock Print Set<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/StockPrintSetHist/" target="_blank" rel="noopener noreferrer" class="code-tag">StockPrintSetHist</a></th><td>Trades</td><td>Jan 2016</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td></tr>
+            <tr><th scope="row">Stock Imbalances<a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/StockExchImbalance/" target="_blank" rel="noopener noreferrer" class="code-tag">StockExchImbalance</a></th><td>Every Tick</td><td>Aug 2010</td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="yes" aria-label="Included">&#10003;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td><td><span class="no" aria-label="Not included">&ndash;</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">
+        <p class="note-label">Note</p>
+        <p>History shows the month and year each dataset begins. <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#stocks-1" target="_blank" rel="noopener noreferrer" class="arrow-link">See the latest on our documentation site <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY SPIDERROCK / TCA / EUROPEAN ──────────────────────────────────── -->
+  <section id="why" class="bg-white section tab-target">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <p class="eyebrow mb-3">Why SpiderRock</p>
+          <h3 class="card-title-3 mb-4">Why Use SpiderRock&rsquo;s Historical Data</h3>
+          <p class="body-copy mb-4">Our historical data is derived from the live market data and analytics which power the SpiderRock trading system, ensuring a high level of accuracy and consistency. Datasets are synchronized across asset classes (stocks, options, futures), improving the accuracy of trade performance calculations and supporting multi-asset strategy testing.</p>
+          <p class="body-copy">Print Sets are typically used to replay market patterns, as they contain every print along with the quote and mid-market surface at print time, with most datasets offering records dating back to 2016.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <p class="eyebrow mb-3">Trade Cost Analysis</p>
+          <h3 class="card-title-3 mb-4">Trade Cost Analysis (TCA)</h3>
+          <p class="body-copy">Market participants can use our TCA metrics data to analyze trade performance. SpiderRock specializes in computing TCA for options and provides similar TCA data for other asset classes as well. Our TCA metrics consider the mean-reverting characteristics of markets and help you understand the true cost of accessing the liquidity.</p>
+        </div>
+        <div id="european" class="card card-accent bg-white tab-target">
+          <p class="eyebrow mb-3">European Markets</p>
+          <h3 class="card-title-3 mb-4">European Historical Data</h3>
+          <p class="body-copy mb-4">SpiderRock also provides structured historical datasets for European futures, options, and equity markets, supporting backtesting, modeling, and market analysis.</p>
+          <p class="body-copy mb-5">European historical data is delivered through the same AWS S3 and Snowflake infrastructure used for our U.S. datasets.</p>
+          <ul class="bullets">
+            <li>End-of-day data at five-minute frequencies, delivered T+1</li>
+            <li>Trades and analytics</li>
+            <li>Time-series market data</li>
+            <li>Market summaries and derived metrics</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 scroll-mt-[140px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
       <h2 class="h2 text-gray-900 mb-4">Request Historical Data</h2>

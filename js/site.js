@@ -61,6 +61,34 @@
     });
   }
 
+  // ── In-page tabs (product pages): underline the tab for the section in view.
+  var tabs = document.querySelectorAll('.page-tabs a[href^="#"]');
+  if (tabs.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    tabs.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var visible = {};
+    var clicked = null;   // a clicked tab stays active while its section is in view
+    function highlight() {
+      var current = clicked && visible[clicked.getAttribute('href').slice(1)] ? clicked : null;
+      tabs.forEach(function (a) { if (!current && visible[a.getAttribute('href').slice(1)]) current = a; });
+      if (!current) return;
+      tabs.forEach(function (a) { a.classList.toggle('is-active', a === current); });
+      var row = current.parentElement;
+      row.scrollLeft = current.offsetLeft - (row.clientWidth - current.offsetWidth) / 2;
+    }
+    tabs.forEach(function (a) {
+      a.addEventListener('click', function () { clicked = a; visible[a.getAttribute('href').slice(1)] = true; highlight(); });
+    });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        visible[e.target.id] = e.isIntersecting;
+        if (!e.isIntersecting && clicked && clicked.getAttribute('href') === '#' + e.target.id) clicked = null;
+      });
+      highlight();
+    }, { rootMargin: '-140px 0px -55% 0px' });
+    Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+
   // ── Search: a small dialog that searches the documentation site in a new tab.
   // Opened by the search buttons or Ctrl/Cmd+K.
   var dialog = document.getElementById('siteSearch');
