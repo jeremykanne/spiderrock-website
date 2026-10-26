@@ -103,104 +103,118 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap py-16 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5"><a href="../" class="hover:text-white transition-colors">SpiderStream</a></p>
-      <h1 class="hero-h1 mb-10 max-w-4xl">Futures NBBO Feeds</h1>
-      <div class="flex flex-wrap gap-4">
-        <a href="../#request-access" class="btn btn-primary">Request Information</a>
-        <a href="../#data-products" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">All Data Products</a>
-        <a href="../pdfs/MLink-Feeds-Live.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><a href="../">SpiderStream / MLink API</a><span aria-hidden="true">›</span><span aria-current="page">Futures NBBO Feeds</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">SpiderStream</p>
+        <h1 class="hero-h1 mb-9">Futures NBBO Feeds</h1>
+        <div class="flex flex-wrap gap-4">
+          <a href="../#request-access" class="btn btn-primary">Request Information</a>
+          <a href="../#data-products" class="btn btn-ghost">All Data Products</a>
+          <a href="../pdfs/MLink-Feeds-Live.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Download PDF&nbsp;<span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Exchange Feeds</p>
+        <div class="arch-chips"><span>CME</span><span>NYMEX</span><span>COMEX</span><span>CBOT</span><span>CFE</span><span>Real-time or delayed</span></div>
+        <p class="dark-panel-label mt-6">Pricing</p>
+        <dl class="mt-3">
+          <div class="flex justify-between items-baseline gap-4 py-2.5 border-t border-white/15"><dt class="text-[#D3DEE8] text-[14px]">Individual (Monthly)</dt><dd class="text-right"><span class="font-display font-semibold text-[20px] text-white">$500 / $1500</span><span class="block text-[13px] text-[#D3DEE8]">+ $.25 per million messages</span><span class="block text-[13px] text-[#D3DEE8]">(per DCM / All DCM)</span></dd></div>
+          <div class="flex justify-between items-baseline gap-4 py-2.5 border-t border-white/15"><dt class="text-[#D3DEE8] text-[14px]">Institutional (Monthly)</dt><dd class="text-right"><span class="font-display font-semibold text-[20px] text-white">$750 / $2250</span><span class="block text-[13px] text-[#D3DEE8]">(per DCM / All DCM)</span></dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
   <!-- PRODUCT DETAILS & PRICING -->
-  <section class="bg-gray-50 section">
+  <section class="bg-sr-mist section">
     <div class="wrap space-y-8">
-      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div class="bg-sr-navy text-white px-8 md:px-10 py-6 flex flex-wrap items-baseline justify-between gap-4">
-          <h2 class="font-display text-2xl font-bold tracking-wide">FUTURES</h2>
-          <p class="text-white/70">CME/NYMEX/COMEX/CBOT/CFE &middot; Real-time or delayed</p>
-        </div>
-        <div class="p-8 md:p-10 grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16">
+      <div class="card dataset-card bg-white">
+        <div class="dataset-head">
           <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Available Messages</h3>
-            <ul class="space-y-2 text-gray-700"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Future Book Quote</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Future Prints</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Mkt Summary (1 min bars)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Future EOD Closing Price</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Future Settlement Prices</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Product Definitions</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Codes Definitions</li></ul>
+            <h2 class="card-title-2">FUTURES</h2>
+            <p class="body-copy mt-1">CME/NYMEX/COMEX/CBOT/CFE</p>
+          </div>
+          <span class="freq-tag">Real-time or delayed</span>
+        </div>
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-14 mt-4">
+          <div>
+            <p class="includes-label">Available Messages</p>
+            <ul class="bullets">
+              <li>Future Book Quote</li>
+              <li>Future Prints</li>
+              <li>Mkt Summary (1 min bars)</li>
+              <li>Future EOD Closing Price</li>
+              <li>Future Settlement Prices</li>
+              <li>Product Definitions</li>
+              <li>Codes Definitions</li>
+            </ul>
           </div>
           <div>
             <div class="grid sm:grid-cols-2 gap-4 mb-6">
-              <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Individual (Monthly)</p>
-                <div class="font-display text-3xl font-bold text-sr-navy">$500 / $1500</div><div class="text-gray-500 text-sm mt-1">+ $.25 per million messages</div><div class="text-gray-500 text-sm mt-1">(per DCM / All DCM)</div>
-              </div>
-              <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Institutional (Monthly)</p>
-                <div class="font-display text-3xl font-bold text-sr-navy">$750 / $2250</div><div class="text-gray-500 text-sm mt-1">(per DCM / All DCM)</div>
-              </div>
+            <div class="rounded-[10px] border border-gray-200 bg-sr-mist p-5">
+              <p class="includes-label">Individual (Monthly)</p>
+              <p class="font-display font-semibold text-[28px] leading-tight text-sr-navy">$500 / $1500</p><p class="text-[14px] text-sr-gray mt-1">+ $.25 per million messages</p><p class="text-[14px] text-sr-gray mt-1">(per DCM / All DCM)</p>
             </div>
-            <dl class="grid sm:grid-cols-2 gap-x-10 border-t border-gray-200">
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Filters (Stream Topics)</dt>
-              <dd class="text-gray-800">Future Key, Expiry Key, [A-Z] Stripes</dd>
+            <div class="rounded-[10px] border border-gray-200 bg-sr-mist p-5">
+              <p class="includes-label">Institutional (Monthly)</p>
+              <p class="font-display font-semibold text-[28px] leading-tight text-sr-navy">$750 / $2250</p><p class="text-[14px] text-sr-gray mt-1">(per DCM / All DCM)</p>
             </div>
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Redistribution License**</dt>
-              <dd class="text-gray-800">Redistribution Fees may apply (by exchange)</dd>
             </div>
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Data Licensing**</dt>
-              <dd class="text-gray-800">Data Licensing may apply (by exchange)</dd>
-            </div>
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">WebSocket &amp; REST APIs (HTTP/HTTPS)</dt>
-              <dd class="text-gray-800">Live Stream, Active Sampling, Queries (no limits)</dd>
-            </div>
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Protocols</dt>
-              <dd class="text-gray-800">JSON, Google Protocol buffers, C++ and C# are available</dd>
-            </div>
-            <div class="py-4 border-b border-gray-200">
-              <dt class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Connection (Types)</dt>
-              <dd class="text-gray-800">Internet and direct connections</dd>
-            </div>
+            <dl class="spec-list">
+            <div><dt>Filters (Stream Topics)</dt><dd>Future Key, Expiry Key, [A-Z] Stripes</dd></div>
+            <div><dt>Redistribution License**</dt><dd>Redistribution Fees may apply (by exchange)</dd></div>
+            <div><dt>Data Licensing**</dt><dd>Data Licensing may apply (by exchange)</dd></div>
+            <div><dt>WebSocket &amp; REST APIs (HTTP/HTTPS)</dt><dd>Live Stream, Active Sampling, Queries (no limits)</dd></div>
+            <div><dt>Protocols</dt><dd>JSON, Google Protocol buffers, C++ and C# are available</dd></div>
+            <div><dt>Connection (Types)</dt><dd>Internet and direct connections</dd></div>
             </dl>
           </div>
         </div>
       </div>
-      <div class="mt-6 space-y-1 text-gray-500 text-sm"><p>** User selects required exchanges which are subject to fees. Redistribution fees may apply separately to SpiderStream analytics.</p></div>
+      <div class="note-box mt-6">
+        <p class="note-label">Note</p>
+        <p>** User selects required exchanges which are subject to fees. Redistribution fees may apply separately to SpiderStream analytics.</p>
+      </div>
     </div>
   </section>
 
   <!-- ALL LIVE FEEDS -->
   <section class="bg-white section">
     <div class="wrap">
-      <p class="eyebrow mb-4">Compare</p>
-      <h2 class="h2 text-gray-900 mb-10">All Live Feeds</h2>
-      <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 p-6">
-        <table class="w-full border-collapse">
-          <thead><tr><th scope="col" class="py-4 pr-6"><span class="sr-only">Field</span></th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">EQUITY</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">EQUITY OPTIONS</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] text-gray-600">OPTIONS ON FUTURES</th><th scope="col" class="py-4 px-5 text-left align-bottom text-xs font-bold uppercase tracking-wider min-w-[210px] bg-sr-navy text-white">FUTURES<span class="block normal-case tracking-normal font-semibold text-blue-300 mt-1">This product</span></th></tr></thead>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Compare</p>
+        <h2 class="h2">All Live Feeds</h2>
+      </div>
+      <div class="table-box">
+        <table class="product-table">
+          <thead><tr><th scope="col"><span class="sr-only">Field</span></th><th scope="col">EQUITY</th><th scope="col">EQUITY OPTIONS</th><th scope="col">OPTIONS ON FUTURES</th><th scope="col" class="!bg-sr-navy !text-white">FUTURES<span class="block font-medium text-[#D3DEE8] mt-1">This product</span></th></tr></thead>
           <tbody>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Exchange Feeds</th><td class="py-4 px-5 align-top text-sm text-gray-700">CTA/UTP/OTC/<br>NASDAQ/ARCA</td><td class="py-4 px-5 align-top text-sm text-gray-700">OPRA</td><td class="py-4 px-5 align-top text-sm text-gray-700">CME/NYMEX/COMEX/<br>CBOT/CFE</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">CME/NYMEX/COMEX/<br>CBOT/CFE</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Feed Type</th><td class="py-4 px-5 align-top text-sm text-gray-700">Real-time or delayed</td><td class="py-4 px-5 align-top text-sm text-gray-700">Real-time or delayed</td><td class="py-4 px-5 align-top text-sm text-gray-700">Real-time or delayed</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Real-time or delayed</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Available Messages</th><td class="py-4 px-5 align-top text-sm text-gray-700">Stock NBBO Quote<br>Stock Prints<br>Order Imbalances*<br>Mkt Summary (1 min bar)<br>EOD Closing Prices</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option NBBO Book Quote<br>Option Prints<br>Mkt Summary (OHL)<br>Option Opening Price<br>Option EOD Closing Price<br>Ticker/Root Definitions<br>Option Print Types</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option NBBO Book Quote<br>Option Prints<br>Mkt Summary (OHL)<br>Option Opening Price<br>Option EOD Closing Price<br>Product Definitions<br>Codes Definitions</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Future Book Quote<br>Future Prints<br>Mkt Summary (1 min bars)<br>Future EOD Closing Price<br>Future Settlement Prices<br>Product Definitions<br>Codes Definitions</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Individual<br>(Monthly)</th><td class="py-4 px-5 align-top text-sm text-gray-700">$500<br>+$.25 per million messages</td><td class="py-4 px-5 align-top text-sm text-gray-700">$750<br>+ $.25 per million messages</td><td class="py-4 px-5 align-top text-sm text-gray-700">$500 / $1500<br>+ $.25 per million messages<br>(per DCM / All DCM)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">$500 / $1500<br>+ $.25 per million messages<br>(per DCM / All DCM)</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Institutional<br>(Monthly)</th><td class="py-4 px-5 align-top text-sm text-gray-700">$2000</td><td class="py-4 px-5 align-top text-sm text-gray-700">$2500</td><td class="py-4 px-5 align-top text-sm text-gray-700">$750 / $2250<br>(per DCM / All DCM)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">$750 / $2250<br>(per DCM / All DCM)</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Filters<br>(Stream Topics)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Ticker Key, [A-Z] Stripes</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option Key, Future Key, Expiry Key, [A-Z] Stripes</td><td class="py-4 px-5 align-top text-sm text-gray-700">Option Key, Future Key, Expiry Key, [A-Z] Stripes</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Future Key, Expiry Key, [A-Z] Stripes</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Redistribution License**</th><td class="py-4 px-5 align-top text-sm text-gray-700">Redistribution Fees may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Redistribution Fees may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Redistribution Fees may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Redistribution Fees may apply (by exchange)</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Data Licensing**</th><td class="py-4 px-5 align-top text-sm text-gray-700">Data Licensing may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Data Licensing may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Data Licensing may apply (by exchange)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Data Licensing may apply (by exchange)</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">WebSocket<br>&amp; REST APIs<br>(HTTP/HTTPS)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Live Stream, Active Sampling, Queries (no limits)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Live Stream, Active Sampling, Queries (no limits)</td><td class="py-4 px-5 align-top text-sm text-gray-700">Live Stream, Active Sampling, Queries (no limits)</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Live Stream, Active Sampling, Queries (no limits)</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Protocols</th><td class="py-4 px-5 align-top text-sm text-gray-700">JSON, Google Protocol buffers, C++ and C# are available</td><td class="py-4 px-5 align-top text-sm text-gray-700">JSON, Google Protocol buffers, C++ and C# are available</td><td class="py-4 px-5 align-top text-sm text-gray-700">JSON, Google Protocol buffers, C++ and C# are available</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">JSON, Google Protocol buffers, C++ and C# are available</td></tr>
-            <tr class="border-t border-gray-200"><th scope="row" class="py-4 pr-6 text-left align-top text-xs font-bold uppercase tracking-wider text-gray-500 whitespace-nowrap">Connection<br>(Types)</th><td class="py-4 px-5 align-top text-sm text-gray-700">Internet and direct connections</td><td class="py-4 px-5 align-top text-sm text-gray-700">Internet and direct connections</td><td class="py-4 px-5 align-top text-sm text-gray-700">Internet and direct connections</td><td class="py-4 px-5 align-top text-sm bg-sr-navy/5 text-gray-900">Internet and direct connections</td></tr>
+            <tr><th scope="row">Exchange Feeds</th><td class="!whitespace-normal min-w-[200px]">CTA/UTP/OTC/<br>NASDAQ/ARCA</td><td class="!whitespace-normal min-w-[200px]">OPRA</td><td class="!whitespace-normal min-w-[200px]">CME/NYMEX/COMEX/<br>CBOT/CFE</td><td class="!whitespace-normal min-w-[200px]">CME/NYMEX/COMEX/<br>CBOT/CFE</td></tr>
+            <tr><th scope="row">Feed Type</th><td class="!whitespace-normal min-w-[200px]">Real-time or delayed</td><td class="!whitespace-normal min-w-[200px]">Real-time or delayed</td><td class="!whitespace-normal min-w-[200px]">Real-time or delayed</td><td class="!whitespace-normal min-w-[200px]">Real-time or delayed</td></tr>
+            <tr><th scope="row">Available Messages</th><td class="!whitespace-normal min-w-[200px]">Stock NBBO Quote<br>Stock Prints<br>Order Imbalances*<br>Mkt Summary (1 min bar)<br>EOD Closing Prices</td><td class="!whitespace-normal min-w-[200px]">Option NBBO Book Quote<br>Option Prints<br>Mkt Summary (OHL)<br>Option Opening Price<br>Option EOD Closing Price<br>Ticker/Root Definitions<br>Option Print Types</td><td class="!whitespace-normal min-w-[200px]">Option NBBO Book Quote<br>Option Prints<br>Mkt Summary (OHL)<br>Option Opening Price<br>Option EOD Closing Price<br>Product Definitions<br>Codes Definitions</td><td class="!whitespace-normal min-w-[200px]">Future Book Quote<br>Future Prints<br>Mkt Summary (1 min bars)<br>Future EOD Closing Price<br>Future Settlement Prices<br>Product Definitions<br>Codes Definitions</td></tr>
+            <tr><th scope="row">Individual<br>(Monthly)</th><td class="!whitespace-normal min-w-[200px]">$500<br>+$.25 per million messages</td><td class="!whitespace-normal min-w-[200px]">$750<br>+ $.25 per million messages</td><td class="!whitespace-normal min-w-[200px]">$500 / $1500<br>+ $.25 per million messages<br>(per DCM / All DCM)</td><td class="!whitespace-normal min-w-[200px]">$500 / $1500<br>+ $.25 per million messages<br>(per DCM / All DCM)</td></tr>
+            <tr><th scope="row">Institutional<br>(Monthly)</th><td class="!whitespace-normal min-w-[200px]">$2000</td><td class="!whitespace-normal min-w-[200px]">$2500</td><td class="!whitespace-normal min-w-[200px]">$750 / $2250<br>(per DCM / All DCM)</td><td class="!whitespace-normal min-w-[200px]">$750 / $2250<br>(per DCM / All DCM)</td></tr>
+            <tr><th scope="row">Filters<br>(Stream Topics)</th><td class="!whitespace-normal min-w-[200px]">Ticker Key, [A-Z] Stripes</td><td class="!whitespace-normal min-w-[200px]">Option Key, Future Key, Expiry Key, [A-Z] Stripes</td><td class="!whitespace-normal min-w-[200px]">Option Key, Future Key, Expiry Key, [A-Z] Stripes</td><td class="!whitespace-normal min-w-[200px]">Future Key, Expiry Key, [A-Z] Stripes</td></tr>
+            <tr><th scope="row">Redistribution License**</th><td class="!whitespace-normal min-w-[200px]">Redistribution Fees may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Redistribution Fees may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Redistribution Fees may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Redistribution Fees may apply (by exchange)</td></tr>
+            <tr><th scope="row">Data Licensing**</th><td class="!whitespace-normal min-w-[200px]">Data Licensing may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Data Licensing may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Data Licensing may apply (by exchange)</td><td class="!whitespace-normal min-w-[200px]">Data Licensing may apply (by exchange)</td></tr>
+            <tr><th scope="row">WebSocket<br>&amp; REST APIs<br>(HTTP/HTTPS)</th><td class="!whitespace-normal min-w-[200px]">Live Stream, Active Sampling, Queries (no limits)</td><td class="!whitespace-normal min-w-[200px]">Live Stream, Active Sampling, Queries (no limits)</td><td class="!whitespace-normal min-w-[200px]">Live Stream, Active Sampling, Queries (no limits)</td><td class="!whitespace-normal min-w-[200px]">Live Stream, Active Sampling, Queries (no limits)</td></tr>
+            <tr><th scope="row">Protocols</th><td class="!whitespace-normal min-w-[200px]">JSON, Google Protocol buffers, C++ and C# are available</td><td class="!whitespace-normal min-w-[200px]">JSON, Google Protocol buffers, C++ and C# are available</td><td class="!whitespace-normal min-w-[200px]">JSON, Google Protocol buffers, C++ and C# are available</td><td class="!whitespace-normal min-w-[200px]">JSON, Google Protocol buffers, C++ and C# are available</td></tr>
+            <tr><th scope="row">Connection<br>(Types)</th><td class="!whitespace-normal min-w-[200px]">Internet and direct connections</td><td class="!whitespace-normal min-w-[200px]">Internet and direct connections</td><td class="!whitespace-normal min-w-[200px]">Internet and direct connections</td><td class="!whitespace-normal min-w-[200px]">Internet and direct connections</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="mt-6 space-y-1 text-gray-500 text-sm"><p>* Additional fees apply</p><p>** User selects required exchanges which are subject to fees. Redistribution fees may apply separately to SpiderStream analytics.</p></div>
+      <div class="note-box mt-6">
+        <p class="note-label">Note</p>
+        <p>* Additional fees apply</p><p>** User selects required exchanges which are subject to fees. Redistribution fees may apply separately to SpiderStream analytics.</p>
+      </div>
       <div class="mt-12 flex flex-wrap gap-4">
-        <a href="../#request-access" class="btn btn-primary">Request Information</a>
-        <a href="../#data-products" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">All Data Products</a>
-        <a href="../pdfs/MLink-Feeds-Live.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-8 py-3 hover:bg-sr-navy hover:text-white transition-colors">Download PDF <span aria-hidden="true">&#8599;</span></a>
+          <a href="../#request-access" class="btn btn-primary">Request Information</a>
+          <a href="../#data-products" class="btn btn-outline">All Data Products</a>
+          <a href="../pdfs/MLink-Feeds-Live.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Download PDF&nbsp;<span aria-hidden="true">&#8599;</span></a>
       </div>
     </div>
   </section>

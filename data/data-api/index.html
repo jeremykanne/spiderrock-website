@@ -15,88 +15,73 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">
-        Data Delivery Solutions
-      </h1>
-      <p class="hero-lead mb-10">
-        Real-time multicast feeds, proprietary live analytics, and cloud-based historical data delivery — all from SpiderRock's institutional infrastructure.
-      </p>
-      <a href="../../contact-us/" class="btn btn-primary">Consult With Us</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Data Delivery Solutions</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1 mb-6">Data Delivery Solutions</h1>
+        <p class="hero-lead mb-9">Real-time multicast feeds, proprietary live analytics, and cloud-based historical data delivery — all from SpiderRock's institutional infrastructure.</p>
+        <a href="../../contact-us/" class="btn btn-primary">Consult With Us</a>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Hosted In</p>
+        <div class="arch-chips"><span>NY4/5</span><span>CH2</span></div>
+        <p class="dark-panel-label mt-6">Real-Time Delivery</p>
+        <div class="arch-chips"><span>Multicast feeds</span><span>C++/C# API</span><span>MySQL API</span></div>
+        <p class="dark-panel-label mt-6">Historical Delivery</p>
+        <div class="arch-chips"><span>Cloud-Based File Delivery</span><span>Liberator API</span><span>Data Portal</span></div>
+      </div>
     </div>
   </section>
 
   <!-- OVERVIEW -->
   <section class="bg-white section">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow mb-4">Overview</p>
-        <h2 class="h2 text-gray-900 mb-6">Real-Time and Historical Data Delivery</h2>
-        <p class="text-gray-600 text-lg max-w-3xl leading-relaxed">
-          Effective analytical workflows are a critical component of trade strategy development. SpiderRock data delivery solutions combine institutional quality market data and analytics with resource-efficient delivery mechanisms — covering market data feeds, live analytics, and historical data.
-        </p>
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Overview</p>
+        <h2 class="h2 mb-5">Real-Time and Historical Data Delivery</h2>
+        <p class="body-copy">Effective analytical workflows are a critical component of trade strategy development. SpiderRock data delivery solutions combine institutional quality market data and analytics with resource-efficient delivery mechanisms — covering market data feeds, live analytics, and historical data.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 text-center">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Market Data Feeds</h3>
-          <p class="text-gray-600 text-sm">Vendor of record, low latency raw/normalized US equities, options, and futures</p>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Market Data Feeds</h3>
+          <p class="body-copy">Vendor of record, low latency raw/normalized US equities, options, and futures</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Live Analytics</h3>
-          <p class="text-gray-600 text-sm">Greeks, implied volatilities, volatility surfaces, historical volatilities, risk factors, trade performance</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Live Analytics</h3>
+          <p class="body-copy">Greeks, implied volatilities, volatility surfaces, historical volatilities, risk factors, trade performance</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Historical Analytics</h3>
-          <p class="text-gray-600 text-sm">Snapshots of live data/analytics: end-of-day, intraday, minute bar, previous day. Up to 10 years</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Historical Analytics</h3>
+          <p class="body-copy">Snapshots of live data/analytics: end-of-day, intraday, minute bar, previous day. Up to 10 years</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REAL-TIME DELIVERY -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-20 items-start">
-        <div>
-          <p class="eyebrow mb-5">Real-Time</p>
-          <h2 class="h2 text-gray-900 mb-6">Market Data Feed Delivery</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            SpiderRock provides raw and normalized low latency multicast feeds covering US equities, options, and futures markets. We are an exchange licensed redistributor of market data.
-          </p>
-          <div class="space-y-6">
-            <div class="stat">
-              <h4 class="font-display font-bold text-gray-900 mb-2">Low Latency Service</h4>
-              <p class="text-gray-600 text-sm">Exchange feed pre-processing using FPGA and kernel bypass technology with Arista switches and 10GB/40GB fiber connections for fast normalized data feeds.</p>
-            </div>
-            <div class="border-l-4 border-sr-blue pl-6">
-              <h4 class="font-display font-bold text-gray-900 mb-2">Hosted Solution</h4>
-              <p class="text-gray-600 text-sm">Hosted within NY4/5 and CH2 data centers. Client software runs on SpiderRock-owned hardware or in client environments using SpiderRock-supplied C++/C# APIs.</p>
-            </div>
-            <div class="border-l-4 border-sr-dark pl-6">
-              <h4 class="font-display font-bold text-gray-900 mb-2">Normalized OPRA Feed</h4>
-              <p class="text-gray-600 text-sm">A normalized version of the OPRA feed processed on a single thread of a single core. Typically 1/10th the size of raw OPRA — more manageable for firms needing real-time options data.</p>
-            </div>
-          </div>
+  <!-- REAL-TIME + LIVE ANALYTICS DELIVERY -->
+  <section class="bg-sr-mist section">
+    <div class="wrap grid lg:grid-cols-2 gap-7">
+      <div class="card bg-white">
+        <p class="eyebrow mb-3">Real-Time</p>
+        <h2 class="h2 mb-5">Market Data Feed Delivery</h2>
+        <p class="body-copy mb-4">SpiderRock provides raw and normalized low latency multicast feeds covering US equities, options, and futures markets. We are an exchange licensed redistributor of market data.</p>
+        <div class="doc-rows">
+            <div class="doc-row"><div><p class="doc-row-name">Low Latency Service</p><p class="doc-row-text">Exchange feed pre-processing using FPGA and kernel bypass technology with Arista switches and 10GB/40GB fiber connections for fast normalized data feeds.</p></div></div>
+            <div class="doc-row"><div><p class="doc-row-name">Hosted Solution</p><p class="doc-row-text">Hosted within NY4/5 and CH2 data centers. Client software runs on SpiderRock-owned hardware or in client environments using SpiderRock-supplied C++/C# APIs.</p></div></div>
+            <div class="doc-row"><div><p class="doc-row-name">Normalized OPRA Feed</p><p class="doc-row-text">A normalized version of the OPRA feed processed on a single thread of a single core. Typically 1/10th the size of raw OPRA — more manageable for firms needing real-time options data.</p></div></div>
         </div>
-        <div>
-          <p class="eyebrow mb-5">Proprietary</p>
-          <h2 class="h2 text-gray-900 mb-6">Live Analytics Delivery</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Low-cost delivery of market data and options analytics without significant infrastructure investment. Analytics for volatility and surface modeling capable of supporting live trading operations.
-          </p>
-          <div class="space-y-6">
-            <div class="stat">
-              <h4 class="font-display font-bold text-gray-900 mb-2">Volatility and Greeks Feed</h4>
-              <p class="text-gray-600 text-sm">A reliable real-time feed for all US-listed options providing NBBO prices, bid/ask implied volatilities, SpiderRock surface volatilities, Greeks, and proprietary analytics.</p>
-            </div>
-            <div class="border-l-4 border-sr-blue pl-6">
-              <h4 class="font-display font-bold text-gray-900 mb-2">Delivery Formats</h4>
-              <p class="text-gray-600 text-sm">Analytics distributed as multicast messages via C++/C# API or queried via MySQL API. Live, delayed, or query data through a robust, reliable technical infrastructure.</p>
-            </div>
-          </div>
+      </div>
+      <div class="card bg-white">
+        <p class="eyebrow mb-3">Proprietary</p>
+        <h2 class="h2 mb-5">Live Analytics Delivery</h2>
+        <p class="body-copy mb-4">Low-cost delivery of market data and options analytics without significant infrastructure investment. Analytics for volatility and surface modeling capable of supporting live trading operations.</p>
+        <div class="doc-rows">
+            <div class="doc-row"><div><p class="doc-row-name">Volatility and Greeks Feed</p><p class="doc-row-text">A reliable real-time feed for all US-listed options providing NBBO prices, bid/ask implied volatilities, SpiderRock surface volatilities, Greeks, and proprietary analytics.</p></div></div>
+            <div class="doc-row"><div><p class="doc-row-name">Delivery Formats</p><p class="doc-row-text">Analytics distributed as multicast messages via C++/C# API or queried via MySQL API. Live, delayed, or query data through a robust, reliable technical infrastructure.</p></div></div>
         </div>
       </div>
     </div>
@@ -106,35 +91,33 @@
   <section class="bg-white section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow mb-4">Historical</p>
-        <h2 class="h2 text-gray-900">Historical Data Delivery Options</h2>
+        <p class="eyebrow mb-3">Historical</p>
+        <h2 class="h2">Historical Data Delivery Options</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Cloud-Based File Delivery</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">Data tables organized by format type (closing marks, minute bars, surfaces, prints) and loaded into cloud storage overnight, partitioned by date. Daily subscription files and bulk historical downloads available.</p>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Cloud-Based File Delivery</h3>
+          <p class="body-copy">Data tables organized by format type (closing marks, minute bars, surfaces, prints) and loaded into cloud storage overnight, partitioned by date. Daily subscription files and bulk historical downloads available.</p>
         </div>
-
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Liberator API</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">On-demand historical data access by ticker, groups, date, and time ranges. Starter codes and notebooks in Python, R, C++, C#, JavaScript, and a Microsoft Excel plug-in. No need to download large datasets during research.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Liberator API</h3>
+          <p class="body-copy">On-demand historical data access by ticker, groups, date, and time ranges. Starter codes and notebooks in Python, R, C++, C#, JavaScript, and a Microsoft Excel plug-in. No need to download large datasets during research.</p>
         </div>
-
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Data Portal</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">Browser-based access for customers to view, search, filter, and download historical data files within their subscription. No API integration required for simple file access.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Data Portal</h3>
+          <p class="body-copy">Browser-based access for customers to view, search, filter, and download historical data files within their subscription. No API integration required for simple file access.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-sr-navy section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="h2 text-white mb-6">Consult with Our Team</h2>
-      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Our broad and rich analytics are easily accessible via multiple delivery mechanisms. Let us help you scale while keeping cost under control.</p>
+  <section class="bg-sr-mist section">
+    <div class="wrap cta-band">
+      <div>
+        <h2 class="h2 mb-4">Consult with Our Team</h2>
+        <p class="body-copy text-[18px]">Our broad and rich analytics are easily accessible via multiple delivery mechanisms. Let us help you scale while keeping cost under control.</p>
+      </div>
       <a href="../../contact-us/" class="btn btn-primary">Get in Touch</a>
     </div>
   </section>

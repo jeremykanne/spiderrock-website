@@ -106,113 +106,156 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">VOL2G</p>
-      <h1 class="hero-h1-sm mb-6 max-w-4xl">The Analytics Database for US Stock and Equity Options Pricing and Volatility</h1>
-      <p class="hero-lead mb-10">Out of our real-time trading platform, SpiderRock delivers a comprehensive volatility database and a suite of extended data products designed to meet the needs of institutional and academic researchers who depend on high-quality historical volatility analytics.</p>
-      <a href="#request-access" class="btn btn-primary">Request Access</a>
-    </div>
-  </section>
-
-  <!-- WHAT IS VOL2G -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
-        <div>
-          <p class="eyebrow mb-4">Overview</p>
-          <h2 class="h2 text-gray-900 mb-6">What Is VOL2G?</h2>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><a href="../">Historical Data</a><span aria-hidden="true">›</span><span aria-current="page">VOL2G</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">VOL2G</p>
+        <h1 class="hero-h1-sm mb-6">The Analytics Database for US Stock and Equity Options Pricing and Volatility</h1>
+        <p class="hero-lead mb-9">Out of our real-time trading platform, SpiderRock delivers a comprehensive volatility database and a suite of extended data products designed to meet the needs of institutional and academic researchers who depend on high-quality historical volatility analytics.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#request-access" class="btn btn-primary">Request Access</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
         </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label mb-3">The VOL2G Database Bundle</p>
         <div>
-          <p class="text-gray-600 text-lg leading-relaxed">VOL2G is SpiderRock&rsquo;s volatility data bundle, featuring implied at-the-money volatilities and skew slopes for fixed-term option expirations at multiple points ranging from 5 to 504 days. The dataset also includes prices and implied volatilities for all observed option strikes, synchronized open/high/low/close and volume data on underlying prices, and documents earnings dates and earnings-driven volatility so it can be removed from the analysis. VOL2G users receive a complete set of reference data, including security IDs, asset definitions, and corporate action adjustments needed to value and backtest options portfolios.</p>
-          <p class="mt-8"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="arrow-link">Option pricing methodology <span aria-hidden="true">&#8599;</span></a></p>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Stock Close Marks</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Option Close Marks</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Fixed Grid Surfaces</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Fixed Term Surfaces ATM</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Volatility History by Ticker</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
+          <div class="flex items-center justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[16px] text-white">Equity Reference Tables</span><span class="font-mono text-[12px] text-[#F3B7A9]">EOD</span></div>
         </div>
+        <p class="mt-4 text-[14px] text-[#D3DEE8]">History back to January 2010</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT THE BUNDLE -->
-  <section class="bg-gray-50 section">
+  <!-- In-page tabs: a marketing version of the docs' "On this page" (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#overview">Overview</a>
+      <a href="#bundle">Bundle Coverage</a>
+      <a href="#offerings">Product Offerings</a>
+      <a href="#why">Why VOL2G</a>
+      <a href="#beyond-eod">Beyond EOD</a>
+    </div>
+  </nav>
+
+  <!-- ─── WHAT IS VOL2G ────────────────────────────────────────────────────── -->
+  <section id="overview" class="bg-white section tab-target">
+    <div class="wrap grid lg:grid-cols-[1fr_2fr] gap-x-16 gap-y-8">
+      <div>
+        <p class="eyebrow mb-3">Overview</p>
+        <h2 class="h2">What Is VOL2G?</h2>
+      </div>
+      <div>
+        <p class="lead">VOL2G is SpiderRock&rsquo;s volatility data bundle, featuring implied at-the-money volatilities and skew slopes for fixed-term option expirations at multiple points ranging from 5 to 504 days. The dataset also includes prices and implied volatilities for all observed option strikes, synchronized open/high/low/close and volume data on underlying prices, and documents earnings dates and earnings-driven volatility so it can be removed from the analysis. VOL2G users receive a complete set of reference data, including security IDs, asset definitions, and corporate action adjustments needed to value and backtest options portfolios.</p>
+        <p class="mt-8"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="arrow-link">Option pricing methodology <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT THE BUNDLE ─────────────────────────────────────────────────── -->
+  <section id="bundle" class="bg-sr-mist section tab-target">
+    <div class="wrap">
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Bundle Coverage</p>
+        <h2 class="h2 mb-5">About Our VOL2G Bundle</h2>
+        <p class="body-copy">VOL2G has everything you need for high-quality equity volatility research and analysis.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Data Scope</h3>
+          <ul class="bullets">
+            <li>Over ten (10) years of historical EOD options data</li>
+            <li>All US exchange-traded equity options, indexes, ETFs, ADRs</li>
+            <li>Bid/Ask option pricing, volume, open interest</li>
+            <li>Underlying stock open, high, low, close prices back to 2007</li>
+          </ul>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Analytics</h3>
+          <ul class="bullets">
+            <li>Calculated bid/ask implied volatility &amp; theoretical surface prices with Greeks</li>
+            <li>Multi-point at-the-money smoothed constant maturity curves</li>
+            <li>Skew curves and estimated skew slopes</li>
+          </ul>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Insights</h3>
+          <ul class="bullets">
+            <li>Volatility reported as both censored (without earnings events) and uncensored (as observed)</li>
+            <li>Implied stock earnings estimates and historical earnings moves</li>
+            <li>Point-in-time forecasted dividends and actual corporate action adjustments</li>
+            <li>Supporting reference data including security ID and segmented industry sector codes</li>
+            <li>Backtest-ready with daily returns</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-10"><a href="../volatility-surfaces/" class="arrow-link">Historical volatility surfaces <span class="arrow">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- ─── PRODUCT OFFERINGS ────────────────────────────────────────────────── -->
+  <section id="offerings" class="bg-white section tab-target">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow mb-4">Bundle Coverage</p>
-        <h2 class="h2 text-gray-900 mb-6">About Our VOL2G Bundle</h2>
-        <p class="text-gray-600 text-lg leading-relaxed max-w-3xl">VOL2G has everything you need for high-quality equity volatility research and analysis.</p>
+        <p class="eyebrow mb-3">Product Offerings</p>
+        <h2 class="h2">Product Offerings</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Data Scope</h3>
-          <ul class="space-y-3 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Over ten (10) years of historical EOD options data</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>All US exchange-traded equity options, indexes, ETFs, ADRs</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Bid/Ask option pricing, volume, open interest</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Underlying stock open, high, low, close prices back to 2007</span></li></ul>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">The VOL2G Database Bundle</h3>
+          <p class="body-copy">The VOL2G Database Bundle includes Stock Close Marks, Option Close Marks, Fixed Grid Surfaces, Fixed Term Surfaces ATM, Volatility History by Ticker, and Equity Reference Tables, all EOD with history back to January 2010.</p>
         </div>
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Analytics</h3>
-          <ul class="space-y-3 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Calculated bid/ask implied volatility &amp; theoretical surface prices with Greeks</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Multi-point at-the-money smoothed constant maturity curves</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Skew curves and estimated skew slopes</span></li></ul>
-        </div>
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Insights</h3>
-          <ul class="space-y-3 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Volatility reported as both censored (without earnings events) and uncensored (as observed)</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Implied stock earnings estimates and historical earnings moves</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Point-in-time forecasted dividends and actual corporate action adjustments</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Supporting reference data including security ID and segmented industry sector codes</span></li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span><span>Backtest-ready with daily returns</span></li></ul>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Individual &amp; Add-On Tables</h3>
+          <p class="body-copy">Individual and add-on tables (Stock Minute Bars, Stock Print Set, Stock Imbalances, Options Price History ID/HID, Options 1 Minute Bars ATM, Options Print Set) are also available and are maintained in full detail on our documentation site.</p>
         </div>
       </div>
-      <p class="mt-10"><a href="../volatility-surfaces/" class="arrow-link">Historical volatility surfaces <span class="arrow">&rarr;</span></a></p>
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#data-and-analytics-product-offerings" target="_blank" rel="noopener noreferrer" class="arrow-link">View full product tables <span aria-hidden="true">↗</span></a><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="arrow-link">Data dictionary &amp; product overviews <span aria-hidden="true">↗</span></a></p>
     </div>
   </section>
 
-  <!-- PRODUCT OFFERINGS -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Product Offerings</p>
-      <h2 class="h2 text-gray-900 mb-12">Product Offerings</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-sr-navy text-white rounded-xl p-10">
-          <h3 class="font-display text-2xl font-bold mb-3">The VOL2G Database Bundle</h3>
-          <p class="text-white/80 leading-relaxed">The VOL2G Database Bundle includes Stock Close Marks, Options Close Marks, Fixed Grid Surfaces, Fixed Term Surfaces ATM, Volatility History by Ticker, and Equity Reference Tables, all EOD with history back to January 2010.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Individual &amp; Add-On Tables</h3>
-          <p class="text-gray-600 leading-relaxed">Individual and add-on tables (Stock Minute Bars, Stock Print Set, Stock Imbalances, Options Price History ID/HID, Options 1 Minute Bars ATM, Options Print Set) are also available and are maintained in full detail on our documentation site.</p>
-        </div>
+  <!-- ─── WHY USE ──────────────────────────────────────────────────────────── -->
+  <section id="why" class="bg-sr-mist section tab-target">
+    <div class="wrap grid lg:grid-cols-[1fr_2fr] gap-x-16 gap-y-8">
+      <div>
+        <p class="eyebrow mb-3">Why VOL2G</p>
+        <h2 class="h2">Why Use Our Historical Options Volatility Data?</h2>
       </div>
-      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/#data-and-analytics-product-offerings" target="_blank" rel="noopener noreferrer" class="arrow-link">View full product tables <span aria-hidden="true">&#8599;</span></a><a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/Data%20Dictionaries/" target="_blank" rel="noopener noreferrer" class="arrow-link">Data dictionary &amp; product overviews <span aria-hidden="true">&#8599;</span></a></p>
+      <p class="lead">The datasets in the VOL2G bundle are excellent for analyzing relative movements in volatility across assets over longer time scales (days to years). It removes the individual expiring strikes&rsquo; complexity and supports the study of volatility strategies at fixed maturity points, well suited to using implied volatility data alongside stock data and other alternative datasets such as credit card purchases, social media data, weather, and other event-driven volatility for individual companies or groups of assets.</p>
     </div>
   </section>
 
-  <!-- WHY USE -->
-  <section class="bg-gray-50 section">
+  <!-- ─── EXTENDING VOL2G ──────────────────────────────────────────────────── -->
+  <section id="beyond-eod" class="bg-white section tab-target">
     <div class="wrap">
-      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
-        <div>
-          <p class="eyebrow mb-4">Why VOL2G</p>
-          <h2 class="h2 text-gray-900 mb-6">Why Use Our Historical Options Volatility Data?</h2>
-        </div>
-        <p class="text-gray-600 text-lg leading-relaxed">The datasets in the VOL2G bundle are excellent for analyzing relative movements in volatility across assets over longer time scales (days to years). It removes the individual expiring strikes&rsquo; complexity and supports the study of volatility strategies at fixed maturity points, well suited to using implied volatility data alongside stock data and other alternative datasets such as credit card purchases, social media data, weather, and other event-driven volatility for individual companies or groups of assets.</p>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Beyond EOD</p>
+        <h2 class="h2">Extending the Power of VOL2G</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- EXTENDING VOL2G -->
-  <section class="bg-sr-navy section">
-    <div class="wrap">
-      <p class="eyebrow eyebrow-dark mb-4">Beyond EOD</p>
-      <h2 class="h2 text-white mb-0">Extending the Power of VOL2G</h2>
-      <div class="grid md:grid-cols-2 gap-16 mt-10">
-        <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-4">Intraday Add-Ons</h3>
-          <p class="text-white/80 text-lg leading-relaxed">VOL2G isn&rsquo;t limited to daily analysis or end-of-day data. Because SpiderRock records real-time market data and analytics as part of our platform operations, VOL2G can be enhanced with add-on files at intraday time scales, including intraday option surfaces and market price snapshots as frequent as 5 minutes, daily prints marked up with options analytics, and minute bar data for underlying equities and at-the-money volatility.</p>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Intraday Add-Ons</h3>
+          <p class="body-copy">VOL2G isn&rsquo;t limited to daily analysis or end-of-day data. Because SpiderRock records real-time market data and analytics as part of our platform operations, VOL2G can be enhanced with add-on files at intraday time scales, including intraday option surfaces and market price snapshots as frequent as 5 minutes, daily prints marked up with options analytics, and minute bar data for underlying equities and at-the-money volatility.</p>
         </div>
-        <div class="md:border-l md:border-white/15 md:pl-16">
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-4">Delivery</h3>
-          <p class="text-white/80 text-lg leading-relaxed">Datasets are available independently or as the full bundle. Data tables load into cloud-based storage overnight, and historical datasets are also available on-demand via a Snowflake reader account or a RESTful API (Python, C++, C#, Java, R, Excel).</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Delivery</h3>
+          <p class="body-copy">Datasets are available independently or as the full bundle. Data tables load into cloud-based storage overnight, and historical datasets are also available on-demand via a Snowflake reader account or a RESTful API (Python, C++, C#, Java, R, Excel).</p>
         </div>
       </div>
-      <p class="mt-12"><a href="../options-greeks-stock-prices/" class="text-blue-200 font-semibold hover:underline">Historical options, Greeks &amp; stock prices &rarr;</a></p>
+      <p class="mt-10"><a href="../options-greeks-stock-prices/" class="arrow-link">Historical options, Greeks &amp; stock prices <span class="arrow">→</span></a></p>
     </div>
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 scroll-mt-[140px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
       <h2 class="h2 text-gray-900 mb-4">Contact Our Data Team</h2>

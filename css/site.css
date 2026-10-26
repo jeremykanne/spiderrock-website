@@ -320,7 +320,7 @@ a.reg-row:hover .arrow { transform: translateX(4px); }
 .tab-target { scroll-margin-top: 136px; }
 @media (max-width: 1023px) { .page-tabs { top: 68px; } .tab-target { scroll-margin-top: 124px; } }
 /* Dataset card: title with a monospace frequency tag on the right. */
-.dataset-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+.dataset-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 8px 16px; margin-bottom: 12px; }
 .freq-tag { flex-shrink: 0; font: 500 12px/1 "Roboto Mono", monospace; color: #3B3F40; background: #F5F6F6;
   border-radius: 4px; padding: 6px 8px; margin-top: 3px; white-space: nowrap; }
 .bg-sr-mist .dataset-card .freq-tag { background: #EEF0F0; }

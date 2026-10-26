@@ -14,137 +14,119 @@
 
 {% include "partials/header.njk" %}
 
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">Historical Stock Price Data</h1>
-      <p class="hero-lead mb-10">End-of-day and intraday tick data for U.S. equities — clean, adjusted, and ready for quantitative research, backtesting, and machine learning applications.</p>
-      <div class="flex gap-4 flex-wrap">
-        <a href="../../../contact-us/" class="btn btn-primary">Request Data Access</a>
-        <a href="../" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 hover:bg-white/10 transition-colors">Historical Data Overview</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><a href="../">Historical Data</a><span aria-hidden="true">›</span><span aria-current="page">Historical Stock Price Data</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
+        <h1 class="hero-h1 mb-6">Historical Stock Price Data</h1>
+        <p class="hero-lead mb-9">End-of-day and intraday tick data for U.S. equities — clean, adjusted, and ready for quantitative research, backtesting, and machine learning applications.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="../../../contact-us/" class="btn btn-primary">Request Data Access</a>
+          <a href="../" class="btn btn-ghost">Historical Data Overview</a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- HERO IMAGE -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <img src="../../images/stock-price-hero.jpg" alt="Historical Stock Price Data" class="w-full rounded-xl shadow-xl mb-16">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="dark-panel">
+        <p class="dark-panel-label mb-3">At a Glance</p>
         <div>
-          <p class="eyebrow mb-4">Institutional-Grade Equity History</p>
-          <h2 class="h2 text-gray-900 mb-6">Clean, Adjusted, and Complete</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">SpiderRock's historical stock price data covers the full U.S. equity universe with corporate action adjustments, survivorship-bias awareness, and deep tick-level granularity for intraday research.</p>
-          <p class="text-gray-600 leading-relaxed">Delivered alongside SpiderRock's options data, equity history integrates seamlessly into workflows that require coordinated stock and derivatives analysis.</p>
-        </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-navy mb-1">EOD</div>
-            <div class="text-sm text-gray-600 font-medium">End-of-day pricing</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-blue mb-1">Tick</div>
-            <div class="text-sm text-gray-600 font-medium">Intraday granularity</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-red mb-1">Adj.</div>
-            <div class="text-sm text-gray-600 font-medium">Corporate action adjusted</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-gray mb-1">U.S.</div>
-            <div class="text-sm text-gray-600 font-medium">Full equity universe</div>
-          </div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">EOD</span><span class="text-[14px] text-[#D3DEE8] text-right">End-of-day pricing</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">Tick</span><span class="text-[14px] text-[#D3DEE8] text-right">Intraday granularity</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">Adj.</span><span class="text-[14px] text-[#D3DEE8] text-right">Corporate action adjusted</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">U.S.</span><span class="text-[14px] text-[#D3DEE8] text-right">Full equity universe</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DATA FIELDS -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Data Coverage</p>
-      <h2 class="h2 text-gray-900 mb-12">Fields Available per Symbol</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">End-of-Day (EOD)</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Open, High, Low, Close (OHLC)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Adjusted and unadjusted prices</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Volume and dollar volume</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Dividend and split adjustment factors</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Market cap and shares outstanding</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Closing bid/ask and spread</li>
-          </ul>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Intraday Tick</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade price and size</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>NBBO bid/ask updates</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Exchange of execution</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Trade condition codes</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Nanosecond timestamps</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>OHLCV bars (1-min, 5-min, hourly)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW WE CLEAN DATA -->
+  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
   <section class="bg-white section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow mb-3">Institutional-Grade Equity History</p>
+        <h2 class="h2 mb-6">Clean, Adjusted, and Complete</h2>
+        <p class="body-copy mb-4">SpiderRock's historical stock price data covers the full U.S. equity universe with corporate action adjustments, survivorship-bias awareness, and deep tick-level granularity for intraday research.</p>
+        <p class="body-copy">Delivered alongside SpiderRock's options data, equity history integrates seamlessly into workflows that require coordinated stock and derivatives analysis.</p>
+      </div>
+      <div class="split-media !aspect-[1600/932]"><img src="../../images/stock-price-hero.jpg" alt="Historical Stock Price Data"></div>
+    </div>
+  </section>
+
+  <!-- ─── DATA FIELDS ──────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
     <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="eyebrow mb-4">Data Quality</p>
-          <h2 class="h2 text-gray-900 mb-6">Rigorous Data Processing</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">Raw exchange data contains errors, anomalies, and inconsistencies. SpiderRock applies institutional-grade processing to deliver clean, research-ready data.</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-sr-navy rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">1</div>
-              <div><strong class="text-gray-900">Corporate Action Adjustments</strong><p class="text-gray-600 text-sm mt-1">Prices and volumes are adjusted for stock splits, reverse splits, spin-offs, and special dividends — ensuring continuity across the full history.</p></div>
-            </li>
-            <li class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-sr-blue rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">2</div>
-              <div><strong class="text-gray-900">Outlier Detection &amp; Cleansing</strong><p class="text-gray-600 text-sm mt-1">Erroneous prints and quotes are flagged and removed. Obvious bad ticks are corrected, and suspicious data is annotated rather than silently discarded.</p></div>
-            </li>
-            <li class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-sr-red rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">3</div>
-              <div><strong class="text-gray-900">Symbol Mapping &amp; Continuity</strong><p class="text-gray-600 text-sm mt-1">Ticker changes, mergers, delistings, and re-listings are tracked so you can follow securities through corporate events without losing historical context.</p></div>
-            </li>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Data Coverage</p>
+        <h2 class="h2">Fields Available per Symbol</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">End-of-Day (EOD)</h3>
+            <span class="freq-tag">EOD</span>
+          </div>
+          <ul class="bullets">
+            <li>Open, High, Low, Close (OHLC)</li>
+            <li>Adjusted and unadjusted prices</li>
+            <li>Volume and dollar volume</li>
+            <li>Dividend and split adjustment factors</li>
+            <li>Market cap and shares outstanding</li>
+            <li>Closing bid/ask and spread</li>
           </ul>
         </div>
-        <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Compatible With Your Stack</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Historical stock data is delivered in formats designed for direct ingestion into quantitative workflows:</p>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
-              <div class="w-8 h-8 bg-sr-navy rounded flex items-center justify-center text-white text-xs font-bold">CSV</div>
-              <span class="text-gray-700 text-sm">Flat CSV files for pandas, R, and spreadsheets</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
-              <div class="w-8 h-8 bg-sr-blue rounded flex items-center justify-center text-white text-xs font-bold">PQ</div>
-              <span class="text-gray-700 text-sm">Parquet format for large-scale analytics (Spark, Dask)</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
-              <div class="w-8 h-8 bg-sr-red rounded flex items-center justify-center text-white text-xs font-bold">API</div>
-              <span class="text-gray-700 text-sm">Liberator REST API for targeted, on-demand queries</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
-              <div class="w-8 h-8 bg-sr-gray rounded flex items-center justify-center text-white text-xs font-bold">S3</div>
-              <span class="text-gray-700 text-sm">Direct cloud delivery to AWS S3 or Azure Blob</span>
-            </div>
+        <div class="card dataset-card bg-white">
+          <div class="dataset-head">
+            <h3 class="card-title-3">Intraday Tick</h3>
+            <span class="freq-tag">Tick</span>
           </div>
+          <ul class="bullets">
+            <li>Trade price and size</li>
+            <li>NBBO bid/ask updates</li>
+            <li>Exchange of execution</li>
+            <li>Trade condition codes</li>
+            <li>Nanosecond timestamps</li>
+            <li>OHLCV bars (1-min, 5-min, hourly)</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-sr-navy section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="h2 text-white mb-6">Get Access to Historical Stock Data</h2>
-      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Contact our data team to discuss coverage, formats, pricing, and integration options for historical U.S. equity data.</p>
+  <!-- ─── DATA QUALITY ─────────────────────────────────────────────────────── -->
+  <section class="bg-white section">
+    <div class="wrap grid lg:grid-cols-2 gap-x-16 gap-y-12 items-start">
+      <div>
+        <p class="eyebrow mb-3">Data Quality</p>
+        <h2 class="h2 mb-6">Rigorous Data Processing</h2>
+        <p class="body-copy mb-6">Raw exchange data contains errors, anomalies, and inconsistencies. SpiderRock applies institutional-grade processing to deliver clean, research-ready data.</p>
+        <ul class="bullets !gap-5">
+            <li><span><strong class="text-sr-dark">Corporate Action Adjustments</strong><br>Prices and volumes are adjusted for stock splits, reverse splits, spin-offs, and special dividends — ensuring continuity across the full history.</span></li>
+            <li><span><strong class="text-sr-dark">Outlier Detection &amp; Cleansing</strong><br>Erroneous prints and quotes are flagged and removed. Obvious bad ticks are corrected, and suspicious data is annotated rather than silently discarded.</span></li>
+            <li><span><strong class="text-sr-dark">Symbol Mapping &amp; Continuity</strong><br>Ticker changes, mergers, delistings, and re-listings are tracked so you can follow securities through corporate events without losing historical context.</span></li>
+        </ul>
+      </div>
+      <div class="card bg-sr-mist">
+        <h3 class="card-title-3 mb-3">Compatible With Your Stack</h3>
+        <p class="body-copy mb-4">Historical stock data is delivered in formats designed for direct ingestion into quantitative workflows:</p>
+        <div class="doc-rows">
+            <div class="doc-row"><span class="text-[15px] text-[#4A5051]">Flat CSV files for pandas, R, and spreadsheets</span><span class="freq-tag">CSV</span></div>
+            <div class="doc-row"><span class="text-[15px] text-[#4A5051]">Parquet format for large-scale analytics (Spark, Dask)</span><span class="freq-tag">PQ</span></div>
+            <div class="doc-row"><span class="text-[15px] text-[#4A5051]">Liberator REST API for targeted, on-demand queries</span><span class="freq-tag">API</span></div>
+            <div class="doc-row"><span class="text-[15px] text-[#4A5051]">Direct cloud delivery to AWS S3 or Azure Blob</span><span class="freq-tag">S3</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
+    <div class="wrap cta-band">
+      <div>
+        <h2 class="h2 mb-4">Get Access to Historical Stock Data</h2>
+        <p class="body-copy text-[18px]">Contact our data team to discuss coverage, formats, pricing, and integration options for historical U.S. equity data.</p>
+      </div>
       <a href="../../../contact-us/" class="btn btn-primary">Request Information</a>
     </div>
   </section>

@@ -103,141 +103,185 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">SpiderStream Market Data API</h1>
-      <p class="hero-lead mb-5">Transforming access to market data and powerful market analytics for U.S. and EU Equities, Futures and Options.</p>
-      <p class="text-white/65 text-lg max-w-3xl leading-relaxed mb-10">European coverage spans Eurex, Euronext, ICE, and Cboe Europe (BXE, CXE, and DXE).</p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#request-access" class="btn btn-primary">Request Information</a>
-        <a href="#data-products" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">Products &amp; Pricing</a>
-        <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white/40 text-white font-semibold px-8 py-3 hover:bg-white hover:text-sr-navy transition-colors">Documentation <span aria-hidden="true">&#8599;</span></a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">SpiderStream / MLink API</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1 mb-6">SpiderStream Market Data API</h1>
+        <p class="hero-lead mb-4">Transforming access to market data and powerful market analytics for U.S. and EU Equities, Futures and Options.</p>
+        <p class="text-[#D3DEE8] text-[17px] leading-relaxed max-w-[34em] mb-9">European coverage spans Eurex, Euronext, ICE, and Cboe Europe (BXE, CXE, and DXE).</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#request-access" class="btn btn-primary">Request Information</a>
+          <a href="#data-products" class="btn btn-ghost">Products &amp; Pricing</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Documentation&nbsp;<span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Markets</p>
+        <div class="arch-chips">
+          <span>U.S.</span><span>EU</span><span>Equities</span><span>Futures</span><span>Options</span>
+        </div>
+        <p class="dark-panel-label mt-6">European Venues</p>
+        <div class="arch-chips">
+          <span>Eurex</span><span>Euronext</span><span>ICE</span><span>Cboe Europe (BXE, CXE, DXE)</span>
+        </div>
+        <p class="dark-panel-label mt-6">Integration</p>
+        <div class="arch-chips">
+          <span>WebSocket</span><span>REST API</span><span>JSON</span><span>Protocol buffers</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- THREE PILLARS -->
-  <section class="bg-white py-20 border-b border-gray-100">
-    <div class="wrap">
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="p-8">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Institutional-Grade</h3>
-          <p class="text-gray-600">Access market data and analytics trusted by the largest firms.</p>
-        </div>
-        <div class="p-8">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Intelligently Structured</h3>
-          <p class="text-gray-600">Don&rsquo;t waste time organizing and maintaining data. Let us do it for you.</p>
-        </div>
-        <div class="p-8">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Simple Integration</h3>
-          <p class="text-gray-600">Receive data via WebSocket and REST API. API supports JSON and protocol buffers.</p>
-        </div>
-      </div>
+  <!-- In-page tabs (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#features">Features</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#connect">Get Connected</a>
+      <a href="#data-products">Products &amp; Pricing</a>
+      <a href="#request-access">Get Started</a>
     </div>
-  </section>
+  </nav>
 
-  <!-- PRODUCT FEATURES -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">Features</p>
-        <h2 class="h2 text-gray-900">Product Features</h2>
-      </div>
-      <div class="bg-white rounded-xl p-10 border border-gray-100">
-        <ul class="grid md:grid-cols-2 gap-x-16"><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Integrate with real-time or delayed market data</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Low latency message delivery</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Single or Enterprise user license</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Unlimited user API Calls</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">High-capacity throughput</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Specify symbol, index, or exchange stripes</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Send signals to receive data on-demand</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Adapt latency based on your capability</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">Actively query via our REST API</span></li><li class="flex items-start gap-3 py-3 border-b border-gray-100"><span class="bullet" aria-hidden="true"></span><span class="text-gray-700">JSON and Protobuf protocols</span></li></ul>
-      </div>
-      <p class="mt-10"><a href="../options-analytics/" class="arrow-link">Real-time options analytics <span class="arrow">&rarr;</span></a></p>
-    </div>
-  </section>
-
-  <!-- AVAILABLE DATA & ANALYTICS -->
+  <!-- ─── THREE PILLARS ───────────────────────────────────────────────────── -->
   <section class="bg-white section">
-    <div class="wrap">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">Coverage</p>
-        <h2 class="h2 text-gray-900">Available Data &amp; Analytics</h2>
+    <div class="wrap grid md:grid-cols-3 gap-7">
+      <div class="card card-accent bg-white">
+        <h3 class="card-title-3 mb-3">Institutional-Grade</h3>
+        <p class="body-copy">Access market data and analytics trusted by the largest firms.</p>
       </div>
-      <div class="grid sm:grid-cols-2 gap-4"><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Equity quotes, trades, aggregations</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Equity options implied vol, Greeks, trade analytics</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Futures quotes, trades, aggregations</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Futures options implied vol, Greeks, trade analytics</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Options quotes, trades, aggregations</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-6 py-5 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Options implied quotes, trades live data feed</div></div>
+      <div class="card card-accent bg-white">
+        <h3 class="card-title-3 mb-3">Intelligently Structured</h3>
+        <p class="body-copy">Don&rsquo;t waste time organizing and maintaining data. Let us do it for you.</p>
+      </div>
+      <div class="card card-accent bg-white">
+        <h3 class="card-title-3 mb-3">Simple Integration</h3>
+        <p class="body-copy">Receive data via WebSocket and REST API. API supports JSON and protocol buffers.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CONNECTION & SUPPORT -->
-  <section class="bg-gray-50 section">
+  <!-- ─── PRODUCT FEATURES ────────────────────────────────────────────────── -->
+  <section id="features" class="bg-sr-mist section tab-target">
     <div class="wrap">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">Get Connected</p>
-        <h2 class="h2 text-gray-900">Connection Options &amp; Support Resources</h2>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Features</p>
+        <h2 class="h2">Product Features</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-8 border border-gray-100 flex flex-col">
-          <p class="font-display text-lg font-bold text-gray-900 mb-4">Example queries and data access configuration</p>
-          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/Examples/" target="_blank" rel="noopener noreferrer" class="mt-auto arrow-link text-sm">View in documentation <span aria-hidden="true">&#8599;</span></a>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-100 flex flex-col">
-          <p class="font-display text-lg font-bold text-gray-900 mb-4">WebSocket connection guide</p>
-          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/WebSocket/" target="_blank" rel="noopener noreferrer" class="mt-auto arrow-link text-sm">View in documentation <span aria-hidden="true">&#8599;</span></a>
-        </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-100 flex flex-col">
-          <p class="font-display text-lg font-bold text-gray-900 mb-4">Readily available client libraries</p>
-          
-        </div>
+      <div class="card bg-white mb-8">
+        <ul class="bullets md:grid-cols-2 md:gap-x-16">
+            <li>Integrate with real-time or delayed market data</li>
+            <li>Low latency message delivery</li>
+            <li>Single or Enterprise user license</li>
+            <li>Unlimited user API Calls</li>
+            <li>High-capacity throughput</li>
+            <li>Specify symbol, index, or exchange stripes</li>
+            <li>Send signals to receive data on-demand</li>
+            <li>Adapt latency based on your capability</li>
+            <li>Actively query via our REST API</li>
+            <li>JSON and Protobuf protocols</li>
+        </ul>
       </div>
-      <p class="mt-10"><a href="../market-data-partners/" class="arrow-link">See our market data partners <span class="arrow">&rarr;</span></a></p>
+      <a href="../options-analytics/" class="arrow-link">Real-time options analytics <span class="arrow">&rarr;</span></a>
     </div>
   </section>
 
-  <!-- DATA PRODUCTS -->
-  <section id="data-products" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <!-- ─── AVAILABLE DATA & ANALYTICS ──────────────────────────────────────── -->
+  <section id="coverage" class="bg-white section tab-target">
     <div class="wrap">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">Products &amp; Pricing</p>
-        <h2 class="h2 text-gray-900">Data Products</h2>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Coverage</p>
+        <h2 class="h2">Available Data &amp; Analytics</h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Stock</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Real-time quotes, print details, closing prices, market summary, order imbalances.</p>
-          <a href="equity-nbbo-feeds/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+      <ul class="bullets sm:grid-cols-2 sm:gap-x-16">
+            <li>Equity quotes, trades, aggregations</li>
+            <li>Equity options implied vol, Greeks, trade analytics</li>
+            <li>Futures quotes, trades, aggregations</li>
+            <li>Futures options implied vol, Greeks, trade analytics</li>
+            <li>Options quotes, trades, aggregations</li>
+            <li>Options implied quotes, trades live data feed</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── CONNECTION & SUPPORT ────────────────────────────────────────────── -->
+  <section id="connect" class="bg-sr-mist section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Get Connected</p>
+        <h2 class="h2">Connection Options &amp; Support Resources</h2>
+      </div>
+      <div class="doc-rows max-w-[52rem] mb-8">
+        <div class="doc-row">
+          <p class="doc-row-name">Example queries and data access configuration</p>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/Examples/" target="_blank" rel="noopener noreferrer" class="arrow-link">View in documentation <span aria-hidden="true">&#8599;</span></a>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Options</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Real-time quotes, print details, closing prices, market summary.</p>
-          <a href="options-nbbo-feeds/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        <div class="doc-row">
+          <p class="doc-row-name">WebSocket connection guide</p>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/WebSocket/" target="_blank" rel="noopener noreferrer" class="arrow-link">View in documentation <span aria-hidden="true">&#8599;</span></a>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Futures</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Real-time quotes, print details, settlement prices, closing prices, market summary.</p>
-          <a href="futures-book-feeds/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Option Implied Quotes &amp; Prints</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Options implied quotes, print details.</p>
-          <a href="option-implied-trades/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Equity Options Analytics</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
-          <a href="equity-options-analytics/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover flex flex-col">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-3">Options on Futures Analytics</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
-          <a href="future-options-analytics/" class="mt-auto arrow-link text-sm">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        <div class="doc-row">
+          <p class="doc-row-name">Readily available client libraries</p>
         </div>
       </div>
-      <p class="mt-10"><a href="../stocks-options-futures/#exchange-feeds" class="arrow-link">Browse the full exchange feed list <span class="arrow">&rarr;</span></a></p>
+      <a href="../market-data-partners/" class="arrow-link">See our market data partners <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- ─── DATA PRODUCTS ───────────────────────────────────────────────────── -->
+  <section id="data-products" class="bg-white section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Products &amp; Pricing</p>
+        <h2 class="h2">Data Products</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mb-8">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Stock</h3>
+          <p class="body-copy mb-7">Real-time quotes, print details, closing prices, market summary, order imbalances.</p>
+          <a href="equity-nbbo-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Options</h3>
+          <p class="body-copy mb-7">Real-time quotes, print details, closing prices, market summary.</p>
+          <a href="options-nbbo-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Futures</h3>
+          <p class="body-copy mb-7">Real-time quotes, print details, settlement prices, closing prices, market summary.</p>
+          <a href="futures-book-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Option Implied Quotes &amp; Prints</h3>
+          <p class="body-copy mb-7">Options implied quotes, print details.</p>
+          <a href="option-implied-trades/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Equity Options Analytics</h3>
+          <p class="body-copy mb-7">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
+          <a href="equity-options-analytics/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Options on Futures Analytics</h3>
+          <p class="body-copy mb-7">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
+          <a href="future-options-analytics/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <a href="../stocks-options-futures/#exchange-feeds" class="arrow-link">Browse the full exchange feed list <span class="arrow">&rarr;</span></a>
     </div>
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 tab-target">
     <div class="max-w-3xl mx-auto px-8">
-      <p class="eyebrow mb-4">Consult With Us</p>
-      <h2 class="h2 text-gray-900 mb-4">Ready to Get Started?</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
-      <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
+      <p class="eyebrow mb-3">Consult With Us</p>
+      <h2 class="h2 mb-4">Ready to Get Started?</h2>
+      <p class="body-copy text-[18px] mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the form below.</p>
+      <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="btn btn-outline mb-12">View Documentation&nbsp;<span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 7 (srock.activehosted.com) -->
       <div class="_form_7 ac-form"></div>

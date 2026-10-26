@@ -102,115 +102,123 @@
 
 {% include "partials/header.njk" %}
 
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Option Pricing Tool</p>
-      <h1 class="hero-h1-sm mb-10 max-w-4xl">Optimize Strategies, Track Pricing, and Effectively Manage Risk for Listed and FLEX Options</h1>
-      <a href="#request-access" class="btn btn-primary">Request Information</a>
-    </div>
-  </section>
-
-  <!-- THE PRECISION DATA YOU NEED -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Benefits</p>
-      <h2 class="h2 text-gray-900 mb-6">The Precision Data You Need</h2>
-      <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mb-12">By combining intraday and end-of-day data, the dataset delivers a comprehensive and robust information profile.</p>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Optimize Trading Strategies</h3>
-          <p class="text-gray-600 leading-relaxed">Make well-informed decisions with accurate and reliable option pricing.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Reduce Operational Costs</h3>
-          <p class="text-gray-600 leading-relaxed">Streamline your pricing processes without hefty investments in infrastructure.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Enhance Risk Management</h3>
-          <p class="text-gray-600 leading-relaxed">Accurately track and manage pricing risks with real-time data integration.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Calculators</p>
-      <h2 class="h2 text-gray-900 mb-12">How It Works</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Simple Option Calculator</h3>
-          <p class="text-gray-600 leading-relaxed">Allows users to calculate a single option price or volatility for a specific option using SpiderRock data inputs from a simple web-based GUI or programmatically via the API. Users can subscribe to advanced functionality to override input values with proprietary assumptions to better fit their specific needs.</p>
-        </div>
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Option Basket Calculator</h3>
-          <p class="text-gray-600 leading-relaxed">Allows users to define a basket (up to 1000 option keys) of options by populating a table within the MLink API. The basket, or any option within it, can then be accessed programmatically throughout the trading day to update pricing based on current market activity.</p>
-        </div>
-      </div>
-      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/MLinkCalculators/" target="_blank" rel="noopener noreferrer" class="arrow-link">MLink live calculators <span aria-hidden="true">&#8599;</span></a><a href="../options-analytics/" class="arrow-link">Real-time options analytics <span class="arrow">&rarr;</span></a></p>
-    </div>
-  </section>
-
-  <!-- UNIQUE FEATURES -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <p class="eyebrow mb-4">Features</p>
-      <h2 class="h2 text-gray-900 mb-12">Unique Features</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">01</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">Trusted On Demand Pricing</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">SpiderRock&rsquo;s complex option pricing models are used by thousands of institutional professionals each day to support live trading and risk.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">02</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">FLEX Options Capability</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Custom inputs support FLEX options, offering the ability to price customizable contracts.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">03</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">Simplified Data Access</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">SpiderRock allows users to leverage our actively managed reference data library to compute Greeks, implied volatilities, and option pricing results.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">04</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">Real-Time Market Integration</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Unlimited data refresh access throughout the trading day using our high-capacity option data API.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">05</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">Single Strike or Basket Delivery</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Request single strike pricing or define and upload large baskets of options for bulk pricing.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <span class="font-display text-sm font-bold text-sr-red">06</span>
-          <h3 class="font-display text-lg font-bold text-gray-900 mt-2 mb-3">Full Market Coverage</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Pricing and volatility coverage of the US listed market, supporting both European and American style options.</p>
-        </div>
-      </div>
-      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="arrow-link">Option pricing methodology <span aria-hidden="true">&#8599;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="arrow-link">Historical volatility surfaces <span class="arrow">&rarr;</span></a></p>
-    </div>
-  </section>
-
-  <!-- SIMPLIFY + WHAT ARE FLEX OPTIONS -->
-  <section class="bg-sr-navy section">
-    <div class="wrap grid md:grid-cols-2 gap-16">
+    <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow eyebrow-dark mb-4">MLink API</p>
-        <h2 class="h2 text-white mb-6">Simplify and Enhance the Pricing of Options</h2>
-        <p class="text-white/80 text-lg leading-relaxed">With SpiderRock&rsquo;s MLink API, traders, portfolio managers, brokers, and Option ETF dealers and issuers alike can make well-informed option pricing decisions, optimize strategies, track pricing, and effectively manage risk, all within a streamlined, customizable API platform.</p>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Options Pricing Tool</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Option Pricing Tool</p>
+        <h1 class="hero-h1-sm mb-9">Optimize Strategies, Track Pricing, and Effectively Manage Risk for Listed and FLEX Options</h1>
+        <div class="flex flex-wrap gap-4">
+          <a href="#request-access" class="btn btn-primary">Request Information</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/MLinkCalculators/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
+        </div>
       </div>
-      <div class="md:border-l md:border-white/15 md:pl-16">
-        <p class="eyebrow eyebrow-dark mb-4">FLEX Options</p>
-        <h2 class="h2 text-white mb-6">What Are FLEX Options?</h2>
-        <p class="text-white/80 text-lg leading-relaxed">FLEX options (Flexible Exchange Options) are customizable contracts traded on regulated exchanges that are designed to meet specific needs of institutional and advanced traders. These options allow for tailored strike prices, expiration dates, and exercise styles, providing flexibility for portfolio strategies. Their versatility makes FLEX options ideal for managing complex risk, hedging, and crafting Defined Outcome and Buffer ETF strategies.</p>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Calculators</p>
+        <div class="offer-row"><span><span class="offer-title">Simple Option Calculator</span><span class="offer-sub">A single option price or volatility, from a web-based GUI or the API</span></span></div>
+        <div class="offer-row"><span><span class="offer-title">Option Basket Calculator</span><span class="offer-sub">Baskets of up to 1000 option keys, updated through the trading day</span></span></div>
+        <p class="dark-panel-label mt-6">Coverage</p>
+        <div class="arch-chips"><span>Listed options</span><span>FLEX options</span><span>European &amp; American style</span><span>MLink API</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-page tabs (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#benefits">Benefits</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Unique Features</a>
+      <a href="#flex">FLEX Options</a>
+    </div>
+  </nav>
+
+  <!-- ─── BENEFITS ─────────────────────────────────────────────────────────── -->
+  <section id="benefits" class="bg-white section tab-target">
+    <div class="wrap">
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Benefits</p>
+        <h2 class="h2 mb-5">The Precision Data You Need</h2>
+        <p class="body-copy">By combining intraday and end-of-day data, the dataset delivers a comprehensive and robust information profile.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Optimize Trading Strategies</h3>
+          <p class="body-copy">Make well-informed decisions with accurate and reliable option pricing.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Reduce Operational Costs</h3>
+          <p class="body-copy">Streamline your pricing processes without hefty investments in infrastructure.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Enhance Risk Management</h3>
+          <p class="body-copy">Accurately track and manage pricing risks with real-time data integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─────────────────────────────────────────────────────── -->
+  <section id="how-it-works" class="bg-sr-mist section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Calculators</p>
+        <h2 class="h2">How It Works</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7 mb-10">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Simple Option Calculator</h3>
+          <p class="body-copy">Allows users to calculate a single option price or volatility for a specific option using SpiderRock data inputs from a simple web-based GUI or programmatically via the API. Users can subscribe to advanced functionality to override input values with proprietary assumptions to better fit their specific needs.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Option Basket Calculator</h3>
+          <p class="body-copy">Allows users to define a basket (up to 1000 option keys) of options by populating a table within the MLink API. The basket, or any option within it, can then be accessed programmatically throughout the trading day to update pricing based on current market activity.</p>
+        </div>
+      </div>
+      <p class="flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/MLinkCalculators/" target="_blank" rel="noopener noreferrer" class="arrow-link">MLink live calculators <span aria-hidden="true">&#8599;</span></a><a href="../options-analytics/" class="arrow-link">Real-time options analytics <span class="arrow">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <!-- ─── UNIQUE FEATURES ──────────────────────────────────────────────────── -->
+  <section id="features" class="bg-white section tab-target">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow mb-3">Features</p>
+        <h2 class="h2">Unique Features</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">01</p><h3>Trusted On Demand Pricing</h3><p>SpiderRock&rsquo;s complex option pricing models are used by thousands of institutional professionals each day to support live trading and risk.</p></div>
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">02</p><h3>FLEX Options Capability</h3><p>Custom inputs support FLEX options, offering the ability to price customizable contracts.</p></div>
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">03</p><h3>Simplified Data Access</h3><p>SpiderRock allows users to leverage our actively managed reference data library to compute Greeks, implied volatilities, and option pricing results.</p></div>
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">04</p><h3>Real-Time Market Integration</h3><p>Unlimited data refresh access throughout the trading day using our high-capacity option data API.</p></div>
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">05</p><h3>Single Strike or Basket Delivery</h3><p>Request single strike pricing or define and upload large baskets of options for bulk pricing.</p></div>
+        <div class="greek-tile"><p class="font-display text-sm font-semibold text-sr-red mb-2">06</p><h3>Full Market Coverage</h3><p>Pricing and volatility coverage of the US listed market, supporting both European and American style options.</p></div>
+      </div>
+      <p class="flex flex-wrap gap-x-8 gap-y-3"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformFeatures/Analytics/OptionPricing/" target="_blank" rel="noopener noreferrer" class="arrow-link">Option pricing methodology <span aria-hidden="true">&#8599;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="arrow-link">Historical volatility surfaces <span class="arrow">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <!-- ─── SIMPLIFY + WHAT ARE FLEX OPTIONS ─────────────────────────────────── -->
+  <section id="flex" class="bg-sr-mist section tab-target">
+    <div class="wrap grid lg:grid-cols-2 gap-7">
+      <div class="card card-accent bg-white">
+        <p class="eyebrow mb-3">MLink API</p>
+        <h2 class="card-title-2 mb-4">Simplify and Enhance the Pricing of Options</h2>
+        <p class="body-copy">With SpiderRock&rsquo;s MLink API, traders, portfolio managers, brokers, and Option ETF dealers and issuers alike can make well-informed option pricing decisions, optimize strategies, track pricing, and effectively manage risk, all within a streamlined, customizable API platform.</p>
+      </div>
+      <div class="card card-accent bg-white">
+        <p class="eyebrow mb-3">FLEX Options</p>
+        <h2 class="card-title-2 mb-4">What Are FLEX Options?</h2>
+        <p class="body-copy">FLEX options (Flexible Exchange Options) are customizable contracts traded on regulated exchanges that are designed to meet specific needs of institutional and advanced traders. These options allow for tailored strike prices, expiration dates, and exercise styles, providing flexibility for portfolio strategies. Their versatility makes FLEX options ideal for managing complex risk, hedging, and crafting Defined Outcome and Buffer ETF strategies.</p>
       </div>
     </div>
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 scroll-mt-[140px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
       <h2 class="h2 text-gray-900 mb-4">Get Started Today</h2>

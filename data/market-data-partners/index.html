@@ -27,118 +27,126 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap py-16 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 max-w-3xl">Market Data Partners</h1>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Market Data Partners</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1">Market Data Partners</h1>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Our Partners</p>
+        <div class="arch-chips"><span>NewMark Risk</span><span>Canari</span><span>Skylight</span><span>Exponential</span><span>Nations Indexes</span><span>QuantCrunch</span><span>CPZAI</span><span>BMLL</span></div>
+      </div>
     </div>
   </section>
 
   <!-- PARTNERS -->
-  <section class="bg-gray-50 section">
+  <section class="bg-sr-mist section">
     <div class="wrap">
-      <div class="space-y-8">
+      <div class="space-y-6">
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <img src="../images/partners/newmark-risk.png" alt="NewMark Risk logo" class="w-full max-w-[210px] h-auto">
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://newmarkrisk.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">NewMark Risk <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">NewMark Risk is a fin-tech company focused on providing option-derived analytics for institutional investors. NewMark Risk has garnered experience across the financial and technology sectors where data requires a lot of initial work to scrub and prepare prior to being able to begin analyses to draw meaningful insights. NewMark Risk strives to provide clients with alternative data and options-derived analytics not currently provided anywhere else with unmatched accuracy and quality.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://newmarkrisk.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">NewMark Risk <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">NewMark Risk is a fin-tech company focused on providing option-derived analytics for institutional investors. NewMark Risk has garnered experience across the financial and technology sectors where data requires a lot of initial work to scrub and prepare prior to being able to begin analyses to draw meaningful insights. NewMark Risk strives to provide clients with alternative data and options-derived analytics not currently provided anywhere else with unmatched accuracy and quality.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-gateway-technologies-partners-with-newmark-risk-to-improve-options-implied-analytics-library/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <div class="flex items-center gap-3" role="img" aria-label="Canari.dev logo"><img src="../images/partners/canari-bird.png" alt="" class="h-14 w-auto flex-shrink-0"><span class="canari-wordmark">Canari.dev</span></div>
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://canari.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Canari <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">Canari.dev is a web-based platform aiming to bring the power of Machine Learning to all options traders. They use Artificial Intelligence to track patterns in screen trades, cross underlying volatility spreads, term structure shapes, and much more. Canari&rsquo;s goal is to reinvent the workflow for volatility trades that don&rsquo;t belong in the order book by making it cheaper and more transparent.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://canari.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Canari <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">Canari.dev is a web-based platform aiming to bring the power of Machine Learning to all options traders. They use Artificial Intelligence to track patterns in screen trades, cross underlying volatility spreads, term structure shapes, and much more. Canari&rsquo;s goal is to reinvent the workflow for volatility trades that don&rsquo;t belong in the order book by making it cheaper and more transparent.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-gateway-technologies-is-pleased-to-announce-a-partnership-with-canari/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <img src="../images/partners/skylight.svg" alt="Skylight IPV logo" class="w-full max-w-[210px] h-auto">
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://web.skylightipv.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Skylight <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">Skylight IPV is an independent price verification company that combines collective experience and knowledge with innovative technology to deliver new, more effective, and efficient solutions. Skylight&rsquo;s goal is to provide risk managers and product controllers at market-making institutions with extensive, reliable, and independent OTC derivatives valuation data.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://web.skylightipv.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Skylight <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">Skylight IPV is an independent price verification company that combines collective experience and knowledge with innovative technology to deliver new, more effective, and efficient solutions. Skylight&rsquo;s goal is to provide risk managers and product controllers at market-making institutions with extensive, reliable, and independent OTC derivatives valuation data.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-gateway-technologies-is-excited-to-announce-a-partnership-with-skylight-ipv/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <img src="../images/partners/exponential.png" alt="Exponential logo" class="w-full max-w-[210px] h-auto">
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://www.exponential-tech.ai/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Exponential <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">Exponential develops bespoke data analytics, signals and global macro forecasts for institutional investors, with a team with over 25 years of experience in institutional investment and high-frequency market-making. Exponential&rsquo;s Unifier data warehouse and API empowers enterprises to combine on-prem and on-cloud data technology with tightly integrated signals and generative-AI-powered analytics.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://www.exponential-tech.ai/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Exponential <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">Exponential develops bespoke data analytics, signals and global macro forecasts for institutional investors, with a team with over 25 years of experience in institutional investment and high-frequency market-making. Exponential&rsquo;s Unifier data warehouse and API empowers enterprises to combine on-prem and on-cloud data technology with tightly integrated signals and generative-AI-powered analytics.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-and-exponential-tech-announce-partnership/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <div class="" role="img" aria-label="Nations Indexes logo"><span class="ni-wordmark">N<span class="ni-alpha">&#945;</span>tions Indexes</span></div>
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://nationsindexes.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Nations Indexes <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">Nations Indexes is the world&rsquo;s leading independent developer of volatility and option-enhanced indexes. Their indexes provide deeper insight into option prices, allowing traders and investors to quantify what has been subjective and trade with knowledge, not opinion, by deconstructing option skew and applying rigorous methodologies.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://nationsindexes.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">Nations Indexes <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">Nations Indexes is the world&rsquo;s leading independent developer of volatility and option-enhanced indexes. Their indexes provide deeper insight into option prices, allowing traders and investors to quantify what has been subjective and trade with knowledge, not opinion, by deconstructing option skew and applying rigorous methodologies.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-data-and-analytics-and-nations-indexes-announce-new-volatility-analytics-partnership/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <div class="flex items-center gap-3" role="img" aria-label="QuantCrunch logo"><img src="../images/partners/quantcrunch-mark.png" alt="" class="h-9 w-auto flex-shrink-0"><span class="font-display text-[24px] font-bold text-gray-900 tracking-tight">QuantCrunch</span></div>
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://www.quantcrunch.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">QuantCrunch <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">QuantCrunch is a derivatives analytics platform for options and derivatives market analysis. SpiderRock&rsquo;s live options pricing and analytics are now integrated into the QuantCrunch platform, bringing institutional-grade theoretical pricing and volatility analytics to trading, sales, and QIS teams.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://www.quantcrunch.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">QuantCrunch <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">QuantCrunch is a derivatives analytics platform for options and derivatives market analysis. SpiderRock&rsquo;s live options pricing and analytics are now integrated into the QuantCrunch platform, bringing institutional-grade theoretical pricing and volatility analytics to trading, sales, and QIS teams.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-brings-live-options-pricing-and-analytics-to-the-quantcrunch-platform/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <div class="flex items-center gap-3" role="img" aria-label="CPZAI logo"><img src="../images/partners/cpzai-mark.png" alt="" class="h-12 w-auto flex-shrink-0"><span class="font-display text-[28px] font-bold text-gray-900 tracking-tight leading-none">CPZ<span class="text-[#0c99fa]">AI</span></span></div>
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://ai.cpz-lab.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">CPZAI <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">CPZAI is an AI-native systematic trading operating system for researching, developing, and deploying quantitative trading strategies. SpiderRock&rsquo;s live and historical options analytics now feed CPZAI&rsquo;s research environment, giving firms consistent data across strategy development and analysis.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://ai.cpz-lab.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">CPZAI <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">CPZAI is an AI-native systematic trading operating system for researching, developing, and deploying quantitative trading strategies. SpiderRock&rsquo;s live and historical options analytics now feed CPZAI&rsquo;s research environment, giving firms consistent data across strategy development and analysis.</p>
               <p class="mt-5"><a href="../../updates/spiderrock-partners-with-cpzai-to-deliver-an-ai-native-systematic-options-trading-workflow/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover">
+        <div class="card bg-white">
           <div class="grid md:grid-cols-4 gap-10 items-center">
             <div class="md:col-span-1 flex justify-center md:justify-start">
               <img src="../images/partners/bmll.png" alt="BMLL logo" class="w-full max-w-[170px] h-auto">
             </div>
             <div class="md:col-span-3">
-              <h2 class="font-display text-2xl font-bold text-gray-900 mb-3"><a href="https://bmlltech.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">BMLL <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
-              <p class="text-gray-600 leading-relaxed">BMLL is an independent provider of harmonised historical market data across global equities, ETFs, futures, and US equity options. SpiderRock&rsquo;s US equity options print set is now available through the BMLL Data Lab, letting clients study cross-asset market structure across both datasets.</p>
+              <h2 class="card-title-2 mb-3"><a href="https://bmlltech.com/" target="_blank" rel="noopener noreferrer" class="hover:text-sr-blue hover:underline">BMLL <span class="text-gray-400 text-lg font-normal" aria-hidden="true">&#8599;</span></a></h2>
+              <p class="body-copy">BMLL is an independent provider of harmonised historical market data across global equities, ETFs, futures, and US equity options. SpiderRock&rsquo;s US equity options print set is now available through the BMLL Data Lab, letting clients study cross-asset market structure across both datasets.</p>
               <p class="mt-5"><a href="../../updates/bmll-partners-with-spiderrock-to-expand-cross-asset-market-analytics/" class="arrow-link text-sm">Learn More <span class="arrow">&rarr;</span></a></p>
             </div>
           </div>

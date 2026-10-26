@@ -14,143 +14,142 @@
 
 {% include "partials/header.njk" %}
 
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">Historical Options &amp; Greeks Data</h1>
-      <p class="hero-lead mb-10">Comprehensive end-of-day and intraday tick data for options contracts — including OHLCV, Greeks, and implied volatility — across the full U.S. listed options universe.</p>
-      <div class="flex gap-4 flex-wrap">
-        <a href="../../../contact-us/" class="btn btn-primary">Request Data Access</a>
-        <a href="../" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 hover:bg-white/10 transition-colors">Historical Data Overview</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><a href="../">Historical Data</a><span aria-hidden="true">›</span><span aria-current="page">Historical Options &amp; Greeks Data</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
+        <h1 class="hero-h1 mb-6">Historical Options &amp; Greeks Data</h1>
+        <p class="hero-lead mb-9">Comprehensive end-of-day and intraday tick data for options contracts — including OHLCV, Greeks, and implied volatility — across the full U.S. listed options universe.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="../../../contact-us/" class="btn btn-primary">Request Data Access</a>
+          <a href="../" class="btn btn-ghost">Historical Data Overview</a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- HERO IMAGE -->
-  <section class="bg-white section">
-    <div class="wrap">
-      <img src="../../images/options-greeks-hero.jpg" alt="Options Greeks Historical Data" class="w-full rounded-xl shadow-xl mb-16">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="dark-panel">
+        <p class="dark-panel-label mb-3">At a Glance</p>
         <div>
-          <p class="eyebrow mb-4">Complete Options History</p>
-          <h2 class="h2 text-gray-900 mb-6">The Full Options Record</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">SpiderRock's historical options data spans years of end-of-day and intraday tick data across the entire U.S. listed options universe. Each record captures not just prices and volume but computed Greeks and implied volatility derived from SpiderRock's proprietary pricing models.</p>
-          <p class="text-gray-600 leading-relaxed">Whether you're building backtests, training ML models, or conducting academic research, this dataset gives you the depth and completeness to work with confidence.</p>
-        </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-navy mb-1">10+</div>
-            <div class="text-sm text-gray-600 font-medium">Years of history</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-blue mb-1">Full</div>
-            <div class="text-sm text-gray-600 font-medium">Listed options universe</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-red mb-1">EOD</div>
-            <div class="text-sm text-gray-600 font-medium">&amp; intraday tick data</div>
-          </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-100">
-            <div class="text-3xl font-display font-bold text-sr-gray mb-1">API</div>
-            <div class="text-sm text-gray-600 font-medium">&amp; flat file delivery</div>
-          </div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">10+</span><span class="text-[14px] text-[#D3DEE8] text-right">Years of history</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">Full</span><span class="text-[14px] text-[#D3DEE8] text-right">Listed options universe</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">EOD</span><span class="text-[14px] text-[#D3DEE8] text-right">&amp; intraday tick data</span></div>
+          <div class="flex items-baseline justify-between gap-6 py-3 border-t border-white/15"><span class="font-display font-semibold text-[17px] text-white">API</span><span class="text-[14px] text-[#D3DEE8] text-right">&amp; flat file delivery</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DATA FIELDS -->
-  <section class="bg-gray-50 section">
+  <!-- In-page tabs: a marketing version of the docs' "On this page" (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#overview">Overview</a>
+      <a href="#coverage">Data Coverage</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#delivery">Delivery</a>
+    </div>
+  </nav>
+
+  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
+  <section id="overview" class="bg-white section tab-target">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow mb-3">Complete Options History</p>
+        <h2 class="h2 mb-6">The Full Options Record</h2>
+        <p class="body-copy mb-4">SpiderRock's historical options data spans years of end-of-day and intraday tick data across the entire U.S. listed options universe. Each record captures not just prices and volume but computed Greeks and implied volatility derived from SpiderRock's proprietary pricing models.</p>
+        <p class="body-copy">Whether you're building backtests, training ML models, or conducting academic research, this dataset gives you the depth and completeness to work with confidence.</p>
+      </div>
+      <div class="split-media !aspect-[1600/932]"><img src="../../images/options-greeks-hero.jpg" alt="Options Greeks Historical Data"></div>
+    </div>
+  </section>
+
+  <!-- ─── DATA FIELDS ──────────────────────────────────────────────────────── -->
+  <section id="coverage" class="bg-sr-mist section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">Data Coverage</p>
-      <h2 class="h2 text-gray-900 mb-12">What's Included in Every Record</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Price &amp; Volume</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Open, High, Low, Close (OHLC)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Volume and open interest</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Bid/ask and bid/ask sizes</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Last trade price and size</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0"></span>Underlying stock price</li>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Data Coverage</p>
+        <h2 class="h2">What's Included in Every Record</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-4">Price &amp; Volume</h3>
+          <ul class="bullets">
+            <li>Open, High, Low, Close (OHLC)</li>
+            <li>Volume and open interest</li>
+            <li>Bid/ask and bid/ask sizes</li>
+            <li>Last trade price and size</li>
+            <li>Underlying stock price</li>
           </ul>
         </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Greeks &amp; Risk</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Delta (direction risk)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Gamma (delta sensitivity)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Vega (volatility sensitivity)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Theta (time decay)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-blue flex-shrink-0"></span>Rho (interest rate sensitivity)</li>
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-4">Greeks &amp; Risk</h3>
+          <ul class="bullets">
+            <li>Delta (direction risk)</li>
+            <li>Gamma (delta sensitivity)</li>
+            <li>Vega (volatility sensitivity)</li>
+            <li>Theta (time decay)</li>
+            <li>Rho (interest rate sensitivity)</li>
           </ul>
         </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Volatility &amp; Meta</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-navy flex-shrink-0"></span>Implied volatility (bid, ask, mid)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-navy flex-shrink-0"></span>Surface volatility from SR model</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-navy flex-shrink-0"></span>Expiration date and DTE</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-navy flex-shrink-0"></span>Strike, option type (call/put)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-navy flex-shrink-0"></span>Exchange, OCC symbology</li>
+        <div class="card bg-white">
+          <h3 class="card-title-3 mb-4">Volatility &amp; Meta</h3>
+          <ul class="bullets">
+            <li>Implied volatility (bid, ask, mid)</li>
+            <li>Surface volatility from SR model</li>
+            <li>Expiration date and DTE</li>
+            <li>Strike, option type (call/put)</li>
+            <li>Exchange, OCC symbology</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- USE CASES -->
-  <section class="bg-white section">
+  <!-- ─── USE CASES ────────────────────────────────────────────────────────── -->
+  <section id="use-cases" class="bg-white section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">Use Cases</p>
-      <h2 class="h2 text-gray-900 mb-12">Who Uses This Data</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
-          <div>
-            <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Quantitative Researchers</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Build and backtest options strategies with historically accurate pricing and Greeks. Validate pricing models against actual market data across multiple market regimes.</p>
-          </div>
+      <div class="section-head">
+        <p class="eyebrow mb-3">Use Cases</p>
+        <h2 class="h2">Who Uses This Data</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Quantitative Researchers</h3>
+          <p class="body-copy">Build and backtest options strategies with historically accurate pricing and Greeks. Validate pricing models against actual market data across multiple market regimes.</p>
         </div>
-        <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
-          <div>
-            <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Machine Learning Teams</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Train predictive models on rich options features including Greeks, surface parameters, and volatility regime data across the full listed options universe.</p>
-          </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Machine Learning Teams</h3>
+          <p class="body-copy">Train predictive models on rich options features including Greeks, surface parameters, and volatility regime data across the full listed options universe.</p>
         </div>
-        <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
-          <div>
-            <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Hedge Funds &amp; Prop Desks</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Analyze historical volatility patterns, skew dynamics, and term structure across market cycles to develop edge in options market making and trading.</p>
-          </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Hedge Funds &amp; Prop Desks</h3>
+          <p class="body-copy">Analyze historical volatility patterns, skew dynamics, and term structure across market cycles to develop edge in options market making and trading.</p>
         </div>
-        <div class="flex gap-6 p-8 bg-gray-50 rounded-xl border border-gray-100 card-hover">
-          <div>
-            <h3 class="font-display text-lg font-bold text-gray-900 mb-2">Academic Researchers</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Study options market microstructure, volatility risk premium, and information content of derivatives markets with comprehensive, clean historical data.</p>
-          </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Academic Researchers</h3>
+          <p class="body-copy">Study options market microstructure, volatility risk premium, and information content of derivatives markets with comprehensive, clean historical data.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DELIVERY -->
-  <section class="bg-sr-navy section">
-    <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="eyebrow eyebrow-dark mb-4">Data Delivery</p>
-          <h2 class="h2 text-white mb-6">Flexible Access Methods</h2>
-          <p class="text-white/70 leading-relaxed mb-8">Historical options and Greeks data is available through multiple delivery channels to fit your workflow — from direct API access to bulk flat file downloads.</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3 text-white/80"><span class="bullet" aria-hidden="true"></span><span><strong class="text-white">Liberator API</strong> — Programmatic access for targeted queries across dates, underlyings, and expirations</span></li>
-            <li class="flex items-start gap-3 text-white/80"><span class="bullet" aria-hidden="true"></span><span><strong class="text-white">Cloud Files</strong> — Daily flat files delivered to AWS S3 or Azure Blob Storage for bulk processing</span></li>
-            <li class="flex items-start gap-3 text-white/80"><span class="bullet" aria-hidden="true"></span><span><strong class="text-white">Data Portal</strong> — Web-based exploration and ad-hoc download for research and validation</span></li>
-          </ul>
-        </div>
-        <div class="text-center">
-          <a href="../../../contact-us/" class="btn btn-primary mb-4">Request Access</a>
-          <p class="text-white/50 text-sm">Custom date ranges, underlyings, and formats available</p>
-        </div>
+  <!-- ─── DELIVERY ─────────────────────────────────────────────────────────── -->
+  <section id="delivery" class="bg-sr-mist section tab-target">
+    <div class="wrap grid lg:grid-cols-[3fr_2fr] gap-x-16 gap-y-10 items-center">
+      <div>
+        <p class="eyebrow mb-3">Data Delivery</p>
+        <h2 class="h2 mb-6">Flexible Access Methods</h2>
+        <p class="body-copy mb-6">Historical options and Greeks data is available through multiple delivery channels to fit your workflow — from direct API access to bulk flat file downloads.</p>
+        <ul class="bullets">
+            <li><span><strong class="text-sr-dark">Liberator API</strong> — Programmatic access for targeted queries across dates, underlyings, and expirations</span></li>
+            <li><span><strong class="text-sr-dark">Cloud Files</strong> — Daily flat files delivered to AWS S3 or Azure Blob Storage for bulk processing</span></li>
+            <li><span><strong class="text-sr-dark">Data Portal</strong> — Web-based exploration and ad-hoc download for research and validation</span></li>
+        </ul>
+      </div>
+      <div class="card bg-white items-start">
+        <a href="../../../contact-us/" class="btn btn-primary mb-4">Request Access</a>
+        <p class="meta">Custom date ranges, underlyings, and formats available</p>
       </div>
     </div>
   </section>

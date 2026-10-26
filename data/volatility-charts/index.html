@@ -15,71 +15,51 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">
-        Intuitive Volatility Charts
-      </h1>
-      <p class="hero-lead mb-10">
-        Visualize options surfaces, compare relative volatilities, and analyze 10+ years of data on US stocks, indices, ETFs, and ADRs.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="../../contact-us/" class="btn btn-primary">Contact Us to Get Started</a>
-        <a href="../../contact-us/" class="btn btn-ghost">Contact Us</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Volatility Charts</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1 mb-6">Intuitive Volatility Charts</h1>
+        <p class="hero-lead mb-9">Visualize options surfaces, compare relative volatilities, and analyze 10+ years of data on US stocks, indices, ETFs, and ADRs.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="../../contact-us/" class="btn btn-primary">Contact Us to Get Started</a>
+          <a href="../../contact-us/" class="btn btn-ghost">Contact Us</a>
+        </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">The Chart Tool</p>
+        <div class="offer-row"><span><span class="offer-title text-[22px]">10+</span><span class="offer-sub">Years of volatility history</span></span></div>
+        <div class="offer-row"><span><span class="offer-title text-[22px]">100%</span><span class="offer-sub">US equities, ETFs &amp; indices coverage</span></span></div>
+        <div class="offer-row"><span><span class="offer-title text-[22px]">Live</span><span class="offer-sub">Volatility surfaces from live analytics</span></span></div>
+        <div class="offer-row"><span><span class="offer-title text-[22px]">Free</span><span class="offer-sub">30-day trial, no commitment</span></span></div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT IS THE CHART TOOL -->
+  <!-- ─── WHAT IS THE CHART TOOL ───────────────────────────────────────────── -->
   <section class="bg-white section">
-    <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-20 items-center">
-        <div>
-          <p class="eyebrow mb-5">Overview</p>
-          <h2 class="h2 text-gray-900 mb-6">What is the Chart Tool?</h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            The SpiderRock Chart Tool enables users to visualize options surfaces and compare relative volatilities between stocks by creating simple and more complex spreads or ratios. Analyze the impact of earnings and options skew on implied and historical volatility across stocks, ETFs, and indices using our multi-year database of point-in-time option surfaces.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Users can quickly develop, save, and share multiple charts to collaborate with their peers. The data is easily downloaded for further analysis.
-          </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <div class="text-sr-red font-bold text-2xl mb-2">10+</div>
-            <p class="text-gray-700 font-semibold text-sm">Years of volatility history</p>
-          </div>
-          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <div class="text-sr-red font-bold text-2xl mb-2">100%</div>
-            <p class="text-gray-700 font-semibold text-sm">US equities, ETFs &amp; indices coverage</p>
-          </div>
-          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <div class="text-sr-red font-bold text-2xl mb-2">Live</div>
-            <p class="text-gray-700 font-semibold text-sm">Volatility surfaces from live analytics</p>
-          </div>
-          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <div class="text-sr-red font-bold text-2xl mb-2">Free</div>
-            <p class="text-gray-700 font-semibold text-sm">30-day trial, no commitment</p>
-          </div>
-        </div>
-      </div>
+    <div class="wrap max-w-[60rem] ml-0">
+      <p class="eyebrow mb-3">Overview</p>
+      <h2 class="h2 mb-6">What is the Chart Tool?</h2>
+      <p class="body-copy mb-5">The SpiderRock Chart Tool enables users to visualize options surfaces and compare relative volatilities between stocks by creating simple and more complex spreads or ratios. Analyze the impact of earnings and options skew on implied and historical volatility across stocks, ETFs, and indices using our multi-year database of point-in-time option surfaces.</p>
+      <p class="body-copy">Users can quickly develop, save, and share multiple charts to collaborate with their peers. The data is easily downloaded for further analysis.</p>
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
-  <section class="bg-gray-50 section">
+  <!-- ─── CAPABILITIES ─────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow mb-4">Capabilities</p>
-        <h2 class="h2 text-gray-900">Research, Analyze, Collaborate</h2>
+        <p class="eyebrow mb-3">Capabilities</p>
+        <h2 class="h2">Research, Analyze, Collaborate</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Robust Data</h3>
-          <ul class="space-y-3 text-gray-600 text-sm">
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-5">Robust Data</h3>
+          <ul class="bullets">
             <li>10+ year history on all US equities, updated daily</li>
             <li>Censored volatility that eliminates earnings seasonality effects</li>
             <li>Access to add-on SpiderRock datasets (subscription required)</li>
@@ -87,10 +67,9 @@
             <li>Realized volatility and skew data</li>
           </ul>
         </div>
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Powerful Analysis</h3>
-          <ul class="space-y-3 text-gray-600 text-sm">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-5">Powerful Analysis</h3>
+          <ul class="bullets">
             <li>Analyze single stock volatility and skew over time synchronized with stock price and volume</li>
             <li>Compare volatility between single stock pairs or with Index and ETF</li>
             <li>Design custom spreads, ratios, and pairs to track hidden opportunities</li>
@@ -98,10 +77,9 @@
             <li>Zoom in on specific events, 3 months to 10 years</li>
           </ul>
         </div>
-
-        <div class="bg-white rounded-xl p-10 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Easy Collaboration</h3>
-          <ul class="space-y-3 text-gray-600 text-sm">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-5">Easy Collaboration</h3>
+          <ul class="bullets">
             <li>Share insights with other users</li>
             <li>Annotate charts with drawing symbols, tags, and text</li>
             <li>Save up to 5 views or studies at a point in time, or update daily</li>
@@ -109,38 +87,35 @@
             <li>Download data to spreadsheets and files</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- ─── PRICING ──────────────────────────────────────────────────────────── -->
   <section class="bg-white section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow mb-4">Pricing</p>
-        <h2 class="h2 text-gray-900">Choose Your Plan</h2>
+        <p class="eyebrow mb-3">Pricing</p>
+        <h2 class="h2">Choose Your Plan</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl">
-
-        <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
-          <p class="text-sr-gray text-sm font-semibold uppercase tracking-wide mb-3">Free Trial</p>
-          <div class="font-display text-4xl font-bold text-gray-900 mb-1">Free</div>
-          <p class="text-gray-500 text-sm mb-8">30 days, full Trader access</p>
-          <a href="../../contact-us/" class="btn btn-primary w-full mb-8">Contact Us</a>
-          <ul class="space-y-2 text-gray-600 text-sm">
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card bg-white">
+          <p class="text-sm font-bold uppercase tracking-[0.12em] text-sr-gray mb-3">Free Trial</p>
+          <p class="font-display text-4xl font-semibold text-sr-dark mb-1">Free</p>
+          <p class="text-sr-gray text-sm mb-7">30 days, full Trader access</p>
+          <a href="../../contact-us/" class="btn btn-outline w-full mb-7">Contact Us</a>
+          <ul class="bullets">
             <li>Access all Trader features for 30 days</li>
             <li>No credit card required</li>
             <li>Discover all you can do with Chart Tool</li>
           </ul>
         </div>
-
-        <div class="bg-gray-50 rounded-xl p-10 border border-gray-200">
-          <p class="text-sr-gray text-sm font-semibold uppercase tracking-wide mb-3">Basic</p>
-          <div class="font-display text-4xl font-bold text-gray-900 mb-1">$9.99<span class="text-lg font-normal text-gray-500">/mo</span></div>
-          <p class="text-gray-500 text-sm mb-8">Essential volatility research</p>
-          <a href="../../contact-us/" class="btn btn-primary w-full mb-8">Contact Us</a>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card bg-white">
+          <p class="text-sm font-bold uppercase tracking-[0.12em] text-sr-gray mb-3">Basic</p>
+          <p class="font-display text-4xl font-semibold text-sr-dark mb-1">$9.99<span class="text-lg font-normal opacity-70">/mo</span></p>
+          <p class="text-sr-gray text-sm mb-7">Essential volatility research</p>
+          <a href="../../contact-us/" class="btn btn-outline w-full mb-7">Contact Us</a>
+          <ul class="bullets">
             <li>2 years of history</li>
             <li>All US equities scope</li>
             <li>Equity prices &amp; volumes</li>
@@ -150,14 +125,13 @@
             <li>Share work, save 10 chart views</li>
           </ul>
         </div>
-
-        <div class="bg-sr-navy rounded-xl p-10 border border-sr-blue relative">
-          <div class="absolute top-4 right-4 bg-sr-red text-white text-xs font-bold py-1 px-3 rounded-full">MOST POPULAR</div>
-          <p class="text-blue-200 text-sm font-semibold uppercase tracking-wide mb-3">Trader</p>
-          <div class="font-display text-4xl font-bold text-white mb-1">$59.99<span class="text-lg font-normal text-white/60">/mo</span></div>
-          <p class="text-white/60 text-sm mb-8">Advanced volatility research</p>
-          <a href="../../contact-us/" class="btn btn-primary w-full mb-8">Contact Us</a>
-          <ul class="space-y-2 text-white/80 text-sm">
+        <div class="card bg-sr-navy border-sr-navy text-white relative">
+          <span class="tag-new absolute top-5 right-5">MOST POPULAR</span>
+          <p class="text-sm font-bold uppercase tracking-[0.12em] text-[#D3DEE8] mb-3">Trader</p>
+          <p class="font-display text-4xl font-semibold mb-1">$59.99<span class="text-lg font-normal opacity-70">/mo</span></p>
+          <p class="text-[#D3DEE8] text-sm mb-7">Advanced volatility research</p>
+          <a href="../../contact-us/" class="btn btn-primary w-full mb-7">Contact Us</a>
+          <ul class="bullets [&amp;>li]:text-[#E6ECF2]">
             <li>10+ years of history</li>
             <li>All US equities scope</li>
             <li>All Basic features</li>
@@ -168,16 +142,17 @@
             <li>Download underlying data</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-sr-navy section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="h2 text-white mb-6">Start Your Free 30-Day Trial</h2>
-      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Gain full access for 30 days and see how easy it is to develop strategies using our volatility data tools.</p>
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
+    <div class="wrap cta-band">
+      <div>
+        <h2 class="h2 mb-4">Start Your Free 30-Day Trial</h2>
+        <p class="body-copy text-[18px]">Gain full access for 30 days and see how easy it is to develop strategies using our volatility data tools.</p>
+      </div>
       <a href="../../contact-us/" class="btn btn-primary">Contact Us</a>
     </div>
   </section>

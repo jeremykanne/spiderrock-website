@@ -106,52 +106,69 @@
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
 
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <div class="grid lg:grid-cols-[1.6fr_1fr] gap-16 items-end">
-        <div>
-          <p class="eyebrow eyebrow-dark mb-5">Options Analytics</p>
-          <h1 class="hero-h1 mb-6 max-w-3xl">Real-Time Volatility Multicast Feeds</h1>
-          <p class="hero-lead mb-10">SpiderRock volatility feeds are built on option analytics derived from the SpiderRock proprietary numerical pricing libraries and are based on discrete dividend estimates where appropriate. The feeds are fast, with calculations updating every time a top of book option price changes (TICK), at fixed intervals (LOOP), and the end of each trading session day (CLOSE).</p>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Options Analytics</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Options Analytics</p>
+        <h1 class="hero-h1 mb-6">Real-Time Volatility Multicast Feeds</h1>
+        <p class="hero-lead mb-9">SpiderRock volatility feeds are built on option analytics derived from the SpiderRock proprietary numerical pricing libraries and are based on discrete dividend estimates where appropriate. The feeds are fast, with calculations updating every time a top of book option price changes (TICK), at fixed intervals (LOOP), and the end of each trading session day (CLOSE).</p>
+        <div class="flex flex-wrap gap-4">
           <a href="#request-access" class="btn btn-primary">Get Access</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformFeatures/Analytics/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
         </div>
-        <div class="grid grid-cols-3 lg:grid-cols-1 gap-4">
-          <div class="bg-white/10 border border-white/15 rounded-xl p-5"><div class="font-display text-2xl font-bold mb-1">TICK</div><p class="text-white/70 text-sm">Every top-of-book option price change</p></div>
-          <div class="bg-white/10 border border-white/15 rounded-xl p-5"><div class="font-display text-2xl font-bold mb-1">LOOP</div><p class="text-white/70 text-sm">Fixed intervals</p></div>
-          <div class="bg-white/10 border border-white/15 rounded-xl p-5"><div class="font-display text-2xl font-bold mb-1">CLOSE</div><p class="text-white/70 text-sm">End of each trading session</p></div>
-        </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Calculation Updates</p>
+        <div class="offer-row"><span><span class="offer-title">TICK</span><span class="offer-sub">Every top-of-book option price change</span></span></div>
+        <div class="offer-row"><span><span class="offer-title">LOOP</span><span class="offer-sub">Fixed intervals</span></span></div>
+        <div class="offer-row"><span><span class="offer-title">CLOSE</span><span class="offer-sub">End of each trading session</span></span></div>
       </div>
     </div>
   </section>
 
+  <!-- In-page tabs (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#formats">Data Formats</a>
+      <a href="#values">Unique Values</a>
+      <a href="#products">MLink Products</a>
+      <a href="#european">European Analytics</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+  </nav>
+
   <!-- MULTIPLE DATA FORMATS -->
-  <section class="bg-gray-50 section">
+  <section id="formats" class="bg-white section tab-target">
     <div class="wrap">
       <div class="section-head max-w-4xl">
-        <p class="eyebrow mb-4">Delivery</p>
+        <p class="eyebrow mb-3">Delivery</p>
         <h2 class="h2 text-gray-900 mb-6">Multiple Data Formats</h2>
         <p class="text-gray-600 leading-relaxed">SpiderRock offers multiple live options analytics delivery mechanisms, from multicast channels or our proprietary <a href="../spiderstream-market-data-api/" class="arrow-link">MLink</a> engine, using a market-tested proprietary methodology built for speed, throughput, and accuracy. In all cases, our real-time analytics and data tie into historical records to maximize the edge capture and limit loss between backtesting and execution.</p>
       </div>
       <div class="space-y-8">
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div class="card bg-white !grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
-            <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Real-Time Volatility API Feed (SpiderStream)</h3>
-            <p class="text-gray-600 leading-relaxed">The volatility multicast feed is a low-latency analytics feed that adds options content to the raw feeds. The feed includes normalized OPRA and CME prices with a reduced bandwidth profile that is more manageable and cost-effective. The feed is delivered through a robust, reliable technical infrastructure targeted to support traders and trading platforms, and is easy to consume over SpiderRock&rsquo;s feed handlers coded in C# and C++.</p>
+            <h3 class="card-title-2 mb-4">Real-Time Volatility API Feed (SpiderStream)</h3>
+            <p class="body-copy">The volatility multicast feed is a low-latency analytics feed that adds options content to the raw feeds. The feed includes normalized OPRA and CME prices with a reduced bandwidth profile that is more manageable and cost-effective. The feed is delivered through a robust, reliable technical infrastructure targeted to support traders and trading platforms, and is easy to consume over SpiderRock&rsquo;s feed handlers coded in C# and C++.</p>
           </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-16">
-            <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Key product attributes</p>
-            <ul class="space-y-4 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">ADAPTIVE</strong> &ndash; In addition to the prices, the feed includes implied volatility NBBO quotes, surface prices, Greeks with synchronized underlying prices, current forecasted dividends, and interest rates.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">SECURE</strong> &ndash; This feed can be supplied from a redundant infrastructure in the U.S. through NY4/5 or CH2 data centers and globally as part of our partners&rsquo; data ecosystems.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">ARBITRAGE-FREE VOLATILITY</strong> &ndash; Volatility surfaces are designed for trading and tied together with no-arbitrage across strikes to support live trading operations.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">REAL-TIME</strong> &ndash; Sub-millisecond processing of analytics for low latency delivery.</span></li></ul>
+            <p class="includes-label">Key product attributes</p>
+            <ul class="bullets"><li><span><strong class="text-sr-dark">ADAPTIVE</strong> &ndash; In addition to the prices, the feed includes implied volatility NBBO quotes, surface prices, Greeks with synchronized underlying prices, current forecasted dividends, and interest rates.</span></li><li><span><strong class="text-sr-dark">SECURE</strong> &ndash; This feed can be supplied from a redundant infrastructure in the U.S. through NY4/5 or CH2 data centers and globally as part of our partners&rsquo; data ecosystems.</span></li><li><span><strong class="text-sr-dark">ARBITRAGE-FREE VOLATILITY</strong> &ndash; Volatility surfaces are designed for trading and tied together with no-arbitrage across strikes to support live trading operations.</span></li><li><span><strong class="text-sr-dark">REAL-TIME</strong> &ndash; Sub-millisecond processing of analytics for low latency delivery.</span></li></ul>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-10 border border-gray-100 card-hover grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div class="card bg-white !grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
-            <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Live Market Data and Volatility Database (SpiderStream over MLink)</h3>
-            <p class="text-gray-600 leading-relaxed"><a href="../spiderstream-market-data-api/" class="arrow-link">SpiderStream over MLink</a> is a powerful and effective API that allows access via Websocket or REST query to view and integrate with live market data. The available data is direct from the SpiderRock core platform, and includes live market data for all U.S. listed equities, futures, and options. SpiderStream builds on this core market data stream and adds access to the full scope of options analytics together with volatility bid and ask quotes, Greeks, trades marked up with analytics, fully articulated options pricing, and volatility surfaces. The analytic feeds are further supplemented with closing and opening markets, with other useful trade aggregations such as minute bars.</p>
+            <h3 class="card-title-2 mb-4">Live Market Data and Volatility Database (SpiderStream over MLink)</h3>
+            <p class="body-copy"><a href="../spiderstream-market-data-api/" class="arrow-link">SpiderStream over MLink</a> is a powerful and effective API that allows access via Websocket or REST query to view and integrate with live market data. The available data is direct from the SpiderRock core platform, and includes live market data for all U.S. listed equities, futures, and options. SpiderStream builds on this core market data stream and adds access to the full scope of options analytics together with volatility bid and ask quotes, Greeks, trades marked up with analytics, fully articulated options pricing, and volatility surfaces. The analytic feeds are further supplemented with closing and opening markets, with other useful trade aggregations such as minute bars.</p>
           <p class="mt-6"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="arrow-link">MLink API reference <span aria-hidden="true">&#8599;</span></a></p>
           </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-16">
-            <p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Strengths</p>
-            <ul class="space-y-4 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">EASY TO CONSUME</strong> &ndash; Easy access to live equity, options, and futures data feeds accessed over the internet or via cross-connect in either Equinix NY4 or CH2. Also, unlimited user API calls.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">BROAD</strong> &ndash; Live and prior day records covering all listed US equity and futures derivative markets that can be filtered to specific symbols, indexes, or exchange stripes.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">EFFICIENT</strong> &ndash; High throughput operations with low latency message delivery.</span></li><li class="flex items-start gap-2"><span class="text-sr-red font-bold mt-0.5">&mdash;</span><span><strong class="text-gray-900">LIVE ANALYTICS</strong> &ndash; On-the-fly computation of implied volatilities and Greeks.</span></li></ul>
+            <p class="includes-label">Strengths</p>
+            <ul class="bullets"><li><span><strong class="text-sr-dark">EASY TO CONSUME</strong> &ndash; Easy access to live equity, options, and futures data feeds accessed over the internet or via cross-connect in either Equinix NY4 or CH2. Also, unlimited user API calls.</span></li><li><span><strong class="text-sr-dark">BROAD</strong> &ndash; Live and prior day records covering all listed US equity and futures derivative markets that can be filtered to specific symbols, indexes, or exchange stripes.</span></li><li><span><strong class="text-sr-dark">EFFICIENT</strong> &ndash; High throughput operations with low latency message delivery.</span></li><li><span><strong class="text-sr-dark">LIVE ANALYTICS</strong> &ndash; On-the-fly computation of implied volatilities and Greeks.</span></li></ul>
           </div>
         </div>
       </div>
@@ -160,7 +177,7 @@
   </section>
 
   <!-- UNIQUE VALUES -->
-  <section class="bg-white section">
+  <section id="values" class="bg-sr-mist section tab-target">
     <div class="wrap">
       <div class="grid md:grid-cols-2 gap-16">
         <div>
@@ -168,13 +185,13 @@
           <h2 class="h2 text-gray-900 mb-6">Unique Values</h2>
           <p class="text-gray-600 text-lg leading-relaxed">SpiderRock real-time data products offer unique value as a reliable, low-cost delivery method of market data and options analytics without making significant investments in infrastructure and people.</p>
         </div>
-        <ul class="border-t border-gray-200"><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Analytics for volatility and surface modeling capable of supporting live trading operations.</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Low latency calculations that provide a competitive edge.</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Industry-standard pricing methods with proprietary enhancements for both accuracy and speed.</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Purpose-built to support trading and risk management platforms.</li><li class="flex items-start gap-3 border-b border-gray-200 py-4 text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Service and support from experienced option market professionals.</li></ul>
+        <ul class="bullets mt-2"><li>Analytics for volatility and surface modeling capable of supporting live trading operations.</li><li>Low latency calculations that provide a competitive edge.</li><li>Industry-standard pricing methods with proprietary enhancements for both accuracy and speed.</li><li>Purpose-built to support trading and risk management platforms.</li><li>Service and support from experienced option market professionals.</li></ul>
       </div>
     </div>
   </section>
 
   <!-- DISTINCT MLINK PRODUCTS -->
-  <section class="bg-gray-50 section">
+  <section id="products" class="bg-white section tab-target">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow mb-4">Data Coverage</p>
@@ -182,9 +199,9 @@
       </div>
       <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Stock</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Stock</h3>
+          <ul class="bullets">
             <li>Real-time quotes</li>
             <li>Trade details</li>
             <li>Closing prices</li>
@@ -193,9 +210,9 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Options</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Options</h3>
+          <ul class="bullets">
             <li>Real-time quotes</li>
             <li>Trade details</li>
             <li>Closing prices</li>
@@ -203,9 +220,9 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Futures</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Futures</h3>
+          <ul class="bullets">
             <li>Real-time quotes</li>
             <li>Trade details</li>
             <li>Settlement prices</li>
@@ -213,17 +230,17 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Live Implied Quotes</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Live Implied Quotes</h3>
+          <ul class="bullets">
             <li>Options implied quotes</li>
             <li>Trade details</li>
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Equity Options Analytics</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Equity Options Analytics</h3>
+          <ul class="bullets">
             <li>Real-time volatility surfaces</li>
             <li>Historical volatilities</li>
             <li>Opening prices</li>
@@ -232,9 +249,9 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
-          <h3 class="font-display text-lg font-bold text-gray-900 mb-4">Future Options Analytics</h3>
-          <ul class="space-y-2 text-gray-600 text-sm">
+        <div class="card card-accent card-compact bg-white">
+          <h3 class="card-title-3 mb-4">Future Options Analytics</h3>
+          <ul class="bullets">
             <li>Real-time volatility surfaces</li>
             <li>Historical volatilities</li>
             <li>Opening prices</li>
@@ -249,7 +266,7 @@
   </section>
 
   <!-- EUROPEAN OPTIONS ANALYTICS -->
-  <section class="bg-white section">
+  <section id="european" class="bg-sr-mist section tab-target">
     <div class="wrap">
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div>
@@ -258,13 +275,13 @@
           <p class="text-gray-600 text-lg leading-relaxed mb-8">SpiderRock also delivers real-time and delayed options analytics for European markets, combining implied pricing, trade transparency, and market structure insight across Eurex, Euronext, ICE, and Cboe Europe.</p>
           <a href="../european-data/" class="arrow-link">European data <span class="arrow">&rarr;</span></a>
         </div>
-        <div class="grid sm:grid-cols-2 gap-4"><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Implied quotes</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Quotes and trade prints</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Mark-up analytics</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Market summaries</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Reference data</div><div class="bg-gray-50 border border-gray-200 rounded-lg px-5 py-4 flex items-start gap-3 text-gray-800 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Real-time and delayed coverage</div></div>
+        <ul class="grid sm:grid-cols-2 gap-4"><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Implied quotes</li><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Quotes and trade prints</li><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Mark-up analytics</li><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Market summaries</li><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Reference data</li><li class="bg-white border border-gray-200 rounded-lg px-5 py-4 text-sr-dark font-medium">Real-time and delayed coverage</li></ul>
       </div>
     </div>
   </section>
 
   <!-- USE CASES -->
-  <section class="bg-gray-50 section">
+  <section id="use-cases" class="bg-white section tab-target">
     <div class="wrap">
       <div class="section-head max-w-4xl">
         <p class="eyebrow mb-4">Use Cases</p>
@@ -273,17 +290,17 @@
         <p class="text-gray-600 leading-relaxed">Building and maintaining full market data feeds in-house (the infrastructure, the vendor reference datasets, the quantitative modeling) is an expensive, ongoing undertaking. With SpiderStream over MLink, you get that same backbone and quantitative expertise over WebSocket or REST, for the cost of a market data feed. A few ways clients put it to work:</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Trading Strategies</h3>
-          <p class="text-gray-600 leading-relaxed">Consume SpiderRock&rsquo;s volatility surfaces directly to improve model accuracy, with less CPU load than calculating analytics on your own equipment.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Trading Strategies</h3>
+          <p class="body-copy">Consume SpiderRock&rsquo;s volatility surfaces directly to improve model accuracy, with less CPU load than calculating analytics on your own equipment.</p>
         </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Risk and PnL</h3>
-          <p class="text-gray-600 leading-relaxed">Accurate surface prices support portfolio valuation, real-time margin risk, and overnight risk, plus &ldquo;what-if&rdquo; analysis on demand.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Risk and PnL</h3>
+          <p class="body-copy">Accurate surface prices support portfolio valuation, real-time margin risk, and overnight risk, plus &ldquo;what-if&rdquo; analysis on demand.</p>
         </div>
-        <div class="bg-white rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Direct Querying</h3>
-          <p class="text-gray-600 leading-relaxed">Query live prices, quotes, and prints across asset classes, enhanced with proprietary analytics calculated on every tick.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-4">Direct Querying</h3>
+          <p class="body-copy">Query live prices, quotes, and prints across asset classes, enhanced with proprietary analytics calculated on every tick.</p>
         </div>
       </div>
       <p class="mt-10"><a href="../options-pricing-tool/" class="arrow-link">Price options with the same analytics <span class="arrow">&rarr;</span></a></p>
@@ -291,51 +308,51 @@
   </section>
 
   <!-- OTHER DATA PRODUCTS -->
-  <section class="bg-sr-navy section">
+  <section class="bg-sr-mist section">
     <div class="wrap">
-      <p class="eyebrow eyebrow-dark mb-4">More Data</p>
-      <h2 class="h2 text-white mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
-      <p class="text-white/70 leading-relaxed max-w-3xl mb-14">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
+      <p class="eyebrow mb-3">More Data</p>
+      <h2 class="h2 mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
+      <p class="body-copy max-w-3xl mb-12">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
       <div class="grid md:grid-cols-3 gap-12">
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Real-Time</h3>
-          <a href="../data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Real-Time Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../stocks-options-futures/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Real-Time Stocks, Options &amp; Futures</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Real-Time</h3>
+          <a href="../data-analytics/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>All Real-Time Data</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../stocks-options-futures/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Real-Time Stocks, Options &amp; Futures</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Historical</h3>
-          <a href="../historical-data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Historical Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/options-greeks/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Options &amp; Greeks</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/historic-stock-price-data/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Stock Prices</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Volatility Surfaces</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/vol2g/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Volatility Database Bundle</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Historical</h3>
+          <a href="../historical-data-analytics/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>All Historical Data</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/options-greeks/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Options &amp; Greeks</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/historic-stock-price-data/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Stock Prices</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Volatility Surfaces</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/vol2g/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Volatility Database Bundle</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Tools &amp; APIs</h3>
-          <a href="../volatility-charts/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Intuitive Volatility Charts</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../spiderstream-market-data-api/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>SpiderStream Market Data API</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Tools &amp; APIs</h3>
+          <a href="../volatility-charts/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Intuitive Volatility Charts</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../spiderstream-market-data-api/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>SpiderStream Market Data API</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQS -->
-  <section class="bg-gray-50 section">
+  <section id="faqs" class="bg-white section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">FAQs</p>
+      <p class="eyebrow mb-3">FAQs</p>
       <h2 class="h2 text-gray-900 mb-10">FAQs About Our Real-Time Market Data API</h2>
       <div class="max-w-5xl border-t border-gray-200">
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">How do you access the SpiderRock Multicast Volatility Feed?</h3>
+            <h3 class="card-title-3 text-[18px]">How do you access the SpiderRock Multicast Volatility Feed?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">Users can connect to the SpiderRock network and listen to the multichannel multicast stream through SpiderRock supplied feed handlers/API.</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">How do you access the SpiderStream MLink API?</h3>
+            <h3 class="card-title-3 text-[18px]">How do you access the SpiderStream MLink API?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl"><a href="../spiderstream-market-data-api/" class="arrow-link">MLink API</a> real-time and delayed servers are available directly in our NY5 data centers for higher capacity/higher reliability needs. This API can be accessed by cross-connect or via any suitable network connection, including over the public internet. Encrypted SSL connectivity is also available. The API is optimized for high-throughput operations. Once connected, just query any one of the MLink products using your choice of language (Python, R, C#, etc.).</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">What is the latency of the data in the SpiderRock Volatility feeds and Analytical data?</h3>
+            <h3 class="card-title-3 text-[18px]">What is the latency of the data in the SpiderRock Volatility feeds and Analytical data?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">The latency of the data will depend significantly on the source of the feeds. The core calculation engines for both the volatility feeds and analytics are located on NY5 equidistant from the matching engines of the majority of the equity options exchanges.</p><p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">The latency to get to NY5 is generally on the order of a few milliseconds, and the analytics calculation latency is sub-millisecond. These latency ranges will work well to support trading platforms, risk computation, and trading applications.</p><p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">For true low latency needs, we suggest using SpiderRock raw or normalized multicast feeds that are directly connected to our access points in our datacenter installation closest to your required exchanges.</p>
@@ -345,12 +362,12 @@
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 scroll-mt-[140px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
       <h2 class="h2 text-gray-900 mb-4">Consult with Our Data Team</h2>
       <p class="text-gray-600 text-lg leading-relaxed mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the contact form below, or visit our documentation site for full API specifications.</p>
-      <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
+      <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="btn btn-outline mb-12">View Documentation <span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 11 (srock.activehosted.com) — the form this page runs live.
            Fields: firstname, lastname, email, phone, field[2] "company_name",

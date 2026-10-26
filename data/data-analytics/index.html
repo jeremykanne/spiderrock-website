@@ -15,101 +15,113 @@
 {% include "partials/header.njk" %}
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">Real-Time &amp; Historical Data Delivery</h1>
-      <p class="hero-lead mb-10">Institutional quality market data and analytics with resource-efficient delivery — from raw exchange feeds to fully computed analytics.</p>
-      <a href="../../contact-us/" class="btn btn-primary">Consult With Us</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Data Delivery</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1 mb-6">Real-Time &amp; Historical Data Delivery</h1>
+        <p class="hero-lead mb-9">Institutional quality market data and analytics with resource-efficient delivery — from raw exchange feeds to fully computed analytics.</p>
+        <a href="../../contact-us/" class="btn btn-primary">Consult With Us</a>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Three Delivery Types</p>
+        <div class="offer-row"><span><span class="offer-title">Market Data Feeds</span><span class="offer-sub">Raw and normalized multicast feeds</span></span></div>
+        <div class="offer-row"><span><span class="offer-title">Live Analytics</span><span class="offer-sub">Multicast or MySQL API</span></span></div>
+        <div class="offer-row"><span><span class="offer-title">Historical Analytics</span><span class="offer-sub">Cloud files · Liberator API · Data Portal</span></span></div>
+      </div>
     </div>
   </section>
 
-  <!-- OVERVIEW -->
+  <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
   <section class="bg-white section">
     <div class="wrap">
-      <img src="../images/Data-Delivery-v4.png" alt="Data Delivery Overview" class="w-full rounded-xl shadow-lg mb-16">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">Overview</p>
-        <h2 class="h2 text-gray-900 mb-6">Three Delivery Types</h2>
-        <p class="text-gray-600 text-lg max-w-3xl">Our analytics framework provides a low latency and scalable solution for clients to consume live and historical data.</p>
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Overview</p>
+        <h2 class="h2 mb-5">Three Delivery Types</h2>
+        <p class="body-copy">Our analytics framework provides a low latency and scalable solution for clients to consume live and historical data.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Market Data Feeds</h3>
-          <p class="text-gray-600 leading-relaxed">Vendor of record for low latency raw and normalized feeds covering US-listed equities, options, and futures. Quotes and prints in real time.</p>
+      <div class="grid md:grid-cols-3 gap-7 mb-14">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Market Data Feeds</h3>
+          <p class="body-copy">Vendor of record for low latency raw and normalized feeds covering US-listed equities, options, and futures. Quotes and prints in real time.</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Live Analytics</h3>
-          <p class="text-gray-600 leading-relaxed">Greeks, implied volatilities, volatility surfaces, historical volatilities, risk factors, trade performance, and opening/closing marks — computed on every tick.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Live Analytics</h3>
+          <p class="body-copy">Greeks, implied volatilities, volatility surfaces, historical volatilities, risk factors, trade performance, and opening/closing marks — computed on every tick.</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Historical Analytics</h3>
-          <p class="text-gray-600 leading-relaxed">Snapshots of live data/analytics at end-of-day, intraday, and minute-bar frequencies. Up to 10 years of history for backtesting and research.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Historical Analytics</h3>
+          <p class="body-copy">Snapshots of live data/analytics at end-of-day, intraday, and minute-bar frequencies. Up to 10 years of history for backtesting and research.</p>
         </div>
+      </div>
+      <img src="../images/Data-Delivery-v4.png" alt="Data Delivery Overview" class="w-full rounded-[10px] border border-gray-200">
+    </div>
+  </section>
+
+  <!-- ─── REAL-TIME + LIVE ANALYTICS ───────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
+    <div class="wrap grid lg:grid-cols-2 gap-7">
+      <div class="card card-accent bg-white">
+        <p class="eyebrow mb-3">Real-Time</p>
+        <h2 class="card-title-2 mb-4">Market Data Feed Delivery</h2>
+        <p class="body-copy mb-6">SpiderRock provides raw and normalized low latency multicast feeds covering US equities, options, and futures markets. As an exchange licensed redistributor, we deliver market data in both original and normalized formats.</p>
+        <ul class="bullets">
+            <li>FPGA + kernel bypass technology for sub-millisecond processing</li>
+            <li>Hosted in NY4/5 and CH2 data centers</li>
+            <li>Client-side APIs in C++ and C# for efficient packet processing</li>
+            <li>Normalized OPRA feed = 1/10 the size of raw OPRA</li>
+            <li>Arista switches with 10GB and 40GB fiber connections</li>
+        </ul>
+      </div>
+      <div class="card card-accent bg-white">
+        <p class="eyebrow mb-3">Live Analytics</p>
+        <h2 class="card-title-2 mb-4">Proprietary Analytics Delivery</h2>
+        <p class="body-copy mb-6">SpiderRock's proprietary live analytics offer low-cost delivery of market data and options analytics without making a significant investment in infrastructure. Analytics for volatility and surface modeling accuracy capable of supporting live trading operations.</p>
+        <ul class="bullets">
+            <li>Volatility and Greeks feed for all US-listed options</li>
+            <li>NBBO prices, bid/ask implied vols, surface vols, and Greeks</li>
+            <li>Distributed as multicast or via MySQL API</li>
+            <li>90%+ of OPRA messages are size-only changes held back to save bandwidth</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- REAL-TIME FEED -->
-  <section class="bg-gray-50 section">
-    <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="eyebrow mb-4">Real-Time</p>
-          <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">Market Data Feed Delivery</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">SpiderRock provides raw and normalized low latency multicast feeds covering US equities, options, and futures markets. As an exchange licensed redistributor, we deliver market data in both original and normalized formats.</p>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>FPGA + kernel bypass technology for sub-millisecond processing</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Hosted in NY4/5 and CH2 data centers</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Client-side APIs in C++ and C# for efficient packet processing</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Normalized OPRA feed = 1/10 the size of raw OPRA</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Arista switches with 10GB and 40GB fiber connections</li>
-          </ul>
-        </div>
-        <div>
-          <p class="eyebrow mb-4">Live Analytics</p>
-          <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">Proprietary Analytics Delivery</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">SpiderRock's proprietary live analytics offer low-cost delivery of market data and options analytics without making a significant investment in infrastructure. Analytics for volatility and surface modeling accuracy capable of supporting live trading operations.</p>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Volatility and Greeks feed for all US-listed options</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>NBBO prices, bid/ask implied vols, surface vols, and Greeks</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>Distributed as multicast or via MySQL API</li>
-            <li class="flex items-start gap-3"><span class="bullet" aria-hidden="true"></span>90%+ of OPRA messages are size-only changes held back to save bandwidth</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HISTORICAL -->
+  <!-- ─── HISTORICAL ───────────────────────────────────────────────────────── -->
   <section class="bg-white section">
     <div class="wrap">
-      <p class="eyebrow mb-4">Historical</p>
-      <h2 class="h2 text-gray-900 mb-6">Historical Data Delivery</h2>
-      <p class="text-gray-600 text-lg max-w-3xl mb-12">SpiderRock provides a wide variety of historical data in multiple file formats with frequency from end-of-day to one-minute intervals throughout the trading day.</p>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Cloud-Based File Delivery</h3>
-          <p class="text-gray-600 leading-relaxed">Daily subscription files organized by format type and date, loaded into cloud-based storage overnight. Access manually via browser or programmatically using a public-facing IP and security token.</p>
+      <div class="section-head max-w-[52rem]">
+        <p class="eyebrow mb-3">Historical</p>
+        <h2 class="h2 mb-5">Historical Data Delivery</h2>
+        <p class="body-copy">SpiderRock provides a wide variety of historical data in multiple file formats with frequency from end-of-day to one-minute intervals throughout the trading day.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Cloud-Based File Delivery</h3>
+          <p class="body-copy">Daily subscription files organized by format type and date, loaded into cloud-based storage overnight. Access manually via browser or programmatically using a public-facing IP and security token.</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Liberator API</h3>
-          <p class="text-gray-600 leading-relaxed">On-demand access via REST API. Query by ticker or groups and by date and time ranges. Starter code in Python, R, C++, C#, JavaScript, and Microsoft Excel plug-in.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Liberator API</h3>
+          <p class="body-copy">On-demand access via REST API. Query by ticker or groups and by date and time ranges. Starter code in Python, R, C++, C#, JavaScript, and Microsoft Excel plug-in.</p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 card-hover">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Data Portal</h3>
-          <p class="text-gray-600 leading-relaxed">Browser-based access to historical data files. Search, filter, and download data from SpiderRock online. Log in to view subscribed files.</p>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Data Portal</h3>
+          <p class="body-copy">Browser-based access to historical data files. Search, filter, and download data from SpiderRock online. Log in to view subscribed files.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-sr-navy section">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="h2 text-white mb-6">Consult With Our Data Team</h2>
-      <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Our broad and rich analytics are easily accessible via multiple delivery mechanisms. This empowers you to scale while keeping cost under control.</p>
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="bg-sr-mist section">
+    <div class="wrap cta-band">
+      <div>
+        <h2 class="h2 mb-4">Consult With Our Data Team</h2>
+        <p class="body-copy text-[18px]">Our broad and rich analytics are easily accessible via multiple delivery mechanisms. This empowers you to scale while keeping cost under control.</p>
+      </div>
       <a href="../../contact-us/" class="btn btn-primary">Get in Touch</a>
     </div>
   </section>

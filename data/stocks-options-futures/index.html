@@ -103,191 +103,222 @@
 
 {% include "partials/header.njk" %}
 
+  <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-steel text-white">
-    <div class="wrap pt-20 pb-24">
-      <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
-      <h1 class="hero-h1 mb-6 max-w-4xl">Real-Time Stocks, Options, and Futures Price Data</h1>
-      <p class="hero-lead mb-5">SpiderRock delivers raw and normalized equity, options, and futures data feeds via multicast channels and TCP connection, covering U.S. markets. SpiderRock also provides real-time market data and execution connectivity for European derivatives markets including Eurex, Euronext, and ICE Europe.</p>
-      <p class="text-white/65 text-lg max-w-3xl leading-relaxed mb-10">Our normalized feed provides a reduced bandwidth profile for better manageability and cost effectiveness, and our client-side APIs turn high multicast packet volumes into individual messages at low latencies.</p>
-      <a href="#request-access" class="btn btn-primary">Get Access</a>
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <a href="/data/">Data &amp; Analytics</a><span aria-hidden="true">›</span><span aria-current="page">Market Data Feeds</span>
+        </nav>
+        <p class="eyebrow eyebrow-dark mb-5">Data &amp; Analytics</p>
+        <h1 class="hero-h1-sm mb-6">Real-Time Stocks, Options, and Futures Price Data</h1>
+        <p class="hero-lead mb-5">SpiderRock delivers raw and normalized equity, options, and futures data feeds via multicast channels and TCP connection, covering U.S. markets. SpiderRock also provides real-time market data and execution connectivity for European derivatives markets including Eurex, Euronext, and ICE Europe.</p>
+        <p class="text-[#D3DEE8] text-[17px] leading-relaxed max-w-[34em] mb-9">Our normalized feed provides a reduced bandwidth profile for better manageability and cost effectiveness, and our client-side APIs turn high multicast packet volumes into individual messages at low latencies.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#request-access" class="btn btn-primary">Get Access</a>
+          <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="dark-panel">
+        <p class="dark-panel-label">Delivery Formats</p>
+        <div class="arch-chips">
+          <span>Raw multicast</span><span>Normalized multicast</span><span>MLink TCP stream</span>
+        </div>
+        <p class="dark-panel-label mt-6">U.S. Sources</p>
+        <div class="arch-chips">
+          <span>CBOE</span><span>CME</span><span>NYSE / CTA</span><span>NASDAQ / UTP</span><span>OPRA</span><span>MIAX</span><span>BOX</span><span>OTC Markets</span>
+        </div>
+        <p class="text-[#D3DEE8] text-sm mt-5">30 feeds across 8 sources.</p>
+      </div>
     </div>
   </section>
 
+  <!-- In-page tabs (highlighting in /js/site.js). -->
+  <nav class="page-tabs" aria-label="On this page">
+    <div class="wrap page-tabs-inner">
+      <a href="#overview">Overview</a>
+      <a href="#markets">Markets</a>
+      <a href="#exchange-feeds">Exchange Feeds</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+  </nav>
+
   <!-- OVERVIEW -->
-  <section class="bg-white section">
+  <section id="overview" class="bg-white section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">Product Overview</p>
+      <p class="eyebrow mb-3">Product Overview</p>
       <h2 class="h2 text-gray-900 mb-6">Real-Time Market Data</h2>
       <div class="grid md:grid-cols-2 gap-16 max-w-6xl">
-        <p class="text-gray-600 leading-relaxed">SpiderRock provides a wide range of raw and normalized low latency multicast feeds covering US equities, options, and futures markets.</p>
-        <p class="text-gray-600 leading-relaxed">We offer a client-side API suitable for turning multicast packets into individual message events within your software. This API is optimized for the efficient processing of very high packet volumes and very low latencies. The data is available, with source code, free of charge for consumers of SpiderRock feed products. This API is currently available in C++ and C# versions. Clients interested in accessing our API code can contact us and request a GitHub login.</p>
+        <p class="body-copy">SpiderRock provides a wide range of raw and normalized low latency multicast feeds covering US equities, options, and futures markets.</p>
+        <p class="body-copy">We offer a client-side API suitable for turning multicast packets into individual message events within your software. This API is optimized for the efficient processing of very high packet volumes and very low latencies. The data is available, with source code, free of charge for consumers of SpiderRock feed products. This API is currently available in C++ and C# versions. Clients interested in accessing our API code can contact us and request a GitHub login.</p>
       </div>
       <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/" target="_blank" rel="noopener noreferrer" class="arrow-link">See the API reference <span aria-hidden="true">&#8599;</span></a></p>
     </div>
   </section>
 
   <!-- MARKET COVERAGE -->
-  <section class="bg-gray-50 section">
+  <section id="markets" class="bg-sr-mist section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">Markets</p>
+      <p class="eyebrow mb-3">Markets</p>
       <h2 class="h2 text-gray-900 mb-12">Stocks, Options, Futures &amp; European Markets</h2>
       <div class="grid md:grid-cols-2 gap-8 max-w-6xl">
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Stocks</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">SpiderRock offers a range of U.S. equity feeds focused on low latency top-of-book consolidated market data and specialty data to support users who need pricing and market data.</p>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Consolidated equity SIP feeds from NYSE (CTA) and NASDAQ (UTP)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Select order imbalance feeds from ARCA / NYSE / NASDAQ</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Mutual Funds, OTC Markets, Dow Jones feeds, CBOE Indices</li></ul>
-          <a href="#exchange-feeds" class="mt-auto arrow-link text-sm">See exchange feeds <span class="arrow">&rarr;</span></a>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Stocks</h3>
+          <p class="body-copy mb-5">SpiderRock offers a range of U.S. equity feeds focused on low latency top-of-book consolidated market data and specialty data to support users who need pricing and market data.</p>
+          <ul class="bullets mb-7"><li>Consolidated equity SIP feeds from NYSE (CTA) and NASDAQ (UTP)</li><li>Select order imbalance feeds from ARCA / NYSE / NASDAQ</li><li>Mutual Funds, OTC Markets, Dow Jones feeds, CBOE Indices</li></ul>
+          <a href="#exchange-feeds" class="mt-auto arrow-link">See exchange feeds <span class="arrow">&rarr;</span></a>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Options</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">All the relevant options market data needed to support access to a wide range of market liquidity from multiple exchange venues in normalized feeds formats that help manage the infrastructure demands and organize different and complex proprietary exchange feeds.</p>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>OPRA&rsquo;s raw multicast feed in a reduced bandwidth normalized format</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Complex order books from PHLX, MIAX, BOX, CBOE, C2, EDGX, ISE</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Direct connections to proprietary auction feeds and a normalized auction feed format</li></ul>
-          <a href="#exchange-feeds" class="mt-auto arrow-link text-sm">See exchange feeds <span class="arrow">&rarr;</span></a>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Options</h3>
+          <p class="body-copy mb-5">All the relevant options market data needed to support access to a wide range of market liquidity from multiple exchange venues in normalized feeds formats that help manage the infrastructure demands and organize different and complex proprietary exchange feeds.</p>
+          <ul class="bullets mb-7"><li>OPRA&rsquo;s raw multicast feed in a reduced bandwidth normalized format</li><li>Complex order books from PHLX, MIAX, BOX, CBOE, C2, EDGX, ISE</li><li>Direct connections to proprietary auction feeds and a normalized auction feed format</li></ul>
+          <a href="#exchange-feeds" class="mt-auto arrow-link">See exchange feeds <span class="arrow">&rarr;</span></a>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Futures</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">A full range of futures data from the CME and critical specialty data that supports CBOE volatility (VIX) markets.</p>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>CME consolidated feeds from CME, CBOT, NYMEX, COMEX</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>CBOE futures feed on the CFE</li></ul>
-          <a href="#exchange-feeds" class="mt-auto arrow-link text-sm">See exchange feeds <span class="arrow">&rarr;</span></a>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Futures</h3>
+          <p class="body-copy mb-5">A full range of futures data from the CME and critical specialty data that supports CBOE volatility (VIX) markets.</p>
+          <ul class="bullets mb-7"><li>CME consolidated feeds from CME, CBOT, NYMEX, COMEX</li><li>CBOE futures feed on the CFE</li></ul>
+          <a href="#exchange-feeds" class="mt-auto arrow-link">See exchange feeds <span class="arrow">&rarr;</span></a>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200 card-hover flex flex-col">
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">European Markets</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">SpiderRock also provides low-latency real-time market data across European futures, options, and equity venues, including Eurex, Euronext, ICE, and Cboe Europe.</p>
-          <ul class="space-y-2 text-gray-600 text-sm mb-6"><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Futures and options quotes and prints across Eurex, Euronext, and ICE</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Equity quotes and trades on Cboe Europe (BXE, CXE, and DXE)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Market summary data (1-minute bars)</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>End-of-day pricing and settlement data</li><li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sr-red flex-shrink-0 mt-1.5"></span>Real-time analytics, including implied volatility and volatility surfaces</li></ul>
-          <a href="../european-data/" class="mt-auto arrow-link text-sm">European data <span class="arrow">&rarr;</span></a>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">European Markets</h3>
+          <p class="body-copy mb-5">SpiderRock also provides low-latency real-time market data across European futures, options, and equity venues, including Eurex, Euronext, ICE, and Cboe Europe.</p>
+          <ul class="bullets mb-7"><li>Futures and options quotes and prints across Eurex, Euronext, and ICE</li><li>Equity quotes and trades on Cboe Europe (BXE, CXE, and DXE)</li><li>Market summary data (1-minute bars)</li><li>End-of-day pricing and settlement data</li><li>Real-time analytics, including implied volatility and volatility surfaces</li></ul>
+          <a href="../european-data/" class="mt-auto arrow-link">European data <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- EXCHANGE FEEDS -->
-  <section id="exchange-feeds" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="exchange-feeds" class="bg-white section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">Coverage</p>
+      <p class="eyebrow mb-3">Coverage</p>
       <h2 class="h2 text-gray-900 mb-4">Exchange Feeds</h2>
-      <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">Every feed below is available in all three delivery formats &mdash; <strong class="text-gray-900">raw multicast</strong>, <strong class="text-gray-900">normalized multicast</strong>, and <strong class="text-gray-900">MLink TCP stream</strong>.</p>
-      <p class="text-gray-600 leading-relaxed mb-10 max-w-3xl">The sources below are US venues. European market data &mdash; Eurex, Euronext, ICE Europe, and Cboe Europe &mdash; is delivered through SpiderRock Connect&rsquo;s European platform. <a href="../european-data/" class="arrow-link">European data <span class="arrow">&rarr;</span></a></p>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse text-left">
+      <p class="body-copy mb-6 max-w-3xl">Every feed below is available in all three delivery formats &mdash; <strong class="text-sr-dark">raw multicast</strong>, <strong class="text-sr-dark">normalized multicast</strong>, and <strong class="text-sr-dark">MLink TCP stream</strong>.</p>
+      <p class="body-copy mb-6 max-w-3xl">The sources below are US venues. European market data &mdash; Eurex, Euronext, ICE Europe, and Cboe Europe &mdash; is delivered through SpiderRock Connect&rsquo;s European platform. <a href="../european-data/" class="arrow-link">European data <span class="arrow">&rarr;</span></a></p>
+      <div class="table-box mt-10">
+        <table class="product-table">
+          <caption class="sr-only">U.S. exchange feeds by source</caption>
           <thead>
-            <tr class="border-b-2 border-gray-300">
-              <th scope="col" class="py-3 pr-6 text-xs font-bold uppercase tracking-wider text-gray-500">Source</th>
-              <th scope="col" class="py-3 text-xs font-bold uppercase tracking-wider text-gray-500">Feeds</th>
-              <th scope="col" class="py-3 pl-6 text-xs font-bold uppercase tracking-wider text-gray-500">Count</th>
+            <tr>
+              <th scope="col">Source</th>
+              <th scope="col">Feeds</th>
+              <th scope="col">Count</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">CBOE</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Futures (CFE)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Indices</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE CSM Strategies Feed (Complex Order Book)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Opening Auction</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Opening Process Feed</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Complex Options TOP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Complex Auctions</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Simple Auctions</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>C2 COB Options</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>C2 Complex Auctions</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">10 feeds</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">CBOE</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Futures (CFE)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Indices</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE CSM Strategies Feed (Complex Order Book)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Opening Auction</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOE Opening Process Feed</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Complex Options TOP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Complex Auctions</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>EDGX Simple Auctions</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>C2 COB Options</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>C2 Complex Auctions</li></ul></td>
+              <td class="text-sm">10 feeds</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">CME</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CME</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOT</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>NYMEX</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>COMEX</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Dow Jones Indices (DJI)</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">5 feeds</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">CME</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CME</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CBOT</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>NYMEX</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>COMEX</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Dow Jones Indices (DJI)</li></ul></td>
+              <td class="text-sm">5 feeds</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">NYSE / CTA</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CTS/CQS &ndash; SIP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>ARCA Order Imbalances</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>NYSE Order Imbalances</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">3 feeds</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">NYSE / CTA</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>CTS/CQS &ndash; SIP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>ARCA Order Imbalances</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>NYSE Order Imbalances</li></ul></td>
+              <td class="text-sm">3 feeds</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">NASDAQ / UTP</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>UTP (UQDF/UTDF) &ndash; SIP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>ISE Spreads</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Mutual Funds (NFN)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>PHLX Orders</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">4 feeds</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">NASDAQ / UTP</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>UTP (UQDF/UTDF) &ndash; SIP</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>ISE Spreads</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Mutual Funds (NFN)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>PHLX Orders</li></ul></td>
+              <td class="text-sm">4 feeds</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">OPRA</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Options Price Reporting Agency (OPRA) &ndash; SIP</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">1 feed</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">OPRA</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>Options Price Reporting Agency (OPRA) &ndash; SIP</li></ul></td>
+              <td class="text-sm">1 feed</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">MIAX</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Complex Top of Market (cToM)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Administrative Information Subscriber (AIS)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Product Feed (MPF)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Emerald Complex Top of Market (cToM)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Emerald Administrative Information Subscriber (AIS)</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">5 feeds</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">MIAX</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Complex Top of Market (cToM)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Administrative Information Subscriber (AIS)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Product Feed (MPF)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Emerald Complex Top of Market (cToM)</li><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>MIAX Emerald Administrative Information Subscriber (AIS)</li></ul></td>
+              <td class="text-sm">5 feeds</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">BOX</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>BOX High Speed Vendor Feed (HSVF)</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">1 feed</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">BOX</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>BOX High Speed Vendor Feed (HSVF)</li></ul></td>
+              <td class="text-sm">1 feed</td>
             </tr>
-            <tr class="border-t border-gray-200 align-top">
-              <th scope="row" class="py-4 pr-6 text-left font-display font-bold text-gray-900 whitespace-nowrap">OTC Markets</th>
-              <td class="py-4"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-gray-600 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>OTC Markets (Pinksheets)</li></ul></td>
-              <td class="py-4 pl-6 text-gray-500 text-sm whitespace-nowrap">1 feed</td>
+            <tr>
+              <th scope="row" class="whitespace-nowrap">OTC Markets</th>
+              <td class="!whitespace-normal"><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm"><li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-sr-red flex-shrink-0 mt-2"></span>OTC Markets (Pinksheets)</li></ul></td>
+              <td class="text-sm">1 feed</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="text-gray-500 text-sm mt-6">30 feeds across 8 sources.</p>
+      <p class="meta mt-5">30 feeds across 8 sources.</p>
       <p class="mt-10"><a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="arrow-link">MLink documentation <span aria-hidden="true">&#8599;</span></a></p>
     </div>
   </section>
 
   <!-- OTHER DATA PRODUCTS -->
-  <section class="bg-sr-navy section">
+  <section class="bg-sr-mist section">
     <div class="wrap">
-      <p class="eyebrow eyebrow-dark mb-4">More Data</p>
-      <h2 class="h2 text-white mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
-      <p class="text-white/70 leading-relaxed max-w-3xl mb-14">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
+      <p class="eyebrow mb-3">More Data</p>
+      <h2 class="h2 mb-6 max-w-3xl">Other SpiderRock Data Products</h2>
+      <p class="body-copy max-w-3xl mb-12">We also offer multiple historical and real-time price datasets including options, volatility, and futures data.</p>
       <div class="grid md:grid-cols-3 gap-12">
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Real-Time</h3>
-          <a href="../data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Real-Time Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../options-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Real-Time Volatility</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Real-Time</h3>
+          <a href="../data-analytics/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>All Real-Time Data</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../options-analytics/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Real-Time Volatility</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Historical</h3>
-          <a href="../historical-data-analytics/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>All Historical Data</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/options-greeks/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Options &amp; Greeks</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/historic-stock-price-data/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Stock Prices</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Historical Volatility Surfaces</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/vol2g/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Volatility Database Bundle</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Historical</h3>
+          <a href="../historical-data-analytics/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>All Historical Data</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/options-greeks/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Options &amp; Greeks</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/historic-stock-price-data/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Stock Prices</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/volatility-surfaces/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Historical Volatility Surfaces</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../historical-data-analytics/vol2g/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Volatility Database Bundle</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
         <div>
-          <h3 class="text-white/45 text-xs font-bold uppercase tracking-wider mb-3">Tools &amp; APIs</h3>
-          <a href="../volatility-charts/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>Intuitive Volatility Charts</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../spiderstream-market-data-api/" class="group flex items-center justify-between gap-4 border-b border-white/15 py-3 text-white/85 hover:text-white transition-colors"><span>SpiderStream Market Data API</span><span class="text-blue-300 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
+          <h3 class="includes-label">Tools &amp; APIs</h3>
+          <a href="../volatility-charts/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>Intuitive Volatility Charts</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a><a href="../spiderstream-market-data-api/" class="group flex items-center justify-between gap-4 border-b border-gray-200 py-3 text-sr-dark hover:text-sr-blue transition-colors"><span>SpiderStream Market Data API</span><span class="text-sr-blue transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQS -->
-  <section class="bg-gray-50 section">
+  <section id="faqs" class="bg-white section tab-target">
     <div class="wrap">
-      <p class="eyebrow mb-4">FAQs</p>
+      <p class="eyebrow mb-3">FAQs</p>
       <h2 class="h2 text-gray-900 mb-10">FAQs About Our Real-Time Market Data API</h2>
       <div class="max-w-5xl border-t border-gray-200">
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">How do you get your real-time stock &amp; options data?</h3>
+            <h3 class="card-title-3 text-[18px]">How do you get your real-time stock &amp; options data?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">SpiderRock connects to multiple and redundant data feed sources in large financial market datacenters. Some connections are direct to exchange venues for proprietary feeds. For consolidated feeds we connect to secondary suppliers who distribute feeds to institutional buyers.</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">Why are some real-time market data quotes delivered on a 15-minute delay?</h3>
+            <h3 class="card-title-3 text-[18px]">Why are some real-time market data quotes delivered on a 15-minute delay?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">Market data is typically supplied in real-time, delayed, and historical formats from exchanges through licensed distributors. For most market data, delayed data and historical data are not generally fee liable, although you may need to register your use with the exchange. As a result of this licensing structure, it is popular to distribute market prices delayed to users who don&rsquo;t require it in real-time.</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">What is the latency on your live market data API?</h3>
+            <h3 class="card-title-3 text-[18px]">What is the latency on your live market data API?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">The use of any API will increase the latency of market data. Normalizing or processing the feed is a trade-off between ease of access and speed. The latency impact on any feed is highly variable depending on locations and feed bandwidth at a given time. The typical latency for a SpiderRock API is around 1 ms or less.</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">How does SpiderRock normalize the market data?</h3>
+            <h3 class="card-title-3 text-[18px]">How does SpiderRock normalize the market data?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">We transform data into structures suited to common processing tasks. For example, we offer a version of an OPRA feed that includes the best and second-best prices and sizes in the marketplace and a bitmask of all participating exchanges. Transformed in this way, it is possible to process the full OPRA feed using a single thread of a single core on a current-generation machine.</p><p class="text-gray-600 leading-relaxed mt-4">All SpiderRock normalized feed products are disseminated in native ticker formats and include the ticker source information in each packet that allows seamless integration of data from multiple sources, even when native tickers collide. In addition, we offer normalized exchange product definition information to help you manage a diverse product environment.</p>
         </details>
         <details class="group border-b border-gray-200 py-5">
           <summary class="flex items-center justify-between gap-6 cursor-pointer list-none">
-            <h3 class="font-display text-lg font-bold text-gray-900">What is the OPRA price feed?</h3>
+            <h3 class="card-title-3 text-[18px]">What is the OPRA price feed?</h3>
             <svg class="w-5 h-5 text-sr-red flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           </summary>
           <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">The Options Price Reporting Authority (OPRA) is responsible for aggregating and disseminating price quotations for listed options contracts in the U.S. OPRA provides data feeds to financial firms, brokers, and traders, displaying the national best bid and offer for an options contract or series.</p>
@@ -298,12 +329,12 @@
   </section>
 
   <!-- CONSULT / AC FORM -->
-  <section id="request-access" class="bg-white py-28 border-t border-gray-200 scroll-mt-[150px]">
+  <section id="request-access" class="bg-white section border-t border-gray-200 scroll-mt-[140px]">
     <div class="max-w-3xl mx-auto px-8">
       <p class="eyebrow mb-4">Consult With Us</p>
       <h2 class="h2 text-gray-900 mb-4">Access SpiderRock Market Data</h2>
       <p class="text-gray-600 text-lg leading-relaxed mb-6">Please send your data and analytics inquiries to the SpiderRock data team via the contact form below, or visit our documentation site for full feed specifications.</p>
-      <a href="https://docs.spiderrockconnect.com/" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-sr-navy text-sr-navy font-semibold px-6 py-2.5 mb-12 hover:bg-sr-navy hover:text-white transition-colors">View Documentation <span aria-hidden="true">&#8599;</span></a>
+      <a href="https://docs.spiderrockconnect.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline mb-12">View Documentation <span aria-hidden="true">&#8599;</span></a>
 
       <!-- ActiveCampaign form 7 (srock.activehosted.com) — the form the live data pages run.
            Fields: firstname, lastname, email, phone, field[2] "company_name",
