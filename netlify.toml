@@ -32,3 +32,9 @@
   to = "/updates/"
   status = 301
   force = true
+
+# The Historical Data overview was retired (kept in _archive/); send old links to the main historical page.
+[[redirects]]
+  from = "/data/historical-data-analytics/"
+  to = "/data/historical-data-analytics/options-greeks-stock-prices/"
+  status = 301
