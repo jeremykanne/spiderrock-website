@@ -110,11 +110,8 @@ body { color: #3B3F40; }
 .footer-u { color: #fff; text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
 .footer-u:hover { color: #D3DEE8; }
 .footer-members { color: #8E9495; font-weight: 700; }
+.footer-members + .footer-members { margin-top: -12px; }
 .footer-notice { color: #D3D6D6; font-weight: 700; font-size: 12px; letter-spacing: 0.04em; }
-.footer-fine { color: #8E9495; font-size: 12px; line-height: 1.6; }
-.footer-small { color: #8E9495; font-size: 13px; }
-.footer-small a { color: #AEB3B4; }
-.footer-small a:hover { color: #fff; }
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
 .wrap { max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
