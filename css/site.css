@@ -147,6 +147,24 @@ body { color: #3B3F40; }
   border-bottom: 3px solid #BA4838;
 }
 
+/* ── Homepage hero: the canyon photo fills the right 74% in natural color, under a dark
+   left-to-right fade (#1E2933) and a light bottom fade. With `cover` on a box wider than
+   the photo, the Spider Rock spire (53% across the photo) lands about two-thirds across. */
+.home-hero { position: relative; overflow: hidden; background: #1E2933; border-bottom: 3px solid #BA4838; }
+.home-hero::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 74%;
+  background: url("/images/home/spider-rock-hero.jpg") center / cover no-repeat; }
+.home-hero::after { content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(30,41,51,0) 72%, rgba(30,41,51,0.45) 100%),
+    linear-gradient(90deg, #1E2933 30%, rgba(30,41,51,0.8) 40%, rgba(30,41,51,0.3) 52%, rgba(30,41,51,0) 64%); }
+.home-hero-inner { position: relative; z-index: 1; padding-top: 88px; padding-bottom: 88px; }
+@media (max-width: 767px) {
+  /* Narrow screens: the photo spans the banner under an even darkening so the copy stays legible. */
+  .home-hero::before { width: 100%; background-position: 60% center; }
+  .home-hero::after { background: linear-gradient(180deg, rgba(30,41,51,0.78), rgba(30,41,51,0.62) 50%, rgba(30,41,51,0.85)); }
+  .home-hero-inner { padding-top: 64px; padding-bottom: 64px; }
+}
+
 /* ── Buttons: 52px tall, 6px corners ────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
   padding: 0 30px; border-radius: 6px; font: 700 17px/1 Roboto, sans-serif; color: #fff; text-align: center;
@@ -196,6 +214,43 @@ body { color: #3B3F40; }
 .news-side:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
 .news-chip { font-size: 12px; background: #fff; border: 1px solid #E3E5E5; color: #5A6060; padding: 4px 8px; border-radius: 6px; }
 .news-chip-dark { font-size: 12px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); color: rgba(255,255,255,0.9); padding: 4px 8px; border-radius: 6px; }
+
+/* ── Featured News cards (partials/featured-news.njk) ──────────────────── */
+.news-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #E3E5E5; border-radius: 10px;
+  overflow: hidden; transition: transform 200ms ease, box-shadow 200ms ease; }
+.news-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(44,70,96,0.10); }
+.news-card-media { display: block; aspect-ratio: 16 / 10; background: #2C4660; }
+.news-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.news-card-body { flex: 1; display: flex; flex-direction: column; padding: 22px 24px 24px; }
+.news-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 13px; color: #7A8080; }
+.news-card-title { font: 600 19px/1.35 Montserrat, sans-serif; color: #3B3F40; margin-bottom: 20px; }
+.news-card-title a:hover { color: #3C5E80; }
+.news-card .news-chip { background: #F5F6F6; }
+.news-card-more { margin-top: auto; font-size: 15px; }
+.tag-new { background: #BA4838; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; padding: 3px 8px; border-radius: 6px; }
+
+/* ── Content building blocks ───────────────────────────────────────────── */
+/* Bullet list: 6px red dot, 12px gap, 10px between items. */
+.bullets { display: grid; gap: 10px; }
+.bullets li { display: flex; gap: 12px; font-size: 16px; line-height: 1.6; color: #4A5051; }
+.bullets li::before { content: ""; flex-shrink: 0; width: 6px; height: 6px; border-radius: 9999px; background: #BA4838;
+  margin-top: calc(0.8em - 3px); }
+.card .bullets li { font-size: 15px; }
+.tag { display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; color: #3B3F40;
+  background: #F5F6F6; border: 1px solid #E3E5E5; border-radius: 6px; padding: 6px 12px; }
+.bg-sr-mist .tag { background: #fff; }
+/* Text beside an image; .split-reverse puts the image first on wide screens. */
+.split { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .split-reverse > :first-child { order: 2; }
+}
+.split-media { border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: 0 14px 40px rgba(30,41,51,0.18); }
+.split-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Closing call to action: heading and text left, buttons right. */
+.cta-band { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; }
+.cta-band > :first-child { max-width: 50rem; }
 
 /* Standard bullet (replaces checkmarks): a small red dot centred on the first line of text. */
 .bullet { display: inline-block; flex-shrink: 0; width: 6px; height: 6px; border-radius: 9999px;

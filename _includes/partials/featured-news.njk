@@ -1,0 +1,32 @@
+{#- Featured News: three equal cards with the post's listing image, a meta row (NEW on the
+    site's newest post, date, first category) and the title. Expects `featured` (3 posts) and
+    `newsTitle` (the H2). -#}
+  <section class="bg-white section">
+    <div class="wrap">
+      <div class="section-head flex flex-wrap justify-between items-end gap-4">
+        <div>
+          <p class="eyebrow mb-3">Featured News</p>
+          <h2 class="h2">{{ newsTitle }}</h2>
+        </div>
+        <a href="/updates/" class="arrow-link mb-1">View All Updates <span class="arrow">→</span></a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+{%- for post in featured %}
+        <article class="news-card">
+          <a href="{{ post.url }}" class="news-card-media" tabindex="-1" aria-hidden="true">
+            {%- if post.data.image %}<img src="{{ post.data.image }}" alt="" loading="lazy">{% endif %}
+          </a>
+          <div class="news-card-body">
+            <p class="news-card-meta">
+              {%- if post.url == collections.posts[0].url %}<span class="tag-new">New</span>{% endif %}
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | dateShort }}</time>
+              {%- if post.data.categories %}<span class="news-chip">{{ post.data.categories[0] }}</span>{% endif %}
+            </p>
+            <h3 class="news-card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            <a href="{{ post.url }}" class="arrow-link news-card-more">Read More <span class="arrow">→</span></a>
+          </div>
+        </article>
+{%- endfor %}
+      </div>
+    </div>
+  </section>
