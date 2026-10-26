@@ -38,4 +38,4 @@ Machine learning, in contrast, has several benefits compared to traditional algo
 
 Data quality is critical to machine learning. Machine learning algorithms must be trained on accurate and comprehensive historical data, or they will never provide reliable predictions. Ideally, the data should be normalized, and it should include a wide range of relevant indicators for the asset you’re interested in. 
 
-SpiderRock’s data archives include a comprehensive selection of [historical data sets](/data/historical-data-analytics/) suitable for training machine learning algorithms, including stocks, options and greeks, futures, volatility data, and more.
+SpiderRock’s data archives include a comprehensive selection of [historical data sets](/data/historical-data-analytics/options-greeks-stock-prices/) suitable for training machine learning algorithms, including stocks, options and greeks, futures, volatility data, and more.

@@ -11,7 +11,7 @@ categories:
 
 [SpiderRock Gateway Technologies](/) has partnered with [NewMark Risk](https://newmarkrisk.com/) to offer NewMark Risk’s [Options-Implied Analytics](https://newmarkrisk.com/analytics) library for equity investors using SpiderRock’s [options data](/data/options-analytics/). SpiderRock’s high-quality data will allow NewMark Risk to provide more precise and consistent analytics.
 
-SpiderRock’s [options data](/data/options-analytics/) is highly accurate and uses adaptive pricing methods to cover all US-listed options on stocks, ETFs, ADRs, and Index products. SpiderRock [historical data](/data/historical-data-analytics/) is captured directly from the market data feeds and combined with analytics, including implied volatility, Greeks, and theoretical surface prices derived from synchronized underlying markets with critical supporting reference data.
+SpiderRock’s [options data](/data/options-analytics/) is highly accurate and uses adaptive pricing methods to cover all US-listed options on stocks, ETFs, ADRs, and Index products. SpiderRock [historical data](/data/historical-data-analytics/options-greeks-stock-prices/) is captured directly from the market data feeds and combined with analytics, including implied volatility, Greeks, and theoretical surface prices derived from synchronized underlying markets with critical supporting reference data.
 
 NewMark Risk provides all the analytics you can derive from options data for enhancing investment decisions in the underlying asset. NewMark Risk leverages their subject matter and technical expertise in options markets, machine learning, and quantitative finance to provide orthogonal analytics found in academic and proprietary research.
 

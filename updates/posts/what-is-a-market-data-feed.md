@@ -70,4 +70,4 @@ SpiderRocks customers have several options for accessing our real-time market da
 
 Additionally, historical data and analytics can be accessed both as flat files via SFTP or from our ElasticSearch database API.
 
-To learn more about SpiderRock’s [real-time market data feeds](/data/stocks-options-futures/) and [historical market data and analytics](/data/historical-data-analytics/), [contact our team of experts](/contact-us/) today.
+To learn more about SpiderRock’s [real-time market data feeds](/data/stocks-options-futures/) and [historical market data and analytics](/data/historical-data-analytics/options-greeks-stock-prices/), [contact our team of experts](/contact-us/) today.

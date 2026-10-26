@@ -11,7 +11,7 @@ categories:
 
 Stop by SpiderRock Data and Analytics’ booth at Quant Strats to discuss our [Option Intraday Datasets](/data/option-features-dataset/). 
 
-SpiderRock, a leader in [real-time](/data/data-analytics/) and [historical](/data/historical-data-analytics/) options data and analytics captures 5-and 30-minute snapshots throughout the live trading session on all U.S listed equity options.  Tailored for short-term traders seeking clarity and precision, these datasets deliver high level visibility into the inner workings of the market intraday.  
+SpiderRock, a leader in [real-time](/data/#delivery) and [historical](/data/historical-data-analytics/options-greeks-stock-prices/) options data and analytics captures 5-and 30-minute snapshots throughout the live trading session on all U.S listed equity options.  Tailored for short-term traders seeking clarity and precision, these datasets deliver high level visibility into the inner workings of the market intraday.  
 
 ### **Key Features**
 

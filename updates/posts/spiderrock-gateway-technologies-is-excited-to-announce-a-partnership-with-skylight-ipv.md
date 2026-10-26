@@ -11,9 +11,9 @@ categories:
 
 [SpiderRock Gateway Technologies](/data/) and [Skylight IPV](https://web.skylightipv.com/) are announcing a partnership.
 
-Skylight IPV offers an Independent Price Verification (IPV) service that is creative in its thinking, adaptable in its application, and responsive to evolving requirements. This partnership will allow Skylight IPV to utilize SpiderRock’s expansive [historical options data](/data/historical-data-analytics/) to broaden and deepen their coverage, enhancing their back-testing capabilities.
+Skylight IPV offers an Independent Price Verification (IPV) service that is creative in its thinking, adaptable in its application, and responsive to evolving requirements. This partnership will allow Skylight IPV to utilize SpiderRock’s expansive [historical options data](/data/historical-data-analytics/options-greeks-stock-prices/) to broaden and deepen their coverage, enhancing their back-testing capabilities.
 
-SpiderRock’s [historical data](/data/historical-data-analytics/) comes from live data and analytics powered by the SpiderRock trading  system. Using the data as part of the trading platform continuously helps to ensure high accuracy and consistency. The data is also properly labeled and saved in a point-in-time format, and basic data cleaning is performed to improve the information’s quality. SpiderRock evaluates the data for validity and accuracy and performs statistical checks on the production databases daily to verify completeness.
+SpiderRock’s [historical data](/data/historical-data-analytics/options-greeks-stock-prices/) comes from live data and analytics powered by the SpiderRock trading  system. Using the data as part of the trading platform continuously helps to ensure high accuracy and consistency. The data is also properly labeled and saved in a point-in-time format, and basic data cleaning is performed to improve the information’s quality. SpiderRock evaluates the data for validity and accuracy and performs statistical checks on the production databases daily to verify completeness.
 
 SpiderRock’s historical options analytics include implied volatility, Greeks, and theoretical surfaces derived from underlying markets with critical supporting reference data to ensure highly accurate estimates, resulting in tradable market data.
 

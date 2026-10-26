@@ -16,7 +16,7 @@ Besides regular market-making activities, options instruments can be used to tam
 - Tail hedging
 - Event speculation
 
-The SpiderRock Option Close Marks, Price Intervals, and Print Set data sets offer a variety of data points ([historical options price data, implied volatility, Greeks](/data/historical-data-analytics/)) that can help investigate and backtest these option strategies using trade and volume data, trade synchronized Level I and Level II quotes, implied volatility surfaces and Greeks. [Read more about our Historical Option Price Data Sets here.](/data/historical-data-analytics/options-greeks/)
+The SpiderRock Option Close Marks, Price Intervals, and Print Set data sets offer a variety of data points ([historical options price data, implied volatility, Greeks](/data/historical-data-analytics/options-greeks-stock-prices/)) that can help investigate and backtest these option strategies using trade and volume data, trade synchronized Level I and Level II quotes, implied volatility surfaces and Greeks. [Read more about our Historical Option Price Data Sets here.](/data/historical-data-analytics/options-greeks/)
 
 [Tail hedging](/data/resources/glossary/), in particular, is interesting as rolling insurance against extreme events (which deceptively are not so rare and follow long-tail [non-Gaussian distribution](/data/resources/glossary/)). For example, portfolio managers could simulate buying puts in the range 5-10 Delta, typically 30 to 60 calendar days to expiration out, in some proportion of the managed portfolio and backtest the performance of the strategy. 
 

@@ -24,5 +24,5 @@ SpiderRock is distinguished by its deep expertise in options market data. We spe
 
 - - Raw and normalized [real-time options data](/data/stocks-options-futures/)
   - Industry-leading [options analytics](/data/options-analytics/)
-  - Intraday and end-of-day [historical data](/data/historical-data-analytics/)
+  - Intraday and end-of-day [historical data](/data/historical-data-analytics/options-greeks-stock-prices/)
   - Multiple [data delivery solutions](/data/#delivery), network connections and hosting that meet any speed and latency needs

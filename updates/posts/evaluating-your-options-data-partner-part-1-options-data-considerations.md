@@ -16,7 +16,7 @@ This blog post is the first part of a five-part series that will detail what fac
 
 Different trading strategies demand different types of options data. Whether you’re an options trader, an equity hedge fund manager, or a proprietary trading firm, your data needs will be unique.  
 
-Your data partner should offer customizable solutions that align with your specific requirements. Options traders may require real-time tick data and [historical data](/data/historical-data-analytics/) for rapid decision-making, while long-term investors may prioritize end-of-day data for research purposes. 
+Your data partner should offer customizable solutions that align with your specific requirements. Options traders may require real-time tick data and [historical data](/data/historical-data-analytics/options-greeks-stock-prices/) for rapid decision-making, while long-term investors may prioritize end-of-day data for research purposes. 
 
 ## **Raw vs. Normalized Data Feeds**
 
@@ -32,7 +32,7 @@ Ensure that your data partner offers reliable analytics backed by high-quality r
 
 ## **Historical Data for Strategy Development**
 
-[Historical data](/data/historical-data-analytics/) is invaluable for back testing trading strategies and refining models. Your data partner should offer deep end-of-day historical data to support rigorous strategy development and testing. Additionally, intraday snapshots can be essential for analyzing intraday volatility strategies and understanding market movements. 
+[Historical data](/data/historical-data-analytics/options-greeks-stock-prices/) is invaluable for back testing trading strategies and refining models. Your data partner should offer deep end-of-day historical data to support rigorous strategy development and testing. Additionally, intraday snapshots can be essential for analyzing intraday volatility strategies and understanding market movements. 
 
 ## **Conclusion: Partnering for Success**
 
