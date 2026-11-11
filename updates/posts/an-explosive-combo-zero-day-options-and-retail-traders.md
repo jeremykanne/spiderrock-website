@@ -1,14 +1,15 @@
 ---
 title: "An Explosive Combo: Zero-Day Options and Retail Traders"
 date: 2023-05-03
-summary: "The options market has been witnessing a surge of activity from retail traders looking for ways to profit from short-term price movements and volatility."
+summary: The options market has been witnessing a surge of activity from retail
+  traders looking for ways to profit from short-term price movements and
+  volatility.
 image: /images/uploads/updates/an-explosive-combo-zero-day-options-and-retail-traders/0DayOptions-Image-768x486.jpg
 image_alt: "An Explosive Combo: Zero-Day Options and Retail Traders"
 categories:
-  - "Data & Analytics"
+  - Data & Analytics
 ---
-
-The options market has been witnessing a surge of activity from retail traders looking for ways to profit from short-term price movements and volatility. One of the most popular strategies among these traders is to trade options that expire within a day, also known as zero-day-to-expiry (0DTE) options.
+The a options market has been witnessing a surge of activity from retail traders looking for ways to profit from short-term price movements and volatility. One of the most popular strategies among these traders is to trade options that expire within a day, also known as zero-day-to-expiry (0DTE) options.
 
 **What are 0DTE options and why are they attractive?**
 
@@ -62,12 +63,12 @@ SpiderRock Gateway option printset offers valuable information about the market 
 
 The average profit and loss of these hedged trades are shown as a percentage of the underlying price. The results are displayed based on the total call option volume and categorized by market sentiment (Green for bullish sentiment when call volume is double the put volume, and Red for bearish sentiment when the put volume is twice the call volume). The [options data](/data/historical-data-analytics/options-greeks/) is also sorted by the estimated retail volume, determined by the marker size. We note some both expected and compelling findings:
 
-- Market makers generally have positive profits, with some significant gains in well-known “meme” stocks like DKNG, SHOP, ULTA, and GME, which have a large retail volume.
-- Market makers have larger profits in names with lower total call volume (under 50000 contracts) and larger retail volume components.
-- There is bullish sentiment and relatively large retail size in inflation names such as KO, GLD, GDX, and SLV.
-- There is bearish sentiment and institutional trading in the financial sector, driven by XLF, AFRM, SI, and COIN, with the latter two being impacted by the FTX crash.
-- Market makers show much smaller profits in highly liquid ETFs (QQQ) and highly liquid names (META, AMD) even if the retail volume component is large.
+* Market makers generally have positive profits, with some significant gains in well-known “meme” stocks like DKNG, SHOP, ULTA, and GME, which have a large retail volume.
+* Market makers have larger profits in names with lower total call volume (under 50000 contracts) and larger retail volume components.
+* There is bullish sentiment and relatively large retail size in inflation names such as KO, GLD, GDX, and SLV.
+* There is bearish sentiment and institutional trading in the financial sector, driven by XLF, AFRM, SI, and COIN, with the latter two being impacted by the FTX crash.
+* Market makers show much smaller profits in highly liquid ETFs (QQQ) and highly liquid names (META, AMD) even if the retail volume component is large.
 
 These observations can be further analyzed to potentially create consistent metrics for use in the investment industry. More details will be provided in a follow-up, more comprehensive work. [0DTE options](/data/resources/glossary/) are a fascinating phenomenon that reflects the changing landscape and preferences of retail traders in today’s markets. While they offer a unique way to speculate on short-term price movements and volatility, they also entail significant risks and challenges that require careful consideration and preparation. As more traders embrace this strategy, it will be interesting to estimate in more detail the impact of 0DTE option trading on option market dynamics and to understand the information spillover into the behavior of the underlying instruments with [option price data](/data/historical-data-analytics/options-greeks/).
 
-Options involve risk and are not suitable for all investors. Below is a link to the OCC option disclosure document that explains the characteristics and risks of exchange traded options: [https://www.theocc.com/getmedia/a151a9ae-d784-4a15-bdeb-23a029f50b70/riskstoc.pdf](https://www.theocc.com/getmedia/a151a9ae-d784-4a15-bdeb-23a029f50b70/riskstoc.pdf)
+Options involve risk and are not suitable for all investors. Below is a link to the OCC option disclosure document that explains the characteristics and risks of exchange traded options: <https://www.theocc.com/getmedia/a151a9ae-d784-4a15-bdeb-23a029f50b70/riskstoc.pdf>
