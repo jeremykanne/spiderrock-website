@@ -9,7 +9,7 @@ image_alt: "An Explosive Combo: Zero-Day Options and Retail Traders"
 categories:
   - Data & Analytics
 ---
-The a options market has been witnessing a surge of activity from retail traders looking for ways to profit from short-term price movements and volatility. One of the most popular strategies among these traders is to trade options that expire within a day, also known as zero-day-to-expiry (0DTE) options.
+The options market has been witnessing a surge of activity from retail traders looking for ways to profit from short-term price movements and volatility. One of the most popular strategies among these traders is to trade options that expire within a day, also known as zero-day-to-expiry (0DTE) options.
 
 **What are 0DTE options and why are they attractive?**
 
