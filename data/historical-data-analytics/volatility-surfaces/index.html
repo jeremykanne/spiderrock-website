@@ -114,7 +114,7 @@
         </nav>
         <p class="eyebrow eyebrow-dark mb-5">Historical Data</p>
         <h1 class="hero-h1 mb-6">Historical Volatility Surfaces</h1>
-        <p class="hero-lead mb-9">SpiderRock operates servers that continually compute implied volatility surfaces for all option expiration months with live market quotes. These surfaces reflect a SpiderRock best fit of current markets and are subject to change if market conditions change. SpiderRock archives these surfaces at regular intervals for historical analysis for all options on stocks, ETFs, and options on futures indexes.</p>
+        <p class="hero-lead mb-9">SpiderRock operates servers that continually compute implied volatility surfaces for all option expiration months with live market quotes. SpiderRock archives these surfaces at regular intervals for historical analysis for all options on stocks, ETFs, and options on futures indexes.</p>
         <div class="flex flex-wrap gap-4">
           <a href="#request-access" class="btn btn-primary">Consult With Us</a>
           <a href="https://docs.spiderrockconnect.com/docs/next/HistoricalData/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Documentation&nbsp;<span aria-hidden="true">↗</span></a>
@@ -147,19 +147,29 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow mb-3">Surface Types</p>
-        <h2 class="h2">Volatility Surface Datasets</h2>
+        <h2 class="h2 mb-5">Volatility Surface Datasets</h2>
+        <p class="body-copy max-w-3xl">These surfaces reflect a SpiderRock best fit of current markets and are subject to change if market conditions change.</p>
       </div>
       <div class="grid gap-6">
         <div class="card bg-white grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-14">
-          <h3 class="card-title-3">Live Surface Curve</h3>
+          <div>
+            <img src="/images/data/volatility/live-surface-curve.png" alt="" width="500" height="389" loading="lazy" class="w-24 h-auto mb-5">
+            <h3 class="card-title-3">Live Surface Curve</h3>
+          </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-14"><p class="body-copy">This table contains spline curve parameters, implied volatility surfaces, Greeks, and hedge deltas for all options expiration months with live market quotes. The records backing each SpiderRock surface represent a two-dimensional curve with strikes on the X-axis expressed in terms of moneyness, and options volatilities on the Y-axis expressed as a multiple of at-the-money volatility.</p></div>
         </div>
         <div class="card bg-white grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-14">
-          <h3 class="card-title-3">Live Surface Grid Records (Skew Surfaces)</h3>
+          <div>
+            <img src="/images/data/volatility/live-surface-grid-records.png" alt="" width="500" height="373" loading="lazy" class="w-24 h-auto mb-5">
+            <h3 class="card-title-3">Live Surface Grid Records (Skew Surfaces)</h3>
+          </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-14"><p class="body-copy">This table contains a fixed grid of volatility for a given expiration as a function of delta for uncensored curves. The file also includes days until the next earnings date and implied earnings moves.</p></div>
         </div>
         <div class="card bg-white grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-14">
-          <h3 class="card-title-3">Live Surface Fixed Term</h3>
+          <div>
+            <img src="/images/data/volatility/live-surface-fixed-term.png" alt="" width="500" height="387" loading="lazy" class="w-24 h-auto mb-5">
+            <h3 class="card-title-3">Live Surface Fixed Term</h3>
+          </div>
           <div class="lg:border-l lg:border-gray-200 lg:pl-14"><p class="body-copy">This dataset contains snapshots of the censored at-the-money volatility term structure with the impact of implied earnings events removed for each ticker. Censored curves are created by eliminating the earnings volatility from the observed fitted curve, which enables the user to better understand the ticker&rsquo;s underlying volatility.</p><p class="body-copy mt-4">Each snapshot contains at-the-money volatilities for fixed-term expirations from 5 days out to 504 days (two years). The data also includes historical earnings move history, estimated implied earnings moves, uncensored curves with earnings events included, and censored curves with the impact removed.</p></div>
         </div>
       </div>
