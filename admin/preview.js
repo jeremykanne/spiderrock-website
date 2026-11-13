@@ -20,6 +20,8 @@ const UpdatePreview = createClass({
     const title = get("title");
     const date = get("date");
     const summary = get("summary");
+    const imagePath = get("image");
+    const image = imagePath ? String(getAsset(imagePath)) : "";
     const categories = (get("categories") || []).toJS ? get("categories").toJS() : get("categories") || [];
 
     return h("div", {},
@@ -35,6 +37,7 @@ const UpdatePreview = createClass({
       h("section", { className: "pv-listing" },
         h("p", { className: "pv-listing-label" }, "Latest News on the News & Updates page"),
         h("div", { className: "pv-lead" },
+          image ? h("img", { className: "pv-lead-img", src: image, alt: "" }) : null,
           h("div", { className: "pv-lead-tags" },
             h("span", { className: "pv-lead-latest" }, "Latest"),
             categories.map((c) => h("span", { className: "pv-lead-tag", key: c }, c))
@@ -44,7 +47,7 @@ const UpdatePreview = createClass({
           h("p", { className: "pv-lead-summary" + (summary ? "" : " pv-empty") }, summary || "Summary shown on the listing"),
           h("span", { className: "pv-lead-btn" }, "Read More →")
         ),
-        h("p", { className: "pv-note" }, "The newest post appears as this lead story; the next two sit beside it as smaller cards, and older posts appear as text rows.")
+        h("p", { className: "pv-note" }, "The newest post appears as this lead story; the next two sit beside it as smaller cards, and older posts appear as rows. Each shows the Listing Image.")
       )
     );
   },

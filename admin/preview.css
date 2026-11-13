@@ -31,7 +31,8 @@ body { margin: 0; font-family: "Roboto", sans-serif; color: #111827; background:
 /* Listing card — the "Latest News" card on /updates/ */
 .pv-listing { background: #F9FAFB; border-top: 1px solid #E5E7EB; padding: 2.5rem 2rem 3rem; }
 .pv-listing-label { color: #C0392B; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1rem; }
-.pv-lead { max-width: 40rem; background: linear-gradient(to bottom right, #162032, #1B3D6B, #162032); color: #fff; border-radius: 0.75rem; padding: 2.5rem; }
+.pv-lead { max-width: 40rem; overflow: hidden; background: linear-gradient(to bottom right, #162032, #1B3D6B, #162032); color: #fff; border-radius: 0.75rem; padding: 2.5rem; }
+.pv-lead-img { display: block; width: calc(100% + 5rem); max-width: none; margin: -2.5rem -2.5rem 2rem; aspect-ratio: 768 / 398; object-fit: cover; border-radius: 0.75rem 0.75rem 0 0; }
 .pv-lead-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
 .pv-lead-latest { color: #93C5FD; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 .pv-lead-tag { font-size: 0.75rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.25rem 0.5rem; border-radius: 0.25rem; }

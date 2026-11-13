@@ -1,4 +1,5 @@
-{#- "Latest News": the newest post as a lead story plus the next two as cards. Expects `featured` (3 posts).
+{#- "Latest News": the newest post as a lead story plus the next two as cards, each with the post's
+    listing image when it has one. Expects `featured` (3 posts).
     Set `hideLatestLabel` when the including page already has its own section heading. -#}
       {%- set lead = featured[0] %}
       <div{% if not hideLatestLabel %} class="mb-20"{% endif %}>
@@ -6,7 +7,11 @@
         <p class="eyebrow mb-8">Latest News</p>
         {%- endif %}
         <div class="grid lg:grid-cols-3 gap-6">
-          <article class="news-lead lg:col-span-2 text-white p-8 md:p-12 flex flex-col justify-center">
+          <article class="news-lead lg:col-span-2 text-white">
+            {%- if lead.data.image %}
+            <a href="{{ lead.url }}" class="news-lead-media" tabindex="-1" aria-hidden="true"><img src="{{ lead.data.image }}" alt=""></a>
+            {%- endif %}
+            <div class="news-lead-body">
             <div class="flex flex-wrap items-center gap-3 mb-6">
               <span class="text-xs font-bold uppercase tracking-[0.16em] text-[#D3DEE8]">Latest</span>
               {%- for c in lead.data.categories %}<span class="news-chip-dark">{{ c }}</span>{% endfor %}
@@ -17,10 +22,14 @@
             <p class="text-[#E6ECF2] text-lg leading-relaxed mb-8 max-w-2xl">{{ lead.data.summary }}</p>
             {%- endif %}
             <a href="{{ lead.url }}" class="btn btn-primary self-start">Read More →</a>
+            </div>
           </article>
           <div class="grid gap-6">
 {%- for post in featured | tail(1) %}
             <article class="news-side">
+              {%- if post.data.image %}
+              <a href="{{ post.url }}" class="news-side-media" tabindex="-1" aria-hidden="true"><img src="{{ post.data.image }}" alt="" loading="lazy"></a>
+              {%- endif %}
               <div class="flex gap-2 flex-wrap mb-3">{% for c in post.data.categories %}<span class="news-chip">{{ c }}</span>{% endfor %}</div>
               <h3 class="font-display font-bold text-gray-900 leading-snug text-lg mb-2"><a href="{{ post.url }}" class="hover:text-sr-blue transition-colors">{{ post.data.title }}</a></h3>
               <p class="meta mb-3"><time datetime="{{ post.date | isoDate }}">{{ post.date | dateShort }}</time></p>
