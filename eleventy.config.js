@@ -2,6 +2,10 @@
 // (data/index.njk) are Nunjucks templates; the other pages are hand-authored HTML, run through
 // Nunjucks only so they can include the shared header and footer partials.
 
+import { readFile, readdir } from "node:fs/promises";
+import { join, relative, sep } from "node:path";
+import * as pagefind from "pagefind";
+
 // Folders copied through as-is. Their .html and .njk pages are built instead.
 // Retired pages live in _archive/, which is neither built nor published.
 const PASSTHROUGH = [
@@ -99,6 +103,27 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("olderPosts", (api) =>
     api.getFilteredByGlob("updates/posts/*.md").sort((a, b) => b.date - a.date).slice(3)
   );
+
+  // Site search: after every build (and every --serve rebuild), index the built pages with
+  // Pagefind into _site/pagefind/. The header search dialog (js/site.js) reads that index.
+  // Skipped: the CMS, redirected leftovers, and listing pages that only repeat post titles.
+  const NOT_SEARCHED = [/^admin\//, /^(platform|data)\/contact-us\//, /^platform\/updates\//,
+    /^updates\/category\//, /\/page\/\d+\//];
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const { index } = await pagefind.createIndex({});
+    const walk = async (d) => (await Promise.all((await readdir(d, { withFileTypes: true })).map(
+      (e) => e.isDirectory() ? (e.name === "pagefind" ? [] : walk(join(d, e.name))) : [join(d, e.name)]
+    ))).flat();
+    for (const file of await walk(dir.output)) {
+      if (!file.endsWith(".html")) continue;
+      const rel = relative(dir.output, file).split(sep).join("/");
+      if (NOT_SEARCHED.some((re) => re.test(rel))) continue;
+      const url = "/" + rel.replace(/index\.html$/, "");
+      await index.addHTMLFile({ url, content: await readFile(file, "utf8") });
+    }
+    await index.writeFiles({ outputPath: join(dir.output, "pagefind") });
+    await pagefind.close();
+  });
 
   return {
     dir: { input: ".", output: "_site", includes: "_includes" },

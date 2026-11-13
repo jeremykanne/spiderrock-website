@@ -90,7 +90,7 @@ body { color: #3B3F40; }
 .m-utility a { color: #5A6060; font-size: 15px; min-height: 40px; display: inline-flex; align-items: center; }
 .m-foot { display: grid; gap: 12px; padding: 16px 24px 24px; border-top: 1px solid #E3E5E5; flex-shrink: 0; }
 
-/* Docs search dialog (Ctrl/Cmd+K). */
+/* Search dialog (Ctrl/Cmd+K): website results (Pagefind) + documentation. */
 .search-dialog { width: min(600px, calc(100vw - 32px)); margin: 12vh auto auto; padding: 20px; border: 1px solid #E3E5E5;
   border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.25); }
 .search-dialog::backdrop { background: rgba(30,41,51,0.55); }
@@ -99,6 +99,22 @@ body { color: #3B3F40; }
 .search-field { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 12px 0 16px; border: 2px solid #3C5E80;
   border-radius: 6px; color: #5A6060; }
 .search-field input { flex: 1; min-width: 0; height: 100%; font-size: 17px; color: #3B3F40; outline: none; background: none; }
+.search-tabs { display: flex; gap: 4px; margin-top: 14px; border-bottom: 1px solid #E3E5E5; }
+.search-tabs button { padding: 8px 12px; margin-bottom: -1px; font-size: 14px; font-weight: 600; color: #5A6060;
+  border-bottom: 2px solid transparent; }
+.search-tabs button:hover { color: #2C4660; }
+.search-tabs button[aria-selected="true"] { color: #2C4660; border-bottom-color: #BA4838; }
+.search-results { max-height: min(60vh, 520px); overflow-y: auto; }
+.search-group { padding-top: 14px; }
+.search-group-h { margin: 0 0 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8A9090; }
+.search-list a { display: block; padding: 10px 12px; border-radius: 6px; }
+.search-list a:hover, .search-list a:focus-visible { background: #F3F4F4; outline: none; }
+.search-title { display: block; font-weight: 600; color: #2C4660; }
+.search-excerpt { display: block; margin-top: 2px; font-size: 14px; line-height: 1.45; color: #5A6060; }
+.search-excerpt mark { background: none; color: #3B3F40; font-weight: 700; }
+.search-empty { padding: 4px 12px 8px; font-size: 14px; color: #8A9090; }
+.search-more { display: block; padding: 10px 12px; border-radius: 6px; font-weight: 600; color: #3C5E80; }
+.search-more:hover, .search-more:focus-visible { background: #F3F4F4; outline: none; }
 
 /* ── Footer (partials/footer.njk): link columns, then a centered docs-style legal block. */
 .footer-h { color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 14px; }

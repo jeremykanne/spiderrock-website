@@ -89,15 +89,76 @@
     Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
-  // ── Search: a small dialog that searches the documentation site in a new tab.
-  // Opened by the search buttons or Ctrl/Cmd+K.
+  // ── Search: one dialog for the website and the documentation, opened by the search buttons
+  // or Ctrl/Cmd+K. Website results come from the Pagefind index built with the site
+  // (/pagefind/, see eleventy.config.js); the Documentation group links to the docs site's search.
+  // Tabs filter to one group. Enter opens the first result.
   var dialog = document.getElementById('siteSearch');
   if (!dialog) return;
+  var form = dialog.querySelector('form');
   var input = dialog.querySelector('input');
+  var tabs = dialog.querySelector('.search-tabs');
+  var siteGroup = dialog.querySelector('[data-group="site"]');
+  var docsGroup = dialog.querySelector('[data-group="docs"]');
+  var siteList = siteGroup.querySelector('.search-list');
+  var siteEmpty = siteGroup.querySelector('.search-empty');
+  var docsMore = docsGroup.querySelector('.search-more');
+  var scope = 'all';
+  var pagefind = null;
+  var seq = 0;
+
+  function loadPagefind() {
+    if (!pagefind) {
+      pagefind = import('/pagefind/pagefind.js').then(function (pf) {
+        return pf.options({ excerptLength: 22 }).then(function () { return pf; });
+      }).catch(function () { return null; });
+    }
+    return pagefind;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  // Page titles carry the site name ("Options Analytics — SpiderRock …"); keep the page part.
+  function cleanTitle(t) { return (t || '').split(/\s+[—|–]\s+/)[0]; }
+
+  function show() {
+    var q = input.value.trim();
+    tabs.hidden = !q;
+    siteGroup.hidden = !q || scope === 'docs';
+    docsGroup.hidden = !q || scope === 'site';
+  }
+  function setScope(next) {
+    scope = next;
+    tabs.querySelectorAll('[role="tab"]').forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.scope === scope)); });
+    show();
+  }
+  function run() {
+    var q = input.value.trim();
+    var mine = ++seq;
+    docsMore.href = form.action + '?q=' + encodeURIComponent(q);
+    docsMore.querySelector('span').textContent = q;
+    show();
+    if (!q) { siteList.innerHTML = ''; return; }
+    loadPagefind().then(function (pf) {
+      if (!pf) return null;
+      return pf.debouncedSearch(q, {}, 200);
+    }).then(function (res) {
+      if (mine !== seq || res === null) return;
+      if (!res) { siteList.innerHTML = ''; siteEmpty.hidden = false; return; }
+      return Promise.all(res.results.slice(0, 8).map(function (r) { return r.data(); })).then(function (pages) {
+        if (mine !== seq) return;
+        siteEmpty.hidden = pages.length > 0;
+        siteList.innerHTML = pages.map(function (p) {
+          return '<li><a href="' + esc(p.url) + '"><span class="search-title">' + esc(cleanTitle(p.meta.title)) +
+            '</span><span class="search-excerpt">' + p.excerpt + '</span></a></li>';
+        }).join('');
+      });
+    });
+  }
+
   function openSearch() {
     if (menu && !menu.hidden) setMenu(false);
     if (!dialog.open) dialog.showModal();
     input.focus();
+    loadPagefind();
   }
   document.querySelectorAll('[data-search-open]').forEach(function (btn) {
     btn.addEventListener('click', openSearch);
@@ -106,7 +167,16 @@
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
   });
   dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
-  dialog.querySelector('form').addEventListener('submit', function () {
-    setTimeout(function () { dialog.close(); input.value = ''; }, 0);
+  tabs.addEventListener('click', function (e) {
+    var t = e.target.closest('[role="tab"]');
+    if (t) { setScope(t.dataset.scope); input.focus(); }
   });
+  input.addEventListener('input', run);
+  // Enter: open the first visible result, or the docs search in a new tab.
+  form.addEventListener('submit', function (e) {
+    var first = !siteGroup.hidden && siteList.querySelector('a');
+    if (first) { e.preventDefault(); window.location.href = first.href; return; }
+    setTimeout(function () { dialog.close(); }, 0);
+  });
+  dialog.addEventListener('close', function () { input.value = ''; setScope('all'); run(); });
 })();
