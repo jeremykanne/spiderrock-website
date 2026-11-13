@@ -89,6 +89,13 @@
     Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
+  // ── "New" badges on news cards: shown until the date the build stamps on them
+  // (three weeks after the post date), so they expire without a rebuild.
+  var today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll('[data-new-until]').forEach(function (el) {
+    el.hidden = today >= el.getAttribute('data-new-until');
+  });
+
   // ── Search: one dialog for the website and the documentation, opened by the search buttons
   // or Ctrl/Cmd+K. Website results come from the Pagefind index built with the site
   // (/pagefind/, see eleventy.config.js); the Documentation group links to the docs site's search.

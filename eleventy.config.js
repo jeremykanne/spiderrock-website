@@ -53,6 +53,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("dateLong", (d) => formatDate(d, "long"));
   eleventyConfig.addFilter("dateShort", (d) => formatDate(d, "short"));
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  // The date a post's "New" badge expires (js/site.js hides the badge after it).
+  const NEW_BADGE_DAYS = 21;
+  eleventyConfig.addFilter("newUntil", (d) =>
+    new Date(new Date(d).getTime() + NEW_BADGE_DAYS * 864e5).toISOString().slice(0, 10));
 
   eleventyConfig.addFilter("head", (arr, n) => arr.slice(0, n));
   eleventyConfig.addFilter("tail", (arr, n) => arr.slice(n));

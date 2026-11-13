@@ -1,5 +1,5 @@
-{#- Featured News: three equal cards with the post's listing image, a meta row (NEW on the
-    site's newest post, date, first category) and the title. Expects `featured` (3 posts) and
+{#- Featured News: three equal cards with the post's listing image, a meta row (NEW for
+    three weeks after a post is published, date, first category) and the title. Expects `featured` (3 posts) and
     `newsTitle` (the H2). -#}
   <section class="bg-white section">
     <div class="wrap">
@@ -18,7 +18,7 @@
           </a>
           <div class="news-card-body">
             <p class="news-card-meta">
-              {%- if post.url == collections.posts[0].url %}<span class="tag-new">New</span>{% endif %}
+              <span class="tag-new" data-new-until="{{ post.date | newUntil }}" hidden>New</span>
               <time datetime="{{ post.date | isoDate }}">{{ post.date | dateShort }}</time>
               {%- if post.data.categories %}<span class="news-chip">{{ post.data.categories[0] }}</span>{% endif %}
             </p>
