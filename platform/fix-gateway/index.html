@@ -44,6 +44,84 @@
           SpiderRock operates FIX gateways hosted within Equinix NY4/5 and CH2 data centers, with connectivity available via cross-connect for minimum latency.
         </p>
       </div>
+
+      <!-- FIX gateway diagram, redrawn from spiderrock.net/platform/fix-gateway/ in the site's diagram
+           style. Scrolls sideways on phones rather than shrinking the text. -->
+      <div class="mt-16">
+        <p class="eyebrow mb-3">Overview</p>
+        <p class="body-copy max-w-3xl mb-8">Below is an overview of the main functions supported by FIXBase, including order entry, order management, order execution, as well as drop copy management and third party integrations.</p>
+        <div class="rounded-xl overflow-x-auto border border-gray-200 shadow-[0_14px_40px_rgba(30,41,51,0.12)]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 490" class="block w-full h-auto min-w-[760px]" role="img" aria-labelledby="fix-diagram-title fix-diagram-desc">
+            <title id="fix-diagram-title">FIXBase overview</title>
+            <desc id="fix-diagram-desc">The client's OMS, fed by trading and compliance and risk, sends parent orders and dark quotes over FIX 4.2 or 4.4 to the SpiderRock clientside gateway, which converts FIX to binary for the SpiderRock message bus. The execution engines take parent orders from the message bus and return child orders to it, and exchange data with the drop server, which sends inbound and outbound FIX drops back to the OMS. The streetside gateway converts binary to FIX and sends child orders and RFQs to exchanges, brokers and ATSs, with dynamic cancel/replace in both directions and fills and acknowledgements coming back.</desc>
+            <defs>
+              <pattern id="fx-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.65" fill="#A8BED4" opacity="0.5"/></pattern>
+              <marker id="fx-arr-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><polygon points="0,1 7,4 0,7" fill="#BA4838"/></marker>
+              <marker id="fx-arr-gray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><polygon points="0,1 6,3.5 0,6" fill="#94AABF" opacity="0.8"/></marker>
+            </defs>
+            <rect width="880" height="490" fill="#F4F7FA"/>
+            <rect width="880" height="490" fill="url(#fx-dots)"/>
+            <!-- CLIENT ENVIRONMENT with the OMS -->
+            <rect x="150" y="30" width="330" height="122" rx="2" fill="#fff" stroke="#C2D0DE" stroke-width="1"/>
+            <text x="315" y="53" fill="#1E2D3D" font-size="12.5" font-weight="700" letter-spacing="0.8" text-anchor="middle" font-family="'Montserrat',sans-serif">CLIENT ENVIRONMENT</text>
+            <text x="232" y="78" fill="#2C4660" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Trading</text>
+            <text x="398" y="78" fill="#2C4660" font-size="11.5" font-weight="500" text-anchor="middle" font-family="'Roboto',sans-serif">Compliance / Risk</text>
+            <path d="M232 84 V104" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <path d="M392 84 V104" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <path d="M404 104 V86" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <rect x="170" y="108" width="290" height="30" rx="2" fill="#EEF2F6" stroke="#C2D0DE" stroke-width="1"/>
+            <text x="315" y="127" fill="#1E2D3D" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" font-family="'Montserrat',sans-serif">OMS</text>
+            <!-- EXCHANGES, BROKERS & ATS -->
+            <rect x="580" y="92" width="150" height="48" rx="2" fill="#fff" stroke="#BA4838" stroke-width="1.2"/>
+            <text x="655" y="112" fill="#1E2D3D" font-size="10.5" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">EXCHANGES,</text>
+            <text x="655" y="127" fill="#1E2D3D" font-size="10.5" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">BROKERS &amp; ATS</text>
+            <line x1="44" y1="214" x2="836" y2="214" stroke="#A8BECE" stroke-width="0.75" stroke-dasharray="4,4"/>
+            <text x="44" y="208" fill="#94A3B8" font-size="8" letter-spacing="1" font-family="'Roboto',sans-serif">SPIDERROCK CLOUD</text>
+            <!-- SpiderRock components -->
+            <rect x="150" y="300" width="140" height="48" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1"/>
+            <text x="220.0" y="321.5" fill="white" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">CLIENTSIDE GATEWAY</text>
+            <text x="220.0" y="334.5" fill="white" fill-opacity="0.75" font-size="9" text-anchor="middle" font-family="'Roboto',sans-serif">(Inbound)</text>
+            <rect x="306" y="300" width="110" height="48" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1"/>
+            <text x="361.0" y="321.5" fill="white" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">EXECUTION</text>
+            <text x="361.0" y="334.5" fill="white" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">ENGINES</text>
+            <rect x="446" y="300" width="110" height="48" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1"/>
+            <text x="501.0" y="328.0" fill="white" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">DROP SERVER</text>
+            <rect x="580" y="300" width="150" height="48" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1"/>
+            <text x="655.0" y="321.5" fill="white" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle" font-family="'Montserrat',sans-serif">STREETSIDE GATEWAY</text>
+            <text x="655.0" y="334.5" fill="white" fill-opacity="0.75" font-size="9" text-anchor="middle" font-family="'Roboto',sans-serif">(Outbound)</text>
+            <!-- Client side: parent orders in over FIX, drop copies back out -->
+            <path d="M220.0 140 V296" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <text x="228.0" y="170" fill="#4A5A6A" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Parent orders</text>
+            <text x="228.0" y="183" fill="#4A5A6A" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">&amp; Dark quotes</text>
+            <text transform="translate(212.0 268) rotate(-90)" fill="#6B8299" font-size="9" text-anchor="middle" font-family="'Roboto',sans-serif">FIX 4.2 / 4.4</text>
+            <path d="M501.0 298 V200 Q501.0 188 489.0 188 H404 Q392 188 392 176 V142" fill="none" stroke="#BA4838" stroke-width="1.5" marker-start="url(#fx-arr-red)" marker-end="url(#fx-arr-red)"/>
+            <text x="404" y="166" fill="#BA4838" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Inbound &amp; Outbound</text>
+            <text x="404" y="179" fill="#BA4838" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">FIX drops</text>
+            <path d="M422 324 H440" fill="none" stroke="#94AABF" stroke-width="1" marker-start="url(#fx-arr-gray)" marker-end="url(#fx-arr-gray)"/>
+            <!-- Street side: child orders and RFQs out, cancel/replace both ways, fills and acks back -->
+            <path d="M612 298 V144" fill="none" stroke="#BA4838" stroke-width="1.5" marker-end="url(#fx-arr-red)"/>
+            <text x="604" y="250" fill="#BA4838" font-size="10" text-anchor="end" font-family="'Roboto',sans-serif">Child orders</text>
+            <text x="604" y="263" fill="#BA4838" font-size="10" text-anchor="end" font-family="'Roboto',sans-serif">&amp; RFQs</text>
+            <path d="M655 296 V146" fill="none" stroke="#BA4838" stroke-width="1.5" marker-start="url(#fx-arr-red)" marker-end="url(#fx-arr-red)"/>
+            <text x="661" y="250" fill="#BA4838" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Dynamic</text>
+            <text x="661" y="263" fill="#BA4838" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Cxl / Rpl</text>
+            <path d="M710 142 V296" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <text x="716" y="250" fill="#4A5A6A" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Fills &amp;</text>
+            <text x="716" y="263" fill="#4A5A6A" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Acks</text>
+            <!-- Components <-> message bus -->
+            <path d="M220.0 350 V420" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <text x="212.0" y="392" fill="#4A5A6A" font-size="10" text-anchor="end" font-family="'Roboto',sans-serif">FIX to Binary</text>
+            <path d="M351.0 420 V352" fill="none" stroke="#94AABF" stroke-width="1" marker-end="url(#fx-arr-gray)"/>
+            <text x="343.0" y="392" fill="#4A5A6A" font-size="10" text-anchor="end" font-family="'Roboto',sans-serif">Parent orders</text>
+            <path d="M371.0 350 V418" fill="none" stroke="#BA4838" stroke-width="1.5" marker-end="url(#fx-arr-red)"/>
+            <text x="379.0" y="392" fill="#BA4838" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Child orders</text>
+            <path d="M655.0 352 V418" fill="none" stroke="#94AABF" stroke-width="1" marker-start="url(#fx-arr-gray)" marker-end="url(#fx-arr-gray)"/>
+            <text x="663.0" y="392" fill="#4A5A6A" font-size="10" text-anchor="start" font-family="'Roboto',sans-serif">Binary to FIX</text>
+            <rect x="150" y="424" width="580" height="44" rx="2" fill="#2C4660" stroke="#3C5E80" stroke-width="1.5"/>
+            <text x="440" y="451" fill="white" font-size="11" font-weight="700" letter-spacing="3" text-anchor="middle" font-family="'Montserrat',sans-serif">SPIDERROCK MESSAGE BUS</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
