@@ -115,7 +115,7 @@
         <p class="text-[#D3DEE8] text-[17px] leading-relaxed max-w-[34em] mb-9">European coverage spans Eurex, Euronext, ICE, and Cboe Europe (BXE, CXE, and DXE).</p>
         <div class="flex flex-wrap gap-4">
           <a href="#request-access" class="btn btn-primary">Request Information</a>
-          <a href="#data-products" class="btn btn-ghost">Products &amp; Pricing</a>
+          <a href="#data-products" class="btn btn-ghost">Data Products</a>
           <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Documentation&nbsp;<span aria-hidden="true">&#8599;</span></a>
         </div>
       </div>
@@ -142,7 +142,7 @@
       <a href="#features">Features</a>
       <a href="#coverage">Coverage</a>
       <a href="#connect">Get Connected</a>
-      <a href="#data-products">Products &amp; Pricing</a>
+      <a href="#data-products">Data Products</a>
       <a href="#request-access">Get Started</a>
     </div>
   </nav>
@@ -237,42 +237,53 @@
   <section id="data-products" class="bg-white section tab-target">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow mb-3">Products &amp; Pricing</p>
+        <p class="eyebrow mb-3">Products</p>
         <h2 class="h2">Data Products</h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mb-8">
+      <h3 class="includes-label mb-5">United States</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mb-14">
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Stock</h3>
-          <p class="body-copy mb-7">Real-time quotes, print details, closing prices, market summary, order imbalances.</p>
-          <a href="equity-nbbo-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Real-time quotes, print details, closing prices, market summary, order imbalances.</p>
         </div>
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Options</h3>
-          <p class="body-copy mb-7">Real-time quotes, print details, closing prices, market summary.</p>
-          <a href="options-nbbo-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Real-time quotes, print details, closing prices, market summary.</p>
         </div>
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Futures</h3>
-          <p class="body-copy mb-7">Real-time quotes, print details, settlement prices, closing prices, market summary.</p>
-          <a href="futures-book-feeds/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Real-time quotes, print details, settlement prices, closing prices, market summary.</p>
         </div>
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Option Implied Quotes &amp; Prints</h3>
-          <p class="body-copy mb-7">Options implied quotes, print details.</p>
-          <a href="option-implied-trades/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Options implied quotes, print details.</p>
         </div>
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Equity Options Analytics</h3>
-          <p class="body-copy mb-7">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
-          <a href="equity-options-analytics/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
         </div>
         <div class="card card-accent bg-white">
           <h3 class="card-title-3 mb-3">Options on Futures Analytics</h3>
-          <p class="body-copy mb-7">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
-          <a href="future-options-analytics/" class="arrow-link mt-auto">View details &amp; pricing <span class="arrow">&rarr;</span></a>
+          <p class="body-copy">Real-time volatility surfaces, realized volatilities, opening prices, closing prices &amp; analytics, risk factors.</p>
         </div>
       </div>
-      <a href="../stocks-options-futures/#exchange-feeds" class="arrow-link">Browse the full exchange feed list <span class="arrow">&rarr;</span></a>
+      <h3 class="includes-label mb-5">Europe</h3>
+      <!-- The three European products, worded as on /data/european-data/. -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mb-8">
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Futures &amp; Options</h3>
+          <p class="body-copy">Futures and option quotes and trades, equity quotes and trades (Cboe EU), market summary (1-minute bars), end-of-day pricing and settlement data.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Options Analytics &amp; Implied Quote</h3>
+          <p class="body-copy">Volatility surfaces, surface prices and volatilities, options trades marked up with analytics, closing prices &amp; analytics.</p>
+        </div>
+        <div class="card card-accent bg-white">
+          <h3 class="card-title-3 mb-3">Cboe Stock</h3>
+          <p class="body-copy">Stock quotes, trade details, market summary (1-minute bars), closing prices across Cboe Europe venues including BXE, CXE, and DXE.</p>
+        </div>
+      </div>
+      <p class="flex flex-wrap gap-x-8 gap-y-3"><a href="../stocks-options-futures/#exchange-feeds" class="arrow-link">Browse the full exchange feed list <span class="arrow">&rarr;</span></a><a href="../european-data/" class="arrow-link">European data <span class="arrow">&rarr;</span></a></p>
     </div>
   </section>
 

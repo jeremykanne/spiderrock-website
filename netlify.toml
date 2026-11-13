@@ -49,3 +49,47 @@
   from = "/data/data-analytics/"
   to = "/data/#delivery"
   status = 301
+
+# Retired MLink price sheets (kept in _archive/mlink-pricing/); send old links to the MLink Data Products section.
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/equity-nbbo-feeds/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/options-nbbo-feeds/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/futures-book-feeds/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/option-implied-trades/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/equity-options-analytics/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/future-options-analytics/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/spiderstream-market-data-api/pdfs/*"
+  to = "/data/spiderstream-market-data-api/#data-products"
+  status = 301
+  force = true
