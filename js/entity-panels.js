@@ -89,7 +89,7 @@
     let loop = 0;
     const stop = () => { loop = 0; ld.style.opacity = 0; };
     const start = () => { if (loop) return; loop = 1; ld.style.opacity = 1; const t0 = performance.now();
-      (function f(t) { if (!loop) return; const p = pts[Math.floor(((t - t0) / 2400 % 1) * N)]; put(ld, p[0], p[1]); requestAnimationFrame(f); })(t0); };
+      (function f(t) { if (!loop) return; const p = pts[Math.floor(((Math.max(0, t - t0) / 2400) % 1) * N)]; put(ld, p[0], p[1]); requestAnimationFrame(f); })(t0); };
     const rest = () => { stop(); upTo(2); gh.forEach(g => g.style.opacity = 1); qd.style.opacity = qx.style.opacity = 1; draw(300); };
     const focus = k => { only(k); gh.forEach(g => g.style.opacity = k === 2 ? 1 : 0); qd.style.opacity = qx.style.opacity = k === 1 ? 1 : 0;
       if (k === 0) { if (rm) { put(ld, pts[N * .9 | 0][0], pts[N * .9 | 0][1]); ld.style.opacity = 1; } else start(); } else stop(); };
