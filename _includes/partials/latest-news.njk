@@ -1,44 +1,25 @@
-{#- "Latest News": the newest post as a lead story plus the next two as cards, each with the post's
-    listing image when it has one. Expects `featured` (3 posts).
-    Set `hideLatestLabel` when the including page already has its own section heading. -#}
-      {%- set lead = featured[0] %}
+{#- "Latest News": the three newest posts as three equal cards, each with the post's listing image
+    when it has one. Expects `featured` (3 posts). Equal cards keep the landing view calm; the
+    newest story is still first. Set `hideLatestLabel` when the including page already has its
+    own section heading. -#}
       <div{% if not hideLatestLabel %} class="mb-20"{% endif %}>
         {%- if not hideLatestLabel %}
         <p class="eyebrow mb-8">Latest News</p>
         {%- endif %}
-        <div class="grid lg:grid-cols-3 gap-6">
-          <article class="news-lead lg:col-span-2 text-white">
-            {%- if lead.data.image %}
-            <a href="{{ lead.url }}" class="news-lead-media" tabindex="-1" aria-hidden="true"><img src="{{ lead.data.image }}" alt=""></a>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+{%- for post in featured %}
+          <article class="news-side">
+            {%- if post.data.image %}
+            <a href="{{ post.url }}" class="news-side-media" tabindex="-1" aria-hidden="true"><img src="{{ post.data.image }}" alt=""{% if not loop.first %} loading="lazy"{% endif %}></a>
             {%- endif %}
-            <div class="news-lead-body">
-            <div class="flex flex-wrap items-center gap-3 mb-6">
-              <span class="text-xs font-bold uppercase tracking-[0.16em] text-[#D3DEE8]">Latest</span>
-              {%- for c in lead.data.categories %}<span class="news-chip-dark">{{ c }}</span>{% endfor %}
-            </div>
-            <h2 class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em] mb-4"><a href="{{ lead.url }}" class="hover:text-[#D3DEE8] transition-colors">{{ lead.data.title }}</a></h2>
-            <p class="text-[#D3DEE8] text-sm mb-6"><time datetime="{{ lead.date | isoDate }}">{{ lead.date | dateLong }}</time></p>
-            {%- if lead.data.summary %}
-            <p class="text-[#E6ECF2] text-lg leading-relaxed mb-8 max-w-2xl">{{ lead.data.summary }}</p>
+            <div class="flex gap-2 flex-wrap mb-3">{% for c in post.data.categories %}<span class="news-chip">{{ c }}</span>{% endfor %}</div>
+            <h3 class="font-display font-bold text-gray-900 leading-snug text-lg mb-2"><a href="{{ post.url }}" class="hover:text-sr-blue transition-colors">{{ post.data.title }}</a></h3>
+            <p class="meta mb-3"><time datetime="{{ post.date | isoDate }}">{{ post.date | dateShort }}</time></p>
+            {%- if post.data.summary %}
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{{ post.data.summary }}</p>
             {%- endif %}
-            <a href="{{ lead.url }}" class="btn btn-primary self-start">Read More →</a>
-            </div>
+            <a href="{{ post.url }}" class="arrow-link mt-auto text-sm">Read More <span class="arrow">→</span></a>
           </article>
-          <div class="grid gap-6">
-{%- for post in featured | tail(1) %}
-            <article class="news-side">
-              {%- if post.data.image %}
-              <a href="{{ post.url }}" class="news-side-media" tabindex="-1" aria-hidden="true"><img src="{{ post.data.image }}" alt="" loading="lazy"></a>
-              {%- endif %}
-              <div class="flex gap-2 flex-wrap mb-3">{% for c in post.data.categories %}<span class="news-chip">{{ c }}</span>{% endfor %}</div>
-              <h3 class="font-display font-bold text-gray-900 leading-snug text-lg mb-2"><a href="{{ post.url }}" class="hover:text-sr-blue transition-colors">{{ post.data.title }}</a></h3>
-              <p class="meta mb-3"><time datetime="{{ post.date | isoDate }}">{{ post.date | dateShort }}</time></p>
-              {%- if post.data.summary %}
-              <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{{ post.data.summary }}</p>
-              {%- endif %}
-              <a href="{{ post.url }}" class="arrow-link mt-auto text-sm">Read More <span class="arrow">→</span></a>
-            </article>
 {%- endfor %}
-          </div>
         </div>
       </div>

@@ -61,9 +61,6 @@ permalink: "updates/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNum
       {%- set pager = { hrefs: pagination.hrefs, current: pagination.pageNumber, previous: pagination.href.previous, next: pagination.href.next } %}
       {% include "partials/pager.njk" %}
 
-      <div class="mt-12 text-center">
-        <a href="/contact-us/" class="btn btn-outline">Contact Us →</a>
-      </div>
     </div>
   </section>
 

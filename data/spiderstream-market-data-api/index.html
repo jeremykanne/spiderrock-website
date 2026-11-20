@@ -115,7 +115,6 @@
         <p class="text-[#D3DEE8] text-[17px] leading-relaxed max-w-[34em] mb-9">European coverage spans Eurex, Euronext, ICE, and Cboe Europe (BXE, CXE, and DXE).</p>
         <div class="flex flex-wrap gap-4">
           <a href="#request-access" class="btn btn-primary">Request Information</a>
-          <a href="#data-products" class="btn btn-ghost">Data Products</a>
           <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Documentation&nbsp;<span aria-hidden="true">&#8599;</span></a>
         </div>
       </div>
@@ -197,14 +196,17 @@
         <p class="eyebrow mb-3">Coverage</p>
         <h2 class="h2">Available Data &amp; Analytics</h2>
       </div>
-      <ul class="bullets sm:grid-cols-2 sm:gap-x-16">
-            <li>Equity quotes, trades, aggregations</li>
-            <li>Equity options implied vol, Greeks, trade analytics</li>
-            <li>Futures quotes, trades, aggregations</li>
-            <li>Futures options implied vol, Greeks, trade analytics</li>
-            <li>Options quotes, trades, aggregations</li>
-            <li>Options implied quotes, trades live data feed</li>
-      </ul>
+<div class="table-box">
+        <table class="product-table">
+          <caption class="sr-only">MLink coverage by asset class</caption>
+          <thead><tr><th scope="col">Asset class</th><th scope="col">Market data</th><th scope="col">Analytics</th><th scope="col">Regions</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Equities</th><td>Quotes, trades, aggregations</td><td>&ndash;</td><td>U.S., EU</td></tr>
+            <tr><th scope="row">Options</th><td>Quotes, trades, aggregations, implied quotes</td><td>Implied volatility, Greeks, trade analytics</td><td>U.S., EU</td></tr>
+            <tr><th scope="row">Futures</th><td>Quotes, trades, aggregations</td><td>Options on futures: implied volatility, Greeks, trade analytics</td><td>U.S., EU</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -223,10 +225,6 @@
         <div class="doc-row">
           <p class="doc-row-name">WebSocket connection guide</p>
           <a href="https://docs.spiderrockconnect.com/docs/next/Documentation/PlatformAPIs/MLink/WebSocket/" target="_blank" rel="noopener noreferrer" class="arrow-link">View in documentation <span aria-hidden="true">&#8599;</span></a>
-        </div>
-        <div class="doc-row">
-          <p class="doc-row-name">Readily available client libraries</p>
-          <a href="https://github.com/SpiderRock/SpiderRock-Connect-SDK/tree/main/SpiderStream" target="_blank" rel="noopener noreferrer" class="arrow-link">View on GitHub <span aria-hidden="true">&#8599;</span></a>
         </div>
       </div>
       <a href="../market-data-partners/" class="arrow-link">See our market data partners <span class="arrow">&rarr;</span></a>
