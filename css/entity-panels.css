@@ -1,0 +1,64 @@
+/* Homepage entity sections (Trading Platform, Brokerage & Market Access, Data & Analytics):
+   text beside an animated dark panel. Per the Homepage Entity Sections handoff, every rule is
+   scoped under .sr-ent; loaded only by index.html. Behaviour lives in js/entity-panels.js. */
+
+.sr-ent .sr-ent-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 64px; align-items: center; }
+.sr-ent.sr-ent-flip .sr-ent-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+.sr-ent.sr-ent-flip .ep { order: -1; }
+
+/* text column */
+.sr-ent .ep-h { margin: 0 0 16px; }
+.sr-ent .ep-lead { margin: 0 0 22px; font: 500 18px/1.55 Roboto, Arial, sans-serif; color: #3B3F40; }
+.sr-ent .ep-more { display: inline-flex; margin-top: 26px; }
+
+/* panel shell */
+.sr-ent .ep { background: #3B3F40; border-radius: 10px; padding: 36px 36px 40px; }
+.sr-ent .ep-eb { display: flex; align-items: center; gap: 12px; margin: 0 0 36px; font: 700 12px Roboto, Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #D3DEE8; }
+.sr-ent .ep-eb::before { content: ""; width: 28px; height: 2px; background: #BA4838; flex: none; }
+
+/* graphic strip */
+.sr-ent .ep-vis { position: relative; height: 84px; }
+.sr-ent .ep-vis svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
+.sr-ent .ep-seg, .sr-ent .ep-gh { transition: opacity .4s; }
+.sr-ent .ep-end { position: absolute; left: calc(78.67% + 10px); white-space: nowrap; font: 500 11px Roboto, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transform: translateY(-50%); transition: color .4s; }
+.sr-ent .ep-end.on { color: #fff; }
+.sr-ent .ep-gate { position: absolute; left: calc(33.333% + 17px); top: 34%; width: 2px; height: 32%; background: rgba(230,236,242,.5); transition: background .4s; }
+.sr-ent .ep-gate.on { background: #BA4838; }
+.sr-ent .ep-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity .3s; }
+.sr-ent .ep-ldot { background: #fff; box-shadow: 0 0 0 4px rgba(186,72,56,.45); }
+.sr-ent .ep-qd { background: #BA4838; box-shadow: 0 0 0 4px rgba(186,72,56,.25); }
+.sr-ent .ep-qx { position: absolute; top: 0; bottom: 0; border-left: 1px dashed rgba(211,222,232,.45); opacity: 0; transition: opacity .4s; }
+
+/* columns */
+.sr-ent .ep-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 30px; }
+.sr-ent .ep-c { padding: 0 16px 0 0; outline: none; cursor: default; border-radius: 4px; }
+.sr-ent .ep-c + .ep-c { padding-left: 16px; }
+.sr-ent .ep-c:last-child { padding-right: 0; }
+.sr-ent .ep-c:focus-visible { box-shadow: 0 0 0 2px rgba(211,222,232,.6); }
+.sr-ent .ep-rule { width: 20px; height: 2px; background: rgba(230,236,242,.35); margin: 0 0 16px; transition: background .4s; }
+.sr-ent .ep-c.on .ep-rule { background: #BA4838; }
+.sr-ent .ep-n { margin: 0 0 12px; font: 500 28px/1 Montserrat, Arial, sans-serif; color: rgba(230,236,242,.42); transition: color .4s; }
+.sr-ent .ep-t { margin: 0 0 8px; font: 600 13px Montserrat, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transition: color .4s; }
+.sr-ent .ep-d { margin: 0; font: 300 14px/1.5 Roboto, Arial, sans-serif; color: rgba(230,236,242,.72); transition: color .4s; }
+.sr-ent .ep-c.on .ep-n, .sr-ent .ep-c.on .ep-t { color: #fff; }
+.sr-ent .ep-c.on .ep-d { color: #D3DEE8; }
+.sr-ent .ep.reduce * { transition: none !important; }
+
+@media (max-width: 960px) {
+  .sr-ent .sr-ent-grid, .sr-ent.sr-ent-flip .sr-ent-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .sr-ent.sr-ent-flip .ep { order: 0; }
+}
+@media (max-width: 560px) {
+  .sr-ent.section { padding-top: 72px; padding-bottom: 72px; }
+  .sr-ent .ep-h { font-size: 26px; }
+  .sr-ent .ep { padding: 26px 20px 28px; }
+  .sr-ent .ep-eb { font-size: 11px; margin-bottom: 28px; }
+  .sr-ent .ep-vis { height: 70px; }
+  .sr-ent .ep-c { padding-right: 8px; }
+  .sr-ent .ep-c + .ep-c { padding-left: 8px; }
+  .sr-ent .ep-n { font-size: 22px; }
+  .sr-ent .ep-t { font-size: 11px; letter-spacing: .1em; }
+  .sr-ent .ep-d { font-size: 12.5px; }
+  .sr-ent .ep-end { font-size: 10px; letter-spacing: .1em; left: calc(78.67% + 6px); }
+  .sr-ent .ep-end .ep-opt { display: none; }
+}

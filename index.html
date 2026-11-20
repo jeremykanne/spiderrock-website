@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/js/tailwind-config.js"></script>
   <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/entity-panels.css" />
 </head>
 <body class="font-sans antialiased text-gray-900">
 
@@ -47,65 +48,136 @@
     </div>
   </section>
 
+  <!-- ─── ENTITY SECTIONS ──────────────────────────────────────────────────── -->
+  <!-- Text beside an animated dark panel (css/entity-panels.css, js/entity-panels.js), per the
+       Homepage Entity Sections handoff. The old section images stay in /images/. -->
+
   <!-- ─── TRADING PLATFORM ─────────────────────────────────────────────────── -->
-  <section id="platform" class="bg-sr-mist section">
-    <div class="wrap split">
+  <section id="platform" class="bg-sr-mist section sr-ent">
+    <div class="wrap sr-ent-grid">
       <div>
-        <p class="eyebrow mb-3">Cloud-Based Multi-Asset Execution</p>
-        <h2 class="h2 mb-6">Trading Platform</h2>
-        <p class="lead mb-6">A high-performance, cloud-based system for building and managing equity, futures, and options strategies at institutional scale.</p>
-        <ul class="bullets mb-8">
-          <li>Trade U.S. equities, equity options, and futures on one integrated platform</li>
-          <li>Algorithmic routing logic built for institutional options workflows</li>
-          <li>Real-time analytics, volatility surfaces, and Greeks</li>
-          <li>Point-and-click and systematic trading styles</li>
+        <h2 class="h2 ep-h">Trading Platform</h2>
+        <p class="ep-lead">Cloud-based trading for equity, futures, and options strategies.</p>
+        <ul class="bullets">
+          <li>Equities, options, and futures in the U.S. and Europe</li>
+          <li>Live volatility surfaces and Greeks</li>
+          <li>Point-and-click or systematic trading</li>
         </ul>
-        <a href="platform/" class="arrow-link">Learn More <span class="arrow">→</span></a>
+        <a href="platform/" class="arrow-link ep-more">Learn More <span class="arrow">→</span></a>
       </div>
-      <div class="split-media">
-        <img src="images/SR-Connect-3.1.png" alt="SpiderRock Connect trading platform interface">
+      <div class="ep" id="ep-platform">
+        <p class="ep-eb">Cloud-based multi-asset trading</p>
+        <div class="ep-vis">
+          <svg viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <g id="ep-g1" fill="none">
+              <path d="M0 12 C30 12 42 42 66 42" vector-effect="non-scaling-stroke"/>
+              <path d="M0 42 H66" vector-effect="non-scaling-stroke"/>
+              <path d="M0 72 C30 72 42 42 66 42" vector-effect="non-scaling-stroke"/>
+              <path d="M66 42 H100" vector-effect="non-scaling-stroke"/>
+              <path d="M100 42 C116 42 118 24 134 24 H166 C182 24 184 42 200 42" vector-effect="non-scaling-stroke"/>
+              <path d="M100 42 H200" vector-effect="non-scaling-stroke"/>
+              <path d="M100 42 C116 42 118 60 134 60 H166 C182 60 184 42 200 42" vector-effect="non-scaling-stroke"/>
+              <path d="M200 42 H300" vector-effect="non-scaling-stroke"/>
+              <path d="M104 12 H300" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"/>
+              <path d="M104 72 H300" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"/>
+              </g>
+              <clipPath id="ep-a0"><rect class="ep-cr" x="0" y="-8" width="100" height="100"/></clipPath>
+              <clipPath id="ep-a1"><rect class="ep-cr" x="100" y="-8" width="100" height="100"/></clipPath>
+              <clipPath id="ep-a2"><rect class="ep-cr" x="200" y="-8" width="100" height="100"/></clipPath>
+            </defs>
+            <use href="#ep-g1" stroke="rgba(230,236,242,.4)" stroke-width="1"/>
+            <use class="ep-seg" href="#ep-g1" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-a0)"/>
+            <use class="ep-seg" href="#ep-g1" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-a1)"/>
+            <use class="ep-seg" href="#ep-g1" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-a2)"/>
+          </svg>
+        </div>
+        <div class="ep-cols">
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Model</p><p class="ep-d">SpiderRock surfaces or your own models</p></div>
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Route</p><p class="ep-d">Fair-value algos across markets</p></div>
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Manage risk</p><p class="ep-d">Order and portfolio risk, live</p></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ─── BROKERAGE ────────────────────────────────────────────────────────── -->
-  <section id="brokerage" class="bg-white section">
-    <div class="wrap split split-reverse">
+  <section id="brokerage" class="bg-white section sr-ent sr-ent-flip">
+    <div class="wrap sr-ent-grid">
       <div>
-        <p class="eyebrow mb-3">FINRA-Regulated Market Access</p>
-        <h2 class="h2 mb-6">Brokerage &amp; Market Access</h2>
-        <p class="lead mb-6">Electronic execution and market access through SpiderRock EXS, a FINRA-regulated broker-dealer and NFA member.</p>
-        <ul class="bullets mb-8">
-          <li>Execute all U.S.-listed equities, options, and futures</li>
-          <li>Client-specific Direct Market Access (DMA) routes</li>
-          <li>Fully compliant 15c3-5 pre-trade risk layer</li>
-          <li>SpiderRock Trading Platform as your front end and risk system</li>
+        <h2 class="h2 ep-h">Brokerage &amp; Market Access</h2>
+        <p class="ep-lead">Market access through SpiderRock EXS, a FINRA-regulated broker-dealer and NFA member.</p>
+        <ul class="bullets">
+          <li>All U.S.-listed equities, options, and futures</li>
+          <li>Client-specific DMA routes</li>
+          <li>15c3-5 pre-trade risk controls</li>
         </ul>
-        <a href="exs/" class="arrow-link">Learn More <span class="arrow">→</span></a>
+        <a href="exs/" class="arrow-link ep-more">Learn More <span class="arrow">→</span></a>
       </div>
-      <div class="split-media">
-        <img src="images/close-up-of-financial-broker-working-on-computer-w-2026-01-08-05-50-16-utc-scaled.jpg" alt="Financial broker working on trading platform">
+      <div class="ep" id="ep-brokerage">
+        <p class="ep-eb">FINRA-regulated market access</p>
+        <div class="ep-vis">
+          <svg viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <g id="ep-g2" fill="none">
+              <path d="M0 42 H200" vector-effect="non-scaling-stroke"/>
+              <path d="M200 42 C220 42 222 18 236 18" vector-effect="non-scaling-stroke"/>
+              <path d="M200 42 C220 42 222 66 236 66" vector-effect="non-scaling-stroke"/>
+              </g>
+              <clipPath id="ep-b0"><rect class="ep-cr" x="0" y="-8" width="100" height="100"/></clipPath>
+              <clipPath id="ep-b1"><rect class="ep-cr" x="100" y="-8" width="100" height="100"/></clipPath>
+              <clipPath id="ep-b2"><rect class="ep-cr" x="200" y="-8" width="100" height="100"/></clipPath>
+            </defs>
+            <use href="#ep-g2" stroke="rgba(230,236,242,.4)" stroke-width="1"/>
+            <use class="ep-seg" href="#ep-g2" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-b0)"/>
+            <use class="ep-seg" href="#ep-g2" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-b1)"/>
+            <use class="ep-seg" href="#ep-g2" stroke="#BA4838" stroke-width="2" clip-path="url(#ep-b2)"/>
+          </svg>
+          <div class="ep-gate"></div>
+          <span class="ep-end" style="top:21.4%">Markets</span><span class="ep-end" style="top:78.6%"><span class="ep-opt">Options </span>ATS</span>
+        </div>
+        <div class="ep-cols">
+          <div class="ep-c" tabindex="0"><p class="ep-n">01</p><p class="ep-t">Enter</p><p class="ep-d">Via the SpiderRock platform</p></div>
+          <div class="ep-c" tabindex="0"><p class="ep-n">02</p><p class="ep-t">Check</p><p class="ep-d">15c3-5 pre-trade limits</p></div>
+          <div class="ep-c" tabindex="0"><p class="ep-n">03</p><p class="ep-t">Execute</p><p class="ep-d">U.S. markets or the options ATS</p></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ─── DATA & ANALYTICS ─────────────────────────────────────────────────── -->
-  <section id="data" class="bg-sr-mist section">
-    <div class="wrap split">
+  <section id="data" class="bg-sr-mist section sr-ent">
+    <div class="wrap sr-ent-grid">
       <div>
-        <p class="eyebrow mb-3">Institutional-Grade Market Data</p>
-        <h2 class="h2 mb-6">Data &amp; Analytics</h2>
-        <p class="lead mb-6">Exchange-licensed U.S. equity options and futures data plus proprietary options analytics for research and production trading.</p>
-        <ul class="bullets mb-8">
-          <li>Low-latency raw and normalized feeds that reduce bandwidth</li>
-          <li>Live options analytics, including implied volatility and Greeks</li>
-          <li>10+ years of historical datasets for backtesting and research</li>
-          <li>Integrate via APIs and cloud-based delivery</li>
+        <h2 class="h2 ep-h">Data &amp; Analytics</h2>
+        <p class="ep-lead">Exchange-licensed market data and proprietary options analytics.</p>
+        <ul class="bullets">
+          <li>Real-time data and live options analytics</li>
+          <li>10+ years of historical datasets</li>
+          <li>API and cloud delivery</li>
         </ul>
-        <a href="data/" class="arrow-link">Learn More <span class="arrow">→</span></a>
+        <a href="data/" class="arrow-link ep-more">Learn More <span class="arrow">→</span></a>
       </div>
-      <div class="split-media">
-        <img src="images/PGvsSR-Stock-Image-5-scaled.jpg" alt="Options analytics and market data visualization">
+      <div class="ep" id="ep-data">
+        <p class="ep-eb">Institutional-grade market data</p>
+        <div class="ep-vis">
+          <svg viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="0" y1="83.5" x2="300" y2="83.5" stroke="rgba(255,255,255,.18)" vector-effect="non-scaling-stroke"/>
+            <g fill="none" stroke="rgba(230,236,242,.32)" stroke-width="1">
+              <path class="ep-gh" d="M0 26 C80 94 200 92 300 36" vector-effect="non-scaling-stroke"/>
+              <path class="ep-gh" d="M0 42 C80 97 200 95 300 50" vector-effect="non-scaling-stroke"/>
+              <path class="ep-gh" d="M0 55 C80 100 200 98 300 61" vector-effect="non-scaling-stroke"/>
+            </g>
+            <path class="ep-cv" d="M0 8 C80 92 200 87 300 21" fill="none" stroke="#BA4838" stroke-width="2" vector-effect="non-scaling-stroke"/>
+            <path id="ep-cvref" d="M0 8 C80 92 200 87 300 21" fill="none" stroke="none"/>
+          </svg>
+          <div class="ep-qx"></div><div class="ep-dot ep-qd"></div><div class="ep-dot ep-ldot"></div>
+        </div>
+        <div class="ep-cols">
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Stream</p><p class="ep-d">Live over WebSocket</p></div>
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Query</p><p class="ep-d">On demand via REST</p></div>
+          <div class="ep-c" tabindex="0"><div class="ep-rule"></div><p class="ep-t">Research</p><p class="ep-d">10+ years on S3 and Snowflake</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -130,6 +202,8 @@
   </section>
 
 {% include "partials/footer.njk" %}
+
+  <script src="/js/entity-panels.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,20 @@
+/* In-page diagrams (Order Management, Risk Management, Compliance Layer, FIX Gateway, Platform APIs).
+   One visual system, per the Site Diagrams Restyle handoff. Every rule is scoped under .sr-diagram;
+   loaded only by pages that carry a diagram. */
+.sr-diagram {
+  margin: 0;
+  max-width: 860px;
+  background: #fff;
+  border: 1px solid #E3E5E5;
+  border-radius: 10px;
+  padding: 28px 28px 22px;
+}
+.sr-diagram .sr-diagram-scroll { overflow-x: auto; }
+.sr-diagram svg { display: block; width: 100%; min-width: 640px; height: auto; font-family: Roboto, Arial, sans-serif; }
+.sr-diagram .sr-diagram-caption {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 560px) {
+  .sr-diagram { padding: 18px 14px 14px; }
+}
