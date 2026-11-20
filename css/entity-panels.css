@@ -19,27 +19,31 @@
 /* graphic strip */
 .sr-ent .ep-vis { position: relative; height: 84px; }
 .sr-ent .ep-vis svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
-.sr-ent .ep-seg, .sr-ent .ep-gh { transition: opacity .4s; }
-.sr-ent .ep-end { position: absolute; left: calc(78.67% + 10px); white-space: nowrap; font: 500 11px Roboto, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transform: translateY(-50%); transition: color .4s; }
+.sr-ent .ep-seg, .sr-ent .ep-cor { transition: opacity .25s ease; }
+.sr-ent .ep.pre .ep-seg, .sr-ent .ep.pre .ep-cor { transition: none; }
+.sr-ent .ep-gh { transition: opacity .5s ease; }
+.sr-ent .ep-end { position: absolute; left: calc(78.67% + 10px); white-space: nowrap; font: 500 11px Roboto, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transform: translateY(-50%); transition: color .3s ease; }
 .sr-ent .ep-end.on { color: #fff; }
-.sr-ent .ep-gate { position: absolute; left: calc(33.333% + 17px); top: 34%; width: 2px; height: 32%; background: rgba(230,236,242,.5); transition: background .4s; }
+.sr-ent .ep-gate { position: absolute; left: calc(33.333% + 17px); top: 34%; width: 2px; height: 32%; background: rgba(230,236,242,.5); transition: background .3s ease; }
 .sr-ent .ep-gate.on { background: #BA4838; }
-.sr-ent .ep-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity .3s; }
+.sr-ent .ep-dot { position: absolute; left: 0; top: 0; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; opacity: 0; transition: opacity .25s ease; will-change: transform; pointer-events: none; }
 .sr-ent .ep-ldot { background: #fff; box-shadow: 0 0 0 4px rgba(186,72,56,.45); }
 .sr-ent .ep-qd { background: #BA4838; box-shadow: 0 0 0 4px rgba(186,72,56,.25); }
-.sr-ent .ep-qx { position: absolute; top: 0; bottom: 0; border-left: 1px dashed rgba(211,222,232,.45); opacity: 0; transition: opacity .4s; }
+.sr-ent .ep-qx { position: absolute; top: 0; bottom: 0; left: 0; width: 0; border-left: 1px dashed rgba(211,222,232,.45); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
 
 /* columns */
 .sr-ent .ep-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 30px; }
-.sr-ent .ep-c { padding: 0 16px 0 0; outline: none; cursor: default; border-radius: 4px; }
+.sr-ent .ep-c { padding: 0 16px 0 0; outline: none; cursor: default; border-radius: 4px; transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
+.sr-ent .ep.pre .ep-c { opacity: .45; transform: translateY(6px); }
+.sr-ent .ep.pre .ep-c.on { opacity: 1; transform: none; }
 .sr-ent .ep-c + .ep-c { padding-left: 16px; }
 .sr-ent .ep-c:last-child { padding-right: 0; }
 .sr-ent .ep-c:focus-visible { box-shadow: 0 0 0 2px rgba(211,222,232,.6); }
-.sr-ent .ep-rule { width: 20px; height: 2px; background: rgba(230,236,242,.35); margin: 0 0 16px; transition: background .4s; }
+.sr-ent .ep-rule { width: 20px; height: 2px; background: rgba(230,236,242,.35); margin: 0 0 16px; transition: background .3s ease; }
 .sr-ent .ep-c.on .ep-rule { background: #BA4838; }
-.sr-ent .ep-n { margin: 0 0 12px; font: 500 28px/1 Montserrat, Arial, sans-serif; color: rgba(230,236,242,.42); transition: color .4s; }
-.sr-ent .ep-t { margin: 0 0 8px; font: 600 13px Montserrat, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transition: color .4s; }
-.sr-ent .ep-d { margin: 0; font: 300 14px/1.5 Roboto, Arial, sans-serif; color: rgba(230,236,242,.72); transition: color .4s; }
+.sr-ent .ep-n { margin: 0 0 12px; font: 500 28px/1 Montserrat, Arial, sans-serif; color: rgba(230,236,242,.42); transition: color .3s ease; }
+.sr-ent .ep-t { margin: 0 0 8px; font: 600 13px Montserrat, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(230,236,242,.72); transition: color .3s ease; }
+.sr-ent .ep-d { margin: 0; font: 300 14px/1.5 Roboto, Arial, sans-serif; color: rgba(230,236,242,.72); transition: color .3s ease; }
 .sr-ent .ep-c.on .ep-n, .sr-ent .ep-c.on .ep-t { color: #fff; }
 .sr-ent .ep-c.on .ep-d { color: #D3DEE8; }
 .sr-ent .ep.reduce * { transition: none !important; }
