@@ -53,7 +53,7 @@
         <p class="body-copy max-w-3xl mb-8">Our system supports a wide array of compliance requirements. We cater to our clients&rsquo; technology specifications, offering several integration points into the core system via our proprietary MySQL API, specialized GUI tools, and FIX gateways. SpiderRock can also interface directly with your prime brokers as well as third party compliance systems.</p>
         <figure class="sr-diagram">
           <div class="sr-diagram-scroll">
-<svg viewBox="0 0 712 536" role="img" aria-labelledby="cl-diagram-title">
+<svg viewBox="0 0 712 574" role="img" aria-labelledby="cl-diagram-title">
 <title id="cl-diagram-title">SpiderRock compliance layer: client and prime broker connections to the compliance access points and execution engines in the SpiderRock cloud</title>
 <defs>
 <marker id="cl-mb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#3C5E80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -62,17 +62,20 @@
 
 <!-- layer label -->
 <g font-size="11" font-weight="700" letter-spacing="1.5" fill="#5A6060">
-<text x="0" y="258">SPIDERROCK</text><text x="0" y="272">CLOUD (SOC 2</text><text x="0" y="286">COMPLIANT)</text>
+<text x="0" y="262">SPIDERROCK</text><text x="0" y="276">CLOUD</text>
+</g>
+<g font-size="11" font-weight="500" letter-spacing="1.5" fill="#5A6060">
+<text x="0" y="300">SOC 2</text><text x="0" y="314">COMPLIANT</text>
 </g>
 
 <!-- client environment and prime brokers -->
 <g fill="#FFFFFF" stroke="#CDD1D1">
 <rect x="168" y="0" width="232" height="56" rx="6"/><rect x="440" y="0" width="232" height="56" rx="6"/>
-<rect x="128" y="440" width="584" height="40" rx="6"/>
+<rect x="128" y="478" width="584" height="40" rx="6"/>
 </g>
 <g font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="12" letter-spacing="1.8" fill="#3B3F40" text-anchor="middle">
 <text x="284" y="24">CLIENT ENVIRONMENT</text><text x="556" y="24">PRIME BROKER(S)</text>
-<text x="420" y="465">EXECUTION ENGINES</text>
+<text x="420" y="503">EXECUTION ENGINES</text>
 </g>
 <g font-size="11" fill="#5A6060" text-anchor="middle">
 <text x="284" y="40">or third party OMS</text><text x="556" y="40">or third party compliance systems</text>
@@ -81,11 +84,11 @@
 <!-- inputs down, drops and reports up -->
 <g stroke="#3C5E80" stroke-width="1.5" marker-end="url(#cl-mb)">
 <line x1="264" y1="56" x2="264" y2="133"/><line x1="536" y1="56" x2="536" y2="133"/>
-<line x1="400" y1="400" x2="400" y2="437"/>
+<line x1="400" y1="438" x2="400" y2="475"/>
 </g>
 <g fill="none" stroke="#7A8080" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#cl-mg)">
 <path d="M304 136 V59"/><path d="M576 136 V59"/>
-<path d="M440 440 V403"/>
+<path d="M440 478 V441"/>
 </g>
 <g font-size="11" font-weight="500">
 <g fill="#3C5E80" text-anchor="end">
@@ -99,28 +102,32 @@
 </g>
 
 <!-- compliance access points -->
-<rect x="128" y="136" width="584" height="264" rx="10" fill="#3B3F40"/>
+<rect x="128" y="136" width="584" height="302" rx="10" fill="#3B3F40"/>
 <text x="420" y="164" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="12" letter-spacing="2" fill="#FFFFFF">COMPLIANCE ACCESS POINTS</text>
 <g fill="rgba(255,255,255,.06)">
 <rect x="152" y="180" width="264" height="60" rx="4"/><rect x="424" y="180" width="264" height="60" rx="4"/>
 <rect x="152" y="248" width="264" height="60" rx="4"/><rect x="424" y="248" width="264" height="60" rx="4"/>
-<rect x="152" y="316" width="536" height="60" rx="4"/>
+<rect x="152" y="360" width="536" height="54" rx="4"/>
 </g>
-<rect x="152" y="316" width="28" height="3" fill="#BA4838"/>
+<line x1="152" y1="326" x2="688" y2="326" stroke="rgba(255,255,255,.15)"/>
+<text x="420" y="350" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="12" letter-spacing="2" fill="#FFFFFF">COMPLIANCE LAYER</text>
+<rect x="152" y="360" width="28" height="3" fill="#BA4838"/>
 <g font-size="13" font-weight="500" fill="#FFFFFF">
 <text x="166" y="200">GUI Tools</text><text x="438" y="208">SRSE (Live SQL API)</text>
 <text x="166" y="276">FIX Drop Servers</text><text x="438" y="276">Elastic Cluster</text>
-<text x="166" y="336">Compliance layer</text>
 </g>
 <g font-size="11" fill="#D3DEE8">
 <text x="166" y="216">Control Viewer | Symbol Viewer</text><text x="166" y="232">Risk Manager | Risk Viewer</text>
 <text x="438" y="224">SRControl | SRRisk | SRTrade</text>
 <text x="166" y="292">Inbound &amp; Outbound drops</text><text x="438" y="292">Historical trade &amp; risk data</text>
-<text x="166" y="352">15c3-5 MAR | Automated order marking |</text><text x="166" y="368">Reject non-compliant orders (Reg NMS) | Release staged orders</text>
+</g>
+<g font-size="12.5" fill="#FFFFFF">
+<text x="166" y="383">15c3-5 MAR</text><text x="166" y="401">Automated order marking</text>
+<text x="438" y="383">Reject non-compliant orders (Reg NMS)</text><text x="438" y="401">Release staged orders</text>
 </g>
 
 <!-- legend -->
-<g font-size="11" fill="#5A6060" transform="translate(128 516)">
+<g font-size="11" fill="#5A6060" transform="translate(128 554)">
 <line x1="0" y1="0" x2="24" y2="0" stroke="#3C5E80" stroke-width="1.5"/><text x="32" y="4">Inputs &amp; orders</text>
 <line x1="140" y1="0" x2="164" y2="0" stroke="#7A8080" stroke-width="1.5" stroke-dasharray="5 4"/><text x="172" y="4">Drops &amp; reports</text>
 <rect x="284" y="-1.5" width="24" height="3" fill="#BA4838"/><text x="316" y="4">Risk check</text>
