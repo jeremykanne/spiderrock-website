@@ -82,7 +82,7 @@
 </g>
 <g font-size="13" font-weight="500" fill="#3B3F40" text-anchor="middle">
 <text x="186" y="25">Desktop</text><text x="314" y="25">OMS</text><text x="442" y="25">Scripts</text><text x="570" y="25">Risk / Compliance</text>
-<text x="186" y="109">GUI Tools</text><text x="314" y="109">FIXBase</text><text x="442" y="109">SRSE</text>
+<text x="186" y="109">GUI Tools</text><text x="314" y="109">FIX Gateway</text><text x="442" y="109">SRSE</text>
 <text x="378" y="601" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="12" letter-spacing="1.8">EXCHANGES &amp; BROKERS</text>
 </g>
 
@@ -137,7 +137,7 @@
           </div>
           <figcaption class="sr-diagram-caption">
 <ol>
-<li>Desktop, OMS and Scripts in the client environment connect through GUI Tools, FIXBase and SRSE on the SpiderRock cloud and message bus.</li>
+<li>Desktop, OMS and Scripts in the client environment connect through GUI Tools, the FIX Gateway and SRSE on the SpiderRock cloud and message bus.</li>
 <li>Orders enter the execution engines. Parent order management runs initial risk checks and algo selection implementation. Rejected orders go to Risk / Compliance.</li>
 <li>Child order management uses live risk counters, which restrict child order size, while continuously analyzing market data and the exchange fee and rebate matrix.</li>
 <li>Child orders go over the message bus to exchanges and brokers. Fill reports return to the execution engines and on to Risk / Compliance.</li>

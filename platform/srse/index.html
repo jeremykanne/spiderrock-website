@@ -36,10 +36,10 @@
         <p class="eyebrow mb-5">Architecture</p>
         <h2 class="h2 text-gray-900 mb-6">The Engine Behind the Platform</h2>
         <p class="text-gray-700 leading-relaxed text-lg mb-6">
-          SRSE (SpiderRock Structured Engine) is SpiderRock's custom high-performance live database engine. It is comprised of six MySQL live databases and enables bulk querying and insert operations to interact with the platform's core data in real time.
+          SRSE (SpiderRock Storage Engine) is SpiderRock's custom high-performance live database engine. It is made up of live SQL databases, including the six below, and enables bulk querying and insert operations to interact with the platform's core data in real time.
         </p>
         <p class="text-gray-700 leading-relaxed text-lg mb-6">
-          Clients integrate programmatically with SpiderRock via SRSE for trading, risk, data, and compliance. The MySQL interface means integration is straightforward — any environment with MySQL client libraries can connect. Client libraries are also available in C++ and C#.
+          Clients integrate programmatically with SpiderRock via SRSE for trading, risk, data, and compliance. The MySQL-compatible SQL interface means integration is straightforward — any environment with MySQL client libraries can connect. Client libraries are also available in C++ and C#.
         </p>
         <p class="text-gray-700 leading-relaxed text-lg">
           Bulk select and insert operations enable high-throughput programmatic workflows, from strategy engines that query thousands of options simultaneously to risk systems that update positions across the entire portfolio on every trade.
@@ -85,10 +85,10 @@
               </g>
               <g font-size="13" font-weight="500" fill="#3B3F40" text-anchor="middle">
                 <text x="204" y="25">Compliance</text><text x="402" y="25">Research / Trading</text><text x="600" y="25">Risk</text>
-                <text x="204" y="191">SR CONTROL</text>
-                <text x="336" y="165">SR ANALYTICS</text><text x="336" y="217">SR LIVE</text>
-                <text x="468" y="165">SR TRADE</text><text x="468" y="217">SR THEO</text>
-                <text x="600" y="191">SR RISK</text>
+                <text x="204" y="191">SRControl</text>
+                <text x="336" y="165">SRAnalytics</text><text x="336" y="217">SRLive</text>
+                <text x="468" y="165">SRTrade</text><text x="468" y="217">SRTheo</text>
+                <text x="600" y="191">SRRisk</text>
               </g>
 
               <!-- into SpiderRock -->
@@ -120,10 +120,10 @@
           </div>
           <figcaption class="sr-diagram-caption">
             <ol>
-              <li>In the client environment, compliance writes to SR Control.</li>
-              <li>Research and trading bulk query SR Analytics and bulk insert into SR Trade.</li>
-              <li>Risk reads from SR Risk.</li>
-              <li>The six SRSE databases in the SpiderRock cloud are SR Control, SR Analytics, SR Live, SR Trade, SR Theo and SR Risk, and they exchange data with the SpiderRock message bus.</li>
+              <li>In the client environment, compliance writes to SRControl.</li>
+              <li>Research and trading bulk query SRAnalytics and bulk insert into SRTrade.</li>
+              <li>Risk reads from SRRisk.</li>
+              <li>The SRSE databases shown in the SpiderRock cloud are SRControl, SRAnalytics, SRLive, SRTrade, SRTheo and SRRisk, and they exchange data with the SpiderRock message bus.</li>
             </ol>
           </figcaption>
         </figure>
@@ -145,7 +145,7 @@
             <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">L</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Live</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRLive</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             Real-time market data: quotes, prints, and order book data across all listed US equity, options, and futures markets. Updated on every exchange message.
@@ -157,7 +157,7 @@
             <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">T</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Theo</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRTheo</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             Theoretical pricing: implied volatilities, Greeks, and volatility surface prices updated on every option tick and at regular intervals. The authoritative source for SpiderRock analytics.
@@ -169,7 +169,7 @@
             <div class="w-10 h-10 bg-sr-navy rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">A</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Analytics</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRAnalytics</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             Advanced analytics: alpha probabilities, trade performance metrics, and historical context drawn from SpiderRock's multi-year data archive.
@@ -181,7 +181,7 @@
             <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">R</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Risk</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRRisk</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             Portfolio risk: real-time Greeks aggregation, P&L calculations, and margin computations. Updated continuously as positions change and markets move.
@@ -193,7 +193,7 @@
             <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">Tr</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Trade</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRTrade</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             Trade records: execution history, fill details, and trade analytics. Every fill is captured with full context including analytics at time of execution.
@@ -205,7 +205,7 @@
             <div class="w-10 h-10 bg-sr-red rounded-lg flex items-center justify-center flex-shrink-0">
               <span class="text-white font-bold text-sm">C</span>
             </div>
-            <h3 class="font-display text-lg font-bold text-gray-900">SR Control</h3>
+            <h3 class="font-display text-lg font-bold text-gray-900">SRControl</h3>
           </div>
           <p class="text-gray-600 leading-relaxed text-sm">
             System state: account configuration, positions, locates, restricted lists, and operational controls. The primary interface for compliance and system management.

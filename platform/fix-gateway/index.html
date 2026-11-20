@@ -54,7 +54,7 @@
         <figure class="sr-diagram">
           <div class="sr-diagram-scroll">
             <svg viewBox="0 0 712 368" role="img" aria-labelledby="fx-diagram-title">
-              <title id="fx-diagram-title">FIXBase overview</title>
+              <title id="fx-diagram-title">FIX gateway overview</title>
               <defs>
                 <marker id="fx-mb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#3C5E80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
                 <marker id="fx-mg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#7A8080" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -117,7 +117,7 @@
               <g font-size="11" font-weight="500">
                 <g fill="#3C5E80">
                   <text x="214" y="163">Parent orders</text><text x="214" y="177">&amp; Dark quotes</text>
-                  <text x="198" y="170" text-anchor="end">FIX 4.2 / 4.4</text>
+                  <text x="198" y="170" text-anchor="end">FIX 4.x</text>
                   <text x="554" y="163" text-anchor="end">Child orders</text><text x="554" y="177" text-anchor="end">&amp; RFQs</text>
                   <text x="598" y="163">Dynamic</text><text x="598" y="177">Cxl / Rpl</text>
                   <text x="176" y="292">FIX to Binary</text>
@@ -141,7 +141,7 @@
           <figcaption class="sr-diagram-caption">
             <ol>
               <li>In the client environment, Trading and Compliance / Risk feed the OMS, and the OMS reports back to Compliance / Risk.</li>
-              <li>The OMS sends parent orders and dark quotes over FIX 4.2 or 4.4 to the SpiderRock clientside gateway (inbound), which converts FIX to binary for the SpiderRock message bus.</li>
+              <li>The OMS sends parent orders and dark quotes over FIX 4.x to the SpiderRock clientside gateway (inbound), which converts FIX to binary for the SpiderRock message bus.</li>
               <li>The execution engines take parent orders from the message bus and return child orders to it, and exchange data with the drop server. The drop server sends inbound and outbound FIX drops to and from the OMS.</li>
               <li>The streetside gateway (outbound) converts binary to FIX from the message bus and sends child orders and RFQs to exchanges, brokers and ATSs, with dynamic cancel/replace in both directions and fills and acknowledgements coming back.</li>
             </ol>
@@ -166,7 +166,7 @@
             SpiderRock operates a client-facing FIX gateway enabling order entry from client OMS and EMS systems. All SpiderRock algo parameters are supported via FIX message tags, giving clients the full power of SpiderRock's routing engine through their existing front-end systems.
           </p>
           <ul class="space-y-3 text-gray-600 text-sm">
-            <li class="flex gap-3"><span class="bullet" aria-hidden="true"></span>Standard FIX 4.2/4.4 protocol</li>
+            <li class="flex gap-3"><span class="bullet" aria-hidden="true"></span>Standard FIX 4.x protocol</li>
             <li class="flex gap-3"><span class="bullet" aria-hidden="true"></span>Full algo parameter support via custom tags</li>
             <li class="flex gap-3"><span class="bullet" aria-hidden="true"></span>Order acknowledgment and execution reports</li>
             <li class="flex gap-3"><span class="bullet" aria-hidden="true"></span>Hosted in NY4/5 and CH2 data centers</li>

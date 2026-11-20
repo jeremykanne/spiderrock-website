@@ -108,13 +108,13 @@
 </g>
 <rect x="152" y="316" width="28" height="3" fill="#BA4838"/>
 <g font-size="13" font-weight="500" fill="#FFFFFF">
-<text x="166" y="200">GUI Tools</text><text x="438" y="208">SRSE (Live MySQL API)</text>
-<text x="166" y="276">FIXBase</text><text x="438" y="276">Elastic Cluster</text>
+<text x="166" y="200">GUI Tools</text><text x="438" y="208">SRSE (Live SQL API)</text>
+<text x="166" y="276">FIX Drop Servers</text><text x="438" y="276">Elastic Cluster</text>
 <text x="166" y="336">Compliance layer</text>
 </g>
 <g font-size="11" fill="#D3DEE8">
 <text x="166" y="216">Control Viewer | Symbol Viewer</text><text x="166" y="232">Risk Manager | Risk Viewer</text>
-<text x="438" y="224">SR Control | SR Risk | SR Trade</text>
+<text x="438" y="224">SRControl | SRRisk | SRTrade</text>
 <text x="166" y="292">Inbound &amp; Outbound drops</text><text x="438" y="292">Historical trade &amp; risk data</text>
 <text x="166" y="352">15c3-5 MAR | Automated order marking |</text><text x="166" y="368">Reject non-compliant orders (Reg NMS) | Release staged orders</text>
 </g>
@@ -131,7 +131,7 @@
             <ol>
               <li>The client environment, or a third party OMS, sends SOD positions, other inputs, order and risk limits and staged orders into the SpiderRock cloud, which is SOC 2 compliant, and receives live FIX drops and trade and risk reports.</li>
               <li>Prime brokers, or third party compliance systems, send SOD positions and other inputs, and receive live FIX drops, trade and risk reports, parent order counts and trade allocations.</li>
-              <li>The compliance access points are GUI Tools (Control Viewer, Symbol Viewer, Risk Manager, Risk Viewer), SRSE (the live MySQL API: SR Control, SR Risk, SR Trade), FIXBase for inbound and outbound drops, and the Elastic Cluster for historical trade and risk data.</li>
+              <li>The compliance access points are GUI Tools (Control Viewer, Symbol Viewer, Risk Manager, Risk Viewer), SRSE (the live SQL API: SRControl, SRRisk, SRTrade), FIX Drop Servers for inbound and outbound drops, and the Elastic Cluster for historical trade and risk data.</li>
               <li>The compliance layer applies 15c3-5 market access risk checks, marks orders automatically, rejects non-compliant orders under Reg NMS and releases staged orders. The compliance layer connects to the execution engines in both directions.</li>
             </ol>
           </figcaption>
@@ -205,8 +205,8 @@
             <p class="text-gray-600">Automated quarterly order routing disclosure report generation.</p>
           </div>
           <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
-            <h3 class="font-display text-lg font-bold text-gray-900 mb-3">MySQL API Access</h3>
-            <p class="text-gray-600">All compliance data accessible via SRSE MySQL API for integration with external compliance systems.</p>
+            <h3 class="font-display text-lg font-bold text-gray-900 mb-3">SQL API Access</h3>
+            <p class="text-gray-600">All compliance data accessible via the SRSE SQL API for integration with external compliance systems.</p>
           </div>
         </div>
       </div>
