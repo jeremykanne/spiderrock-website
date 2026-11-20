@@ -38,7 +38,7 @@ In addition to the type of data, feeds also differ in timeliness. A market data 
 - **Delayed feeds** introduce significant latencies, updating perhaps only every 15 minutes or more. Delayed feeds provide useful information for investors who don’t rely on rapid selling and buying, and they are often sufficient for organizations and individuals engaged in longer-term investment strategies. Delayed feeds are often free or available at a low cost, in contrast to the much more expensive real-time feeds.
 - **Historical data** allows traders to access pricing and market information for a period of time in the past. For example, a trader might request stock prices for a company over the last three years. Historical data helps traders to analyze markets and identify patterns. They are also useful for backtesting algorithmic trading strategies.
 
-At SpiderRock, we offer a diverse array of [normalized real-time market data feeds](/data/stocks-options-futures/) as well as historical data feeds for [stocks](/data/historical-data-analytics/historic-stock-price-data/), [options and greeks](/data/historical-data-analytics/options-greeks/), and [futures](https://spiderrock.net/historical-data-analytics/futures-commodities/).
+At SpiderRock, we offer a diverse array of [normalized real-time market data feeds](/data/stocks-options-futures/) as well as historical data feeds for [stocks](/data/historical-data-analytics/historic-stock-price-data/), [options and greeks](/data/historical-data-analytics/options-greeks/), and [futures](https://docs.spiderrockconnect.com/docs/HistoricalData/).
 
 ## **How Are Market Data Feeds Delivered?**
 
@@ -65,7 +65,7 @@ Organizations may choose to access market feeds via exchanges’ multicast UDP f
 SpiderRocks customers have several options for accessing our real-time market data feeds. They include:
 
 - Raw and normalized low-latency multicast channels.
-- SpiderRock’s [cloud-hosted MySQL API](https://spiderrock.net/mysql-api/) (SRSE). SRSE is a high-throughput custom storage engine that clients can query and integrate into their trading environment.
+- SpiderRock’s [cloud-hosted MySQL API](/platform/srse/) (SRSE). SRSE is a high-throughput custom storage engine that clients can query and integrate into their trading environment.
 - A C++/C# market data API, which users can integrate with client feed handlers and other software. The API converts multicast data packets into messages within the client software. It is highly optimized for the high-volume throughput of low-latency market data.
 
 Additionally, historical data and analytics can be accessed both as flat files via SFTP or from our ElasticSearch database API.

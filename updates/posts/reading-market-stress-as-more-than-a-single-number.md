@@ -11,7 +11,7 @@ categories:
 
 SpiderRock was recently featured in a DataDrivenInvestor article, [How to Break Down Market Stress with Options Data in Python](https://medium.datadriveninvestor.com/how-to-break-down-market-stress-with-options-data-in-python-caa401123add), which explores how options data can be used to move beyond a single volatility reading and pinpoint where market stress is showing up.
 
-The article presents a Python framework for analyzing SPY market stress. It combines live [Nations Indexes](https://nationsindexes.com/) values, calculated and distributed by SpiderRock through [MLink](https://spiderrock.net/data/mlink/), with historical index and SPY price data. It converts five measures (volatility, call demand, put demand, skew, and tail-risk pricing) into historical percentiles, making it easier to compare the signals and tell different market environments apart.
+The article presents a Python framework for analyzing SPY market stress. It combines live [Nations Indexes](https://nationsindexes.com/) values, calculated and distributed by SpiderRock through [MLink](/data/spiderstream-market-data-api/), with historical index and SPY price data. It converts five measures (volatility, call demand, put demand, skew, and tail-risk pricing) into historical percentiles, making it easier to compare the signals and tell different market environments apart.
 
 Rather than treating volatility as a one-dimensional fear gauge, the framework shows how similar volatility levels can mask very different options-market structures, whether driven by put buying, tail hedging, or call demand. The result is a more structured way to interpret what the options market is pricing and how stress builds or broadens beneath the surface.
 

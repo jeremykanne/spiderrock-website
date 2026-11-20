@@ -29,4 +29,4 @@ SpiderRock Gateway Technologies is the data and analytics division of SpiderRock
 
 SpiderRock offers multiple [live options analytics](/data/options-analytics/) delivery mechanisms, from multicast channels or SpiderRock’s proprietary MLink engine. In all cases, SpiderRock’s [real-time analytics](/data/stocks-options-futures/) and data tie into historical records to maximize the edge capture and limit loss between back testing and execution.
 
-For more information, please visit [spiderrock.net](/), follow us on Twitter at [@SpiderRockChi](https://www.bing.com/ck/a?!&&p=92d2a7c10b27ae5dJmltdHM9MTY4ODk0NzIwMCZpZ3VpZD0xNjI3MmE3Mi1hYjhjLTY4YWYtMGM5Ni0zOTYxYWFlZTY5ZDMmaW5zaWQ9NTE5MA&ptn=3&hsh=3&fclid=16272a72-ab8c-68af-0c96-3961aaee69d3&psq=spiderrockchi&u=a1aHR0cHM6Ly90d2l0dGVyLmNvbS9TcGlkZXJSb2NrQ2hp&ntb=1) and visit our [LinkedIn Page](https://www.linkedin.com/company/spiderrock/).
+For more information, please visit [spiderrock.net](/), follow us on Twitter at [@SpiderRockChi](https://twitter.com/SpiderRockChi) and visit our [LinkedIn Page](https://www.linkedin.com/company/spiderrock/).
