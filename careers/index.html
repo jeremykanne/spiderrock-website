@@ -13,7 +13,20 @@
     details summary { cursor: pointer; list-style: none; }
     details summary::-webkit-details-marker { display: none; }
     details[open] .faq-chevron { transform: rotate(180deg); }
-    .faq-chevron { transition: transform 200ms ease; }
+    .faq-chevron { transition: transform 200ms ease; color: #BA4838; }
+    .careers-h1 > span { display: block; }
+    .careers-h1 .stop { color: #BA4838; }
+    @media (min-width: 768px) { .careers-h1 { font-size: 56px; line-height: 1.02; } }
+    .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 36px 0 0; padding: 0; list-style: none; max-width: 34em; }
+    .pillars li { padding-top: 14px; border-top: 1px solid #E3E5E5; position: relative; font: 600 13px Montserrat, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #3B3F40; }
+    .pillars li::before { content: ""; position: absolute; top: -1px; left: 0; width: 28px; height: 2px; background: #BA4838; }
+    @media (max-width: 560px) { .pillars { grid-template-columns: 1fr; gap: 14px; } .faq-list { padding: 4px 20px; } .faq-a { padding-right: 0; } }
+    .faq-list { background: #fff; border: 1px solid #E3E5E5; border-radius: 10px; padding: 4px 28px; }
+    .faq-item + .faq-item { border-top: 1px solid #E3E5E5; }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 20px 0; cursor: pointer; list-style: none; font: 600 16px/1.4 Roboto, sans-serif; color: #3B3F40; }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q:hover { color: #3C5E80; }
+    .faq-a { padding: 0 44px 22px 0; color: #5A6060; line-height: 1.65; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
@@ -25,10 +38,12 @@
   <section class="hero-steel text-white">
     <div class="wrap pt-20 pb-24">
       <p class="eyebrow eyebrow-dark mb-5">Careers</p>
-      <h1 class="hero-h1 mb-6 max-w-3xl">
-        Innovation. Integration. Inspiration.
+      <h1 class="hero-h1 careers-h1 mb-7">
+        <span>Innovation<span class="stop">.</span></span>
+        <span>Integration<span class="stop">.</span></span>
+        <span>Inspiration<span class="stop">.</span></span>
       </h1>
-      <p class="hero-lead mb-10">
+      <p class="hero-lead mb-10 max-w-[36em]">
         Join a fun and flexible environment where you will be inspired to do your best innovative work. SpiderRock's team-driven culture attracts top talent across trading technology, quantitative research, and client services.
       </p>
       <div class="flex flex-wrap gap-4">
@@ -40,36 +55,41 @@
   <!-- ─── TOTAL REWARDS ─────────────────────────────────────────────────────── -->
   <section class="bg-white section">
     <div class="wrap">
-      <div class="grid md:grid-cols-2 gap-20 items-start">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <p class="eyebrow mb-5">Benefits</p>
           <h2 class="h2 text-gray-900 mb-6">Total Rewards</h2>
-          <p class="text-gray-700 leading-relaxed text-lg">
-            SpiderRock's Total Rewards are designed to include programs that fit your lifestyle and your career trajectory. Our Total Rewards approach includes progressive Benefits, market-driven Compensation, and career Development strategies. These three pillars embody our most crucial investment for our most valuable asset — you.
+          <p class="text-gray-700 leading-relaxed text-lg max-w-[34em]">
+            SpiderRock's Total Rewards are designed to include programs that fit your lifestyle and your career trajectory. Our Total Rewards approach includes progressive Benefits, market-driven Compensation, and career Development strategies. These three pillars embody our most crucial investment for our most valuable asset&nbsp;—&nbsp;you.
           </p>
+          <ul class="pillars" aria-label="Total Rewards pillars">
+            <li>Benefits</li>
+            <li>Compensation</li>
+            <li>Development</li>
+          </ul>
         </div>
-        <div class="bg-gradient-to-br from-sr-navy to-sr-blue rounded-xl p-10 text-white">
-          <h3 class="font-display text-2xl font-bold mb-8">Why SpiderRock</h3>
-          <ul class="space-y-5">
+        <div class="bg-gradient-to-br from-sr-navy to-sr-blue rounded-xl p-8 md:p-10 text-white">
+          <h3 class="font-display text-xl font-semibold uppercase tracking-[0.04em] mb-7">Why SpiderRock</h3>
+          <ul class="space-y-4">
             <li class="flex gap-4">
               <span class="bullet" aria-hidden="true"></span>
-              <span class="text-white/80">Work at the intersection of trading technology, quantitative research, and institutional finance</span>
+              <span class="text-white/85 leading-relaxed">Work at the intersection of trading technology, quantitative research, and institutional finance</span>
             </li>
             <li class="flex gap-4">
               <span class="bullet" aria-hidden="true"></span>
-              <span class="text-white/80">Collaborative, team-driven culture with direct access to leadership</span>
+              <span class="text-white/85 leading-relaxed">Collaborative, team-driven culture with direct access to leadership</span>
             </li>
             <li class="flex gap-4">
               <span class="bullet" aria-hidden="true"></span>
-              <span class="text-white/80">High-impact work supporting $47B+ in daily trading volume</span>
+              <span class="text-white/85 leading-relaxed">High-impact work supporting $47B+ in daily trading volume</span>
             </li>
             <li class="flex gap-4">
               <span class="bullet" aria-hidden="true"></span>
-              <span class="text-white/80">Named Best and Brightest Companies to Work For in the Nation</span>
+              <span class="text-white/85 leading-relaxed">Named Best and Brightest Companies to Work For in the Nation</span>
             </li>
             <li class="flex gap-4">
               <span class="bullet" aria-hidden="true"></span>
-              <span class="text-white/80">Training, development, and career growth opportunities throughout your tenure</span>
+              <span class="text-white/85 leading-relaxed">Training, development, and career growth opportunities throughout your tenure</span>
             </li>
           </ul>
         </div>
@@ -80,83 +100,85 @@
   <!-- ─── FAQ ───────────────────────────────────────────────────────────────── -->
   <section class="bg-gray-50 section">
     <div class="wrap">
-      <div class="section-head">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-4">
         <p class="eyebrow mb-4">FAQ</p>
         <h2 class="h2 text-gray-900">Frequently Asked Questions</h2>
       </div>
 
-      <div class="space-y-2 max-w-4xl">
+      <div class="faq-list lg:col-span-8">
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             How current are job postings?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             The website is continually updated. Jobs are posted as soon as they become available and are removed once the position is filled.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             How do I apply for an open position?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Open positions are listed on the SpiderRock <a href="https://jobs.deel.com/spiderrock-technology-solutions-llc" target="_blank" rel="noopener noreferrer" class="text-sr-blue hover:underline">careers portal</a>.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             Will I need to go through the formal process even if I've interviewed with SpiderRock before?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Yes, all candidates go through the standard hiring process to ensure a consistent and fair evaluation. If you've interviewed before, your prior interaction may be noted and considered.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             How do I apply for an internship?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Internship opportunities are posted as they become available. Check the <a href="https://jobs.deel.com/spiderrock-technology-solutions-llc" target="_blank" rel="noopener noreferrer" class="text-sr-blue hover:underline">careers portal</a> for current openings.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             Does SpiderRock conduct background checks?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Yes, background checks are a standard part of the offer process for all positions at SpiderRock.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             Will I have opportunities for training and development after being hired?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Absolutely. Career development is a core pillar of our Total Rewards program. SpiderRock invests in training, mentorship, and growth opportunities throughout your tenure.
           </div>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-          <summary class="flex justify-between items-center px-6 py-5 font-semibold text-gray-900 hover:bg-gray-50">
+        <details class="faq-item">
+          <summary class="faq-q">
             Do you recruit new college graduates?
-            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="faq-chevron w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-600">
+          <div class="faq-a">
             Yes, SpiderRock actively recruits new graduates, particularly in technology, computer science, mathematics, and finance. Entry-level positions and internship-to-hire pathways are available for exceptional candidates.
           </div>
         </details>
 
+      </div>
       </div>
     </div>
   </section>
