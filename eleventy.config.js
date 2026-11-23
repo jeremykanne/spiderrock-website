@@ -45,7 +45,14 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("admin/index.html");
   eleventyConfig.addPassthroughCopy("admin/index.html");
   // Browser tab icon, the same file the docs site uses (docs.spiderrockconnect.com/img/favicon.ico).
+  // Every page's <head> gets a link to it (pages carry their own heads, so it's added here rather
+  // than in each file). Bump ?v= when the icon changes so browsers drop their cached copy.
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addTransform("favicon", function (content) {
+    const out = this.page.outputPath || "";
+    if (!out.endsWith(".html") || content.includes('rel="icon"') || !content.includes("</head>")) return content;
+    return content.replace("</head>", '  <link rel="icon" href="/favicon.ico?v=1" sizes="64x64" />\n</head>');
+  });
 
   eleventyConfig.setTemplateFormats(["md", "njk", "html"]);
   eleventyConfig.ignores.add("README.md");
