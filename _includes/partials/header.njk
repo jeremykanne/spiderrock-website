@@ -114,7 +114,8 @@
     </div>
   </div>
 
-  <dialog id="siteSearch" class="search-dialog" aria-label="Search SpiderRock" data-pagefind-ignore="all">
+  <dialog id="siteSearch" class="search-dialog" aria-label="Search SpiderRock" data-pagefind-ignore="all"
+          data-docs-app="{{ nav.docsAlgolia.appId }}" data-docs-key="{{ nav.docsAlgolia.apiKey }}" data-docs-index="{{ nav.docsAlgolia.indexName }}" data-docs-filter="{{ docsSearchTag }}">
     <form action="{{ nav.docsSearch }}" method="get" target="_blank" role="search">
       <label for="siteSearchInput" class="search-label">Search SpiderRock</label>
       <div class="search-field">
@@ -137,7 +138,7 @@
       <section class="search-group" data-group="docs" hidden>
         <h2 class="search-group-h">Documentation</h2>
         <ol class="search-list"></ol>
-        <a class="search-more" target="_blank" rel="noopener noreferrer">Search the documentation for &ldquo;<span></span>&rdquo; <span aria-hidden="true">↗</span></a>
+        <a class="search-more" target="_blank" rel="noopener noreferrer">See all documentation results for &ldquo;<span></span>&rdquo; <span aria-hidden="true">↗</span></a>
       </section>
     </div>
   </dialog>

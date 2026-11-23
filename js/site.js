@@ -98,8 +98,11 @@
 
   // ── Search: one dialog for the website and the documentation, opened by the search buttons
   // or Ctrl/Cmd+K. Website results come from the Pagefind index built with the site
-  // (/pagefind/, see eleventy.config.js); the Documentation group links to the docs site's search.
-  // Tabs filter to one group. Enter opens the first result.
+  // (/pagefind/, see eleventy.config.js). Documentation results come from the docs site's
+  // Algolia DocSearch index (public search-only key, see _data/nav.js), current docs version
+  // only; if Algolia errors or takes over 2s, only the "See all documentation results" link
+  // shows. The two queries run independently, so website results never wait on the docs.
+  // Tabs filter to one group; arrow keys move through results; Enter opens the first result.
   var dialog = document.getElementById('siteSearch');
   if (!dialog) return;
   var form = dialog.querySelector('form');
@@ -109,10 +112,18 @@
   var docsGroup = dialog.querySelector('[data-group="docs"]');
   var siteList = siteGroup.querySelector('.search-list');
   var siteEmpty = siteGroup.querySelector('.search-empty');
+  var docsList = docsGroup.querySelector('.search-list');
   var docsMore = docsGroup.querySelector('.search-more');
+  var algolia = {
+    app: dialog.dataset.docsApp, key: dialog.dataset.docsKey,
+    index: dialog.dataset.docsIndex, filter: dialog.dataset.docsFilter
+  };
+  var docsOrigin = new URL(form.action).origin;
   var scope = 'all';
   var pagefind = null;
   var seq = 0;
+  var docsTimer = null;
+  var docsAbort = null;
 
   function loadPagefind() {
     if (!pagefind) {
@@ -125,6 +136,8 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   // Page titles carry the site name ("Options Analytics — SpiderRock …"); keep the page part.
   function cleanTitle(t) { return (t || '').split(/\s+[—|–]\s+/)[0]; }
+  // Algolia snippets: escape everything, then turn our highlight markers back into <mark>.
+  function snippet(s) { return esc(s || '').replace(/\[\[mk\]\]/g, '<mark>').replace(/\[\[\/mk\]\]/g, '</mark>'); }
 
   function show() {
     var q = input.value.trim();
@@ -137,12 +150,77 @@
     tabs.querySelectorAll('[role="tab"]').forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.scope === scope)); });
     show();
   }
+
+  function searchDocs(q, mine) {
+    clearTimeout(docsTimer);
+    if (docsAbort) docsAbort.abort();
+    docsList.innerHTML = '';
+    if (!q || !algolia.app || !algolia.key) return;
+    docsTimer = setTimeout(function () {
+      var ctrl = docsAbort = new AbortController();
+      var timeout = setTimeout(function () { ctrl.abort(); }, 2000);
+      fetch('https://' + algolia.app + '-dsn.algolia.net/1/indexes/' + encodeURIComponent(algolia.index) + '/query', {
+        method: 'POST',
+        signal: ctrl.signal,
+        headers: { 'X-Algolia-Application-Id': algolia.app, 'X-Algolia-API-Key': algolia.key },
+        body: JSON.stringify({
+          query: q,
+          hitsPerPage: 20,
+          facetFilters: algolia.filter ? [algolia.filter] : [],
+          attributesToRetrieve: ['hierarchy', 'url'],
+          attributesToSnippet: ['content:20'],
+          highlightPreTag: '[[mk]]',
+          highlightPostTag: '[[/mk]]'
+        })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('docs search ' + r.status);
+        return r.json();
+      }).then(function (data) {
+        if (mine !== seq) return;
+        // DocSearch returns one hit per heading; keep the first hit per page, up to five pages.
+        // Heading hits carry no text, so the snippet comes from that page's first hit with text.
+        var byPage = {};
+        var pages = [];
+        (data.hits || []).forEach(function (h) {
+          if (!h.url) return;
+          var u;
+          try { u = new URL(h.url); } catch (e) { return; }
+          if (u.origin !== docsOrigin) return;
+          var key = u.origin + u.pathname;
+          var text = h._snippetResult && h._snippetResult.content ? h._snippetResult.content.value : '';
+          var page = byPage[key];
+          if (!page) {
+            if (pages.length >= 5) return;
+            page = byPage[key] = { hit: h, snip: text };
+            pages.push(page);
+          } else if (!page.snip && text) {
+            page.snip = text;
+          }
+        });
+        docsList.innerHTML = pages.map(function (p) {
+          var h = p.hit;
+          var hi = h.hierarchy || {};
+          var path = [hi.lvl0, hi.lvl2].filter(Boolean).map(esc).join(' &rsaquo; ');
+          var snip = p.snip;
+          return '<li><a href="' + esc(h.url) + '" target="_blank" rel="noopener noreferrer">' +
+            '<span class="search-title">' + esc(hi.lvl1 || hi.lvl0 || 'Documentation') + ' <span class="search-ext" aria-hidden="true">↗</span></span>' +
+            (path ? '<span class="search-path">' + path + '</span>' : '') +
+            (snip ? '<span class="search-excerpt">' + snippet(snip) + '</span>' : '') +
+            '</a></li>';
+        }).join('');
+      }).catch(function () {
+        if (mine === seq) docsList.innerHTML = '';
+      }).then(function () { clearTimeout(timeout); });
+    }, 200);
+  }
+
   function run() {
     var q = input.value.trim();
     var mine = ++seq;
     docsMore.href = form.action + '?q=' + encodeURIComponent(q);
     docsMore.querySelector('span').textContent = q;
     show();
+    searchDocs(q, mine);
     if (!q) { siteList.innerHTML = ''; return; }
     loadPagefind().then(function (pf) {
       if (!pf) return null;
@@ -158,6 +236,13 @@
             '</span><span class="search-excerpt">' + p.excerpt + '</span></a></li>';
         }).join('');
       });
+    });
+  }
+
+  // Every result link (website, then docs, then "See all") in the visible groups, in order.
+  function resultLinks() {
+    return Array.prototype.filter.call(dialog.querySelectorAll('.search-group a'), function (a) {
+      return !a.closest('.search-group').hidden;
     });
   }
 
@@ -179,10 +264,27 @@
     if (t) { setScope(t.dataset.scope); input.focus(); }
   });
   input.addEventListener('input', run);
-  // Enter: open the first visible result, or the docs search in a new tab.
+  // Arrow keys: from the box into the results and between them; Up from the first goes back to
+  // the box. Enter on a focused result follows it (docs results open in a new tab).
+  dialog.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var links = resultLinks();
+    if (!links.length) return;
+    var i = links.indexOf(document.activeElement);
+    e.preventDefault();
+    if (e.key === 'ArrowDown') (links[i + 1] || links[i < 0 ? 0 : i]).focus();
+    else if (i <= 0) input.focus();
+    else links[i - 1].focus();
+  });
+  // Enter in the box: open the first visible result; with none, the docs search in a new tab.
   form.addEventListener('submit', function (e) {
-    var first = !siteGroup.hidden && siteList.querySelector('a');
-    if (first) { e.preventDefault(); window.location.href = first.href; return; }
+    var first = resultLinks().filter(function (a) { return !a.classList.contains('search-more'); })[0];
+    if (first) {
+      e.preventDefault();
+      if (first.target === '_blank') window.open(first.href, '_blank', 'noopener');
+      else window.location.href = first.href;
+      return;
+    }
     setTimeout(function () { dialog.close(); }, 0);
   });
   dialog.addEventListener('close', function () { input.value = ''; setScope('all'); run(); });

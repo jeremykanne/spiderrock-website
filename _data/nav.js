@@ -8,6 +8,16 @@ export default {
   docs: DOCS,
   docsSearch: `${DOCS}search/`,
 
+  // Documentation results in the search dialog (js/site.js) come straight from the docs site's
+  // Algolia DocSearch index. These are the public, search-only values from the docs site's own
+  // Docusaurus config (themeConfig.algolia); never put any other Algolia key here. The version
+  // filter (released docs only, not "Upcoming") is read at build time: _data/docsSearchTag.js.
+  docsAlgolia: {
+    appId: "W0MFR4KIOR",
+    apiKey: "52ff4eebf8ba73ee0a81dc162ff2f6da",
+    indexName: "spiderrockconnect",
+  },
+
   // Utility bar (top strip), right-aligned.
   utility: [
     { label: "Leadership", href: "/about-us/" },
