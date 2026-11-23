@@ -44,6 +44,8 @@ export default function (eleventyConfig) {
   // The Decap CMS page is copied as-is, never run through Nunjucks.
   eleventyConfig.ignores.add("admin/index.html");
   eleventyConfig.addPassthroughCopy("admin/index.html");
+  // Browser tab icon, the same file the docs site uses (docs.spiderrockconnect.com/img/favicon.ico).
+  eleventyConfig.addPassthroughCopy("favicon.ico");
 
   eleventyConfig.setTemplateFormats(["md", "njk", "html"]);
   eleventyConfig.ignores.add("README.md");
